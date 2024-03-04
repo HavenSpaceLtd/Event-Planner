@@ -11,6 +11,7 @@ sqlalchemy-serializer = "*"
 flask-restful = "*"
 flask-bcrypt = "*"
 pyjwt = "*"
+flask-jwt-extended = "*"
 
 [dev-packages]
 
