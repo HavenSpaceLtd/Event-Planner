@@ -20,8 +20,13 @@ class Event(db.Model):
     description = db.Column(db.String)
     image = db.Column(db.String)
 
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
+    # Foreign key to indicate the owner of the event
+    owner_id = db.Column(db.Integer, db.ForeignKey('users.id', name='fk_owner_id'))
+    owner = db.relationship('User', back_populates='owned_events')
+
+    # Relationship with users who are team members of the event
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id', name='fk_user_id'))
     users = db.relationship('User', secondary = 'user_event_association', back_populates='events')
 
     tasks = db.relationship('Task', secondary = 'event_task_association', back_populates='events')
