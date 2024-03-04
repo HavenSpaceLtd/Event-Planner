@@ -36,8 +36,8 @@ class AllUsers(Resource):
         current_user = get_jwt_identity()
         user = User.query.filter(User.id == current_user['user_id']).first()
 
-        if not user.admin:
-            return make_response(jsonify({'message': 'Permission denied!'}), 403)
+        # if not user.admin:
+        #     return make_response(jsonify({'message': 'Permission denied!'}), 403)
         
         # Get form data
         email = request.form.get('email')
