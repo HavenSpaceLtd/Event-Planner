@@ -13,6 +13,9 @@ class Task(db.Model):
     start_time=db.Column(db.Time)
     end_time=db.Column(db.Time)
 
+    amount = db.Column(db.Integer)
+    progress = db.Column(db.Integer)
+
     created_at = db.Column(DateTime, default=func.now())
     updated_at = db.Column(DateTime, default=func.now(), onupdate=func.now())
 
@@ -27,4 +30,4 @@ class Task(db.Model):
 
 
     def __repr__(self) -> str:
-        return f'<Event {self.id}, {self.title}, {self.start_date}, {self.start_time}, {self.end_date}, {self.end_time}, {self.created_at}, {self.updated_at}, {self.image} ,{self.description}, {self.location}>'
+        return f'<Event {self.id}, {self.title}, {self.start_date}, {self.start_time}, {self.end_date}, {self.end_time}, {self.created_at}, {self.updated_at}, {self.image} ,{self.description}, {self.location}, {self.amount}, {self.progress}>'
