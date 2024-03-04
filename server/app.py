@@ -1,25 +1,26 @@
 from flask import Flask, make_response, request, jsonify, session
 from flask_migrate import Migrate
 from database import db
-
-from models.user import User
-from models.event import Event
-from models.task import Task
-
+from functools import wraps
 from flask_restful import Api, Resource
 from flask_bcrypt import Bcrypt
 import os
+import jwt
+from datetime import datetime, timedelta
 
+from models.event import Event
+from models.user import User
+from models.task import Task
 
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///events.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-#Create Migrations
+# Create Migrations
 migrate = Migrate(app, db)
 
-#Create api instance
+# Create api instance
 api = Api(app)
 bcrypt = Bcrypt(app)
 
@@ -28,12 +29,36 @@ app.secret_key = secret_key
 
 db.init_app(app)
 
+# JWT Secret Key
+jwt_secret_key = 'your_jwt_secret_key'
+
+# JWT Expiration Time
+jwt_exp_time = 3600  # 1 hour
+
+# JWT Token Required Decorator
+def token_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        token = request.headers.get('Authorization')
+        if not token:
+            return make_response(jsonify({'message': 'Token is missing!'}), 401)
+        try:
+            data = jwt.decode(token, jwt_secret_key, algorithms=["HS256"])
+            current_user = User.query.get(data['user_id'])
+        except:
+            return make_response(jsonify({'message': 'Token is invalid!'}), 401)
+        return f(current_user, *args, **kwargs)
+    return decorated
+
 class Index(Resource):
     def get(self):
         return "<h1>Skidi Papa Papa</h1>"
 
 class AllUsers(Resource):
-    def post(self):
+    @token_required
+    def post(self, current_user):
+        if not current_user.admin:
+            return make_response(jsonify({'message': 'Permission denied!'}), 403)
         
         # Get form data
         email = request.form.get('email')
@@ -60,14 +85,11 @@ class AllUsers(Resource):
         db.session.add(new_user)
         db.session.commit()
 
-        #Create a session for the User
-        session["user_id"] = new_user.id
 
-        # return make_response(jsonify(new_User.to_dict()), 201)
         return make_response(jsonify({"Message": f"New user with email, {new_user.email}, successfully registered."}), 201)
 
-
-    def get(self):
+    @token_required
+    def get(self, current_user):
         users = User.query.all()
         users_list = [
             {
@@ -82,6 +104,8 @@ class AllUsers(Resource):
         return make_response(jsonify(users_list))
     
 
+
+
 class LoginUser(Resource):
     def post(self):
         email = request.form.get('email')
@@ -93,10 +117,12 @@ class LoginUser(Resource):
         if not bcrypt.check_password_hash(user.password, password):
             return make_response(jsonify({"Error": "Incorrect password!"}), 401)
         
-        #Create a session for the user
-        session["user_id"] = user.id
+        # Create JWT Token
+        token = jwt.encode({'user_id': user.id, 'exp': datetime.utcnow() + timedelta(seconds=jwt_exp_time)}, jwt_secret_key, algorithm="HS256")
+
         return make_response(jsonify({
             "Message": "Login successful!",
+            "token": token,
             "name": f"{user.first_name} {user.last_name}",
             "id": f"{user.id}",
             "email": user.email,
@@ -108,11 +134,9 @@ class LoginUser(Resource):
         session.pop("user_id", None)
         return make_response(jsonify({"Message": "Logout successful!"}), 200)
 
-
 api.add_resource(Index, '/')
 api.add_resource(AllUsers, '/users')
 api.add_resource(LoginUser, '/login')
-
 
 if __name__ == '__main__':
     app.run(port=5555)
