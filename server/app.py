@@ -4,10 +4,8 @@ from database import db
 from functools import wraps
 from flask_restful import Api, Resource
 from flask_bcrypt import Bcrypt
+from flask_jwt_extended import JWTManager, jwt_required, create_access_token, get_jwt_identity
 import os
-import jwt
-from datetime import datetime, timedelta
-
 from models.event import Event
 from models.user import User
 from models.task import Task
@@ -16,6 +14,7 @@ app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///events.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['JWT_SECRET_KEY'] = 'your_jwt_secret_key'
 
 # Create Migrations
 migrate = Migrate(app, db)
@@ -23,41 +22,21 @@ migrate = Migrate(app, db)
 # Create api instance
 api = Api(app)
 bcrypt = Bcrypt(app)
-
-secret_key = os.urandom(24)
-app.secret_key = secret_key
+jwt = JWTManager(app)
 
 db.init_app(app)
-
-# JWT Secret Key
-jwt_secret_key = 'your_jwt_secret_key'
-
-# JWT Expiration Time
-jwt_exp_time = 3600  # 1 hour
-
-# JWT Token Required Decorator
-def token_required(f):
-    @wraps(f)
-    def decorated(*args, **kwargs):
-        token = request.headers.get('Authorization')
-        if not token:
-            return make_response(jsonify({'message': 'Token is missing!'}), 401)
-        try:
-            data = jwt.decode(token, jwt_secret_key, algorithms=["HS256"])
-            current_user = User.query.get(data['user_id'])
-        except:
-            return make_response(jsonify({'message': 'Token is invalid!'}), 401)
-        return f(current_user, *args, **kwargs)
-    return decorated
 
 class Index(Resource):
     def get(self):
         return "<h1>Skidi Papa Papa</h1>"
 
 class AllUsers(Resource):
-    @token_required
-    def post(self, current_user):
-        if not current_user.admin:
+    @jwt_required()
+    def post(self):
+        current_user = get_jwt_identity()
+        user = User.query.filter(User.id == current_user['user_id']).first()
+
+        if not user.admin:
             return make_response(jsonify({'message': 'Permission denied!'}), 403)
         
         # Get form data
@@ -85,11 +64,10 @@ class AllUsers(Resource):
         db.session.add(new_user)
         db.session.commit()
 
-
         return make_response(jsonify({"Message": f"New user with email, {new_user.email}, successfully registered."}), 201)
 
-    @token_required
-    def get(self, current_user):
+    @jwt_required()
+    def get(self):
         users = User.query.all()
         users_list = [
             {
@@ -103,9 +81,6 @@ class AllUsers(Resource):
         ]
         return make_response(jsonify(users_list))
     
-
-
-
 class LoginUser(Resource):
     def post(self):
         email = request.form.get('email')
@@ -118,11 +93,11 @@ class LoginUser(Resource):
             return make_response(jsonify({"Error": "Incorrect password!"}), 401)
         
         # Create JWT Token
-        token = jwt.encode({'user_id': user.id, 'exp': datetime.utcnow() + timedelta(seconds=jwt_exp_time)}, jwt_secret_key, algorithm="HS256")
+        access_token = create_access_token(identity={'user_id': user.id})
 
         return make_response(jsonify({
             "Message": "Login successful!",
-            "token": token,
+            "access_token": access_token,
             "name": f"{user.first_name} {user.last_name}",
             "id": f"{user.id}",
             "email": user.email,

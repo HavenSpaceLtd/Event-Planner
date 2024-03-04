@@ -12,6 +12,7 @@ class User(db.Model, SerializerMixin):
     email = db.Column(db.String)
     location = db.Column(db.String)
     title = db.Column(db.String)
+    admin = db.Column(db.Boolean, default=False)
     password = db.Column(db.String)
     about = db.Column(db.String)
     image = db.Column(db.String)
