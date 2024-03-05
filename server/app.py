@@ -3,7 +3,7 @@ from flask_migrate import Migrate
 from database import db
 from functools import wraps
 from flask_restful import Api, Resource
-from flask_bcrypt import Bcrypt
+from flask_bcrypt import Bcrypt, generate_password_hash
 from flask_jwt_extended import JWTManager, jwt_required, create_access_token, get_jwt_identity
 import os
 from werkzeug.utils import secure_filename
@@ -39,13 +39,25 @@ class Index(Resource):
         return "<h1>Skidi Papa Papa</h1>"
 
 class AllUsers(Resource):
+
+    
     def post(self):
-        
-        # if not user.admin:
-        #     return make_response(jsonify({'message': 'Permission denied!'}), 403)
-        
-        # Get form data
-        email = request.form.get('email')
+        # Get JSON data
+        data = request.json
+
+        # Log the form data
+        print("Form Data:", data)
+
+        # Extract data from JSON
+        first_name = data.get('firstName')
+        last_name = data.get('lastName')
+        phone = data.get('phone')
+        title = data.get('title')
+        email = data.get('email')
+        about = data.get('about')
+        image = data.get('image')
+        location = data.get('location')
+        password = data.get('password')
 
         # Check if user with the given email already exists
         existing_user = User.query.filter(User.email == email).first()
@@ -53,14 +65,17 @@ class AllUsers(Resource):
             return make_response(jsonify({"Error": f"Email account {email} already exists"}), 409)
 
         # If the email is unique, proceed with creating the new user
-        new_user = User(first_name=request.form.get('first_name'),
-                          last_name=request.form.get('last_name'),
-                          phone=request.form.get('phone'),
-                          title=request.form.get('title'),
-                          email=request.form.get('email'),
-                          location=request.form.get('location'),
-                          password=bcrypt.generate_password_hash(request.form.get('password')),
-                          )
+        new_user = User(
+            first_name=first_name,
+            last_name=last_name,
+            phone=phone,
+            title=title,
+            email=email,
+            about=about,
+            image=image,
+            location=location,
+            password=generate_password_hash(password),
+        )
         
         user = User.query.filter(User.email == new_user.email).first()
         if user is not None:
@@ -178,8 +193,10 @@ class UserById(Resource):
 
 class LoginUser(Resource):
     def post(self):
-        email = request.form.get('email')
-        password = request.form.get('password')
+        data = request.json
+
+        email = data.get('email')
+        password = data.get('password')
         user = User.query.filter(User.email == email).first()
 
         if user is None:
