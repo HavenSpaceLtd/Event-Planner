@@ -1,34 +1,40 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const Navbar = () => {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: '#008080' }}>
-            <div className="container">
-                <Link className="navbar-brand" to="/">LargeEvents</Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav ms-auto">
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/">Home</Link>
-                        </li>
+function Navbar() {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: '#3e2723' }}>
+      <div className="container-fluid">
+        <NavLink className="navbar-brand" to="/" style={{ color: '#fff' }}>Our Task Manager</NavLink>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+                  <ul className="navbar-nav me-auto">
+                      
+                  <li className="nav-item">
+              <NavLink className="nav-link" activeClassName="active" exact to="/register" style={{ color: '#fff' }}>Register</NavLink>
+                      </li>
 
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/register">Register</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/login">Login</Link>
-                        </li>
-
-                        <li><h3>Paybill 12345</h3></li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    );
-};
+                      <li className="nav-item">
+              <NavLink className="nav-link" activeClassName="active" exact to="/login" style={{ color: '#fff' }}>Login</NavLink>
+                      </li>
+                      
+            <li className="nav-item">
+              <NavLink className="nav-link" activeClassName="active" exact to="/" style={{ color: '#fff' }}>Home</NavLink>
+            </li>
+        
+          </ul>
+          <form className="d-flex">
+            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button className="btn btn-outline-light" type="submit">Search</button>
+          </form>
+          <span className="navbar-text mx-3" style={{ color: '#fff' }}>Maureen Wanjiku</span>
+          <button className="btn btn-outline-light" style={{ color: '#fff' }}>Logout</button>
+        </div>
+      </div>
+    </nav>
+  );
+}
 
 export default Navbar;
