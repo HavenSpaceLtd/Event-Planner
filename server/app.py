@@ -1,4 +1,4 @@
-from flask import Flask, make_response, request, jsonify, session
+from flask import Flask, make_response, request, jsonify, session, flash
 from flask_migrate import Migrate
 from database import db
 from functools import wraps
@@ -6,15 +6,19 @@ from flask_restful import Api, Resource
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager, jwt_required, create_access_token, get_jwt_identity
 import os
+from werkzeug.utils import secure_filename
 from models.event import Event
 from models.user import User
 from models.task import Task
 
 app = Flask(__name__)
 
+UPLOAD_FOLDER = "../client/public/images/"
+app.json.compact = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///events.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['JWT_SECRET_KEY'] = 'your_jwt_secret_key'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Create Migrations
 migrate = Migrate(app, db)
@@ -26,16 +30,17 @@ jwt = JWTManager(app)
 
 db.init_app(app)
 
+ALLOWED_EXTENSIONS = set(['png','jpg','jpeg','gif'])
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 class Index(Resource):
     def get(self):
         return "<h1>Skidi Papa Papa</h1>"
 
 class AllUsers(Resource):
-    @jwt_required()
     def post(self):
-        current_user = get_jwt_identity()
-        user = User.query.filter(User.id == current_user['user_id']).first()
-
+        
         # if not user.admin:
         #     return make_response(jsonify({'message': 'Permission denied!'}), 403)
         
@@ -81,6 +86,96 @@ class AllUsers(Resource):
         ]
         return make_response(jsonify(users_list))
     
+
+class UserById(Resource):
+    @jwt_required()
+    def get(self, id):
+        current_user_id = get_jwt_identity()['user_id']
+        user = User.query.get(current_user_id)
+
+        if user is None:
+            return make_response(jsonify({"error": "User not found!"}), 404)
+
+        user_data = {
+            "id": user.id,
+            "first_name": user.first_name,
+            "last_name": user.last_name,
+            "email": user.email,
+            "title": user.title,
+            "phone": user.phone,
+            "image": user.image,
+            "about": user.about,
+            "location": user.location,
+        }
+        return make_response(jsonify(user_data))
+    
+    @jwt_required()
+    def patch(self, id):
+        current_user_id = get_jwt_identity()['user_id']
+        data = request.get_json()
+        
+        user = User.query.get(id)
+
+        if user is None:
+            return make_response(jsonify({"error": "User not found!"}), 404)
+
+        if user.id != current_user_id:
+            return make_response(jsonify({"error": "Unauthorized!"}), 403)
+
+        if 'about' in data:
+            user.about = data['about']
+        if 'location' in data:
+            user.location = data['location']
+        if 'phone' in data:
+            user.phone = data['phone']
+
+        db.session.commit()
+
+        updated_user_data = {
+            "id": user.id,
+            "first_name": user.first_name,
+            "last_name": user.last_name,
+            "email": user.email,
+            "title": user.title,
+            "phone": user.phone,
+            "image": user.image,
+            "about": user.about,
+            "location": user.location,
+        }
+        return make_response(jsonify(updated_user_data), 200)
+
+    @jwt_required()
+    def post(self, id):
+        current_user_id = get_jwt_identity()['user_id']
+        # Handle image upload
+        user = User.query.get(id)
+        image_file = request.files['image']
+
+        if 'image' not in request.files:
+            flash('No file...')
+            return make_response(jsonify({"error": "Image not found"}), 404)
+
+        if user.id != current_user_id:
+            return make_response(jsonify({"error": "Unauthorized!"}), 403)
+
+        if image_file.filename == '':
+            flash('No image selected')
+            return make_response(jsonify({"error": "No file selected"}), 404)
+
+        if image_file and allowed_file(image_file.filename):
+            filename = secure_filename(image_file.filename)
+            image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            image_file.save(image_path)
+            user.image = image_path
+
+            updated_user = {"image": user.image}
+
+            db.session.commit()
+
+        return make_response(jsonify(updated_user), 200)
+
+
+
 class LoginUser(Resource):
     def post(self):
         email = request.form.get('email')
@@ -112,6 +207,7 @@ class LoginUser(Resource):
 api.add_resource(Index, '/')
 api.add_resource(AllUsers, '/users')
 api.add_resource(LoginUser, '/login')
+api.add_resource(UserById, '/users/<int:id>')
 
 if __name__ == '__main__':
     app.run(port=5555)
