@@ -1,7 +1,7 @@
 from database import db
 from sqlalchemy_serializer import SerializerMixin
 
-class User(db.Model):
+class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -16,12 +16,11 @@ class User(db.Model):
     about = db.Column(db.String)
     image = db.Column(db.String)
 
-    events = db.relationship('Event', secondary='user_event_association', back_populates='users')
-    tasks = db.relationship('Task', secondary='user_task_association', back_populates='users')
+    events = db.relationship('Event', secondary = 'user_event_association', back_populates='users')
 
     def __repr__(self) -> str:
         return f'<User {self.id}, {self.first_name}, {self.last_name}, {self.phone}, {self.email}, {self.location}, {self.title}, {self.image} ,{self.about}, {self.password}>'
-
+    
     def to_dict(self):
         return {
             'id': self.id,
@@ -32,5 +31,5 @@ class User(db.Model):
             'location': self.location,
             'email': self.email,
             'about': self.about,
-            'image': self.image,
+            'image': self.image,    
         }

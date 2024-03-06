@@ -10,8 +10,8 @@ class Task(db.Model):
     title = db.Column(db.String)
     start_date = db.Column(db.Date)
     end_date = db.Column(db.Date)
-    start_time = db.Column(db.Time)
-    end_time = db.Column(db.Time)
+    start_time=db.Column(db.Time)
+    end_time=db.Column(db.Time)
 
     amount = db.Column(db.Integer)
     progress = db.Column(db.Integer)
@@ -24,10 +24,10 @@ class Task(db.Model):
     image = db.Column(db.String)
 
     event_id = db.Column(db.Integer, db.ForeignKey('events.id'))
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id', name='fk_user_id'))
 
-    events = db.relationship('Event', secondary='event_task_association', back_populates='tasks')
-    users = db.relationship('User', secondary='user_task_association', back_populates='tasks')
+    events = db.relationship('Event', secondary = 'event_task_association', back_populates='tasks')
+
+
 
     def __repr__(self) -> str:
-        return f'<Task {self.id}, {self.title}, {self.start_date}, {self.start_time}, {self.end_date}, {self.end_time}, {self.created_at}, {self.updated_at}, {self.image} ,{self.description}, {self.location}, {self.amount}, {self.progress}>'
+        return f'<Event {self.id}, {self.title}, {self.start_date}, {self.start_time}, {self.end_date}, {self.end_time}, {self.created_at}, {self.updated_at}, {self.image} ,{self.description}, {self.location}, {self.amount}, {self.progress}>'
