@@ -1,8 +1,8 @@
+
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import googleIcon from '../assets/google.svg';
 import emailIcon from '../assets/gmail.svg';
-
 
 const googleIconStyle = {
   width: '24px',
@@ -16,8 +16,8 @@ const iconStyle = {
 
 const SignUpForm = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     phone: '',
     email: '',
     location: '',
@@ -32,17 +32,23 @@ const SignUpForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleImageChange = (e) => {
+    const imageFile = e.target.files[0];
+    setFormData({ ...formData, image: imageFile });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
     try {
+      const formDataToSend = new FormData();
+      for (let key in formData) {
+        formDataToSend.append(key, formData[key]);
+      }
+
       const response = await fetch('/users', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-       
+        body: formDataToSend,
       });
 
       if (!response.ok) {
@@ -52,8 +58,8 @@ const SignUpForm = () => {
       console.log('User registered successfully');
       // Reset form fields after successful registration
       setFormData({
-        firstName: '',
-        lastName: '',
+        first_name: '',
+        last_name: '',
         phone: '',
         email: '',
         location: '',
@@ -77,59 +83,59 @@ const SignUpForm = () => {
                 <h2 className="text-center text-dark  mb-4" style={{ marginBottom: '20px', fontWeight: 'bold', textTransform: 'uppercase' }}>Sign Up</h2>
                 <Form onSubmit={handleSubmit}>
                 <Row className="mb-3">
-                  <Col sm={12}>
-                    <Form.Label style={{ marginRight: '600px', fontWeight: 'bold'}}>First Name</Form.Label>
-                    <Form.Control type="text" placeholder="Enter first name" name="firstName" value={formData.firstName} onChange={handleChange} />
-                  </Col>
-                </Row>
-                <Row className="mb-3">
-                  <Col sm={12}>
-                    <Form.Label style={{ marginRight: '600px', fontWeight: 'bold'}}>Last Name</Form.Label>
-                    <Form.Control type="text" placeholder="Enter last name" name="lastName" value={formData.lastName} onChange={handleChange} />
-                  </Col>
-                </Row>
-                <Row className="mb-3">
-                  <Col sm={12}>
-                    <Form.Label style={{ marginRight: '600px', fontWeight: 'bold'}}>Phone</Form.Label>
-                    <Form.Control type="text" placeholder="Enter phone" name="phone" value={formData.phone} onChange={handleChange} />
-                  </Col>
-                </Row>   
-                <Row className="mb-3">
-                  <Col sm={12}>
-                    <Form.Label style={{ marginRight: '600px', fontWeight: 'bold'}}>Email</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" name="email" value={formData.email} onChange={handleChange} />
-                  </Col>
-                </Row>
-                <Row className="mb-3">
-                  <Col sm={12}>
-                    <Form.Label style={{ marginRight: '600px', fontWeight: 'bold'}}>Location</Form.Label>
-                    <Form.Control type="text" placeholder="Enter location" name="location" value={formData.location} onChange={handleChange} />
-                  </Col>
-                </Row>
-                <Row className="mb-3">
-                  <Col sm={12}>
-                    <Form.Label style={{ marginRight: '600px', fontWeight: 'bold'}}>Title</Form.Label>
-                    <Form.Control type="text" placeholder="Enter title" name="title" value={formData.title} onChange={handleChange} />
-                  </Col>
-                </Row>
-                <Row className="mb-3">
-                  <Col sm={12}>
-                    <Form.Label style={{ marginRight: '600px', fontWeight: 'bold'}}>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Enter password" name="password" value={formData.password} onChange={handleChange} />
-                  </Col>
-                </Row>
-                <Row className="mb-3">
-                  <Col sm={12}>
-                    <Form.Label style={{ marginRight: '600px', fontWeight: 'bold'}}>About</Form.Label>
-                    <Form.Control as="textarea" rows={3} placeholder="Tell us about yourself" name="about" value={formData.about} onChange={handleChange} />
-                  </Col>
-                </Row>
-                <Row className="mb-3">
-                  <Col sm={12}>
-                    <Form.Label style={{ marginRight: '600px', fontWeight: 'bold'}}>Image</Form.Label>
-                    <Form.Control type="file" name="image" onChange={handleChange} />
-                  </Col>
-                </Row>
+                    <Col sm={12}>
+                      <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>First Name</Form.Label>
+                      <Form.Control type="text" placeholder="Enter first name" name="first_name" value={formData.first_name} onChange={handleChange} />
+                    </Col>
+                  </Row>
+                  <Row className="mb-3">
+                    <Col sm={12}>
+                      <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>Last Name</Form.Label>
+                      <Form.Control type="text" placeholder="Enter last name" name="last_name" value={formData.last_name} onChange={handleChange} />
+                    </Col>
+                  </Row>
+                  <Row className="mb-3">
+                    <Col sm={12}>
+                      <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>Phone</Form.Label>
+                      <Form.Control type="text" placeholder="Enter phone" name="phone" value={formData.phone} onChange={handleChange} />
+                    </Col>
+                  </Row>
+                  <Row className="mb-3">
+                    <Col sm={12}>
+                      <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>Email</Form.Label>
+                      <Form.Control type="email" placeholder="Enter email" name="email" value={formData.email} onChange={handleChange} />
+                    </Col>
+                  </Row>
+                  <Row className="mb-3">
+                    <Col sm={12}>
+                      <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>Location</Form.Label>
+                      <Form.Control type="text" placeholder="Enter location" name="location" value={formData.location} onChange={handleChange} />
+                    </Col>
+                  </Row>
+                  <Row className="mb-3">
+                    <Col sm={12}>
+                      <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>Title</Form.Label>
+                      <Form.Control type="text" placeholder="Enter title" name="title" value={formData.title} onChange={handleChange} />
+                    </Col>
+                  </Row>
+                  <Row className="mb-3">
+                    <Col sm={12}>
+                      <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>Password</Form.Label>
+                      <Form.Control type="password" placeholder="Enter password" name="password" value={formData.password} onChange={handleChange} />
+                    </Col>
+                  </Row>
+                  <Row className="mb-3">
+                    <Col sm={12}>
+                      <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>About</Form.Label>
+                      <Form.Control as="textarea" rows={3} placeholder="Tell us about yourself" name="about" value={formData.about} onChange={handleChange} />
+                    </Col>
+                  </Row>
+                  <Row className="mb-3">
+                    <Col sm={12}>
+                      <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>Image</Form.Label>
+                      <Form.Control type="file" name="image" onChange={handleImageChange} />
+                    </Col>
+                  </Row>
                   <Button variant="primary" type="submit" className="w-100 rounded-pill align-items-center">Sign Up</Button>
                 </Form>
                 <div className="text-center mb-4 position-relative" style={{ marginTop: '70px' }}>
