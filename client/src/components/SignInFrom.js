@@ -17,28 +17,26 @@ const SignInForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Serialize form data to x-www-form-urlencoded format
-      const urlEncodedData = new URLSearchParams(formData).toString();
-      
-      const response = await fetch('/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: urlEncodedData,
-      });
-  
-      if (!response.ok) {
-        throw new Error('Failed to login');
-      }
-  
-      const data = await response.json();
-      console.log(data); 
-  
+        const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(formData), 
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to login');
+        }
+
+        const data = await response.json();
+        console.log(data);
+
     } catch (error) {
-      console.error('Error:', error.message);
+        console.error('Error:', error.message);
     }
-  };
+};
+
 
   return (
     <div className="full-page-container" style={{ background: 'linear-gradient(135deg, #ff8080, #b3ff66)', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)', marginTop: 0, paddingTop: '50px', paddingBottom: '50px' }}>

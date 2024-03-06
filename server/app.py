@@ -40,8 +40,10 @@ class Index(Resource):
 
 class AllUsers(Resource):
     def post(self):
+        data = request.json
+
         # Get form data
-        email = request.form.get('email')
+        email = data.get('email')
 
         # Check if user with the given email already exists
         existing_user = User.query.filter(User.email == email).first()
@@ -64,14 +66,14 @@ class AllUsers(Resource):
 
         # If the email is unique and image is uploaded successfully, proceed with creating the new user
         new_user = User(
-            first_name=request.form.get('first_name'),
-            last_name=request.form.get('last_name'),
-            phone=request.form.get('phone'),
-            title=request.form.get('title'),
-            email=request.form.get('email'),
-            about=request.form.get('about'),
-            location=request.form.get('location'),
-            password=bcrypt.generate_password_hash(request.form.get('password')),
+            first_name=data.get('first_name'),
+            last_name=data.get('last_name'),
+            phone=data.get('phone'),
+            title=data.get('title'),
+            email=data.get('email'),
+            about=data.get('about'),
+            location=data.get('location'),
+            password=bcrypt.generate_password_hash(data.get('password')),
             image=image_path  # Assigning the path of the uploaded image
         )
 
@@ -85,16 +87,16 @@ class AllUsers(Resource):
         users = User.query.all()
         users_list = [
             {
-            "id": user.id,
-            "first_name": user.first_name,
-            "last_name": user.last_name,
-            "email": user.email,
-            "title": user.title,
-        }
+                "id": user.id,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "email": user.email,
+                "title": user.title,
+            }
             for user in users
         ]
         return make_response(jsonify(users_list))
-    
+
 
 class UserById(Resource):
     @jwt_required()
@@ -117,12 +119,12 @@ class UserById(Resource):
             "location": user.location,
         }
         return make_response(jsonify(user_data))
-    
+
     @jwt_required()
     def patch(self, id):
         current_user_id = get_jwt_identity()['user_id']
-        data = request.get_json()
-        
+        data = request.json
+
         user = User.query.get(id)
 
         if user is None:
@@ -156,6 +158,8 @@ class UserById(Resource):
     @jwt_required()
     def post(self, id):
         current_user_id = get_jwt_identity()['user_id']
+        data = request.json
+
         # Handle image upload
         user = User.query.get(id)
         image_file = request.files['image']
@@ -184,18 +188,18 @@ class UserById(Resource):
         return make_response(jsonify(updated_user), 200)
 
 
-
 class LoginUser(Resource):
     def post(self):
-        email = request.form.get('email')
-        password = request.form.get('password')
+        data = request.json
+        email = data.get('email')
+        password = data.get('password')
         user = User.query.filter(User.email == email).first()
 
         if user is None:
             return make_response(jsonify({"Error": "No such user!"}), 401)
         if not bcrypt.check_password_hash(user.password, password):
             return make_response(jsonify({"Error": "Incorrect password!"}), 401)
-        
+
         # Create JWT Token
         access_token = create_access_token(identity={'user_id': user.id})
 
@@ -206,9 +210,9 @@ class LoginUser(Resource):
             "id": f"{user.id}",
             "email": user.email,
             "title": user.title,
-            "image": user.image,        
-            }), 200)
-        
+            "image": user.image,
+        }), 200)
+
     def delete(self):
         session.pop("user_id", None)
         return make_response(jsonify({"Message": "Logout successful!"}), 200)
