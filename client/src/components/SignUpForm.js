@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import googleIcon from '../assets/google.svg';
@@ -39,38 +38,37 @@ const SignUpForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
     try {
-        const response = await fetch('/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json', 
-            },
-            body: JSON.stringify(formData), 
-        });
+      const formDataToSend = new FormData();
+      for (let key in formData) {
+        formDataToSend.append(key, formData[key]);
+      }
+      const response = await fetch('/users', {
+        method: 'POST',
+        body: formDataToSend,
+      });
 
-        if (!response.ok) {
-            throw new Error('Failed to register user');
-        }
+      if (!response.ok) {
+        throw new Error('Failed to register user');
+      }
 
-        console.log('User registered successfully');
-        // Reset form fields after successful registration
-        setFormData({
-            first_name: '',
-            last_name: '',
-            phone: '',
-            email: '',
-            location: '',
-            title: '',
-            password: '',
-            about: '',
-            image: '',
-        });
+      console.log('User registered successfully');
+      // Reset form fields after successful registration
+      setFormData({
+        first_name: '',
+        last_name: '',
+        phone: '',
+        email: '',
+        location: '',
+        title: '',
+        password: '',
+        about: '',
+        image: '',
+      });
     } catch (error) {
-        console.error('Error:', error.message);
+      console.error('Error:', error.message);
     }
-};
-
+  };
 
   return (
     <div className="full-page-container" style={{ background: 'linear-gradient(135deg, #ff8080, #b3ff66)', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)', marginTop: 0, paddingTop: '50px', paddingBottom: '50px' }}>

@@ -49,7 +49,7 @@ class Index(Resource):
 
 class AllUsers(Resource):
     def post(self):
-        data = request.json
+        data = request.form
 
         # Get form data
         email = data.get('email')
@@ -105,6 +105,7 @@ class AllUsers(Resource):
             for user in users
         ]
         return make_response(jsonify(users_list))
+
 
 
 class UserById(Resource):
