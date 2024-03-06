@@ -17,21 +17,24 @@ const SignInForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Serialize form data to x-www-form-urlencoded format
+      const urlEncodedData = new URLSearchParams(formData).toString();
+      
       const response = await fetch('/login', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify(formData),
+        body: urlEncodedData,
       });
-
+  
       if (!response.ok) {
         throw new Error('Failed to login');
       }
-
+  
       const data = await response.json();
-      console.log(data); // You can handle the response data as per your requirements
-
+      console.log(data); 
+  
     } catch (error) {
       console.error('Error:', error.message);
     }

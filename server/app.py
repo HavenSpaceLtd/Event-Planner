@@ -3,7 +3,7 @@ from flask_migrate import Migrate
 from database import db
 from functools import wraps
 from flask_restful import Api, Resource
-from flask_bcrypt import Bcrypt, generate_password_hash
+from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager, jwt_required, create_access_token, get_jwt_identity
 import os
 from werkzeug.utils import secure_filename
@@ -39,48 +39,42 @@ class Index(Resource):
         return "<h1>Skidi Papa Papa</h1>"
 
 class AllUsers(Resource):
-
-    
     def post(self):
-        # Get JSON data
-        data = request.json
-
-        # Log the form data
-        print("Form Data:", data)
-
-        # Extract data from JSON
-        first_name = data.get('firstName')
-        last_name = data.get('lastName')
-        phone = data.get('phone')
-        title = data.get('title')
-        email = data.get('email')
-        about = data.get('about')
-        image = data.get('image')
-        location = data.get('location')
-        password = data.get('password')
+        # Get form data
+        email = request.form.get('email')
 
         # Check if user with the given email already exists
         existing_user = User.query.filter(User.email == email).first()
         if existing_user:
             return make_response(jsonify({"Error": f"Email account {email} already exists"}), 409)
 
-        # If the email is unique, proceed with creating the new user
+        # Handle image upload
+        image_file = request.files['image']
+
+        if 'image' not in request.files:
+            return make_response(jsonify({"error": "Image not found"}), 404)
+
+        if image_file.filename == '':
+            return make_response(jsonify({"error": "No file selected"}), 404)
+
+        if image_file and allowed_file(image_file.filename):
+            filename = secure_filename(image_file.filename)
+            image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            image_file.save(image_path)
+
+        # If the email is unique and image is uploaded successfully, proceed with creating the new user
         new_user = User(
-            first_name=first_name,
-            last_name=last_name,
-            phone=phone,
-            title=title,
-            email=email,
-            about=about,
-            image=image,
-            location=location,
-            password=generate_password_hash(password),
+            first_name=request.form.get('first_name'),
+            last_name=request.form.get('last_name'),
+            phone=request.form.get('phone'),
+            title=request.form.get('title'),
+            email=request.form.get('email'),
+            about=request.form.get('about'),
+            location=request.form.get('location'),
+            password=bcrypt.generate_password_hash(request.form.get('password')),
+            image=image_path  # Assigning the path of the uploaded image
         )
-        
-        user = User.query.filter(User.email == new_user.email).first()
-        if user is not None:
-            return make_response(jsonify({"Error": f"Email account {new_user.email} already exists"}), 409)
-        
+
         db.session.add(new_user)
         db.session.commit()
 
@@ -193,10 +187,8 @@ class UserById(Resource):
 
 class LoginUser(Resource):
     def post(self):
-        data = request.json
-
-        email = data.get('email')
-        password = data.get('password')
+        email = request.form.get('email')
+        password = request.form.get('password')
         user = User.query.filter(User.email == email).first()
 
         if user is None:
