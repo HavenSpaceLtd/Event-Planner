@@ -34,6 +34,15 @@ ALLOWED_EXTENSIONS = set(['png','jpg','jpeg','gif'])
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+def planner_required(fn):
+    def wrapper(*args, **kwargs):
+        current_user = get_jwt_identity()
+        if current_user.get('title') == "planner":
+            return fn(*args, **kwargs)
+        else:
+            return jsonify(message="Unauthorized"), 403
+    return wrapper
+
 class Index(Resource):
     def get(self):
         return "<h1>Skidi Papa Papa</h1>"
@@ -216,11 +225,93 @@ class LoginUser(Resource):
     def delete(self):
         session.pop("user_id", None)
         return make_response(jsonify({"Message": "Logout successful!"}), 200)
+    
+
+class AllEvents(Resource):
+    @planner_required
+    def post(self):
+        data = request.json
+        new_event = Event(
+            title=data.get('title'),
+            start_date=data.get('start_date'),
+            end_date=data.get('end_date'),
+            start_time=data.get('start_time'),
+            location=data.get('location'),
+            amount=data.get('amount'),
+            description=data.get('description'),
+            owner_id=data.get('owner_id'))
+        db.session.add(new_event)
+        db.session.commit
+        
+    @jwt_required()
+    def get(self):
+        current_user = get_jwt_identity()
+        user_id = current_user.get('id')
+        events = Event.query.filter(Event.users.any(id=user_id)).all()
+        events_list = [
+            {
+                "id": event.id,
+                "title": event.title,
+                "start_date": event.start_date,
+                "end_date": event.end_date,
+                "start_time": event.start_time,
+                "end_time": event.end_time,
+                "location": event.location,
+                "amount": event.amount,
+                "progress": event.progress,
+                "description": event.description,
+                "owner": event.owner.first_name,
+            }
+            for event in events
+        ]
+        return make_response(jsonify(events_list))
+    
+class AllTasks(Resource):
+    @planner_required
+    def post(self):
+        data = request.json
+        new_task = Task(
+            title=data.get('title'),
+            start_date=data.get('start_date'),
+            end_date=data.get('end_date'),
+            start_time=data.get('start_time'),
+            location=data.get('location'),
+            amount=data.get('amount'),
+            description=data.get('description'),
+            event_id=data.get('event_id'),
+            user_id=data.get('user_id'))
+        db.session.add(new_task)
+        db.session.commit
+        
+    @jwt_required()
+    def get(self):
+        current_user = get_jwt_identity()
+        user_id = current_user.get('id')
+        tasks = Task.query.all()
+        tasks_list = [
+            {
+                "id": task.id,
+                "title": task.title,
+                "start_date": task.start_date,
+                "end_date": task.end_date,
+                "start_time": task.start_time,
+                "end_time": task.end_time,
+                "location": task.location,
+                "amount": task.amount,
+                "progress": task.progress,
+                "description": task.description,
+            }
+            for task in tasks
+        ]
+        return make_response(jsonify(tasks_list))
+
 
 api.add_resource(Index, '/')
 api.add_resource(AllUsers, '/users')
 api.add_resource(LoginUser, '/login')
 api.add_resource(UserById, '/users/<int:id>')
+api.add_resource(AllEvents, '/events')
+api.add_resource(AllTasks, '/tasks')
 
 if __name__ == '__main__':
     app.run(port=5555)
