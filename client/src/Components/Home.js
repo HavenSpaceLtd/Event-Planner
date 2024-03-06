@@ -17,8 +17,6 @@ function Home() {
       numParticipants: 1 // Add numParticipants field
     },
   ]);
-  
-  const [selectedUsers, setSelectedUsers] = useState([]); // State to track selected users
 
   const users = ['User 1', 'User 2', 'User 3', 'User 4', 'User 5', 'User 6', 'User 7', 'User 8', 'User 9', 'User 10'];
 
@@ -27,38 +25,62 @@ function Home() {
       return;
     }
 
-    const { destination } = result;
+    const { destination, source } = result;
+
+    if (destination.droppableId === source.droppableId) {
+      return;
+    }
+
     const updatedTasks = [...tasks];
     const movedTask = updatedTasks.find(task => task.id.toString() === result.draggableId);
+
+    // Set the previous status
     const prevStatus = movedTask.status;
+
+    // Update the status of the moved task
     movedTask.status = destination.droppableId;
+
+    // If the destination is 'Todo', set the status to 'Todo'
+    if (destination.droppableId === 'todo') {
+      movedTask.status = 'Todo';
+    }
+
+    // If the destination is 'inprogress', set the status to 'InProgress'
+    if (destination.droppableId === 'inprogress') {
+      movedTask.status = 'InProgress';
+    }
+
+    // If the destination is 'completed', set the status to 'Completed'
+    if (destination.droppableId === 'completed') {
+      movedTask.status = 'Completed';
+    }
+
+    // If the destination is 'delayed', set the status to 'Delayed'
+    if (destination.droppableId === 'delayed') {
+      movedTask.status = 'Delayed';
+    }
+
     setTasks(updatedTasks);
 
-    const assignedUsers = movedTask.assignedTo;
-    const taskTitle = movedTask.taskTitle;
-
-    // Notification for each stage
-    switch (destination.droppableId) {
-      case 'inprogress':
-        if (prevStatus !== 'InProgress' && assignedUsers.length > 0) {
-          const usersString = assignedUsers.join(', ');
-          alert(`${usersString} have started working on ${taskTitle}`);
-        }
-        break;
-      case 'completed':
-        if (prevStatus !== 'Completed' && assignedUsers.length > 0) {
-          const usersString = assignedUsers.join(', ');
-          alert(`${usersString} have completed ${taskTitle}`);
-        }
-        break;
-      case 'delayed':
-        if (prevStatus !== 'Delayed' && assignedUsers.length > 0) {
-          const usersString = assignedUsers.join(', ');
-          alert(`Task ${taskTitle} assigned to ${usersString} has been delayed`);
-        }
-        break;
-      default:
-        break;
+    // Notify the user about the status change
+    if (prevStatus !== movedTask.status && movedTask.assignedTo.length > 0) {
+      let message = '';
+      switch (movedTask.status) {
+        case 'InProgress':
+          message = `${movedTask.assignedTo.join(', ')} have started working on ${movedTask.taskTitle}`;
+          break;
+        case 'Completed':
+          message = `${movedTask.assignedTo.join(', ')} have completed ${movedTask.taskTitle}`;
+          break;
+        case 'Delayed':
+          message = `${movedTask.taskTitle} assigned to ${movedTask.assignedTo.join(', ')} has been delayed`;
+          break;
+        default:
+          break;
+      }
+      if (message !== '') {
+        alert(message);
+      }
     }
   };
 
@@ -70,7 +92,6 @@ function Home() {
   };
 
   const handleUpdate = (taskId) => {
-    // Logic to save the changes to the task
     console.log(`Task with ID ${taskId} updated.`);
     alert('Task Updated Successfully');
   };
@@ -83,6 +104,27 @@ function Home() {
     const updatedTasks = tasks.filter(task => task.id !== taskId);
     setTasks(updatedTasks);
     console.log(`Task with ID ${taskId} deleted.`);
+  };
+
+  const handleResetTask = (taskId) => {
+    const taskIndex = tasks.findIndex(task => task.id === taskId);
+    if (taskIndex !== -1) {
+      const originalTask = {
+        id: tasks[taskIndex].id,
+        projectTitle: 'Project title',
+        taskTitle: 'Task Title',
+        subtask: [], // Add subtask array
+        assignedTo: [],
+        startDate: '',
+        endDate: '',
+        priority: 'Urgent',
+        status: 'Todo',
+        numParticipants: 1 // Add numParticipants field
+      };
+      const updatedTasks = [...tasks];
+      updatedTasks[taskIndex] = originalTask;
+      setTasks(updatedTasks);
+    }
   };
 
   const handleAddTask = () => {
@@ -125,16 +167,24 @@ function Home() {
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
       <Container fluid style={{ backgroundColor: 'bisque', padding: '20px' }}>
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg" style={{ borderRadius: '20px' }}>
           <Container>
-            {/* <Navbar.Brand>Plan Your Project to Work Efficiently</Navbar.Brand> */}
-            <Button variant="success" onClick={handleAddTask} className="mx-auto">Add Task</Button>
+            <Button
+              variant="success"
+              onClick={handleAddTask}
+              className="mx-auto"
+              style={{ backgroundColor: '#3e2723' }}
+            >
+              Add Task
+            </Button>
           </Container>
         </Navbar>
         <Row>
           {['Todo', 'InProgress', 'Completed', 'Delayed'].map((status) => (
             <Col key={status}>
+              
               <h3>{status}</h3>
+              <hr style={{ borderColor: '#3e2723', backgroundColor: '#3e2723', height: '2px', margin: '5px 0' }} /> 
               <Droppable droppableId={status.toLowerCase()} key={status}>
                 {(provided) => (
                   <div ref={provided.innerRef} {...provided.droppableProps} style={{ minHeight: '100px' }}>
@@ -149,6 +199,7 @@ function Home() {
                                 {...provided.dragHandleProps}
                                 className="customDraggable"
                               >
+                                <Card style={{ marginBottom: '20px', opacity: snapshot.isDragging ? 0.8 : 1, border: 'none' }}></Card>
                                 <Card style={{ opacity: snapshot.isDragging ? 0.8 : 1 }}>
                                   <Card.Body>
                                     <Form.Group controlId={`task-${task.id}`}>
@@ -164,7 +215,6 @@ function Home() {
                                         value={task.taskTitle}
                                         onChange={(e) => handleChange(task.id, 'taskTitle', e.target.value)}
                                       />
-                                      {/* Subtask input field below task title */}
                                       <Form.Label>Subtask</Form.Label>
                                       <Form.Control
                                         type="text"
@@ -227,8 +277,16 @@ function Home() {
                                         <option value="Completed">Completed</option>
                                         <option value="Delayed">Delayed</option>
                                       </Form.Control>
-                                      <Button variant="primary" onClick={() => handleUpdate(task.id)}>Update</Button>{' '}
-                                      {task.id !== 1 && <Button variant="danger" onClick={() => handleDelete(task.id)}>Delete</Button>}
+                                      <div className="d-flex justify-content-center align-items-center mt-2">
+                                            <Button variant="primary" onClick={() => handleUpdate(task.id)}>Update</Button>
+                                            {task.id !== 1 && (
+                                              <div className="mx-2"> {/* Added mx-2 class for margin-x: 2 */}
+                                                <Button variant="danger" onClick={() => handleDelete(task.id)}>Delete</Button>
+                                              </div>
+                                            )}
+                                            <Button variant="secondary" style={{ backgroundColor: '#3e2723', marginLeft: '5px' }} onClick={() => handleResetTask(task.id)}>Reset Task</Button> {/* Added backgroundColor: '#3e2723' */}
+                                          </div>
+
                                     </Form.Group>
                                   </Card.Body>
                                 </Card>
