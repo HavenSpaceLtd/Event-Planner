@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b5fa37f79ee388f30bd7f94e1e8aa3a49e811d9de8d38d231ec4bc7d6a13b3f9"
+            "sha256": "4818ac4347c5bf83760e17dd04c42750536c6d0e80a78fa2a262b593968077cd"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.10"
+            "python_version": "*"
         },
         "sources": [
             {
@@ -86,7 +86,6 @@
                 "sha256:822c03f4b799204250a7ee84b1eddc40665395333973dfb9deebfe425fefcb7d"
             ],
             "index": "pypi",
-            "markers": "python_version >= '3.8'",
             "version": "==3.0.2"
         },
         "flask-bcrypt": {
@@ -103,7 +102,6 @@
                 "sha256:9215d05a9413d3855764bcd67035e75819d23af2fafb6b55197eb5a3313fdfb2"
             ],
             "index": "pypi",
-            "markers": "python_version >= '3.7' and python_version < '4'",
             "version": "==4.6.0"
         },
         "flask-migrate": {
@@ -112,7 +110,6 @@
                 "sha256:d3f437a8b5f3849d1bb1b60e1b818efc564c66e3fefe90b62e5db08db295e1b1"
             ],
             "index": "pypi",
-            "markers": "python_version >= '3.6'",
             "version": "==4.0.5"
         },
         "flask-restful": {
@@ -129,7 +126,6 @@
                 "sha256:e4b68bb881802dda1a7d878b2fc84c06d1ee57fb40b874d3dc97dabfa36b8312"
             ],
             "index": "pypi",
-            "markers": "python_version >= '3.8'",
             "version": "==3.1.1"
         },
         "greenlet": {
@@ -292,7 +288,6 @@
                 "sha256:59127c392cc44c2da5bb3192169a91f429924e17aff6534d70fdc02ab3e04320"
             ],
             "index": "pypi",
-            "markers": "python_version >= '3.7'",
             "version": "==2.8.0"
         },
         "pytz": {
