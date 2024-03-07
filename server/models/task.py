@@ -1,5 +1,6 @@
 from database import db
 from sqlalchemy import DateTime, func
+from datetime import datetime
 
 
 class Task(db.Model):
@@ -31,3 +32,18 @@ class Task(db.Model):
 
     def __repr__(self) -> str:
         return f'<Event {self.id}, {self.title}, {self.start_date}, {self.start_time}, {self.end_date}, {self.end_time}, {self.created_at}, {self.updated_at}, {self.image} ,{self.description}, {self.location}, {self.amount}, {self.progress}>'
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'start_date': self.start_date,
+            'end_date': self.end_date,
+            'start_time': self.start_time.strftime('%H:%M') if self.start_time else None,
+            'end_time': self.end_time.strftime('%H:%M') if self.end_time else None,
+            'location': self.location,
+            'amount': self.amount,
+            'description': self.description,
+            'image': self.image,
+            
+        }

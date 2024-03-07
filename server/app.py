@@ -10,6 +10,8 @@ from werkzeug.utils import secure_filename
 from models.event import Event
 from models.user import User
 from models.task import Task
+from models.team import Team
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -221,6 +223,7 @@ class LoginUser(Resource):
             "email": user.email,
             "title": user.title,
             "image": user.image,
+            "events": user.get_owned_events()
         }), 200)
 
     def delete(self):
@@ -229,20 +232,41 @@ class LoginUser(Resource):
     
 
 class AllEvents(Resource):
-    @planner_required
+    @jwt_required()
     def post(self):
-        data = request.json
+        data = request.get_json()
+        
+        # Convert start date string to Python date object
+        start_date_str = data.get('start_date')
+        start_date = datetime.strptime(start_date_str, '%m/%d/%Y').date()
+        
+        # Convert end date string to Python date object
+        end_date_str = data.get('end_date')
+        end_date = datetime.strptime(end_date_str, '%m/%d/%Y').date()
+        
+        # Convert start time string to Python time object
+        start_time_str = data.get('start_time')
+        start_time = datetime.strptime(start_time_str, '%H:%M').time()
+        
+        # Convert end time string to Python time object
+        end_time_str = data.get('end_time')
+        end_time = datetime.strptime(end_time_str, '%H:%M').time()
+        
         new_event = Event(
             title=data.get('title'),
-            start_date=data.get('start_date'),
-            end_date=data.get('end_date'),
-            start_time=data.get('start_time'),
+            start_date=start_date,
+            end_date=end_date,
+            start_time=start_time,
+            end_time=end_time,
             location=data.get('location'),
             amount=data.get('amount'),
             description=data.get('description'),
             owner_id=data.get('owner_id'))
         db.session.add(new_event)
-        db.session.commit
+        db.session.commit()
+
+        return make_response(jsonify({'message': 'Event created successfully'}), 201)
+
         
     @jwt_required()
     def get(self):
@@ -268,21 +292,40 @@ class AllEvents(Resource):
         return make_response(jsonify(events_list))
     
 class AllTasks(Resource):
-    @planner_required
+    @jwt_required()
     def post(self):
-        data = request.json
+        data = request.get_json()
+
+        # Convert start date string to Python date object
+        start_date_str = data.get('start_date')
+        start_date = datetime.strptime(start_date_str, '%m/%d/%Y').date()
+        
+        # Convert end date string to Python date object
+        end_date_str = data.get('end_date')
+        end_date = datetime.strptime(end_date_str, '%m/%d/%Y').date()
+        
+        # Convert start time string to Python time object
+        start_time_str = data.get('start_time')
+        start_time = datetime.strptime(start_time_str, '%H:%M').time()
+        
+        # Convert end time string to Python time object
+        end_time_str = data.get('end_time')
+        end_time = datetime.strptime(end_time_str, '%H:%M').time()
+
         new_task = Task(
             title=data.get('title'),
-            start_date=data.get('start_date'),
-            end_date=data.get('end_date'),
-            start_time=data.get('start_time'),
+            start_date=start_date,
+            end_date=end_date,
+            start_time=start_time,
+            end_time=end_time,
             location=data.get('location'),
             amount=data.get('amount'),
             description=data.get('description'),
-            event_id=data.get('event_id'),
-            user_id=data.get('user_id'))
+            event_id=data.get('event_id'))
         db.session.add(new_task)
-        db.session.commit
+        db.session.commit()
+
+        return make_response(jsonify({'message': 'Task created successfully'}), 201)
         
     @jwt_required()
     def get(self):
