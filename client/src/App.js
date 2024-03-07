@@ -4,7 +4,12 @@ import NavBar from './components/Navbar';
 import Footer from './components/Footer';
 import SignUpForm from './components/SignUpForm';
 import SignInForm from './components/SignInFrom';
-
+import ResourceForm from './components/ResourceForm';
+import ResourceList from './components/Resource';
+import BudgetForm from './components/BudgetForm';
+import BudgetTracker from './components/BudgetTracker';
+import Chart from './components/Chart';
+import ExpenseForm from './components/ExpenseForm';
 
 function App() {
   return (
@@ -14,7 +19,13 @@ function App() {
         <Routes>
           <Route path="/" element={<div>
             <SignInForm />
-            <SignUpForm />
+            <SignUpForm /> 
+             {/* <ResourceList /> */}
+        <ResourceForm />
+        <BudgetForm />
+        {/* <BudgetTracker /> */}
+        < ExpenseForm  />
+        {/* <Chart /> */}
           </div>} />
         </Routes>
         <Footer />
