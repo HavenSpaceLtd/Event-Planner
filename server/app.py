@@ -11,6 +11,9 @@ from models.event import Event
 from models.user import User
 from models.task import Task
 from models.team import Team
+from models.collaboration import Collaboration
+from models.budget import Budget
+from models.expense import Expense
 from datetime import datetime
 
 app = Flask(__name__)
@@ -349,6 +352,126 @@ class AllTasks(Resource):
         ]
         return make_response(jsonify(tasks_list))
 
+class ManageCollaborations(Resource):
+    def post(self):
+        data = request.json
+        message = data.get('message')
+        recipient_id = data.get('recipient_id')
+
+        # Check if recipient exists
+        recipient = User.query.get(recipient_id)
+        if recipient is None:
+            return make_response(jsonify({"Error": "Recipient does not exist!"}), 404)
+
+        # Create a new collaboration
+        new_collaboration = Collaboration(message=message, recipient_id=recipient_id)
+        db.session.add(new_collaboration)
+        db.session.commit()
+
+        return make_response(jsonify({"Message": "Collaboration added successfully!"}), 201)
+
+    def get(self):
+        # Retrieve all collaborations
+        collaborations = Collaboration.query.all()
+        collaborations_dict = [collab.to_dict() for collab in collaborations]
+        return jsonify(collaborations_dict)
+
+
+class BudgetResource(Resource):
+    def get(self, budget_id=None):
+        if budget_id:
+            budget = Budget.query.get(budget_id)
+            if budget:
+                return jsonify(budget.to_dict())
+            else:
+                return jsonify({'message': 'Budget not found'}), 404
+        else:
+            budgets = Budget.query.all()
+            budgets_list = [budget.to_dict() for budget in budgets]
+            return jsonify(budgets_list)
+
+    def post(self):
+        data = request.json
+        event_id = data.get('event_id')
+        amount = data.get('amount')
+
+        new_budget = Budget(event_id=event_id, amount=amount)
+        db.session.add(new_budget)
+        db.session.commit()
+
+        return jsonify({'message': 'Budget created successfully'}), 201
+
+    def put(self, budget_id):
+        data = request.json
+        budget = Budget.query.get(budget_id)
+        if budget:
+            budget.event_id = data.get('event_id', budget.event_id)
+            budget.amount = data.get('amount', budget.amount)
+            db.session.commit()
+            return jsonify({'message': 'Budget updated successfully'})
+        else:
+            return jsonify({'message': 'Budget not found'}), 404
+
+    def delete(self, budget_id):
+        budget = Budget.query.get(budget_id)
+        if budget:
+            db.session.delete(budget)
+            db.session.commit()
+            return jsonify({'message': 'Budget deleted successfully'})
+        else:
+            return jsonify({'message': 'Budget not found'}), 404
+
+class ExpenseResource(Resource):
+    def post(self):
+        data = request.json
+        amount = data.get('amount')
+        category = data.get('category')
+        description = data.get('description')
+        event_id = data.get('event_id')
+
+        # Check if event exists
+        event = Event.query.get(event_id)
+        if event is None:
+            return jsonify({"Error": "Event does not exist!"}), 404
+
+        # Create a new expense
+        new_expense = Expense(amount=amount, category=category, description=description, event_id=event_id)
+        db.session.add(new_expense)
+        db.session.commit()
+
+        return jsonify({"Message": "Expense added successfully!"}), 201
+
+    def get(self):
+        expenses = Expense.query.all()
+        expenses_dict = [expense.to_dict() for expense in expenses]
+        return jsonify(expenses_dict)
+
+class ResourceResource(Resource):
+    def post(self):
+        data = request.json
+        name = data.get('name')
+        quantity = data.get('quantity')
+        start_date = data.get('start_date')
+        end_date = data.get('end_date')
+        availability_status = data.get('availability_status')
+        event_id = data.get('event_id')
+
+        # Check if event exists
+        event = Event.query.get(event_id)
+        if event is None:
+            return jsonify({"Error": "Event does not exist!"}), 404
+
+        # Create a new resource
+        new_resource = Resource(name=name, quantity=quantity, start_date=start_date, end_date=end_date, availability_status=availability_status, event_id=event_id)
+        db.session.add(new_resource)
+        db.session.commit()
+
+        return jsonify({"Message": "Resource added successfully!"}), 201
+
+    def get(self):
+        resources = Resource.query.all()
+        resources_dict = [resource.to_dict() for resource in resources]
+        return jsonify(resources_dict)
 
 api.add_resource(Index, '/')
 api.add_resource(AllUsers, '/users')
@@ -356,6 +479,10 @@ api.add_resource(LoginUser, '/login')
 api.add_resource(UserById, '/users/<int:id>')
 api.add_resource(AllEvents, '/events')
 api.add_resource(AllTasks, '/tasks')
+api.add_resource(ManageCollaborations, '/collaborations')
+api.add_resource(BudgetResource, '/budgets', '/budgets/<int:budget_id>')
+api.add_resource(ExpenseResource, '/expenses')
+api.add_resource(ResourceResource, '/resources')
 
 if __name__ == '__main__':
-    app.run(port=5555)
+    app.run(port=5555, debug=True)
