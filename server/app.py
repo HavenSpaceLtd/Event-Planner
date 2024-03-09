@@ -11,6 +11,7 @@ from models.event import Event
 from models.user import User
 from models.task import Task
 from models.team import Team
+from models.assignment import Assignment
 from datetime import datetime
 
 app = Flask(__name__)
@@ -223,7 +224,9 @@ class LoginUser(Resource):
             "email": user.email,
             "title": user.title,
             "image": user.image,
-            "events": user.get_owned_events()
+            "events": user.get_owned_events(),
+            "tasks": user.get_assigned_tasks(),
+            "due_tasks": user.get_assigned_tasks_due_within_week(),
         }), 200)
 
     def delete(self):
@@ -290,7 +293,46 @@ class AllEvents(Resource):
             for event in events
         ]
         return make_response(jsonify(events_list))
-    
+
+class EventById(Resource):
+    @jwt_required()
+    def get(self, event_id):
+        event = Event.query.get(event_id)
+        if not event:
+            return make_response(jsonify({'message': 'Event not found'}), 404)
+
+        return make_response(jsonify(event.to_dict()), 200)
+
+    @jwt_required()
+    def patch(self, event_id):
+        data = request.get_json()
+        event = Event.query.get(event_id)
+        if not event:
+            return make_response(jsonify({'message': 'Event not found'}), 404)
+
+        event.title = data.get('title', event.title)
+        event.start_date = datetime.strptime(data.get('start_date', event.start_date), '%m/%d/%Y').date()
+        event.end_date = datetime.strptime(data.get('end_date', event.end_date), '%m/%d/%Y').date()
+        event.start_time = datetime.strptime(data.get('start_time', event.start_time), '%H:%M').time()
+        event.end_time = datetime.strptime(data.get('end_time', event.end_time), '%H:%M').time()
+        event.amount = data.get('amount', event.amount)
+        event.progress = data.get('progress', event.progress)
+        event.location = data.get('location', event.location)
+        event.description = data.get('description', event.description)
+
+        db.session.commit()
+        return make_response(jsonify({'message': 'Event updated successfully'}), 200)
+
+    @jwt_required()
+    def delete(self, event_id):
+        event = Event.query.get(event_id)
+        if not event:
+            return make_response(jsonify({'message': 'Event not found'}), 404)
+
+        db.session.delete(event)
+        db.session.commit()
+        return make_response(jsonify({'message': 'Event deleted successfully'}), 200)
+
 class AllTasks(Resource):
     @jwt_required()
     def post(self):
@@ -349,6 +391,75 @@ class AllTasks(Resource):
         ]
         return make_response(jsonify(tasks_list))
 
+class TaskById(Resource):
+    @jwt_required()
+    def get(self, task_id):
+        task = Task.query.get(task_id)
+        if not task:
+            return make_response(jsonify({'message': 'Task not found'}), 404)
+
+        return make_response(jsonify(task.to_dict()), 200)
+
+    @jwt_required()
+    def patch(self, task_id):
+        data = request.get_json()
+        task = Task.query.get(task_id)
+        if not task:
+            return make_response(jsonify({'message': 'Task not found'}), 404)
+
+        task.title = data.get('title', task.title)
+        task.start_date = datetime.strptime(data.get('start_date', task.start_date), '%m/%d/%Y').date()
+        task.end_date = datetime.strptime(data.get('end_date', task.end_date), '%m/%d/%Y').date()
+        task.start_time = datetime.strptime(data.get('start_time', task.start_time), '%H:%M').time()
+        task.end_time = datetime.strptime(data.get('end_time', task.end_time), '%H:%M').time()
+        task.amount = data.get('amount', task.amount)
+        task.progress = data.get('progress', task.progress)
+        task.location = data.get('location', task.location)
+        task.description = data.get('description', task.description)
+
+        db.session.commit()
+        return make_response(jsonify({'message': 'Task updated successfully'}), 200)
+
+    @jwt_required()
+    def delete(self, task_id):
+        task = Task.query.get(task_id)
+        if not task:
+            return make_response(jsonify({'message': 'Task not found'}), 404)
+
+        db.session.delete(task)
+        db.session.commit()
+        return make_response(jsonify({'message': 'Task deleted successfully'}), 200)
+
+
+class Teams(Resource):
+    @jwt_required()
+    def post(self):
+
+        data = request.get_json()
+        team_entry = Team(
+            user_id = data.get('user_id'),
+            event_id = data.get('event_id')
+        )
+
+        db.session.add(team_entry)
+        db.session.commit()
+
+        return make_response(jsonify({'message': 'Team updated'}), 201)
+    
+class Assignments(Resource):
+    @jwt_required()
+    def post(self):
+
+        data = request.get_json()
+        new_assignment = Assignment(
+            user_id = data.get('user_id'),
+            task_id = data.get('task_id')
+        )
+
+        db.session.add(new_assignment)
+        db.session.commit()
+
+        return make_response(jsonify({'message': 'Assignment updated'}), 201)
 
 api.add_resource(Index, '/')
 api.add_resource(AllUsers, '/users')
@@ -356,6 +467,10 @@ api.add_resource(LoginUser, '/login')
 api.add_resource(UserById, '/users/<int:id>')
 api.add_resource(AllEvents, '/events')
 api.add_resource(AllTasks, '/tasks')
+api.add_resource(Teams, '/teams')
+api.add_resource(Assignments, '/assignments')
+api.add_resource(EventById, '/events/<int:event_id>')
+api.add_resource(TaskById, '/events/<int:task_id>')
 
 if __name__ == '__main__':
     app.run(port=5555)
