@@ -50,7 +50,8 @@ def planner_required(fn):
 
 class Index(Resource):
     def get(self):
-        return "<h1>Skidi Papa Papa</h1>"
+        return jsonify({"message": "Skidi Papa Papa"})
+
 
 class AllUsers(Resource):
     def post(self):
@@ -65,9 +66,9 @@ class AllUsers(Resource):
             return make_response(jsonify({"Error": f"Email account {email} already exists"}), 409)
 
         # Handle image upload
-        image_file = request.files['image']
+        image_file = request.files.get('image')  # Using get() instead of directly accessing dictionary to handle missing key
 
-        if 'image' not in request.files:
+        if not image_file:
             return make_response(jsonify({"error": "Image not found"}), 404)
 
         if image_file.filename == '':
@@ -88,7 +89,7 @@ class AllUsers(Resource):
             about=data.get('about'),
             location=data.get('location'),
             password=bcrypt.generate_password_hash(data.get('password')),
-            image=image_path  # Assigning the path of the uploaded image
+            image=image_path if image_file else None  # Assigning the path of the uploaded image if available
         )
 
         db.session.add(new_user)
@@ -113,11 +114,12 @@ class AllUsers(Resource):
 
 
 
+
 class UserById(Resource):
     @jwt_required()
     def get(self, id):
-        current_user_id = get_jwt_identity()['user_id']
-        user = User.query.get(current_user_id)
+        current_user_id = get_jwt_identity().get('user_id')
+        user = User.query.get(id)
 
         if user is None:
             return make_response(jsonify({"error": "User not found!"}), 404)
@@ -137,7 +139,7 @@ class UserById(Resource):
 
     @jwt_required()
     def patch(self, id):
-        current_user_id = get_jwt_identity()['user_id']
+        current_user_id = get_jwt_identity().get('user_id')
         data = request.json
 
         user = User.query.get(id)
@@ -172,23 +174,18 @@ class UserById(Resource):
 
     @jwt_required()
     def post(self, id):
-        current_user_id = get_jwt_identity()['user_id']
+        current_user_id = get_jwt_identity().get('user_id')
         data = request.json
 
         # Handle image upload
         user = User.query.get(id)
-        image_file = request.files['image']
+        image_file = request.files.get('image')
 
-        if 'image' not in request.files:
-            flash('No file...')
+        if not image_file:
             return make_response(jsonify({"error": "Image not found"}), 404)
 
         if user.id != current_user_id:
             return make_response(jsonify({"error": "Unauthorized!"}), 403)
-
-        if image_file.filename == '':
-            flash('No image selected')
-            return make_response(jsonify({"error": "No file selected"}), 404)
 
         if image_file and allowed_file(image_file.filename):
             filename = secure_filename(image_file.filename)
@@ -196,11 +193,11 @@ class UserById(Resource):
             image_file.save(image_path)
             user.image = image_path
 
-            updated_user = {"image": user.image}
-
             db.session.commit()
 
-        return make_response(jsonify(updated_user), 200)
+            updated_user_data = {"image": user.image}
+            return make_response(jsonify(updated_user_data), 200)
+
 
 
 class LoginUser(Resource):
@@ -280,10 +277,10 @@ class AllEvents(Resource):
             {
                 "id": event.id,
                 "title": event.title,
-                "start_date": event.start_date,
-                "end_date": event.end_date,
-                "start_time": event.start_time,
-                "end_time": event.end_time,
+                "start_date": event.start_date.strftime('%m/%d/%Y'),
+                "end_date": event.end_date.strftime('%m/%d/%Y'),
+                "start_time": event.start_time.strftime('%H:%M'),
+                "end_time": event.end_time.strftime('%H:%M'),
                 "location": event.location,
                 "amount": event.amount,
                 "progress": event.progress,
@@ -293,6 +290,7 @@ class AllEvents(Resource):
             for event in events
         ]
         return make_response(jsonify(events_list))
+
     
 class AllTasks(Resource):
     @jwt_required()
@@ -339,10 +337,10 @@ class AllTasks(Resource):
             {
                 "id": task.id,
                 "title": task.title,
-                "start_date": task.start_date,
-                "end_date": task.end_date,
-                "start_time": task.start_time,
-                "end_time": task.end_time,
+                "start_date": task.start_date.strftime('%m/%d/%Y'),
+                "end_date": task.end_date.strftime('%m/%d/%Y'),
+                "start_time": task.start_time.strftime('%H:%M'),
+                "end_time": task.end_time.strftime('%H:%M'),
                 "location": task.location,
                 "amount": task.amount,
                 "progress": task.progress,
@@ -352,29 +350,42 @@ class AllTasks(Resource):
         ]
         return make_response(jsonify(tasks_list))
 
+
 class ManageCollaborations(Resource):
     def post(self):
         data = request.json
         message = data.get('message')
         recipient_id = data.get('recipient_id')
 
+        # Validate data
+        if not message or not recipient_id:
+            return jsonify({"Error": "Invalid data provided!"}), 400
+
         # Check if recipient exists
         recipient = User.query.get(recipient_id)
         if recipient is None:
-            return make_response(jsonify({"Error": "Recipient does not exist!"}), 404)
+            return jsonify({"Error": "Recipient does not exist!"}), 404
 
         # Create a new collaboration
         new_collaboration = Collaboration(message=message, recipient_id=recipient_id)
         db.session.add(new_collaboration)
         db.session.commit()
 
-        return make_response(jsonify({"Message": "Collaboration added successfully!"}), 201)
+        return jsonify({"Message": "Collaboration added successfully!"}), 201
 
     def get(self):
         # Retrieve all collaborations
         collaborations = Collaboration.query.all()
-        collaborations_dict = [collab.to_dict() for collab in collaborations]
-        return jsonify(collaborations_dict)
+        collaborations_list = [
+            {
+                "id": collab.id,
+                "message": collab.message,
+                "recipient_id": collab.recipient_id
+            }
+            for collab in collaborations
+        ]
+        return jsonify(collaborations_list)
+
 
 
 class BudgetResource(Resource):
@@ -382,18 +393,38 @@ class BudgetResource(Resource):
         if budget_id:
             budget = Budget.query.get(budget_id)
             if budget:
-                return jsonify(budget.to_dict())
+                return jsonify({
+                    "id": budget.id,
+                    "event_id": budget.event_id,
+                    "amount": budget.amount
+                })
             else:
                 return jsonify({'message': 'Budget not found'}), 404
         else:
             budgets = Budget.query.all()
-            budgets_list = [budget.to_dict() for budget in budgets]
+            budgets_list = [
+                {
+                    "id": budget.id,
+                    "event_id": budget.event_id,
+                    "amount": budget.amount
+                }
+                for budget in budgets
+            ]
             return jsonify(budgets_list)
 
     def post(self):
         data = request.json
         event_id = data.get('event_id')
-        amount = data.get('amount')
+        amount_str = data.get('amount')
+
+        if amount_str is None:
+            return jsonify({'message': 'Amount is missing'}), 400
+
+        try:
+            # Convert amount string to float
+            amount = float(amount_str.replace(',', ''))
+        except ValueError:
+            return jsonify({'message': 'Invalid amount format'}), 400
 
         new_budget = Budget(event_id=event_id, amount=amount)
         db.session.add(new_budget)
@@ -421,6 +452,7 @@ class BudgetResource(Resource):
         else:
             return jsonify({'message': 'Budget not found'}), 404
 
+
 class ExpenseResource(Resource):
     def post(self):
         data = request.json
@@ -435,7 +467,12 @@ class ExpenseResource(Resource):
             return jsonify({"Error": "Event does not exist!"}), 404
 
         # Create a new expense
-        new_expense = Expense(amount=amount, category=category, description=description, event_id=event_id)
+        new_expense = Expense(
+            amount=amount,
+            category=category,
+            description=description,
+            event_id=event_id
+        )
         db.session.add(new_expense)
         db.session.commit()
 
@@ -443,8 +480,17 @@ class ExpenseResource(Resource):
 
     def get(self):
         expenses = Expense.query.all()
-        expenses_dict = [expense.to_dict() for expense in expenses]
-        return jsonify(expenses_dict)
+        expenses_list = [
+            {
+                "id": expense.id,
+                "amount": expense.amount,
+                "category": expense.category,
+                "description": expense.description,
+                "event_id": expense.event_id
+            }
+            for expense in expenses
+        ]
+        return jsonify(expenses_list)
 
 class ResourceResource(Resource):
     def post(self):
@@ -462,7 +508,14 @@ class ResourceResource(Resource):
             return jsonify({"Error": "Event does not exist!"}), 404
 
         # Create a new resource
-        new_resource = Resource(name=name, quantity=quantity, start_date=start_date, end_date=end_date, availability_status=availability_status, event_id=event_id)
+        new_resource = Resource(
+            name=name,
+            quantity=quantity,
+            start_date=start_date,
+            end_date=end_date,
+            availability_status=availability_status,
+            event_id=event_id
+        )
         db.session.add(new_resource)
         db.session.commit()
 
@@ -470,8 +523,20 @@ class ResourceResource(Resource):
 
     def get(self):
         resources = Resource.query.all()
-        resources_dict = [resource.to_dict() for resource in resources]
+        resources_dict = [
+            {
+                "id": resource.id,
+                "name": resource.name,
+                "quantity": resource.quantity,
+                "start_date": resource.start_date.strftime('%m/%d/%Y') if resource.start_date else None,
+                "end_date": resource.end_date.strftime('%m/%d/%Y') if resource.end_date else None,
+                "availability_status": resource.availability_status,
+                "event_id": resource.event_id
+            }
+            for resource in resources
+        ]
         return jsonify(resources_dict)
+
 
 api.add_resource(Index, '/')
 api.add_resource(AllUsers, '/users')

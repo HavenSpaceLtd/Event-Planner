@@ -11,7 +11,7 @@ class Collaboration(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     message = db.Column(db.String)
     recipient_id = db.Column(db.Integer, ForeignKey('users.id'))
-    datetime = db.Column(db.DateTime, default=datetime.utcnow)
+    datetime = db.Column(db.DateTime, default=datetime.now)
 
     recipient = db.relationship('User', foreign_keys=[recipient_id])
 
@@ -24,5 +24,5 @@ class Collaboration(db.Model, SerializerMixin):
             'message': self.message,
             'recipient_id': self.recipient_id,
             'recipient': self.recipient.to_dict(),
-            'datetime': self.datetime.strftime('%Y-%m-%d %H:%M:%S')
+            'datetime': self.datetime.isoformat()  # Using ISO format for datetime
         }
