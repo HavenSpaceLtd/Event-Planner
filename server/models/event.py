@@ -2,6 +2,8 @@ from database import db
 from sqlalchemy import DateTime, func
 from datetime import datetime
 from models.task import Task
+from models.assignment import Assignment
+
 
 
 class Event(db.Model):
@@ -47,6 +49,36 @@ class Event(db.Model):
         event_tasks = Task.query.filter_by(event_id=self.id).all()
         serialized_tasks = [task.to_dict() for task in event_tasks]
         return serialized_tasks
+    
+    def get_unassigned_tasks(self):
+        unassigned_tasks = Task.query \
+            .filter(Task.event_id == self.id) \
+            .filter(~Task.id.in_(
+                db.session.query(Assignment.task_id)
+                .filter(Assignment.task_id == Task.id)
+            )) \
+            .all()
+        return [task.to_dict() for task in unassigned_tasks]
+    
+    def get_assigned_tasks_with_users(self):
+        from models.user import User  # Import User model locally
+
+        assigned_tasks = db.session.query(Task, User.email) \
+            .join(Assignment, Task.id == Assignment.task_id) \
+            .join(User, Assignment.user_id == User.id) \
+            .filter(Task.event_id == self.id) \
+            .all()
+        
+        assigned_tasks_with_users = [
+            {
+                'task': task.to_dict(),
+                'user': email
+            }
+            for task, email in assigned_tasks
+        ]
+        
+        return assigned_tasks_with_users
+
         
 
     def __repr__(self) -> str:
@@ -66,6 +98,8 @@ class Event(db.Model):
             'image': self.image,
             'team_members':self.get_team_members(), 
             'tasks':self.get_tasks(),
+            'unassigned_tasks':self.get_unassigned_tasks(),
+            'assigned_tasks':self.get_assigned_tasks_with_users(),
         }
     
     

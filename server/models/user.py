@@ -1,6 +1,9 @@
 from database import db
 from sqlalchemy_serializer import SerializerMixin
 from models.event import Event
+from models.task import Task
+from models.assignment import Assignment
+from datetime import datetime, timedelta
 
 class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
@@ -40,3 +43,24 @@ class User(db.Model, SerializerMixin):
         owned_events = Event.query.filter_by(owner_id=self.id).all()
         serialized_events = [event.to_dict() for event in owned_events]
         return serialized_events
+    
+    def get_assigned_tasks(self):
+        assigned_tasks = db.session.query(Task) \
+            .join(Assignment, Task.id == Assignment.task_id) \
+            .filter(Assignment.user_id == self.id) \
+            .all()
+        
+        return [task.to_dict() for task in assigned_tasks]
+    
+    def get_assigned_tasks_due_within_week(self):
+        # Calculate the date one week from now
+        one_week_from_now = datetime.now() + timedelta(days=7)
+
+        # Query tasks assigned to the user that are due within one week
+        assigned_tasks_due_within_week = db.session.query(Task) \
+            .join(Assignment, Task.id == Assignment.task_id) \
+            .filter(Assignment.user_id == self.id) \
+            .filter(Task.end_date <= one_week_from_now) \
+            .all()
+        
+        return [task.to_dict() for task in assigned_tasks_due_within_week]
