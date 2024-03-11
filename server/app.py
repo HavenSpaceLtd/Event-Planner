@@ -540,7 +540,7 @@ class BudgetResource(Resource):
 
         try:
             # Convert amount string to float
-            amount = float(amount_str.replace(',', ''))
+            amount = amount_str
         except ValueError:
             return make_response(jsonify({'message': 'Invalid amount format'}), 400)
 
