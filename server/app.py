@@ -359,19 +359,19 @@ class ManageCollaborations(Resource):
 
         # Validate data
         if not message or not recipient_id:
-            return jsonify({"Error": "Invalid data provided!"}), 400
+            return make_response(jsonify({"Error": "Invalid data provided!"}), 400)
 
         # Check if recipient exists
         recipient = User.query.get(recipient_id)
         if recipient is None:
-            return jsonify({"Error": "Recipient does not exist!"}), 404
+            return make_response(jsonify({"Error": "Recipient does not exist!"}), 404)
 
         # Create a new collaboration
         new_collaboration = Collaboration(message=message, recipient_id=recipient_id)
         db.session.add(new_collaboration)
         db.session.commit()
 
-        return jsonify({"Message": "Collaboration added successfully!"}), 201
+        return make_response(jsonify({"Message": "Collaboration added successfully!"}), 201)
 
     def get(self):
         # Retrieve all collaborations
@@ -384,7 +384,7 @@ class ManageCollaborations(Resource):
             }
             for collab in collaborations
         ]
-        return jsonify(collaborations_list)
+        return make_response(jsonify(collaborations_list))
 
 
 
@@ -399,7 +399,7 @@ class BudgetResource(Resource):
                     "amount": budget.amount
                 })
             else:
-                return jsonify({'message': 'Budget not found'}), 404
+                return make_response(jsonify({'message': 'Budget not found'}), 404)
         else:
             budgets = Budget.query.all()
             budgets_list = [
@@ -410,7 +410,7 @@ class BudgetResource(Resource):
                 }
                 for budget in budgets
             ]
-            return jsonify(budgets_list)
+            return make_response(jsonify(budgets_list))
 
     def post(self):
         data = request.json
@@ -418,19 +418,19 @@ class BudgetResource(Resource):
         amount_str = data.get('amount')
 
         if amount_str is None:
-            return jsonify({'message': 'Amount is missing'}), 400
+            return make_response(jsonify({'message': 'Amount is missing'}), 400)
 
         try:
             # Convert amount string to float
             amount = float(amount_str.replace(',', ''))
         except ValueError:
-            return jsonify({'message': 'Invalid amount format'}), 400
+            return make_response(jsonify({'message': 'Invalid amount format'}), 400)
 
         new_budget = Budget(event_id=event_id, amount=amount)
         db.session.add(new_budget)
         db.session.commit()
 
-        return jsonify({'message': 'Budget created successfully'}), 201
+        return make_response(jsonify({'message': 'Budget created successfully'}), 201)
 
     def put(self, budget_id):
         data = request.json
@@ -439,18 +439,18 @@ class BudgetResource(Resource):
             budget.event_id = data.get('event_id', budget.event_id)
             budget.amount = data.get('amount', budget.amount)
             db.session.commit()
-            return jsonify({'message': 'Budget updated successfully'})
+            return make_response(jsonify({'message': 'Budget updated successfully'}))
         else:
-            return jsonify({'message': 'Budget not found'}), 404
+            return make_response(jsonify({'message': 'Budget not found'}), 404)
 
     def delete(self, budget_id):
         budget = Budget.query.get(budget_id)
         if budget:
             db.session.delete(budget)
             db.session.commit()
-            return jsonify({'message': 'Budget deleted successfully'})
+            return make_response(jsonify({'message': 'Budget deleted successfully'}))
         else:
-            return jsonify({'message': 'Budget not found'}), 404
+            return make_response(jsonify({'message': 'Budget not found'}), 404)
 
 
 class ExpenseResource(Resource):
