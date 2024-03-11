@@ -1,4 +1,9 @@
 from database import db
+from .budget import Budget
+from .collaboration import Collaboration
+from .expense import Expense
+from .asset import Asset
+from .communication import Communication
 
 # Association table for the many-to-many relationship between Worker and OfferedJob
 

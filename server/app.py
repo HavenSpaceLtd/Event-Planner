@@ -12,6 +12,11 @@ from models.user import User
 from models.task import Task
 from models.team import Team
 from models.assignment import Assignment
+from models.budget import Budget
+from models.expense import Expense
+from models.asset import Asset
+from models.collaboration import Collaboration
+from models.communication import Communication
 from datetime import datetime
 
 app = Flask(__name__)
@@ -464,6 +469,220 @@ class Assignments(Resource):
 
         return make_response(jsonify({'message': 'Assignment updated'}), 201)
 
+class ManageCommunications(Resource):
+    def post(self):
+        data = request.json
+        message = data.get('message')
+        recipient_id = data.get('recipient_id')
+
+        # Validate data
+        if not message or not recipient_id:
+            return make_response(jsonify({"Error": "Invalid data provided!"}), 400)
+
+        # Check if recipient exists
+        recipient = User.query.get(recipient_id)
+        if recipient is None:
+            return make_response(jsonify({"Error": "Recipient does not exist!"}), 404)
+
+        # Create a new communication
+        new_communication = Communication(message=message, recipient_id=recipient_id)
+        db.session.add(new_communication)
+        db.session.commit()
+
+        return make_response(jsonify({"Message": "Communication made successfully!"}), 201)
+
+    def get(self):
+        # Retrieve all communications
+        communications = Communication.query.all()
+        communications_list = [
+            {
+                "id": commun.id,
+                "message": commun.message,
+                "recipient_id": commun.recipient_id
+            }
+            for commun in communications
+        ]
+        return make_response(jsonify(communications_list), 200)
+
+
+
+class BudgetResource(Resource):
+    def get(self, budget_id=None):
+        if budget_id:
+            budget = Budget.query.get(budget_id)
+            if budget:
+                return jsonify({
+                    "id": budget.id,
+                    "event_id": budget.event_id,
+                    "amount": budget.amount
+                })
+            else:
+                return make_response(jsonify({'message': 'Budget not found'}), 404)
+        else:
+            budgets = Budget.query.all()
+            budgets_list = [
+                {
+                    "id": budget.id,
+                    "event_id": budget.event_id,
+                    "amount": budget.amount
+                }
+                for budget in budgets
+            ]
+            return make_response(jsonify(budgets_list))
+
+    def post(self):
+        data = request.json
+        event_id = data.get('event_id')
+        amount_str = data.get('amount')
+
+        if amount_str is None:
+            return make_response(jsonify({'message': 'Amount is missing'}), 400)
+
+        try:
+            # Convert amount string to float
+            amount = float(amount_str.replace(',', ''))
+        except ValueError:
+            return make_response(jsonify({'message': 'Invalid amount format'}), 400)
+
+        new_budget = Budget(event_id=event_id, amount=amount)
+        db.session.add(new_budget)
+        db.session.commit()
+
+        return make_response(jsonify({'message': 'Budget created successfully'}), 201)
+
+    def put(self, budget_id):
+        data = request.json
+        budget = Budget.query.get(budget_id)
+        if budget:
+            budget.event_id = data.get('event_id', budget.event_id)
+            budget.amount = data.get('amount', budget.amount)
+            db.session.commit()
+            return make_response(jsonify({'message': 'Budget updated successfully'}))
+        else:
+            return make_response(jsonify({'message': 'Budget not found'}), 404)
+
+    def delete(self, budget_id):
+        budget = Budget.query.get(budget_id)
+        if budget:
+            db.session.delete(budget)
+            db.session.commit()
+            return make_response(jsonify({'message': 'Budget deleted successfully'}))
+        else:
+            return make_response(jsonify({'message': 'Budget not found'}), 404)
+
+
+class ExpenseResource(Resource):
+    def post(self):
+        data = request.json
+        amount = data.get('amount')
+        category = data.get('category')
+        description = data.get('description')
+        event_id = data.get('event_id')
+
+        # Check if event exists
+        event = Event.query.get(event_id)
+        if event is None:
+            return make_response(jsonify({"Error": "Event does not exist!"}), 404)
+
+        # Create a new expense
+        new_expense = Expense(
+            amount=amount,
+            category=category,
+            description=description,
+            event_id=event_id
+        )
+        db.session.add(new_expense)
+        db.session.commit()
+
+        return make_response(jsonify({"Message": "Expense added successfully!"}), 201)
+
+    def get(self):
+        expenses = Expense.query.all()
+        expenses_list = [
+            {
+                "id": expense.id,
+                "amount": expense.amount,
+                "category": expense.category,
+                "description": expense.description,
+                "event_id": expense.event_id
+            }
+            for expense in expenses
+        ]
+        return make_response(jsonify(expenses_list))
+
+class Assets(Resource):
+    def post(self):
+        data = request.json
+        name = data.get('name')
+        quantity = data.get('quantity')
+        start_date = data.get('start_date')
+        end_date = data.get('end_date')
+        availability_status = data.get('availability_status')
+        event_id = data.get('event_id')
+
+        # Check if event exists
+        event = Event.query.get(event_id)
+        if event is None:
+            return make_response(jsonify({"Error": "Event does not exist!"}), 404)
+
+        # Create a new resource
+        new_asset = Asset(
+            name=name,
+            quantity=quantity,
+            start_date=start_date,
+            end_date=end_date,
+            availability_status=availability_status,
+            event_id=event_id
+        )
+        db.session.add(new_asset)
+        db.session.commit()
+
+        return make_response(jsonify({"Message": "Resource added successfully!"}), 201)
+
+    def get(self):
+        assets = Asset.query.all()
+        assets_dict = [
+            {
+                "id": asset.id,
+                "name": asset.name,
+                "quantity": asset.quantity,
+                "start_date": asset.start_date.strftime('%m/%d/%Y') if asset.start_date else None,
+                "end_date": asset.end_date.strftime('%m/%d/%Y') if asset.end_date else None,
+                "availability_status": asset.availability_status,
+                "event_id": asset.event_id
+            }
+            for asset in assets
+        ]
+        return make_response(jsonify(asset_dict))
+
+class CollaborationResource(Resource):
+    def post(self):
+        data = request.json
+        event_id = data.get('event_id')
+        user_id = data.get('user_id')
+        datetime = data.get('datetime')
+
+        # Validate data
+        if not all([event_id, user_id, datetime]):
+            return make_response(jsonify({'error': 'Invalid data provided'}), 400)
+
+        # Create a new collaboration
+        new_collaboration = Collaboration(event_id=event_id, user_id=user_id, datetime=datetime)
+        db.session.add(new_collaboration)
+        db.session.commit()
+
+        return make_response(jsonify({'message': 'Collaboration created successfully'}), 201)
+
+    def get(self):
+        collaborations = Collaboration.query.all()
+        collaborations_list = [{
+            'id': collab.id,
+            'event_id': collab.event_id,
+            'user_id': collab.user_id,
+            'datetime': collab.datetime.isoformat()
+        } for collab in collaborations]
+        return make_response(jsonify(collaborations_list), 200)
+
 api.add_resource(Index, '/')
 api.add_resource(AllUsers, '/users')
 api.add_resource(LoginUser, '/login')
@@ -474,6 +693,11 @@ api.add_resource(Teams, '/teams')
 api.add_resource(Assignments, '/assignments')
 api.add_resource(EventById, '/events/<int:event_id>')
 api.add_resource(TaskById, '/events/<int:task_id>')
+api.add_resource(ManageCommunications, '/communications')
+api.add_resource(BudgetResource, '/budgets', '/budgets/<int:budget_id>')
+api.add_resource(ExpenseResource, '/expenses')
+api.add_resource(Assets, '/assets')
+api.add_resource(CollaborationResource, '/collaborations')
 
 if __name__ == '__main__':
     app.run(port=5555)
