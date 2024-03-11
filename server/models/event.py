@@ -40,6 +40,10 @@ class Event(db.Model):
     tasks = db.relationship('Task', secondary = 'event_task_association', back_populates='events')
     teams = db.relationship('Team', backref='event', lazy=True)
 
+    budgets = db.relationship('Budget', back_populates='event')
+    expenses = db.relationship('Expense', back_populates='event')
+    assets = db.relationship('Asset', back_populates='event')
+
     def get_team_members(self):
         team_members = [team.user.to_dict() for team in self.teams]
         return team_members
