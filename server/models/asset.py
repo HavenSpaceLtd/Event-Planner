@@ -13,7 +13,7 @@ class Asset(db.Model, SerializerMixin):
     quantity = db.Column(db.Integer)
     start_date = db.Column(db.DateTime, default=datetime.utcnow)
     end_date = db.Column(db.DateTime, default=datetime.utcnow)
-    availability_status = db.Column(db.Boolean, default=True)
+    availability_status = db.Column(db.String, default=True)
     event_id = db.Column(db.Integer, ForeignKey('events.id'))
 
     event = db.relationship('Event', back_populates='assets')
