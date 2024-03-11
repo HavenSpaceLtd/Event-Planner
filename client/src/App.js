@@ -10,6 +10,7 @@ import BudgetForm from './components/BudgetForm';
 import BudgetTracker from './components/BudgetTracker';
 import Chart from './components/Chart';
 import ExpenseForm from './components/ExpenseForm';
+import Home from './components/Home'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <BudgetForm />
         {/* <BudgetTracker /> */}
         < ExpenseForm  />
+        <Home />
         {/* <Chart /> */}
           </div>} />
         </Routes>

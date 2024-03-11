@@ -130,6 +130,9 @@ class UserById(Resource):
             "image": user.image,
             "about": user.about,
             "location": user.location,
+            "events": user.get_owned_events(),
+            "tasks": user.get_assigned_tasks(),
+            "due_tasks": user.get_assigned_tasks_due_within_week(),
         }
         return make_response(jsonify(user_data))
 
