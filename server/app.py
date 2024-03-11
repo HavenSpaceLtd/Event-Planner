@@ -238,7 +238,7 @@ class LoginUser(Resource):
         }), 200)
 
     def delete(self):
-        session.pop("user_id", None)
+        #session.pop("user_id", None)
         return make_response(jsonify({"Message": "Logout successful!"}), 200)
     
 
