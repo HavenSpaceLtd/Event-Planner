@@ -653,7 +653,7 @@ class Assets(Resource):
             }
             for asset in assets
         ]
-        return make_response(jsonify(asset_dict))
+        return make_response(jsonify(assets_dict))
 
 class CollaborationResource(Resource):
     def post(self):
