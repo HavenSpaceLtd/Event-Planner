@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, ListGroup, Image, Dropdown, Card } from 'react-bootstrap';
 import { FaArrowLeft } from 'react-icons/fa';
-import data from '@emoji-mart/data'
-import Picker from '@emoji-mart/react'
+import data from '@emoji-mart/data';
+import Picker from '@emoji-mart/react';
 
 const ChatBox = () => {
   const [messages, setMessages] = useState({});

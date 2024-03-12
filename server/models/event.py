@@ -1,4 +1,5 @@
 from database import db
+from sqlalchemy_serializer import SerializerMixin
 from sqlalchemy import DateTime, func
 from datetime import datetime
 from models.task import Task
@@ -6,7 +7,7 @@ from models.assignment import Assignment
 
 
 
-class Event(db.Model):
+class Event(db.Model, SerializerMixin):
     __tablename__ = 'events'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -100,10 +101,8 @@ class Event(db.Model):
             'amount': self.amount,
             'description': self.description,
             'image': self.image,
-            'team_members':self.get_team_members(), 
-            'tasks':self.get_tasks(),
-            'unassigned_tasks':self.get_unassigned_tasks(),
-            'assigned_tasks':self.get_assigned_tasks_with_users(),
+            'team_members': self.get_team_members(), 
+            'tasks': self.get_tasks(),
+            'unassigned_tasks': self.get_unassigned_tasks(),
+            'assigned_tasks': self.get_assigned_tasks_with_users(),
         }
-    
-    
