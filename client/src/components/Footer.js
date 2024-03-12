@@ -6,7 +6,7 @@ import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-
 
 function Footer() {
   return (
-    <footer style={{ backgroundColor: '#343a40', color: '#ffffff', padding: '20px 0', marginTop: 'auto' }}>
+    <footer style={{ backgroundColor: 'bisque', color: 'black', padding: '20px 0', marginTop: 'auto' }}>
       <Container>
         <Row>
           <Col md={4} className="mb-4 mb-md-0">
@@ -29,27 +29,27 @@ function Footer() {
           <Col md={4} className="mb-4 mb-md-0">
             <h5>Quick Links</h5>
             <ul className="list-unstyled">
-              <li><a href="#home" className="text-light">Home</a></li>
-              <li><a href="#about" className="text-light">About Us</a></li>
-              <li><a href="#services" className="text-light">Services</a></li>
-              <li><a href="#contact" className="text-light">Contact Us</a></li>
+              <li><a href="#home" className="text-dark">Home</a></li>
+              <li><a href="#about" className="text-dark">About Us</a></li>
+              <li><a href="#services" className="text-dark">Services</a></li>
+              <li><a href="#contact" className="text-dark">Contact Us</a></li>
             </ul>
           </Col>
           <Col md={4}>
             <h5>Follow Us</h5>
             <ul className="list-unstyled d-flex justify-content-between">
               <li>
-                <a href="#facebook" className="text-light">
+                <a href="#facebook" className="text-dark">
                   <FontAwesomeIcon icon={faFacebook} size="2x" />
                 </a>
               </li>
               <li>
-                <a href="#twitter" className="text-light">
+                <a href="#twitter" className="text-dark">
                   <FontAwesomeIcon icon={faTwitter} size="2x" />
                 </a>
               </li>
               <li>
-                <a href="#linkedin" className="text-light">
+                <a href="#linkedin" className="text-dark">
                   <FontAwesomeIcon icon={faLinkedin} size="2x" />
                 </a>
               </li>

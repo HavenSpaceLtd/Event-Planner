@@ -112,7 +112,11 @@ const SignUpForm = () => {
                   <Row className="mb-3">
                     <Col sm={12}>
                       <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>Title</Form.Label>
-                      <Form.Control type="text" placeholder="Enter title" name="title" value={formData.title} onChange={handleChange} />
+                      <Form.Select name="title" value={formData.title} onChange={handleChange}>
+                        <option value="">Select title</option>
+                        <option value="user">User</option>
+                        <option value="planner">Planner</option>
+                      </Form.Select>
                     </Col>
                   </Row>
                   <Row className="mb-3">
