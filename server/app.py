@@ -646,8 +646,8 @@ class Assets(Resource):
                 "id": asset.id,
                 "name": asset.name,
                 "quantity": asset.quantity,
-                "start_date": asset.start_date.strftime('%m/%d/%Y') if asset.start_date else None,
-                "end_date": asset.end_date.strftime('%m/%d/%Y') if asset.end_date else None,
+                "start_date": asset.start_date.strptime('%m/%d/%Y') if asset.start_date else None,
+                "end_date": asset.end_date.strptime('%m/%d/%Y') if asset.end_date else None,
                 "availability_status": asset.availability_status,
                 "event_id": asset.event_id
             }
