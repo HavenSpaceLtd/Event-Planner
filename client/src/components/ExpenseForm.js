@@ -1,29 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-const ExpenseForm = ({ onSubmit }) => {
+const ExpenseForm = () => {
   const [amount, setAmount] = useState('');
   const [category, setCategory] = useState('');
   const [description, setDescription] = useState('');
-  const [selectedEvent, setSelectedEvent] = useState('');
-  const [events, setEvents] = useState([]);
+  const [event_id, setEventId] = useState('');
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await fetch('/api/events');
-        const data = await response.json();
-        setEvents(data);
-      } catch (error) {
-        console.error('Error fetching events:', error);
-      }
-    };
-    fetchEvents();
-  }, []);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
     try {
-      const response = await fetch('/api/expenses', {
+      const response = await fetch('/expenses', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -32,62 +19,56 @@ const ExpenseForm = ({ onSubmit }) => {
           amount,
           category,
           description,
-          eventId: selectedEvent
+          event_id
         })
       });
-      const data = await response.json();
-      onSubmit(data);
-      setAmount('');
-      setCategory('');
-      setDescription('');
-      setSelectedEvent('');
+
+      if (response.ok) {
+        // Expense added successfully
+        alert('Expense added successfully!');
+        // Clear the form
+        setAmount('');
+        setCategory('');
+        setDescription('');
+        setEventId('');
+      } else {
+        // Error occurred while adding expense
+        const errorMessage = await response.json();
+        alert(errorMessage.Error || 'Failed to add expense!');
+      }
     } catch (error) {
       console.error('Error adding expense:', error);
+      alert('Failed to add expense!');
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '0 auto' }}>
-      <input
-        type="number"
-        placeholder="Amount Spent"
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
-        style={{ width: '100%', padding: '10px', fontSize: '16px', marginBottom: '10px' }}
-      />
-      <input
-        type="text"
-        placeholder="Category"
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
-        style={{ width: '100%', padding: '10px', fontSize: '16px', marginBottom: '10px' }}
-      />
-      <input
-        type="text"
-        placeholder="Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        style={{ width: '100%', padding: '10px', fontSize: '16px', marginBottom: '10px' }}
-      />
-      <select
-        value={selectedEvent}
-        onChange={(e) => setSelectedEvent(e.target.value)}
-        style={{ width: '100%', padding: '10px', fontSize: '16px', marginBottom: '10px' }}
-      >
-        <option value="">Select Event</option>
-        {events.map((event) => (
-          <option key={event.id} value={event.id}>
-            {event.name}
-          </option>
-        ))}
-      </select>
-      <button
-        type="submit"
-        style={{ backgroundColor: '#007bff', color: '#fff', border: 'none', padding: '10px 20px', fontSize: '16px', borderRadius: '4px', cursor: 'pointer' }}
-      >
-        Add Expense
-      </button>
-    </form>
+    <div>
+      <h2>Add Expense</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Amount:
+          <input type="text" value={amount} onChange={(e) => setAmount(e.target.value)} />
+        </label>
+        <br />
+        <label>
+          Category:
+          <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} />
+        </label>
+        <br />
+        <label>
+          Description:
+          <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
+        </label>
+        <br />
+        <label>
+          Event ID:
+          <input type="text" value={event_id} onChange={(e) => setEventId(e.target.value)} />
+        </label>
+        <br />
+        <button type="submit">Add Expense</button>
+      </form>
+    </div>
   );
 };
 
