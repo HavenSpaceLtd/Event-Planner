@@ -282,16 +282,17 @@ class AllEvents(Resource):
     @jwt_required()
     def get(self):
         current_user = get_jwt_identity()
-        user_id = current_user.get('id')
-        events = Event.query.filter(Event.users.any(id=user_id)).all()
+        user_id = current_user.get('user_id')
+        events = Event.query.filter_by(owner_id = user_id).all()
+        
         events_list = [
             {
                 "id": event.id,
                 "title": event.title,
                 "start_date": event.start_date,
                 "end_date": event.end_date,
-                "start_time": event.start_time,
-                "end_time": event.end_time,
+                'start_time': event.start_time.strftime('%H:%M'),
+                'end_time': event.end_time.strftime('%H:%M'),
                 "location": event.location,
                 "amount": event.amount,
                 "progress": event.progress,
