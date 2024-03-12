@@ -424,6 +424,7 @@ class TaskById(Resource):
         task.amount = data.get('amount', task.amount)
         task.progress = data.get('progress', task.progress)
         task.location = data.get('location', task.location)
+        task.status = data.get('status', task.status)
         task.description = data.get('description', task.description)
 
         db.session.commit()
