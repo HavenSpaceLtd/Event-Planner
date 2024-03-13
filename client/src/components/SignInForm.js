@@ -37,6 +37,11 @@ const SignInForm = () => {
       sessionStorage.setItem('accessToken', data.access_token);
       sessionStorage.setItem('userId', data.id);
       sessionStorage.setItem('userName', data.name);
+
+      setFormData({
+        email: '',
+        password: '',
+      })
     } catch (error) {
       console.error('Error:', error.message);
     }
