@@ -9,7 +9,9 @@ import ExpenseForm from './components/ExpenseForm';
 import Home from './components/Home';
 import BudgetTracker from './components/BudgetTracker';
 import Chatbox from './components/Chatbox';
-
+import BudgetPlanning from './components/BudgetPlanning';
+import ExpenseTracking from './components/ExpenseTracker';
+import ResourceManagement from './components/ResourceManagement';
 
 function App() {
   return (
@@ -24,7 +26,10 @@ function App() {
             <ResourceForm />
             <BudgetForm />
             <ExpenseForm />
-            <BudgetTracker />
+
+             < BudgetPlanning />
+        <ExpenseTracking />
+        <ResourceManagement />
             </div>} />
         </Routes>
         <Footer />
