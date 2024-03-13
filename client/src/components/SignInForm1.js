@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import googleIcon from '../assets/google.svg';
 import emailIcon from '../assets/gmail.svg';
 import SignUpForm from './SignUpForm'; 
+import { useAuth } from './AuthContext';
 
 const SignInForm = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ const SignInForm = () => {
   });
 
   const [showSignUpForm, setShowSignUpForm] = useState(false);
+  const { login} = useAuth();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,11 +39,11 @@ const SignInForm = () => {
       sessionStorage.setItem('accessToken', data.access_token);
       sessionStorage.setItem('userId', data.id);
       sessionStorage.setItem('userName', data.name);
+      login(data)
+      sessionStorage.setItem('userData', JSON.stringify(data));
 
-      setFormData({
-        email: '',
-        password: '',
-      })
+      // Redirect after successful login
+      window.location.href = '/home';
     } catch (error) {
       console.error('Error:', error.message);
     }

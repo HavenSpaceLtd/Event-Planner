@@ -1,8 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import NavBar from './components/Navbar';
+import NavBar from './components/Navbar1';
 import Footer from './components/Footer';
-import SignInForm from './components/SignInForm';
+import SignInForm from './components/SignInForm1';
+import SignUpForm from './components/SignUpForm';
 import ResourceForm from './components/ResourceForm';
 import BudgetForm from './components/BudgetForm';
 import ExpenseForm from './components/ExpenseForm';
@@ -19,8 +20,9 @@ function App() {
       <div className="App">
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
           <Route path="/login" element={<SignInForm />} />
+          <Route path="/register" element={<SignUpForm />} />
           <Route path="/collaboration"  element={<Chatbox />} />
           <Route path="/resources" element={<div>
             <ResourceForm />

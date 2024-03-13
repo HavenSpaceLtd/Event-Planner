@@ -1,5 +1,5 @@
 from database import db
-from .budget import Budget
+from models.budget import Budget
 from .collaboration import Collaboration
 from .expense import Expense
 from .asset import Asset

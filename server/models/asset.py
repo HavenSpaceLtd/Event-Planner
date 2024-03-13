@@ -1,7 +1,7 @@
 from datetime import datetime
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Boolean
 from database import db
-from models.event import Event
+from models.event1 import Event
 from sqlalchemy.orm import relationship
 from sqlalchemy_serializer import SerializerMixin
 

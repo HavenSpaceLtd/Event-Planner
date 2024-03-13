@@ -20,7 +20,7 @@ console.log(user)
     setUser(null);
     // Remove user data from sessionStorage
     sessionStorage.removeItem('user');
-    window.location.href = '/login';
+    window.location.href = '/';
   };
     useEffect(() => {
     async function fetchData() {

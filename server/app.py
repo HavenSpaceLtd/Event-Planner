@@ -5,11 +5,12 @@ from functools import wraps
 from flask_restful import Api, Resource
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager, jwt_required, create_access_token, get_jwt_identity
+import logging
 import os
 from werkzeug.utils import secure_filename
-from models.event import Event
+from models.event1 import Event
 from models.user import User
-from models.task import Task
+from models.task1 import Task
 from models.team import Team
 from models.assignment import Assignment
 from models.budget import Budget
@@ -246,33 +247,28 @@ class AllEvents(Resource):
     @jwt_required()
     def post(self):
         data = request.get_json()
-        
+        print(data)
         # Convert start date string to Python date object
-        start_date_str = data.get('start_date')
-        start_date = datetime.strptime(start_date_str, '%m/%d/%Y').date()
+        start_date_str = data.get('startDate')
+       
         
         # Convert end date string to Python date object
-        end_date_str = data.get('end_date')
-        end_date = datetime.strptime(end_date_str, '%m/%d/%Y').date()
+        end_date_str = data.get('endDate')
         
-        # Convert start time string to Python time object
-        start_time_str = data.get('start_time')
-        start_time = datetime.strptime(start_time_str, '%H:%M').time()
+        # Check if date strings are empty
+        if not start_date_str or not end_date_str:
+            return make_response(jsonify({'error': 'Start or end date is missing.'}), 400)
         
-        # Convert end time string to Python time object
-        end_time_str = data.get('end_time')
-        end_time = datetime.strptime(end_time_str, '%H:%M').time()
+        # Convert start date string to Python date object
+        start_date = datetime.strptime(start_date_str, '%Y-%m-%d')  # Corrected format
+        
+        # Convert end date string to Python date object
+        end_date = datetime.strptime(end_date_str, '%Y-%m-%d')  # Corrected format
         
         new_event = Event(
-            title=data.get('title'),
-            start_date=start_date,
-            end_date=end_date,
-            start_time=start_time,
-            end_time=end_time,
-            location=data.get('location'),
-            amount=data.get('amount'),
-            description=data.get('description'),
-            owner_id=data.get('owner_id'))
+            eventTitle=data.get('eventTitle'),
+            startDate=start_date,
+            endDate=end_date,)
         db.session.add(new_event)
         db.session.commit()
 
@@ -288,15 +284,9 @@ class AllEvents(Resource):
         events_list = [
             {
                 "id": event.id,
-                "title": event.title,
-                "start_date": event.start_date,
-                "end_date": event.end_date,
-                'start_time': event.start_time.strftime('%H:%M'),
-                'end_time': event.end_time.strftime('%H:%M'),
-                "location": event.location,
-                "amount": event.amount,
-                "progress": event.progress,
-                "description": event.description,
+                "eventTitle": event.eventTitle,
+                "start_date": event.startDate,
+                "end_date": event.endDate,
                 "owner": event.owner.first_name,
             }
             for event in events
@@ -348,31 +338,28 @@ class AllTasks(Resource):
         data = request.get_json()
 
         # Convert start date string to Python date object
-        start_date_str = data.get('start_date')
-        start_date = datetime.strptime(start_date_str, '%m/%d/%Y').date()
+        start_date_str = data.get('startDate')
+        start_date = datetime.strptime(start_date_str, '%Y-%m-%d')
         
         # Convert end date string to Python date object
-        end_date_str = data.get('end_date')
-        end_date = datetime.strptime(end_date_str, '%m/%d/%Y').date()
+        end_date_str = data.get('endDate')
+        end_date = datetime.strptime(end_date_str, '%Y-%m-%d')
         
-        # Convert start time string to Python time object
-        start_time_str = data.get('start_time')
-        start_time = datetime.strptime(start_time_str, '%H:%M').time()
-        
-        # Convert end time string to Python time object
-        end_time_str = data.get('end_time')
-        end_time = datetime.strptime(end_time_str, '%H:%M').time()
+        # Check if assignedTo key exists in data
+        assignedTo = data.get('assignedTo')
+        if not assignedTo:
+            assignedTo = []  # Assign an empty list if not provided
+      
 
         new_task = Task(
-            title=data.get('title'),
-            start_date=start_date,
-            end_date=end_date,
-            start_time=start_time,
-            end_time=end_time,
-            location=data.get('location'),
-            amount=data.get('amount'),
-            description=data.get('description'),
-            event_id=data.get('event_id'))
+            taskTitle=data.get('taskTitle'),
+                start_date=start_date,
+                end_date=end_date,
+                priority=data.get('priority'),
+                status=data.get('status'),
+                assignedTo = assignedTo,
+                numParticipants=data.get('numParticipants'),
+                event_id = data.get('id'))
         db.session.add(new_task)
         db.session.commit()
 
@@ -386,7 +373,7 @@ class AllTasks(Resource):
         tasks_list = [
             {
                 "id": task.id,
-                "title": task.title,
+                "taskTitle": task.taskTitle,
                 "start_date": task.start_date,
                 "end_date": task.end_date,
                 "start_time": task.start_time,
@@ -684,6 +671,92 @@ class CollaborationResource(Resource):
             'datetime': collab.datetime.isoformat()
         } for collab in collaborations]
         return make_response(jsonify(collaborations_list), 200)
+    
+class CombinedDataResource(Resource):
+    def get(self):
+        try:
+            # Fetch tasks and events from the database
+            tasks = Task.query.all()
+            events = Event.query.all()
+            print(events)
+            # Serialize tasks and events to dictionaries
+            serialized_tasks = [task.to_dict() for task in tasks]
+            serialized_events = [event.to_dict() for event in events]
+
+            # Combine tasks and events into a single list
+            combined_data = []
+            for event in serialized_events:
+                event_id = event['id']
+                event_data = event.copy()  # Make a copy of the event dictionary
+            
+                event_tasks = [task for task in serialized_tasks if task['event_id'] == event_id]
+                for task in event_tasks:
+                    task_data = task.copy()  # Make a copy of the task dictionary
+                    task_data.pop('event_id')  # Remove the 'event_id' key to avoid duplication
+                    task_data.pop('start_date', None)  # Remove the 'start_date' key if present
+                    task_data.pop('end_date', None)  # Remove the 'end_date' key if present
+
+                    combined_item = {**event_data, **task_data}  # Combine event and task details
+                    combined_data.append(combined_item)
+
+            # Return combined data as JSON response
+            return jsonify(combined_data)
+
+        except Exception as e:
+            # Log the specific error
+            logging.error(f"An error occurred while processing the request: {e}", exc_info=True)
+            return {'error': str(e)}, 500
+        
+class GetAllUsers(Resource):
+    def get(self):
+        users = User.query.all()
+        print(users)
+        user_list = []
+        for user in users:
+            user_data = {
+                
+                'first_name': user.first_name,
+               
+            }
+            print(user_data)
+            user_list.append(user_data)
+        return jsonify({'users': user_list})
+
+class UpdateTaskStatus(Resource):
+    def put(self, task_id):
+        data = request.json
+        new_status = data.get('newStatus')
+
+        # Retrieve task from the database using filter_by
+        task = Task.query.filter_by(id=task_id).first()
+
+        if task:
+            task.status = new_status
+            db.session.commit()
+            return jsonify({'message': 'Task status updated successfully'})
+        else:
+            return jsonify({'error': 'Task not found'}), 404
+        
+class AllTasksDelete(Resource):
+    @jwt_required()
+    def delete(self, task_id):
+        try:
+            # Find the task to delete by its ID
+            task = Task.query.filter_by(id=task_id).first()
+            print(task)
+            if not task:
+                return make_response(jsonify({'error': 'Task not found'}), 404)
+
+            # Delete the task from the database
+            db.session.delete(task)
+            db.session.commit()
+
+            return make_response(jsonify({'message': 'Task deleted successfully'}), 200)
+        except Exception as e:
+            db.session.rollback()
+            print("Error:", e)  # Print any exceptions that occur
+            return make_response(jsonify({'error': 'An error occurred while processing the request.'}), 500)
+
 
 api.add_resource(Index, '/')
 api.add_resource(AllUsers, '/users')
@@ -700,6 +773,10 @@ api.add_resource(BudgetResource, '/budgets', '/budgets/<int:budget_id>')
 api.add_resource(ExpenseResource, '/expenses')
 api.add_resource(Assets, '/assets')
 api.add_resource(CollaborationResource, '/collaborations')
+api.add_resource(CombinedDataResource, '/combined-data')
+api.add_resource(GetAllUsers, '/allusers')
+api.add_resource(UpdateTaskStatus, '/update_task_status/<int:task_id>')
+api.add_resource(AllTasksDelete, '/tasksdelete/<int:task_id>')
 
 if __name__ == '__main__':
     app.run(port=5555)

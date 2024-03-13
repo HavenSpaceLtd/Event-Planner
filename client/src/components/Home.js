@@ -5,7 +5,7 @@ import { useAuth } from './AuthContext';
 
 function Home() {
 
-  const { users } = useAuth();
+  const { users, combinedData } = useAuth();
  console.log(users)
  const userDataString = sessionStorage.getItem('userData');
 
@@ -14,10 +14,12 @@ const userData = JSON.parse(userDataString);
 const user = userData
 // Now userData contains the user data retrieved from sessionStorage
 console.log(userData);
-  const [tasks, setTasks] = useState(() => {
-    // Initialize tasks from localStorage or use default if no tasks are saved
-    const savedTasks = localStorage.getItem('tasks');
-    return savedTasks ? JSON.parse(savedTasks) : [
+console.log(users)
+const [tasks, setTasks] = useState([]);
+
+useEffect(() => {
+  const fetchTasks = async () => {
+    return combinedData ? combinedData.filter(task => task.assignedTo === users.first_name) : [
       {
         id: 1,
         eventTitle: 'Event Title',
@@ -28,15 +30,55 @@ console.log(userData);
         priority: 'Urgent',
         status: 'Todo',
         numParticipants: 1
-      },
+      }
     ];
-  });
-  
-  useEffect(() => {
-    // Save tasks to localStorage whenever tasks change
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);
-  
+  };
+
+  fetchTasks(); // Call the fetchTasks function
+
+  // Add any cleanup code if needed
+
+}, [combinedData, user.name]);
+
+useEffect(() => {
+  // Define the formatCombinedData function inside the useEffect callback
+  const formatCombinedData = (data) => {
+    if (!data || data.length === 0) return []; // Return empty array if data is falsy or empty
+
+    return data.map(task => ({
+      ...task,
+      startDate: formatDate(task.startDate),
+      endDate: formatDate(task.endDate),
+      start_date: formatDate(task.start_date),
+      end_date: formatDate(task.end_date)
+    }));
+  };
+
+  // Load tasks from combinedData when it changes
+  if (combinedData && combinedData.length > 0) {
+    const formattedData = formatCombinedData(combinedData);
+    setTasks(formattedData);
+
+    localStorage.setItem('formattedTasks', JSON.stringify(formattedData));
+  }
+}, [combinedData]); // Only include combinedData as a dependency
+
+// Define formatDate function outside the useEffect
+const formatDate = (dateString) => {
+  if (!dateString) return ''; // Return empty string if dateString is falsy
+
+  // Convert the dateString to a Date object
+  const date = new Date(dateString);
+
+  // Extract year, month, and day
+  const year = date.getUTCFullYear();
+  const month = `${date.getUTCMonth() + 1}`.padStart(2, '0'); // Adding 1 because month starts from 0
+  const day = `${date.getUTCDate()}`.padStart(2, '0');
+
+  // Format the date as "yyyy-MM-dd"
+  return `${year}-${month}-${day}`;
+};
+
 
   
  const handleDragEnd = async (result) => {
@@ -169,15 +211,35 @@ console.log(userData);
 
 
 
-  const handleDelete = (taskId) => {
-    if (taskId === 1) {
-      console.log("Cannot delete the first card.");
-      return;
+const handleDelete = async (taskId) => {
+  if (taskId === 1) {
+    console.log("Cannot delete the first card.");
+    return;
+  }
+
+  try {
+    // Send a DELETE request to the server
+    const response = await fetch(`/tasksdelete/${taskId}`, {
+      method: 'DELETE',
+      headers: {
+        "Authorization": `Bearer ${user.access_token}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to delete task');
     }
+
+    // If the request is successful, update the tasks state
     const updatedTasks = tasks.filter(task => task.id !== taskId);
     setTasks(updatedTasks);
     console.log(`Task with ID ${taskId} deleted.`);
-  };
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
+};
+
 
   const handleResetTask = (taskId) => {
     const taskIndex = tasks.findIndex(task => task.id === taskId);
@@ -234,7 +296,8 @@ console.log(userData);
     });
     setTasks(updatedTasks);
   };
-
+console.log(tasks)
+console.log(user)
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
       <Container fluid style={{ backgroundColor: 'bisque', padding: '20px' }}>
@@ -272,20 +335,37 @@ console.log(userData);
                               >
                                 <Card style={{ marginBottom: '20px', opacity: snapshot.isDragging ? 0.8 : 1, border: 'none' }}>
                                   <Card.Body>
+                                  
                                     <Form.Group controlId={`task-${task.id}`}>
-                                      <Form.Label>Event Title</Form.Label>
-                                      <Form.Control
-                                        type="text"
-                                        value={task.eventTitle}
-                                        onChange={(e) => handleChange(task.id, 'eventTitle', e.target.value)}
-                                      />
+                                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                        <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+                                          <Form.Label>Event Title</Form.Label>
+                                        </div>
+                                        <div style={{ flex: 2 }}>
+                                          <Form.Control
+                                            type="text"
+                                            value={task.eventTitle}
+                                            onChange={(e) => handleChange(task.id, 'eventTitle', e.target.value)}
+                                          />
+                                        </div>
+                                      </div>
+                                      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                        <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
                                       <Form.Label>Task Title</Form.Label>
+                                      </div>
+                                      <div style={{ flex: 2 }}>
                                       <Form.Control
                                         type="text"
                                         value={task.taskTitle}
                                         onChange={(e) => handleChange(task.id, 'taskTitle', e.target.value)}
                                       />
+                                      </div>
+                                    </div> 
+                                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
                                       <Form.Label>Number of Participants</Form.Label>
+                                      </div>
+                                    <div style={{ flex: 2 }}>
                                       <Form.Control
                                         type="number"
                                         min="1"
@@ -293,7 +373,13 @@ console.log(userData);
                                         value={task.numParticipants}
                                         onChange={(e) => handleNumParticipantsChange(task.id, e.target.value)}
                                       />
+                                      </div>
+                                    </div>
+                                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
                                       <Form.Label>Assigned To</Form.Label>
+                                      </div>
+                                      <div style={{ flex: 2 }}>
                                       <Form.Control
                                           as="select"
                                           value=""
@@ -301,27 +387,52 @@ console.log(userData);
                                         >
                                           <option value="">Select User</option>
                                           {users.map((user, index) => (
-                                            <option key={index} value={user.name}>{user.name}</option>
+                                            <option key={index} value={user.first_name}>{user.first_name}</option>
                                           ))}
                                         </Form.Control>
-                                                                            <div>
-                                        Assigned to: {task.assignedTo.map((user, index) => (
-                                          <span key={index}>{index > 0 ? ', ' : ''}{user}</span>
-                                        ))}
+                                        <div>
+                                          Assigned to: {
+                                            task.assignedTo
+                                            ? (
+                                              task.assignedTo.map((user, index) => (
+                                                <span key={index}>{index > 0 ? ', ' : ''}{user}</span>
+                                              ))
+                                            ) : (
+                                              <span>No one assigned</span>
+                                            )
+                                          }
+                                        </div>
+                                        </div>
                                       </div>
+                                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
                                       <Form.Label>Start Date</Form.Label>
+                                      </div>
+                                      <div style={{ flex: 2 }}>
                                       <Form.Control
                                         type="date"
                                         value={task.startDate}
                                         onChange={(e) => handleChange(task.id, 'startDate', e.target.value)}
                                       />
+                                      </div>
+                                      </div>
+                                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
                                       <Form.Label>End Date</Form.Label>
+                                      </div>
+                                      <div style={{ flex: 2 }}>
                                       <Form.Control
                                         type="date"
                                         value={task.endDate}
                                         onChange={(e) => handleChange(task.id, 'endDate', e.target.value)}
                                       />
+                                      </div>
+                                      </div>
+                                      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
                                       <Form.Label>Priority</Form.Label>
+                                      </div>
+                                      <div style={{ flex: 2 }}>
                                       <Form.Control
                                         as="select"
                                         value={task.priority}
@@ -330,7 +441,13 @@ console.log(userData);
                                         <option value="Urgent">Urgent</option>
                                         <option value="Not Urgent">Not Urgent</option>
                                       </Form.Control>
+                                      </div>
+                                      </div>
+                                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
                                       <Form.Label>Status</Form.Label>
+                                      </div>
+                                      <div style={{ flex: 2 }}>
                                       <Form.Control
                                         as="select"
                                         value={task.status}
@@ -341,6 +458,8 @@ console.log(userData);
                                         <option value="Completed">Completed</option>
                                         <option value="Delayed">Delayed</option>
                                       </Form.Control>
+                                      </div>
+                                      </div>
                                       <div className="d-flex justify-content-center align-items-center mt-2">
                                         <Button variant="primary" onClick={() => handleUpdate(task.id)}>Update</Button>
                                         {task.id !== 1 && (

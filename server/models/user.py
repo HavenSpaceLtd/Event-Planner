@@ -1,7 +1,7 @@
 from database import db
 from sqlalchemy_serializer import SerializerMixin
-from models.event import Event
-from models.task import Task
+from models.event1 import Event
+from models.task1 import Task
 from models.assignment import Assignment
 from datetime import datetime, timedelta
 
