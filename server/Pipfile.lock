@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b5fa37f79ee388f30bd7f94e1e8aa3a49e811d9de8d38d231ec4bc7d6a13b3f9"
+            "sha256": "548754cdeb5b8170bba090870ad852de4615514edc02588efb018603e044c9cf"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -108,12 +108,12 @@
         },
         "flask-migrate": {
             "hashes": [
-                "sha256:613a2df703998e78716cace68cd83972960834424457f5b67f56e74fff950aef",
-                "sha256:d3f437a8b5f3849d1bb1b60e1b818efc564c66e3fefe90b62e5db08db295e1b1"
+                "sha256:5c532be17e7b43a223b7500d620edae33795df27c75811ddf32560f7d48ec617",
+                "sha256:dff7dd25113c210b069af280ea713b883f3840c1e3455274745d7355778c8622"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.6'",
-            "version": "==4.0.5"
+            "version": "==4.0.7"
         },
         "flask-restful": {
             "hashes": [
@@ -195,6 +195,15 @@
             ],
             "markers": "platform_machine == 'aarch64' or (platform_machine == 'ppc64le' or (platform_machine == 'x86_64' or (platform_machine == 'amd64' or (platform_machine == 'AMD64' or (platform_machine == 'win32' or platform_machine == 'WIN32')))))",
             "version": "==3.0.3"
+        },
+        "importlib-metadata": {
+            "hashes": [
+                "sha256:198f568f3230878cb1b44fbd7975f87906c22336dba2e4a7f05278c281fbd792",
+                "sha256:f4bc4c0c070c490abf4ce96d715f68e95923320370efb66143df00199bb6c100"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
+            "version": "==7.0.2"
         },
         "itsdangerous": {
             "hashes": [
@@ -387,6 +396,14 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==3.0.1"
+        },
+        "zipp": {
+            "hashes": [
+                "sha256:c1bb803ed69d2cce2373152797064f7e79bc43f0a3748eb494096a867e0ebf79",
+                "sha256:df8d042b02765029a09b157efd8e820451045890acc30f8e37dd2f94a060221f"
+            ],
+            "markers": "python_version >= '3.8'",
+            "version": "==3.18.0"
         }
     },
     "develop": {}

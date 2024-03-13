@@ -12,6 +12,7 @@ flask-restful = "*"
 flask-bcrypt = "*"
 pyjwt = "*"
 flask-jwt-extended = "*"
+importlib-metadata = "*"
 
 [dev-packages]
 
