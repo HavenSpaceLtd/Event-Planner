@@ -18,7 +18,6 @@ from models.asset import Asset
 from models.collaboration import Collaboration
 from models.communication import Communication
 from datetime import datetime
-import logging
 
 app = Flask(__name__)
 
@@ -728,9 +727,6 @@ class CollaborationResource(Resource):
         db.session.add(new_collaboration)
         db.session.commit()
 
-        # Log the collaboration creation event
-        logger.info(f"Collaboration created by user {current_user_id} for event {event_id} at {datetime}.")
-
         return make_response(jsonify({'message': 'Collaboration created successfully'}), 201)
 
     @jwt_required()
@@ -743,7 +739,6 @@ class CollaborationResource(Resource):
             'user_id': collab.user_id,
             'datetime': collab.datetime.isoformat()
         } for collab in collaborations]
-        logger.info(f"User {current_user_id} fetched all collaborations.")
         return make_response(jsonify(collaborations_list), 200)
 
 api.add_resource(Index, '/')
