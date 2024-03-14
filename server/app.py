@@ -18,6 +18,7 @@ from models.asset import Asset
 from models.collaboration import Collaboration
 from models.communication import Communication
 from datetime import datetime
+import logging
 
 app = Flask(__name__)
 
@@ -35,6 +36,8 @@ migrate = Migrate(app, db)
 api = Api(app)
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
+logging.basicConfig(filename='EventPlanner.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 db.init_app(app)
 
@@ -53,6 +56,7 @@ def planner_required(fn):
 
 class Index(Resource):
     def get(self):
+        logging.info('Index endpoint accessed')
         return "<h1>Skidi Papa Papa</h1>"
 
 class AllUsers(Resource):
@@ -119,10 +123,12 @@ class AllUsers(Resource):
 class UserById(Resource):
     @jwt_required()
     def get(self, id):
+        
         current_user_id = get_jwt_identity()['user_id']
         user = User.query.get(current_user_id)
-
+        logging.info(f"User, {user.email}, details accessed")
         if user is None:
+            logging.info(f"User not found")
             return make_response(jsonify({"error": "User not found!"}), 404)
 
         user_data = {
