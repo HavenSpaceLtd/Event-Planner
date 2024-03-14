@@ -1,12 +1,21 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
+// Import SVG icons
+import FacebookIcon from '../assets/facebook.svg';
+import TwitterIcon from '../assets/twitter.svg';
+import LinkedinIcon from '../assets/linkedin.svg';
+import DropboxIcon from '../assets/dropbox.svg';
+import GithubIcon from '../assets/github.svg';
+import GitlabIcon from '../assets/gitlab.svg';
+import GoogleIcon from '../assets/google.svg';
+import EmailIcon from '../assets/gmail.svg';
 
 function Footer() {
   return (
-    <footer style={{ backgroundColor: 'bisque', color: 'black', padding: '20px 0', marginTop: 'auto' }}>
+    <footer style={{ backgroundColor: 'bisque', color: 'black', padding: '50px 0', marginTop: 'auto' }}>
       <Container>
         <Row>
           <Col md={4} className="mb-4 mb-md-0">
@@ -26,40 +35,79 @@ function Footer() {
               </li>
             </ul>
           </Col>
-          <Col md={4} className="mb-4 mb-md-0">
-            <h5>Quick Links</h5>
-            <ul className="list-unstyled">
-              <li><a href="#home" className="text-dark">Home</a></li>
-              <li><a href="#about" className="text-dark">About Us</a></li>
-              <li><a href="#services" className="text-dark">Services</a></li>
-              <li><a href="#contact" className="text-dark">Contact Us</a></li>
-            </ul>
+          <Col md={4}>
+            <h5>Subscribe to Our Newsletter</h5>
+            <p>Stay up to date with our latest news and updates by subscribing to our newsletter:</p>
+            <Form>
+              <Form.Group controlId="formEmail">
+                <Form.Control type="email" placeholder="Enter email" />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                Subscribe
+              </Button>
+            </Form>
           </Col>
           <Col md={4}>
-            <h5>Follow Us</h5>
+            <h5>Connect With Us</h5>
             <ul className="list-unstyled d-flex justify-content-between">
               <li>
                 <a href="#facebook" className="text-dark">
-                  <FontAwesomeIcon icon={faFacebook} size="2x" />
+                  <img src={FacebookIcon} alt="Facebook" width="24" height="24" />
                 </a>
               </li>
               <li>
                 <a href="#twitter" className="text-dark">
-                  <FontAwesomeIcon icon={faTwitter} size="2x" />
+                  <img src={TwitterIcon} alt="Twitter" width="24" height="24" />
                 </a>
               </li>
               <li>
                 <a href="#linkedin" className="text-dark">
-                  <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                  <img src={LinkedinIcon} alt="LinkedIn" width="24" height="24" />
                 </a>
               </li>
+              <li>
+                <a href="#dropbox" className="text-dark">
+                  <img src={DropboxIcon} alt="Dropbox" width="24" height="24" />
+                </a>
+              </li>
+              <li>
+                <a href="#github" className="text-dark">
+                  <img src={GithubIcon} alt="GitHub" width="24" height="24" />
+                </a>
+              </li>
+              <li>
+                <a href="#gitlab" className="text-dark">
+                  <img src={GitlabIcon} alt="GitLab" width="24" height="24" />
+                </a>
+              </li>
+              <li>
+                <a href="#google" className="text-dark">
+                  <img src={GoogleIcon} alt="Google" width="24" height="24" />
+                </a>
+              </li>
+              <li>
+                <a href="#email" className="text-dark">
+                  <img src={EmailIcon} alt="Email" width="24" height="24" />
+                </a>
+              </li>
+            </ul>
+            <p className="mt-3">Stay connected with us on social media for updates and news!</p>
+          </Col>
+        </Row>
+        <hr />
+        <Row className="text-center">
+          <Col>
+            <ul className="list-unstyled d-flex justify-content-center">
+              <li><a href="#privacy" className="text-muted mx-2">Privacy Policy</a></li>
+              <li><a href="#terms" className="text-muted mx-2">Terms of Use</a></li>
+              <li><a href="#sitemap" className="text-muted mx-2">Sitemap</a></li>
             </ul>
           </Col>
         </Row>
       </Container>
-      <div style={{ backgroundColor: '#6c757d', padding: '10px 0' }}>
+      <div style={{ backgroundColor: '#6c757d', color: 'white', padding: '20px 0' }}>
         <Container className="text-center">
-          <small>&copy; {new Date().getFullYear()} Event  Planner. All rights reserved.</small>
+          <small>&copy; {new Date().getFullYear()} Event Planner. All rights reserved.</small>
         </Container>
       </div>
     </footer>
