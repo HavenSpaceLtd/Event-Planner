@@ -12,6 +12,8 @@ import Chatbox from './components/Chatbox';
 import BudgetPlanning from './components/BudgetPlanning';
 import ExpenseTracking from './components/ExpenseTracker';
 import ResourceManagement from './components/ResourceManagement';
+import Collaboration from './components/Collaboration';
+
 
 function App() {
   return (
@@ -21,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<SignInForm />} />
-          <Route path="/collaboration"  element={<Chatbox />} />
+          <Route path="/collaboration"  element={<div> <Chatbox/>  < Collaboration /> </div>} />
           <Route path="/resources" element={<div>
             <ResourceForm />
             <BudgetForm />

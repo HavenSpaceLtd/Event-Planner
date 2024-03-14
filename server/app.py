@@ -285,23 +285,42 @@ class AllEvents(Resource):
         user_id = current_user.get('user_id')
         events = Event.query.filter_by(owner_id = user_id).all()
         
-        events_list = [
-            {
+        events_list = []
+        for event in events:
+            event_data = {
                 "id": event.id,
                 "title": event.title,
                 "start_date": event.start_date,
                 "end_date": event.end_date,
-                'start_time': event.start_time.strftime('%H:%M'),
-                'end_time': event.end_time.strftime('%H:%M'),
                 "location": event.location,
                 "amount": event.amount,
                 "progress": event.progress,
                 "description": event.description,
                 "owner": event.owner.first_name,
             }
-            for event in events
-        ]
-        return make_response(jsonify(events_list))
+            if event.start_time:
+                event_data['start_time'] = event.start_time.strftime('%H:%M')
+            if event.end_time:
+                event_data['end_time'] = event.end_time.strftime('%H:%M')
+
+            events_list.append(event_data)
+
+        return make_response(jsonify(events_list), 200)
+
+class AllEventsList(Resource):
+    def get(self):
+        events = Event.query.all()
+
+        events_list = []
+        for event in events:
+            event_data = {
+                "id": event.id,
+                "title": event.title,
+                "owner_id": event.owner_id
+            }
+            events_list.append(event_data)
+
+        return make_response(jsonify(events_list), 200)
 
 class EventById(Resource):
     @jwt_required()
@@ -476,6 +495,7 @@ class ManageCommunications(Resource):
         data = request.json
         message = data.get('message')
         recipient_id = data.get('recipient_id')
+        sender_id = data.get('sender_id')
 
         # Validate data
         if not message or not recipient_id:
@@ -487,7 +507,7 @@ class ManageCommunications(Resource):
             return make_response(jsonify({"Error": "Recipient does not exist!"}), 404)
 
         # Create a new communication
-        new_communication = Communication(message=message, recipient_id=recipient_id)
+        new_communication = Communication(message=message, recipient_id=recipient_id, sender_id=sender_id)
         db.session.add(new_communication)
         db.session.commit()
 
@@ -500,12 +520,13 @@ class ManageCommunications(Resource):
             {
                 "id": commun.id,
                 "message": commun.message,
-                "recipient_id": commun.recipient_id
+                "recipient_id": commun.recipient_id,
+                "sender_id": commun.sender_id,
+                "datetime": commun.datetime
             }
             for commun in communications
         ]
         return make_response(jsonify(communications_list), 200)
-
 
 
 class BudgetResource(Resource):
@@ -662,27 +683,36 @@ class CollaborationResource(Resource):
         data = request.json
         event_id = data.get('event_id')
         user_id = data.get('user_id')
-        datetime = data.get('datetime')
+
+        current_datetime = datetime.utcnow()
 
         # Validate data
-        if not all([event_id, user_id, datetime]):
+        if not all([event_id, user_id]):
             return make_response(jsonify({'error': 'Invalid data provided'}), 400)
 
         # Create a new collaboration
-        new_collaboration = Collaboration(event_id=event_id, user_id=user_id, datetime=datetime)
+        new_collaboration = Collaboration(event_id=event_id, user_id=user_id, datetime=current_datetime)
         db.session.add(new_collaboration)
         db.session.commit()
 
         return make_response(jsonify({'message': 'Collaboration created successfully'}), 201)
 
     def get(self):
-        collaborations = Collaboration.query.all()
+        user_id = request.args.get('user_id')  # Get the user_id from the query parameters
+        if not user_id:
+            return make_response(jsonify({'error': 'User ID parameter is required'}), 400)
+
+        # Query collaborations for the specific user_id
+        collaborations = Collaboration.query.filter_by(user_id=user_id).all()
+        
+        # Format collaborations into a list of dictionaries
         collaborations_list = [{
             'id': collab.id,
             'event_id': collab.event_id,
             'user_id': collab.user_id,
             'datetime': collab.datetime.isoformat()
         } for collab in collaborations]
+
         return make_response(jsonify(collaborations_list), 200)
 
 api.add_resource(Index, '/')
@@ -690,6 +720,7 @@ api.add_resource(AllUsers, '/users')
 api.add_resource(LoginUser, '/login')
 api.add_resource(UserById, '/users/<int:id>')
 api.add_resource(AllEvents, '/events')
+api.add_resource(AllEventsList, '/allevents')
 api.add_resource(AllTasks, '/tasks')
 api.add_resource(Teams, '/teams')
 api.add_resource(Assignments, '/assignments')
