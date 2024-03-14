@@ -3,7 +3,7 @@ import { Card, Col, Container, Row, Form, Button, Navbar } from 'react-bootstrap
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { useAuth } from './AuthContext';
 
-function Home() {
+function Home1() {
 
   const { users } = useAuth();
  console.log(users)
@@ -17,7 +17,7 @@ console.log(userData);
   const [tasks, setTasks] = useState(() => {
     // Initialize tasks from localStorage or use default if no tasks are saved
     const savedTasks = localStorage.getItem('tasks');
-    return savedTasks ? JSON.parse(savedTasks) : [
+    return savedTasks ? JSON.parse(savedTasks).filter(task => task.assignedTo.includes(user.name)) : [
       {
         id: 1,
         eventTitle: 'Event Title',
@@ -169,15 +169,35 @@ console.log(userData);
 
 
 
-  const handleDelete = (taskId) => {
-    if (taskId === 1) {
-      console.log("Cannot delete the first card.");
-      return;
+const handleDelete = async (taskId) => {
+  if (taskId === 1) {
+    console.log("Cannot delete the first card.");
+    return;
+  }
+
+  try {
+    // Send a DELETE request to the server
+    const response = await fetch(`/tasksdelete/${taskId}`, {
+      method: 'DELETE',
+      headers: {
+        "Authorization": `Bearer ${user.access_token}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to delete task');
     }
+
+    // If the request is successful, update the tasks state
     const updatedTasks = tasks.filter(task => task.id !== taskId);
     setTasks(updatedTasks);
     console.log(`Task with ID ${taskId} deleted.`);
-  };
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
+};
+
 
   const handleResetTask = (taskId) => {
     const taskIndex = tasks.findIndex(task => task.id === taskId);
@@ -371,4 +391,4 @@ console.log(userData);
   );
 }
 
-export default Home;
+export default Home1;

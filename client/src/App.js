@@ -6,8 +6,8 @@ import SignInForm from './components/SignInForm';
 import ResourceForm from './components/ResourceForm';
 import BudgetForm from './components/BudgetForm';
 import ExpenseForm from './components/ExpenseForm';
-import Home from './components/Home';
-import BudgetTracker from './components/BudgetTracker';
+import Home from './components/Home2';
+import Charts from './components/Chart';
 import Chatbox from './components/Chatbox';
 import BudgetPlanning from './components/BudgetPlanning';
 import ExpenseTracking from './components/ExpenseTracker';
@@ -28,6 +28,7 @@ function App() {
             <ResourceForm />
             <BudgetForm />
             <ExpenseForm />
+            < Charts />
 
              < BudgetPlanning />
         <ExpenseTracking />

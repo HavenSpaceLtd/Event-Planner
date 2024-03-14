@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 function ResourceManagement() {
   const [resources, setResources] = useState([]);
+  const activeUser = sessionStorage.getItem('userId');
+  const activeToken = sessionStorage.getItem('accessToken');
 
   useEffect(() => {
     fetchResources();
@@ -9,7 +11,14 @@ function ResourceManagement() {
 
   const fetchResources = async () => {
     try {
-      const response = await fetch('/assets');
+      const response = await fetch(`/assets`, {
+        headers: {
+          Authorization: `Bearer ${activeToken}`,
+        },
+      });
+      if (!response.ok) {
+        throw new Error('Failed to fetch resources');
+      }
       const data = await response.json();
       if (Array.isArray(data)) {
         setResources(data);
@@ -25,7 +34,7 @@ function ResourceManagement() {
     <div>
       <h2>Resource Management</h2>
       <ul>
-        {resources.map(resource => (
+        {resources.map((resource) => (
           <li key={resource.id}>{resource.name} - {resource.quantity}</li>
         ))}
       </ul>
