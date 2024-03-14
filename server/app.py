@@ -18,6 +18,7 @@ from models.asset import Asset
 from models.collaboration import Collaboration
 from models.communication import Communication
 from datetime import datetime
+import logging
 
 app = Flask(__name__)
 
@@ -472,6 +473,7 @@ class Assignments(Resource):
         return make_response(jsonify({'message': 'Assignment updated'}), 201)
 
 class ManageCommunications(Resource):
+    @jwt_required()
     def post(self):
         data = request.json
         message = data.get('message')
@@ -493,6 +495,7 @@ class ManageCommunications(Resource):
 
         return make_response(jsonify({"Message": "Communication made successfully!"}), 201)
 
+    @jwt_required()
     def get(self):
         # Retrieve all communications
         communications = Communication.query.all()
@@ -509,6 +512,7 @@ class ManageCommunications(Resource):
 
 
 class BudgetResource(Resource):
+    @jwt_required()
     def get(self, budget_id=None):
         if budget_id:
             budget = Budget.query.get(budget_id)
@@ -532,6 +536,7 @@ class BudgetResource(Resource):
             ]
             return make_response(jsonify(budgets_list))
 
+    @jwt_required()
     def post(self):
         data = request.json
         event_id = data.get('event_id')
@@ -552,6 +557,7 @@ class BudgetResource(Resource):
 
         return make_response(jsonify({'message': 'Budget created successfully'}), 201)
 
+    @jwt_required()
     def put(self, budget_id):
         data = request.json
         budget = Budget.query.get(budget_id)
@@ -563,6 +569,7 @@ class BudgetResource(Resource):
         else:
             return make_response(jsonify({'message': 'Budget not found'}), 404)
 
+    @jwt_required()
     def delete(self, budget_id):
         budget = Budget.query.get(budget_id)
         if budget:
@@ -574,6 +581,7 @@ class BudgetResource(Resource):
 
 
 class ExpenseResource(Resource):
+    @jwt_required()
     def post(self):
         data = request.json
         amount = data.get('amount')
@@ -598,6 +606,7 @@ class ExpenseResource(Resource):
 
         return make_response(jsonify({"Message": "Expense added successfully!"}), 201)
 
+    @jwt_required()
     def get(self):
         expenses = Expense.query.all()
         expenses_list = [
@@ -612,7 +621,39 @@ class ExpenseResource(Resource):
         ]
         return make_response(jsonify(expenses_list))
 
+class BudgetReport(Resource):
+    @jwt_required()
+    def get(self, event_id):
+        # Get total expenses for the event
+        total_expenses = db.session.query(func.sum(Expense.amount)).filter_by(event_id=event_id).scalar()
+        if total_expenses is None:
+            total_expenses = 0
+
+        # Get budget for the event
+        budget = Budget.query.filter_by(event_id=event_id).first()
+        if not budget:
+            return make_response(jsonify({"error": "Budget not found for this event"}), 404)
+
+        remaining_budget = budget.amount - total_expenses
+        insights = ""
+        if remaining_budget < 0:
+            insights = "You have exceeded your budget!"
+        elif remaining_budget < budget.amount * 0.25:
+            insights = "You are running low on budget. Consider reducing expenses."
+        elif total_expenses == 0:
+            insights = "No expenses recorded yet."
+
+        budget_report = {
+            "event_id": event_id,
+            "budget_amount": budget.amount,
+            "total_expenses": total_expenses,
+            "remaining_budget": remaining_budget,
+            "insights": insights
+        }
+        return jsonify(budget_report)
+
 class Assets(Resource):
+    @jwt_required()
     def post(self):
         data = request.json
         name = data.get('name')
@@ -641,6 +682,7 @@ class Assets(Resource):
 
         return make_response(jsonify({"Message": "Resource added successfully!"}), 201)
 
+    @jwt_required()
     def get(self):
         assets = Asset.query.all()
         assets_dict = [
@@ -658,7 +700,9 @@ class Assets(Resource):
         return make_response(jsonify(assets_dict))
 
 class CollaborationResource(Resource):
+    @jwt_required()
     def post(self):
+        current_user_id = get_jwt_identity()
         data = request.json
         event_id = data.get('event_id')
         user_id = data.get('user_id')
@@ -673,9 +717,14 @@ class CollaborationResource(Resource):
         db.session.add(new_collaboration)
         db.session.commit()
 
+        # Log the collaboration creation event
+        logger.info(f"Collaboration created by user {current_user_id} for event {event_id} at {datetime}.")
+
         return make_response(jsonify({'message': 'Collaboration created successfully'}), 201)
 
+    @jwt_required()
     def get(self):
+        current_user_id = get_jwt_identity()
         collaborations = Collaboration.query.all()
         collaborations_list = [{
             'id': collab.id,
@@ -683,6 +732,7 @@ class CollaborationResource(Resource):
             'user_id': collab.user_id,
             'datetime': collab.datetime.isoformat()
         } for collab in collaborations]
+        logger.info(f"User {current_user_id} fetched all collaborations.")
         return make_response(jsonify(collaborations_list), 200)
 
 api.add_resource(Index, '/')
@@ -700,6 +750,7 @@ api.add_resource(BudgetResource, '/budgets', '/budgets/<int:budget_id>')
 api.add_resource(ExpenseResource, '/expenses')
 api.add_resource(Assets, '/assets')
 api.add_resource(CollaborationResource, '/collaborations')
+api.add_resource(BudgetReport, '/budget-report/<int:event_id>')
 
 if __name__ == '__main__':
     app.run(port=5555)
