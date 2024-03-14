@@ -9,6 +9,7 @@ import ExpenseForm from './components/ExpenseForm';
 import Home from './components/Home';
 import BudgetTracker from './components/BudgetTracker';
 import Chatbox from './components/Chatbox';
+import EventCard from './components/EventCard';
 
 
 function App() {
@@ -20,12 +21,14 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<SignInForm />} />
           <Route path="/collaboration"  element={<Chatbox />} />
+          <Route path="/event" element={<EventCard />} />
           <Route path="/resources" element={<div>
             <ResourceForm />
             <BudgetForm />
             <ExpenseForm />
             <BudgetTracker />
             </div>} />
+            
         </Routes>
         <Footer />
       </div>

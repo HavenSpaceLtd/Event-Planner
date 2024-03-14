@@ -283,7 +283,13 @@ class AllEvents(Resource):
     def get(self):
         current_user = get_jwt_identity()
         user_id = current_user.get('user_id')
-        events = Event.query.filter_by(owner_id = user_id).all()
+        user = User.query.get(user_id)
+
+        if (user.title == "planner"):
+            events = Event.query.all()
+
+        if (user.title == "user"):
+            events = Event.query.filter_by(owner_id = user_id).all()
         
         events_list = [
             {
@@ -291,8 +297,8 @@ class AllEvents(Resource):
                 "title": event.title,
                 "start_date": event.start_date,
                 "end_date": event.end_date,
-                'start_time': event.start_time.strftime('%H:%M'),
-                'end_time': event.end_time.strftime('%H:%M'),
+                'start_time': event.start_time.strftime('%H:%M') if event.start_time else None,
+                'end_time': event.end_time.strftime('%H:%M') if event.end_time else None,
                 "location": event.location,
                 "amount": event.amount,
                 "progress": event.progress,
