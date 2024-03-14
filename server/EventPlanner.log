@@ -1,0 +1,20 @@
+2024-03-14 12:44:13,620 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-14 12:44:13,620 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-14 12:44:37,354 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-14 12:44:37,354 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-14 12:44:51,341 - INFO - 127.0.0.1 - - [14/Mar/2024 12:44:51] "POST /login HTTP/1.1" 200 -
+2024-03-14 12:47:32,467 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-14 12:47:32,467 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-14 12:47:59,323 - INFO - 127.0.0.1 - - [14/Mar/2024 12:47:59] "GET /events HTTP/1.1" 200 -
+2024-03-14 12:48:25,849 - INFO - User details accessed
+2024-03-14 12:48:25,859 - INFO - 127.0.0.1 - - [14/Mar/2024 12:48:25] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 12:48:37,911 - INFO - User details accessed
+2024-03-14 12:48:37,914 - INFO - 127.0.0.1 - - [14/Mar/2024 12:48:37] "GET /users/2 HTTP/1.1" 200 -
+2024-03-14 12:54:47,477 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-14 12:54:47,477 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-14 12:54:54,842 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 12:54:54,852 - INFO - 127.0.0.1 - - [14/Mar/2024 12:54:54] "GET /users/2 HTTP/1.1" 200 -
