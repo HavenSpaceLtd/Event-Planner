@@ -1,33 +1,51 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Col, Container, Row, Form, Button, Navbar } from 'react-bootstrap';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import { useAuth } from './AuthContext';
+import axios from 'axios';
 
-function Home1() {
+function Home() {
 
-  const { users } = useAuth();
- console.log(users)
- const userDataString = sessionStorage.getItem('userData');
-
+const[users, setUsers] = useState([])
+ const userDataString = sessionStorage.getItem('UserData');
+ const id = sessionStorage.getItem('userId')
 // Parse the stringified data back into an object
 const userData = JSON.parse(userDataString);
 const user = userData
+
+useEffect(() => {
+  const fetchUsers = async () => {
+    try {
+      const access_token = sessionStorage.getItem('accessToken'); // Assuming you have the access token
+      const response = await axios.get('/users', {
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
+      });
+      setUsers(response.data); // Assuming response.data is an array of users
+    } catch (error) {
+      console.error('Error fetching users:', error);
+    }
+  };
+
+  fetchUsers();
+
+  // Cleanup function if needed
+  // return () => { cleanup code here };
+}, []);
+console.log(users)
 // Now userData contains the user data retrieved from sessionStorage
 console.log(userData);
   const [tasks, setTasks] = useState(() => {
     // Initialize tasks from localStorage or use default if no tasks are saved
     const savedTasks = localStorage.getItem('tasks');
-    return savedTasks ? JSON.parse(savedTasks).filter(task => task.assignedTo.includes(user.name)) : [
+    return savedTasks ? JSON.parse(savedTasks) : [
       {
         id: 1,
-        eventTitle: 'Event Title',
-        taskTitle: 'Task Title',
-        assignedTo: [],
-        startDate: new Date().toISOString().split('T')[0], // Default to today's date
-        endDate: '', // Update this with a default value if needed
-        priority: 'Urgent',
+        title: 'Event Title',
+        end_date: '',
+        location: '',
+        amount: '',
         status: 'Todo',
-        numParticipants: 1
       },
     ];
   });
@@ -127,22 +145,29 @@ console.log(userData);
     try {
         const taskToCreate = tasks.find(task => task.id === taskId);
         console.log(taskToCreate);
+        const startDate = new Date(taskToCreate.start_date);
+        const endDate = new Date(taskToCreate.end_date);
+      console.log(taskToCreate)
+        // For Start Date
+        const startMonth = String(startDate.getMonth() + 1).padStart(2, '0');
+        const startDay = String(startDate.getDate()).padStart(2, '0');
+        const startYear = startDate.getFullYear();
+        const formattedStartDate = `${startMonth}/${startDay}/${startYear}`;
 
-        // Send data to /events endpoint
-        const eventsResponse = await fetch('/events', {
-            method: 'POST',
-            headers: {
-                "Authorization": `Bearer ${user.access_token}`,
-    
-                'Content-Type': 'application/json', 
-            },
-            body: JSON.stringify(taskToCreate), // Send only the task to be created
-        });
-        if (!eventsResponse.ok) {
-            throw new Error('Failed to save to events');
-        }
-        const eventData = await eventsResponse.json();
-        console.log('Events Response:', eventData);
+        // For End Date
+        const endMonth = String(endDate.getMonth() + 1).padStart(2, '0');
+        const endDay = String(endDate.getDate()).padStart(2, '0');
+        const endYear = endDate.getFullYear();
+        const formattedEndDate = `${endMonth}/${endDay}/${endYear}`;
+         
+
+        // Add own_id to taskToCreate object
+        taskToCreate.owner_id = user.id; 
+        taskToCreate.start_date = formattedStartDate; 
+        taskToCreate.end_date = formattedEndDate; 
+       
+        
+         
 
         // Send data to /tasks endpoint
         const tasksResponse = await fetch('/tasks', {
@@ -169,49 +194,27 @@ console.log(userData);
 
 
 
-const handleDelete = async (taskId) => {
-  if (taskId === 1) {
-    console.log("Cannot delete the first card.");
-    return;
-  }
-
-  try {
-    // Send a DELETE request to the server
-    const response = await fetch(`/tasksdelete/${taskId}`, {
-      method: 'DELETE',
-      headers: {
-        "Authorization": `Bearer ${user.access_token}`,
-        'Content-Type': 'application/json'
-      }
-    });
-
-    if (!response.ok) {
-      throw new Error('Failed to delete task');
+  const handleDelete = (taskId) => {
+    if (taskId === 1) {
+      console.log("Cannot delete the first card.");
+      return;
     }
-
-    // If the request is successful, update the tasks state
     const updatedTasks = tasks.filter(task => task.id !== taskId);
     setTasks(updatedTasks);
     console.log(`Task with ID ${taskId} deleted.`);
-  } catch (error) {
-    console.error('Error:', error.message);
-  }
-};
-
+  };
 
   const handleResetTask = (taskId) => {
     const taskIndex = tasks.findIndex(task => task.id === taskId);
     if (taskIndex !== -1) {
       const originalTask = {
         id: tasks[taskIndex].id,
-        eventTitle: 'Event Title',
-        taskTitle: 'Task Title',
-        assignedTo: [],
-        startDate: '',
-        endDate: '',
-        priority: 'Urgent',
-        status: 'Todo',
-        numParticipants: 1
+        title: 'New Event',
+        start_date: '',
+        location: '',
+        amount: '',
+        description: '',
+        status:'Todo'
       };
       const updatedTasks = [...tasks];
       updatedTasks[taskIndex] = originalTask;
@@ -223,14 +226,12 @@ const handleDelete = async (taskId) => {
     const newTaskId = tasks.length + 1;
     const newTask = {
       id: newTaskId,
-      eventTitle: 'New Event',
-      taskTitle: 'New Task',
-      assignedTo: [],
-      startDate: '',
-      endDate: '',
-      priority: 'Urgent',
-      status: 'Todo',
-      numParticipants: 1
+      title: 'New Event',
+      start_date: '',
+      location: '',
+      amount: '',
+      description: '',
+      status:'Todo'
     };
     const updatedTasks = [...tasks, newTask];
     setTasks(updatedTasks);
@@ -254,7 +255,7 @@ const handleDelete = async (taskId) => {
     });
     setTasks(updatedTasks);
   };
-
+console.log(tasks)
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
       <Container fluid style={{ backgroundColor: 'bisque', padding: '20px' }}>
@@ -290,77 +291,103 @@ const handleDelete = async (taskId) => {
                                 {...provided.dragHandleProps}
                                 className="customDraggable"
                               >
-                                <Card style={{ marginBottom: '20px', opacity: snapshot.isDragging ? 0.8 : 1, border: 'none' }}>
+                       <Card style={{ marginBottom: '20px', opacity: snapshot.isDragging ? 0.8 : 1, border: 'none' }}>
                                   <Card.Body>
+                                  
                                     <Form.Group controlId={`task-${task.id}`}>
-                                      <Form.Label>Event Title</Form.Label>
-                                      <Form.Control
-                                        type="text"
-                                        value={task.eventTitle}
-                                        onChange={(e) => handleChange(task.id, 'eventTitle', e.target.value)}
-                                      />
-                                      <Form.Label>Task Title</Form.Label>
-                                      <Form.Control
-                                        type="text"
-                                        value={task.taskTitle}
-                                        onChange={(e) => handleChange(task.id, 'taskTitle', e.target.value)}
-                                      />
-                                      <Form.Label>Number of Participants</Form.Label>
-                                      <Form.Control
-                                        type="number"
-                                        min="1"
-                                        max="4"
-                                        value={task.numParticipants}
-                                        onChange={(e) => handleNumParticipantsChange(task.id, e.target.value)}
-                                      />
-                                      <Form.Label>Assigned To</Form.Label>
-                                      <Form.Control
-                                          as="select"
-                                          value=""
-                                          onChange={(e) => handleUserSelect(e.target.value, task.id)}
-                                        >
-                                          <option value="">Select User</option>
-                                          {users.map((user, index) => (
-                                            <option key={index} value={user.name}>{user.name}</option>
-                                          ))}
-                                        </Form.Control>
-                                                                            <div>
-                                        Assigned to: {task.assignedTo.map((user, index) => (
-                                          <span key={index}>{index > 0 ? ', ' : ''}{user}</span>
-                                        ))}
-                                      </div>
+                                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                        <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+                                          <Form.Label>Task Title</Form.Label>
+                                        </div>
+                                        <div style={{ flex: 2 }}>
+                                          <Form.Control
+                                            type="text"
+                                            value={task.eventTitle}
+                                            onChange={(e) => handleChange(task.id, 'eventTitle', e.target.value)}
+                                          />
+                                        </div>
+                                      </div>                      
+
+                                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
                                       <Form.Label>Start Date</Form.Label>
+                                      </div>
+                                      <div style={{ flex: 2 }}>
                                       <Form.Control
                                         type="date"
-                                        value={task.startDate}
-                                        onChange={(e) => handleChange(task.id, 'startDate', e.target.value)}
+                                        value={task.start_date}
+                                        onChange={(e) => handleChange(task.id, 'start_date', e.target.value)}
                                       />
+                                      </div>
+                                      </div>
+
+                                      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
                                       <Form.Label>End Date</Form.Label>
+                                      </div>
+                                      <div style={{ flex: 2 }}>
                                       <Form.Control
                                         type="date"
-                                        value={task.endDate}
-                                        onChange={(e) => handleChange(task.id, 'endDate', e.target.value)}
+                                        value={task.end_date}
+                                        onChange={(e) => handleChange(task.id, 'end_date', e.target.value)}
                                       />
-                                      <Form.Label>Priority</Form.Label>
+                                      </div>
+                                      </div>
+
+                                                                       
+                                   
+                                      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+                                      <Form.Label htmlFor="time">Location</Form.Label>
+                                      </div>
+                                      <div style={{ flex: 2 }}>
                                       <Form.Control
-                                        as="select"
-                                        value={task.priority}
-                                        onChange={(e) => handleChange(task.id, 'priority', e.target.value)}
-                                      >
-                                        <option value="Urgent">Urgent</option>
-                                        <option value="Not Urgent">Not Urgent</option>
-                                      </Form.Control>
-                                      <Form.Label>Status</Form.Label>
+                                           type="text"
+                                           value={task.location}
+                                           onChange={(e) => handleChange(task.id, 'location', e.target.value)}
+                                      />
+                                      </div>
+                                      </div>
+
+                                      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+                                      <Form.Label htmlFor="time">Amount</Form.Label>
+                                      </div>
+                                      <div style={{ flex: 2 }}>
                                       <Form.Control
-                                        as="select"
-                                        value={task.status}
-                                        onChange={(e) => handleChange(task.id, 'status', e.target.value)}
-                                      >
-                                        <option value="Todo">Todo</option>
-                                        <option value="InProgress">InProgress</option>
-                                        <option value="Completed">Completed</option>
-                                        <option value="Delayed">Delayed</option>
-                                      </Form.Control>
+                                           type="text"
+                                           value={task.amount}
+                                           onChange={(e) => handleChange(task.id, 'amount', e.target.value)}
+                                      />
+                                      </div>
+                                      </div>
+
+                                      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+                                      <Form.Label htmlFor="time">Description</Form.Label>
+                                      </div>
+                                      <div style={{ flex: 2 }}>
+                                      <Form.Control
+                                           as="textarea"
+                                           value={task.description}
+                                           onChange={(e) => handleChange(task.id, 'description', e.target.value)}
+                                      />
+                                      </div>
+                                      </div>
+                                      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+                                      <Form.Label htmlFor="time">Status</Form.Label>
+                                      </div>
+                                      <div style={{ flex: 2 }}>
+                                      <Form.Control
+                                           type="text"
+                                           value={task.status}
+                                           onChange={(e) => handleChange(task.id, 'description', e.target.value)}
+                                      />
+                                      </div>
+                                      </div>
+                                 
+                                     
                                       <div className="d-flex justify-content-center align-items-center mt-2">
                                         <Button variant="primary" onClick={() => handleUpdate(task.id)}>Update</Button>
                                         {task.id !== 1 && (
@@ -391,4 +418,4 @@ const handleDelete = async (taskId) => {
   );
 }
 
-export default Home1;
+export default Home;
