@@ -168,7 +168,7 @@ class UserById(Resource):
             user.phone = data['phone']
 
         db.session.commit()
-
+        
         updated_user_data = {
             "id": user.id,
             "first_name": user.first_name,
@@ -310,6 +310,7 @@ class AllEvents(Resource):
                 "progress": event.progress,
                 "description": event.description,
                 "owner": event.owner.first_name,
+                "tasks": event.get_tasks()
             }
             for event in events
         ]
