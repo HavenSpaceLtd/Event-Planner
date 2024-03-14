@@ -396,17 +396,25 @@ class AllTasks(Resource):
         
     @jwt_required()
     def get(self):
+
         current_user = get_jwt_identity()
-        user_id = current_user.get('id')
-        tasks = Task.query.all()
+        user_id = current_user.get('user_id')
+        user = User.query.get(user_id)
+
+        if (user.title == "planner"):
+            tasks = Task.query.all()
+
+        if (user.title == "user"):
+            tasks = Task.query.filter_by(owner_id = user_id).all()
+
         tasks_list = [
             {
                 "id": task.id,
                 "title": task.title,
                 "start_date": task.start_date,
                 "end_date": task.end_date,
-                "start_time": task.start_time,
-                "end_time": task.end_time,
+                'start_time': task.start_time.strftime('%H:%M') if task.start_time else None,
+                'end_time': task.end_time.strftime('%H:%M') if task.end_time else None,
                 "location": task.location,
                 "amount": task.amount,
                 "progress": task.progress,
