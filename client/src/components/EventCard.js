@@ -31,7 +31,18 @@ function EventCard() {
 
     return (
         <>
-            {userData ? (
+            {userData.title == "planner" ? (
+                <div>
+                    <p>Name: {userData.first_name} {userData.last_name}</p>
+                    <p>Email: {userData.email}</p>
+                    {/* <p>Events: {userData.events}</p>
+                    <p>Tasks: {userData.tasks}</p> */}
+                    {/* Display other user data as needed */}
+                </div>
+            ) : (
+                <p>Loading user data...</p>
+            )}
+            {userData.title == "user" ? (
                 <div>
                     <p>Name: {userData.first_name} {userData.last_name}</p>
                     <p>Email: {userData.email}</p>
