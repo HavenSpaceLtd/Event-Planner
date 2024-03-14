@@ -115,7 +115,7 @@ class AllUsers(Resource):
         return make_response(jsonify(users_list))
 
 
-
+#To get user details by ID including a users' events, tasks, due tasks,
 class UserById(Resource):
     @jwt_required()
     def get(self, id):
@@ -241,7 +241,7 @@ class LoginUser(Resource):
         #session.pop("user_id", None)
         return make_response(jsonify({"Message": "Logout successful!"}), 200)
     
-
+#To create a new event or get all events for the event planner
 class AllEvents(Resource):
     @jwt_required()
     def post(self):
@@ -309,6 +309,7 @@ class AllEvents(Resource):
         ]
         return make_response(jsonify(events_list))
 
+#To get or update a specific event by ID
 class EventById(Resource):
     @jwt_required()
     def get(self, event_id):
@@ -332,6 +333,7 @@ class EventById(Resource):
         event.end_time = datetime.strptime(data.get('end_time', event.end_time), '%H:%M').time()
         event.amount = data.get('amount', event.amount)
         event.progress = data.get('progress', event.progress)
+        event.status = data.get('progress', event.status)
         event.location = data.get('location', event.location)
         event.description = data.get('description', event.description)
 
@@ -348,6 +350,7 @@ class EventById(Resource):
         db.session.commit()
         return make_response(jsonify({'message': 'Event deleted successfully'}), 200)
 
+#To post a new task and assign it to a specific event
 class AllTasks(Resource):
     @jwt_required()
     def post(self):
@@ -406,6 +409,7 @@ class AllTasks(Resource):
         ]
         return make_response(jsonify(tasks_list))
 
+#To get a specfic task by ID in order to update details
 class TaskById(Resource):
     @jwt_required()
     def get(self, task_id):
@@ -446,7 +450,7 @@ class TaskById(Resource):
         db.session.commit()
         return make_response(jsonify({'message': 'Task deleted successfully'}), 200)
 
-
+#To assign a specific user to an event
 class Teams(Resource):
     @jwt_required()
     def post(self):
@@ -461,7 +465,8 @@ class Teams(Resource):
         db.session.commit()
 
         return make_response(jsonify({'message': 'Team updated'}), 201)
-    
+
+#To assign a specific user to a task    
 class Assignments(Resource):
     @jwt_required()
     def post(self):
