@@ -43,7 +43,7 @@ const SignInForm = () => {
       sessionStorage.setItem('userName', data.name);
 
       // Redirect to EventCard after successful login
-      navigate('/event');
+      navigate('/Dashboard');
 
     } catch (error) {
       console.error('Error:', error.message);

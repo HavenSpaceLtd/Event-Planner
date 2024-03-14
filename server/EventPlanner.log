@@ -18,3 +18,706 @@
 2024-03-14 12:54:47,477 - INFO - [33mPress CTRL+C to quit[0m
 2024-03-14 12:54:54,842 - INFO - User, johndoe@gmail.com, details accessed
 2024-03-14 12:54:54,852 - INFO - 127.0.0.1 - - [14/Mar/2024 12:54:54] "GET /users/2 HTTP/1.1" 200 -
+2024-03-14 15:14:33,939 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-14 15:14:33,940 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-14 15:49:02,327 - INFO - 127.0.0.1 - - [14/Mar/2024 15:49:02] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 15:49:02,328 - INFO - 127.0.0.1 - - [14/Mar/2024 15:49:02] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 15:49:41,731 - INFO - 127.0.0.1 - - [14/Mar/2024 15:49:41] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 15:49:41,737 - INFO - 127.0.0.1 - - [14/Mar/2024 15:49:41] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 15:49:43,287 - INFO - 127.0.0.1 - - [14/Mar/2024 15:49:43] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 15:49:43,300 - INFO - 127.0.0.1 - - [14/Mar/2024 15:49:43] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 15:49:48,978 - ERROR - Exception on /budgets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 358, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+2024-03-14 15:49:48,981 - ERROR - Exception on /expenses [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 358, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+2024-03-14 15:49:48,981 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 358, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+2024-03-14 15:49:49,030 - INFO - 127.0.0.1 - - [14/Mar/2024 15:49:49] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 15:49:49,068 - INFO - 127.0.0.1 - - [14/Mar/2024 15:49:49] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 15:49:49,112 - INFO - 127.0.0.1 - - [14/Mar/2024 15:49:49] "[35m[1mGET /budgets HTTP/1.1[0m" 500 -
+2024-03-14 15:49:49,113 - INFO - 127.0.0.1 - - [14/Mar/2024 15:49:49] "[35m[1mGET /expenses HTTP/1.1[0m" 500 -
+2024-03-14 15:49:49,113 - INFO - 127.0.0.1 - - [14/Mar/2024 15:49:49] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-14 15:50:37,607 - ERROR - Exception on /budgets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 358, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+2024-03-14 15:50:37,616 - ERROR - Exception on /expenses [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 358, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+2024-03-14 15:50:37,617 - INFO - 127.0.0.1 - - [14/Mar/2024 15:50:37] "[35m[1mGET /budgets HTTP/1.1[0m" 500 -
+2024-03-14 15:50:37,620 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 358, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+2024-03-14 15:50:37,622 - INFO - 127.0.0.1 - - [14/Mar/2024 15:50:37] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 15:50:37,624 - INFO - 127.0.0.1 - - [14/Mar/2024 15:50:37] "[35m[1mGET /expenses HTTP/1.1[0m" 500 -
+2024-03-14 15:50:37,625 - INFO - 127.0.0.1 - - [14/Mar/2024 15:50:37] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-14 15:50:37,712 - INFO - 127.0.0.1 - - [14/Mar/2024 15:50:37] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 15:50:51,450 - INFO - 127.0.0.1 - - [14/Mar/2024 15:50:51] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 15:50:51,459 - INFO - 127.0.0.1 - - [14/Mar/2024 15:50:51] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 15:51:00,808 - INFO - 127.0.0.1 - - [14/Mar/2024 15:51:00] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 15:51:00,816 - INFO - 127.0.0.1 - - [14/Mar/2024 15:51:00] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 16:22:21,951 - INFO - 127.0.0.1 - - [14/Mar/2024 16:22:21] "[33mGET /API_ENDPOINT_TO_GET_EVENTS HTTP/1.1[0m" 404 -
+2024-03-14 16:22:21,966 - INFO - 127.0.0.1 - - [14/Mar/2024 16:22:21] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 16:22:21,975 - INFO - 127.0.0.1 - - [14/Mar/2024 16:22:21] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 16:29:57,631 - INFO - 127.0.0.1 - - [14/Mar/2024 16:29:57] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 16:29:57,634 - ERROR - Exception on /events [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 358, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+2024-03-14 16:29:57,653 - INFO - 127.0.0.1 - - [14/Mar/2024 16:29:57] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 16:29:57,663 - INFO - 127.0.0.1 - - [14/Mar/2024 16:29:57] "[35m[1mGET /events HTTP/1.1[0m" 500 -
+2024-03-14 16:30:01,698 - ERROR - Exception on /events [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 358, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+2024-03-14 16:30:01,701 - INFO - 127.0.0.1 - - [14/Mar/2024 16:30:01] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 16:30:01,710 - INFO - 127.0.0.1 - - [14/Mar/2024 16:30:01] "[35m[1mGET /events HTTP/1.1[0m" 500 -
+2024-03-14 16:30:01,710 - INFO - 127.0.0.1 - - [14/Mar/2024 16:30:01] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 16:30:07,610 - ERROR - Exception on /events [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 358, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+2024-03-14 16:30:07,616 - INFO - 127.0.0.1 - - [14/Mar/2024 16:30:07] "[35m[1mGET /events HTTP/1.1[0m" 500 -
+2024-03-14 16:30:07,616 - INFO - 127.0.0.1 - - [14/Mar/2024 16:30:07] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 16:30:07,621 - INFO - 127.0.0.1 - - [14/Mar/2024 16:30:07] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 16:30:16,480 - ERROR - Exception on /events [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 358, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+2024-03-14 16:30:16,485 - INFO - 127.0.0.1 - - [14/Mar/2024 16:30:16] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 16:30:16,490 - INFO - 127.0.0.1 - - [14/Mar/2024 16:30:16] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 16:30:16,492 - INFO - 127.0.0.1 - - [14/Mar/2024 16:30:16] "[35m[1mGET /events HTTP/1.1[0m" 500 -
+2024-03-14 16:35:33,254 - ERROR - Exception on /events [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 358, in _decode_jwt_from_request
+    raise NoAuthorizationError(errors[0])
+flask_jwt_extended.exceptions.NoAuthorizationError: Missing Authorization Header
+2024-03-14 16:35:33,273 - INFO - 127.0.0.1 - - [14/Mar/2024 16:35:33] "[35m[1mGET /events HTTP/1.1[0m" 500 -
+2024-03-14 16:36:05,721 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-14 16:36:05,722 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-14 16:38:45,585 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-14 16:38:45,585 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-14 16:38:45,587 - INFO -  * Restarting with stat
+2024-03-14 16:38:46,658 - WARNING -  * Debugger is active!
+2024-03-14 16:38:46,707 - INFO -  * Debugger PIN: 117-519-565
+2024-03-14 16:39:02,974 - INFO - 127.0.0.1 - - [14/Mar/2024 16:39:02] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 16:51:41,624 - INFO - 127.0.0.1 - - [14/Mar/2024 16:51:41] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 16:51:41,625 - INFO - 127.0.0.1 - - [14/Mar/2024 16:51:41] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 16:52:05,554 - INFO - 127.0.0.1 - - [14/Mar/2024 16:52:05] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-03-14 16:56:04,358 - INFO - 127.0.0.1 - - [14/Mar/2024 16:56:04] "[35m[1mPOST /users HTTP/1.1[0m" 201 -
+2024-03-14 16:56:33,144 - INFO - 127.0.0.1 - - [14/Mar/2024 16:56:33] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 16:56:33,146 - INFO - 127.0.0.1 - - [14/Mar/2024 16:56:33] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 16:56:43,842 - INFO - 127.0.0.1 - - [14/Mar/2024 16:56:43] "POST /login HTTP/1.1" 200 -
+2024-03-14 16:59:44,577 - INFO - 127.0.0.1 - - [14/Mar/2024 16:59:44] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 16:59:44,573 - INFO - 127.0.0.1 - - [14/Mar/2024 16:59:44] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 16:59:44,584 - INFO - 127.0.0.1 - - [14/Mar/2024 16:59:44] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 17:02:48,712 - INFO - 127.0.0.1 - - [14/Mar/2024 17:02:48] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 17:05:22,053 - INFO - 127.0.0.1 - - [14/Mar/2024 17:05:22] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 17:05:22,063 - INFO - 127.0.0.1 - - [14/Mar/2024 17:05:22] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 17:06:37,921 - INFO - 127.0.0.1 - - [14/Mar/2024 17:06:37] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 17:06:37,932 - INFO - 127.0.0.1 - - [14/Mar/2024 17:06:37] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 17:06:50,270 - INFO - 127.0.0.1 - - [14/Mar/2024 17:06:50] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 17:06:50,272 - INFO - 127.0.0.1 - - [14/Mar/2024 17:06:50] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 17:18:33,381 - INFO - 127.0.0.1 - - [14/Mar/2024 17:18:33] "DELETE /login HTTP/1.1" 200 -
+2024-03-14 17:18:36,589 - INFO - 127.0.0.1 - - [14/Mar/2024 17:18:36] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 17:18:36,592 - INFO - 127.0.0.1 - - [14/Mar/2024 17:18:36] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 17:19:52,192 - INFO - 127.0.0.1 - - [14/Mar/2024 17:19:52] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 17:19:52,204 - INFO - 127.0.0.1 - - [14/Mar/2024 17:19:52] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 17:19:55,548 - INFO - 127.0.0.1 - - [14/Mar/2024 17:19:55] "POST /login HTTP/1.1" 200 -
+2024-03-14 17:20:04,619 - INFO - 127.0.0.1 - - [14/Mar/2024 17:20:04] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 17:20:04,623 - INFO - 127.0.0.1 - - [14/Mar/2024 17:20:04] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 17:20:04,642 - INFO - 127.0.0.1 - - [14/Mar/2024 17:20:04] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 17:20:46,658 - INFO - 127.0.0.1 - - [14/Mar/2024 17:20:46] "[31m[1mGET /expenses HTTP/1.1[0m" 401 -
+2024-03-14 17:20:46,664 - INFO - 127.0.0.1 - - [14/Mar/2024 17:20:46] "[31m[1mGET /assets HTTP/1.1[0m" 401 -
+2024-03-14 17:20:46,666 - INFO - 127.0.0.1 - - [14/Mar/2024 17:20:46] "[31m[1mGET /budgets HTTP/1.1[0m" 401 -
+2024-03-14 17:20:46,805 - INFO - 127.0.0.1 - - [14/Mar/2024 17:20:46] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 17:20:46,808 - INFO - 127.0.0.1 - - [14/Mar/2024 17:20:46] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 17:21:26,220 - INFO - 127.0.0.1 - - [14/Mar/2024 17:21:26] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 17:21:26,371 - INFO - 127.0.0.1 - - [14/Mar/2024 17:21:26] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 17:21:26,401 - INFO - 127.0.0.1 - - [14/Mar/2024 17:21:26] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 17:21:39,247 - INFO - 127.0.0.1 - - [14/Mar/2024 17:21:39] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 17:21:39,250 - INFO - 127.0.0.1 - - [14/Mar/2024 17:21:39] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 17:21:50,069 - INFO - 127.0.0.1 - - [14/Mar/2024 17:21:50] "[31m[1mGET /budgets HTTP/1.1[0m" 401 -
+2024-03-14 17:21:50,071 - INFO - 127.0.0.1 - - [14/Mar/2024 17:21:50] "[31m[1mGET /expenses HTTP/1.1[0m" 401 -
+2024-03-14 17:21:50,076 - INFO - 127.0.0.1 - - [14/Mar/2024 17:21:50] "[31m[1mGET /assets HTTP/1.1[0m" 401 -
+2024-03-14 17:21:50,322 - INFO - 127.0.0.1 - - [14/Mar/2024 17:21:50] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 17:21:50,330 - INFO - 127.0.0.1 - - [14/Mar/2024 17:21:50] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 17:22:48,277 - INFO - 127.0.0.1 - - [14/Mar/2024 17:22:48] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 17:22:48,382 - INFO - 127.0.0.1 - - [14/Mar/2024 17:22:48] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 17:22:48,391 - INFO - 127.0.0.1 - - [14/Mar/2024 17:22:48] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 17:24:21,232 - INFO - 127.0.0.1 - - [14/Mar/2024 17:24:21] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 17:24:21,246 - INFO - 127.0.0.1 - - [14/Mar/2024 17:24:21] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 17:24:21,257 - INFO - 127.0.0.1 - - [14/Mar/2024 17:24:21] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 17:40:03,533 - INFO - 127.0.0.1 - - [14/Mar/2024 17:40:03] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 17:40:03,544 - INFO - 127.0.0.1 - - [14/Mar/2024 17:40:03] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 17:40:03,769 - INFO - 127.0.0.1 - - [14/Mar/2024 17:40:03] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 17:45:08,412 - INFO - 127.0.0.1 - - [14/Mar/2024 17:45:08] "[31m[1mGET /budgets HTTP/1.1[0m" 401 -
+2024-03-14 17:45:08,407 - INFO - 127.0.0.1 - - [14/Mar/2024 17:45:08] "[31m[1mGET /expenses HTTP/1.1[0m" 401 -
+2024-03-14 17:45:08,421 - INFO - 127.0.0.1 - - [14/Mar/2024 17:45:08] "[31m[1mGET /assets HTTP/1.1[0m" 401 -
+2024-03-14 17:45:08,448 - INFO - 127.0.0.1 - - [14/Mar/2024 17:45:08] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 17:45:08,465 - INFO - 127.0.0.1 - - [14/Mar/2024 17:45:08] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 18:49:50,527 - INFO - 127.0.0.1 - - [14/Mar/2024 18:49:50] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 18:49:50,932 - INFO - 127.0.0.1 - - [14/Mar/2024 18:49:50] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 18:49:50,936 - INFO - 127.0.0.1 - - [14/Mar/2024 18:49:50] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 18:49:53,840 - INFO - 127.0.0.1 - - [14/Mar/2024 18:49:53] "DELETE /login HTTP/1.1" 200 -
+2024-03-14 18:49:59,302 - INFO - 127.0.0.1 - - [14/Mar/2024 18:49:59] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 18:49:59,311 - INFO - 127.0.0.1 - - [14/Mar/2024 18:49:59] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 18:53:38,306 - INFO - 127.0.0.1 - - [14/Mar/2024 18:53:38] "POST /login HTTP/1.1" 200 -
+2024-03-14 18:54:16,409 - INFO - 127.0.0.1 - - [14/Mar/2024 18:54:16] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 18:54:16,651 - INFO - 127.0.0.1 - - [14/Mar/2024 18:54:16] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 18:54:16,653 - INFO - 127.0.0.1 - - [14/Mar/2024 18:54:16] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 18:54:27,914 - INFO - 127.0.0.1 - - [14/Mar/2024 18:54:27] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 18:54:27,937 - INFO - 127.0.0.1 - - [14/Mar/2024 18:54:27] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 18:54:27,939 - INFO - 127.0.0.1 - - [14/Mar/2024 18:54:27] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 18:54:43,567 - INFO - 127.0.0.1 - - [14/Mar/2024 18:54:43] "[31m[1mGET /budgets HTTP/1.1[0m" 401 -
+2024-03-14 18:54:43,568 - INFO - 127.0.0.1 - - [14/Mar/2024 18:54:43] "[31m[1mGET /expenses HTTP/1.1[0m" 401 -
+2024-03-14 18:54:43,578 - INFO - 127.0.0.1 - - [14/Mar/2024 18:54:43] "[31m[1mGET /assets HTTP/1.1[0m" 401 -
+2024-03-14 18:54:43,585 - INFO - 127.0.0.1 - - [14/Mar/2024 18:54:43] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 18:54:43,590 - INFO - 127.0.0.1 - - [14/Mar/2024 18:54:43] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 18:54:54,269 - INFO - 127.0.0.1 - - [14/Mar/2024 18:54:54] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 18:54:54,334 - INFO - 127.0.0.1 - - [14/Mar/2024 18:54:54] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 18:54:54,336 - INFO - 127.0.0.1 - - [14/Mar/2024 18:54:54] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 19:00:09,575 - INFO - 127.0.0.1 - - [14/Mar/2024 19:00:09] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 19:00:09,621 - INFO - 127.0.0.1 - - [14/Mar/2024 19:00:09] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 19:00:09,755 - INFO - 127.0.0.1 - - [14/Mar/2024 19:00:09] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 19:00:10,082 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 19:00:10,194 - INFO - 127.0.0.1 - - [14/Mar/2024 19:00:10] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 19:00:13,296 - INFO - 127.0.0.1 - - [14/Mar/2024 19:00:13] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 19:00:13,316 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 19:00:13,329 - INFO - 127.0.0.1 - - [14/Mar/2024 19:00:13] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 19:00:13,422 - INFO - 127.0.0.1 - - [14/Mar/2024 19:00:13] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 19:00:13,449 - INFO - 127.0.0.1 - - [14/Mar/2024 19:00:13] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 19:07:53,133 - INFO - 127.0.0.1 - - [14/Mar/2024 19:07:53] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 19:07:53,141 - INFO - 127.0.0.1 - - [14/Mar/2024 19:07:53] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 19:08:01,841 - INFO - 127.0.0.1 - - [14/Mar/2024 19:08:01] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 19:08:01,857 - INFO - 127.0.0.1 - - [14/Mar/2024 19:08:01] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 19:08:01,871 - INFO - 127.0.0.1 - - [14/Mar/2024 19:08:01] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 19:08:01,881 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 19:08:01,909 - INFO - 127.0.0.1 - - [14/Mar/2024 19:08:01] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 19:13:34,210 - INFO - 127.0.0.1 - - [14/Mar/2024 19:13:34] "POST /login HTTP/1.1" 200 -
+2024-03-14 19:38:26,270 - INFO - 127.0.0.1 - - [14/Mar/2024 19:38:26] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 19:38:26,365 - INFO - 127.0.0.1 - - [14/Mar/2024 19:38:26] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 19:38:26,372 - INFO - 127.0.0.1 - - [14/Mar/2024 19:38:26] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 19:38:26,381 - INFO - 127.0.0.1 - - [14/Mar/2024 19:38:26] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 19:38:43,079 - INFO - 127.0.0.1 - - [14/Mar/2024 19:38:43] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 19:38:43,080 - INFO - 127.0.0.1 - - [14/Mar/2024 19:38:43] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 19:38:43,081 - INFO - 127.0.0.1 - - [14/Mar/2024 19:38:43] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 19:38:43,112 - INFO - 127.0.0.1 - - [14/Mar/2024 19:38:43] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 19:50:09,253 - INFO - 127.0.0.1 - - [14/Mar/2024 19:50:09] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 19:50:09,265 - INFO - 127.0.0.1 - - [14/Mar/2024 19:50:09] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 19:50:09,337 - INFO - 127.0.0.1 - - [14/Mar/2024 19:50:09] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 19:50:09,366 - INFO - 127.0.0.1 - - [14/Mar/2024 19:50:09] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 19:50:22,219 - INFO - 127.0.0.1 - - [14/Mar/2024 19:50:22] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 19:50:22,243 - INFO - 127.0.0.1 - - [14/Mar/2024 19:50:22] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 19:50:22,248 - INFO - 127.0.0.1 - - [14/Mar/2024 19:50:22] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 19:50:22,253 - INFO - 127.0.0.1 - - [14/Mar/2024 19:50:22] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 19:53:49,328 - INFO - 127.0.0.1 - - [14/Mar/2024 19:53:49] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 19:53:49,334 - INFO - 127.0.0.1 - - [14/Mar/2024 19:53:49] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 19:53:49,347 - INFO - 127.0.0.1 - - [14/Mar/2024 19:53:49] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 19:53:49,353 - INFO - 127.0.0.1 - - [14/Mar/2024 19:53:49] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:00:12,101 - INFO - 127.0.0.1 - - [14/Mar/2024 20:00:12] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 20:00:12,121 - INFO - 127.0.0.1 - - [14/Mar/2024 20:00:12] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 20:00:12,129 - INFO - 127.0.0.1 - - [14/Mar/2024 20:00:12] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:00:12,137 - INFO - 127.0.0.1 - - [14/Mar/2024 20:00:12] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:04:58,418 - INFO - 127.0.0.1 - - [14/Mar/2024 20:04:58] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 20:04:58,422 - INFO - 127.0.0.1 - - [14/Mar/2024 20:04:58] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 20:04:58,428 - INFO - 127.0.0.1 - - [14/Mar/2024 20:04:58] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:04:58,462 - INFO - 127.0.0.1 - - [14/Mar/2024 20:04:58] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:05:07,159 - INFO - 127.0.0.1 - - [14/Mar/2024 20:05:07] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 20:05:07,172 - INFO - 127.0.0.1 - - [14/Mar/2024 20:05:07] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 20:05:07,175 - INFO - 127.0.0.1 - - [14/Mar/2024 20:05:07] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:05:07,208 - INFO - 127.0.0.1 - - [14/Mar/2024 20:05:07] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:11:06,641 - INFO - 127.0.0.1 - - [14/Mar/2024 20:11:06] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 20:11:06,642 - INFO - 127.0.0.1 - - [14/Mar/2024 20:11:06] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 20:11:06,648 - INFO - 127.0.0.1 - - [14/Mar/2024 20:11:06] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:11:06,661 - INFO - 127.0.0.1 - - [14/Mar/2024 20:11:06] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:15:18,835 - INFO - 127.0.0.1 - - [14/Mar/2024 20:15:18] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 20:15:18,841 - INFO - 127.0.0.1 - - [14/Mar/2024 20:15:18] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 20:15:18,850 - INFO - 127.0.0.1 - - [14/Mar/2024 20:15:18] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:15:18,850 - INFO - 127.0.0.1 - - [14/Mar/2024 20:15:18] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:15:28,757 - INFO - 127.0.0.1 - - [14/Mar/2024 20:15:28] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 20:15:28,766 - INFO - 127.0.0.1 - - [14/Mar/2024 20:15:28] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 20:15:28,773 - INFO - 127.0.0.1 - - [14/Mar/2024 20:15:28] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:15:28,776 - INFO - 127.0.0.1 - - [14/Mar/2024 20:15:28] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:15:59,805 - INFO - 127.0.0.1 - - [14/Mar/2024 20:15:59] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 20:15:59,807 - INFO - 127.0.0.1 - - [14/Mar/2024 20:15:59] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:15:59,817 - INFO - 127.0.0.1 - - [14/Mar/2024 20:15:59] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 20:15:59,823 - INFO - 127.0.0.1 - - [14/Mar/2024 20:15:59] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:24:37,774 - INFO - 127.0.0.1 - - [14/Mar/2024 20:24:37] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 20:24:37,775 - INFO - 127.0.0.1 - - [14/Mar/2024 20:24:37] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 20:24:37,788 - INFO - 127.0.0.1 - - [14/Mar/2024 20:24:37] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:24:37,789 - INFO - 127.0.0.1 - - [14/Mar/2024 20:24:37] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:24:42,735 - INFO - 127.0.0.1 - - [14/Mar/2024 20:24:42] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 20:24:42,749 - INFO - 127.0.0.1 - - [14/Mar/2024 20:24:42] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 20:24:42,754 - INFO - 127.0.0.1 - - [14/Mar/2024 20:24:42] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:24:42,773 - INFO - 127.0.0.1 - - [14/Mar/2024 20:24:42] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:25:31,854 - INFO - 127.0.0.1 - - [14/Mar/2024 20:25:31] "DELETE /login HTTP/1.1" 200 -
+2024-03-14 20:25:37,020 - INFO - 127.0.0.1 - - [14/Mar/2024 20:25:37] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:25:37,025 - INFO - 127.0.0.1 - - [14/Mar/2024 20:25:37] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:25:40,215 - INFO - 127.0.0.1 - - [14/Mar/2024 20:25:40] "POST /login HTTP/1.1" 200 -
+2024-03-14 20:25:54,863 - INFO - 127.0.0.1 - - [14/Mar/2024 20:25:54] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 20:25:54,878 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 20:25:54,881 - INFO - 127.0.0.1 - - [14/Mar/2024 20:25:54] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:25:54,903 - INFO - 127.0.0.1 - - [14/Mar/2024 20:25:54] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:25:54,916 - INFO - 127.0.0.1 - - [14/Mar/2024 20:25:54] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 20:30:46,230 - INFO - 127.0.0.1 - - [14/Mar/2024 20:30:46] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 20:30:46,247 - INFO - 127.0.0.1 - - [14/Mar/2024 20:30:46] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:30:46,277 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 20:30:46,378 - INFO - 127.0.0.1 - - [14/Mar/2024 20:30:46] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:30:46,379 - INFO - 127.0.0.1 - - [14/Mar/2024 20:30:46] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 20:32:54,593 - INFO - 127.0.0.1 - - [14/Mar/2024 20:32:54] "[31m[1mGET /events HTTP/1.1[0m" 401 -
+2024-03-14 20:32:54,603 - INFO - 127.0.0.1 - - [14/Mar/2024 20:32:54] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:32:54,606 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 20:32:54,609 - INFO - 127.0.0.1 - - [14/Mar/2024 20:32:54] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:32:54,629 - INFO - 127.0.0.1 - - [14/Mar/2024 20:32:54] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 20:34:43,639 - INFO - 127.0.0.1 - - [14/Mar/2024 20:34:43] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:34:43,647 - INFO - 127.0.0.1 - - [14/Mar/2024 20:34:43] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:34:43,650 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 20:34:43,697 - INFO - 127.0.0.1 - - [14/Mar/2024 20:34:43] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 20:36:20,854 - INFO - 127.0.0.1 - - [14/Mar/2024 20:36:20] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:36:20,865 - INFO - 127.0.0.1 - - [14/Mar/2024 20:36:20] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:36:20,890 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 20:36:20,919 - INFO - 127.0.0.1 - - [14/Mar/2024 20:36:20] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 20:36:22,177 - INFO - 127.0.0.1 - - [14/Mar/2024 20:36:22] "GET /events?userId=1 HTTP/1.1" 200 -
+2024-03-14 20:36:23,048 - INFO - 127.0.0.1 - - [14/Mar/2024 20:36:23] "[35m[1mGET /tasks?userId=1 HTTP/1.1[0m" 500 -
+2024-03-14 20:39:17,937 - INFO - 127.0.0.1 - - [14/Mar/2024 20:39:17] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:39:17,938 - INFO - 127.0.0.1 - - [14/Mar/2024 20:39:17] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:39:18,169 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 20:39:18,402 - INFO - 127.0.0.1 - - [14/Mar/2024 20:39:18] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 20:39:20,038 - INFO - 127.0.0.1 - - [14/Mar/2024 20:39:20] "GET /events?userId=1 HTTP/1.1" 200 -
+2024-03-14 20:39:21,058 - INFO - 127.0.0.1 - - [14/Mar/2024 20:39:21] "[35m[1mGET /tasks?userId=1 HTTP/1.1[0m" 500 -
+2024-03-14 20:41:24,069 - INFO - 127.0.0.1 - - [14/Mar/2024 20:41:24] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 20:41:24,075 - INFO - 127.0.0.1 - - [14/Mar/2024 20:41:24] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:41:24,080 - INFO - 127.0.0.1 - - [14/Mar/2024 20:41:24] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:41:45,505 - INFO - 127.0.0.1 - - [14/Mar/2024 20:41:45] "DELETE /login HTTP/1.1" 200 -
+2024-03-14 20:41:54,385 - INFO - 127.0.0.1 - - [14/Mar/2024 20:41:54] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:41:54,388 - INFO - 127.0.0.1 - - [14/Mar/2024 20:41:54] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:41:57,352 - INFO - 127.0.0.1 - - [14/Mar/2024 20:41:57] "POST /login HTTP/1.1" 200 -
+2024-03-14 20:42:17,181 - INFO - 127.0.0.1 - - [14/Mar/2024 20:42:17] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:42:17,185 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 20:42:17,205 - INFO - 127.0.0.1 - - [14/Mar/2024 20:42:17] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:42:17,220 - INFO - 127.0.0.1 - - [14/Mar/2024 20:42:17] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 20:42:19,083 - INFO - 127.0.0.1 - - [14/Mar/2024 20:42:19] "[33mGET /events/userId=1 HTTP/1.1[0m" 404 -
+2024-03-14 20:42:59,738 - INFO - 127.0.0.1 - - [14/Mar/2024 20:42:59] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:42:59,746 - INFO - 127.0.0.1 - - [14/Mar/2024 20:42:59] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:42:59,747 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 20:42:59,770 - INFO - 127.0.0.1 - - [14/Mar/2024 20:42:59] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 20:43:01,033 - INFO - 127.0.0.1 - - [14/Mar/2024 20:43:01] "GET /events?userId=1 HTTP/1.1" 200 -
+2024-03-14 20:43:01,532 - INFO - 127.0.0.1 - - [14/Mar/2024 20:43:01] "[33mGET /tasks/userId=1 HTTP/1.1[0m" 404 -
+2024-03-14 20:44:16,205 - INFO - 127.0.0.1 - - [14/Mar/2024 20:44:16] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:44:16,208 - INFO - 127.0.0.1 - - [14/Mar/2024 20:44:16] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:44:19,417 - INFO - 127.0.0.1 - - [14/Mar/2024 20:44:19] "POST /login HTTP/1.1" 200 -
+2024-03-14 20:44:32,281 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 20:44:32,311 - INFO - 127.0.0.1 - - [14/Mar/2024 20:44:32] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:44:32,320 - INFO - 127.0.0.1 - - [14/Mar/2024 20:44:32] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:44:32,351 - INFO - 127.0.0.1 - - [14/Mar/2024 20:44:32] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 20:44:33,215 - INFO - 127.0.0.1 - - [14/Mar/2024 20:44:33] "[33mGET /events/userId=1 HTTP/1.1[0m" 404 -
+2024-03-14 20:44:41,773 - INFO - 127.0.0.1 - - [14/Mar/2024 20:44:41] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:44:41,777 - INFO - 127.0.0.1 - - [14/Mar/2024 20:44:41] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:44:41,778 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 20:44:41,808 - INFO - 127.0.0.1 - - [14/Mar/2024 20:44:41] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 20:44:42,740 - INFO - 127.0.0.1 - - [14/Mar/2024 20:44:42] "[33mGET /events/userId=1 HTTP/1.1[0m" 404 -
+2024-03-14 20:46:43,863 - INFO - 127.0.0.1 - - [14/Mar/2024 20:46:43] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:46:43,865 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 20:46:43,897 - INFO - 127.0.0.1 - - [14/Mar/2024 20:46:43] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:46:43,918 - INFO - 127.0.0.1 - - [14/Mar/2024 20:46:43] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 20:46:45,063 - INFO - 127.0.0.1 - - [14/Mar/2024 20:46:45] "GET /events HTTP/1.1" 200 -
+2024-03-14 20:46:45,748 - INFO - 127.0.0.1 - - [14/Mar/2024 20:46:45] "[33mGET /tasks/userId=1 HTTP/1.1[0m" 404 -
+2024-03-14 20:52:17,609 - INFO - 127.0.0.1 - - [14/Mar/2024 20:52:17] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:52:17,619 - INFO - 127.0.0.1 - - [14/Mar/2024 20:52:17] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:52:17,628 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 20:52:17,657 - INFO - 127.0.0.1 - - [14/Mar/2024 20:52:17] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 20:52:19,207 - INFO - 127.0.0.1 - - [14/Mar/2024 20:52:19] "GET /events HTTP/1.1" 200 -
+2024-03-14 20:56:33,258 - INFO - 127.0.0.1 - - [14/Mar/2024 20:56:33] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 20:56:33,291 - INFO - 127.0.0.1 - - [14/Mar/2024 20:56:33] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 20:56:33,302 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 20:56:33,339 - INFO - 127.0.0.1 - - [14/Mar/2024 20:56:33] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 20:56:34,682 - INFO - 127.0.0.1 - - [14/Mar/2024 20:56:34] "GET /events HTTP/1.1" 200 -
+2024-03-14 21:02:52,280 - INFO - 127.0.0.1 - - [14/Mar/2024 21:02:52] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 21:02:52,290 - INFO - 127.0.0.1 - - [14/Mar/2024 21:02:52] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 21:02:52,320 - INFO - 127.0.0.1 - - [14/Mar/2024 21:02:52] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 21:48:14,453 - INFO -  * Detected change in '/Users/ericmusembi/Desktop/projects/Event-capstone-project/EventCapstone-project/Event-Planner/server/app.py', reloading
+2024-03-14 21:48:16,285 - INFO -  * Restarting with stat
+2024-03-14 21:48:18,531 - WARNING -  * Debugger is active!
+2024-03-14 21:48:18,550 - INFO -  * Debugger PIN: 117-519-565
+2024-03-14 21:48:53,162 - INFO - 127.0.0.1 - - [14/Mar/2024 21:48:53] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 21:48:53,290 - INFO - 127.0.0.1 - - [14/Mar/2024 21:48:53] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 21:48:53,293 - INFO - 127.0.0.1 - - [14/Mar/2024 21:48:53] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 21:49:31,067 - INFO - 127.0.0.1 - - [14/Mar/2024 21:49:31] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 21:49:31,069 - INFO - 127.0.0.1 - - [14/Mar/2024 21:49:31] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 21:49:31,071 - INFO - 127.0.0.1 - - [14/Mar/2024 21:49:31] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 21:50:13,308 - INFO - 127.0.0.1 - - [14/Mar/2024 21:50:13] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 21:50:13,313 - INFO - 127.0.0.1 - - [14/Mar/2024 21:50:13] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 21:50:13,316 - INFO - 127.0.0.1 - - [14/Mar/2024 21:50:13] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 21:51:31,271 - INFO - 127.0.0.1 - - [14/Mar/2024 21:51:31] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 21:51:31,290 - INFO - 127.0.0.1 - - [14/Mar/2024 21:51:31] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 21:51:31,295 - INFO - 127.0.0.1 - - [14/Mar/2024 21:51:31] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 21:52:37,193 - INFO - 127.0.0.1 - - [14/Mar/2024 21:52:37] "[31m[1mGET /users/1 HTTP/1.1[0m" 401 -
+2024-03-14 21:52:37,199 - INFO - 127.0.0.1 - - [14/Mar/2024 21:52:37] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 21:52:37,201 - INFO - 127.0.0.1 - - [14/Mar/2024 21:52:37] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 22:00:33,738 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-14 22:00:33,739 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-14 22:01:51,344 - INFO - 127.0.0.1 - - [14/Mar/2024 22:01:51] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 22:01:51,346 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-14 22:01:51,349 - INFO - 127.0.0.1 - - [14/Mar/2024 22:01:51] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 22:01:51,517 - INFO - 127.0.0.1 - - [14/Mar/2024 22:01:51] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-14 22:02:22,481 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-14 22:02:22,484 - INFO - 127.0.0.1 - - [14/Mar/2024 22:02:22] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-14 22:02:22,485 - INFO - 127.0.0.1 - - [14/Mar/2024 22:02:22] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 22:02:22,489 - INFO - 127.0.0.1 - - [14/Mar/2024 22:02:22] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 22:02:51,504 - INFO - 127.0.0.1 - - [14/Mar/2024 22:02:51] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 22:02:51,505 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-14 22:02:51,513 - INFO - 127.0.0.1 - - [14/Mar/2024 22:02:51] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-14 22:02:51,516 - INFO - 127.0.0.1 - - [14/Mar/2024 22:02:51] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 22:03:01,334 - INFO - 127.0.0.1 - - [14/Mar/2024 22:03:01] "DELETE /login HTTP/1.1" 200 -
+2024-03-14 22:03:06,270 - INFO - 127.0.0.1 - - [14/Mar/2024 22:03:06] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 22:03:06,272 - INFO - 127.0.0.1 - - [14/Mar/2024 22:03:06] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 22:03:10,718 - INFO - 127.0.0.1 - - [14/Mar/2024 22:03:10] "POST /login HTTP/1.1" 200 -
+2024-03-14 22:03:23,117 - INFO - 127.0.0.1 - - [14/Mar/2024 22:03:23] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 22:03:23,138 - INFO - 127.0.0.1 - - [14/Mar/2024 22:03:23] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 22:03:23,172 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 22:03:23,194 - INFO - 127.0.0.1 - - [14/Mar/2024 22:03:23] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 22:03:24,391 - INFO - 127.0.0.1 - - [14/Mar/2024 22:03:24] "GET /events HTTP/1.1" 200 -
+2024-03-14 22:03:25,777 - INFO - 127.0.0.1 - - [14/Mar/2024 22:03:25] "GET /tasks HTTP/1.1" 200 -
+2024-03-14 22:08:59,259 - INFO - 127.0.0.1 - - [14/Mar/2024 22:08:59] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 22:08:59,284 - INFO - 127.0.0.1 - - [14/Mar/2024 22:08:59] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 22:08:59,291 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 22:08:59,474 - INFO - 127.0.0.1 - - [14/Mar/2024 22:08:59] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 22:09:01,221 - INFO - 127.0.0.1 - - [14/Mar/2024 22:09:01] "GET /events HTTP/1.1" 200 -
+2024-03-14 22:09:02,203 - INFO - 127.0.0.1 - - [14/Mar/2024 22:09:02] "GET /tasks HTTP/1.1" 200 -
+2024-03-14 22:10:01,360 - INFO - 127.0.0.1 - - [14/Mar/2024 22:10:01] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 22:10:01,362 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 22:10:01,366 - INFO - 127.0.0.1 - - [14/Mar/2024 22:10:01] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 22:10:01,401 - INFO - 127.0.0.1 - - [14/Mar/2024 22:10:01] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 22:10:02,371 - INFO - 127.0.0.1 - - [14/Mar/2024 22:10:02] "GET /events HTTP/1.1" 200 -
+2024-03-14 22:10:02,886 - INFO - 127.0.0.1 - - [14/Mar/2024 22:10:02] "GET /tasks HTTP/1.1" 200 -
+2024-03-14 22:16:37,171 - INFO - 127.0.0.1 - - [14/Mar/2024 22:16:37] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 22:16:37,174 - INFO - 127.0.0.1 - - [14/Mar/2024 22:16:37] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 22:16:37,292 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 22:16:37,455 - INFO - 127.0.0.1 - - [14/Mar/2024 22:16:37] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 22:16:39,294 - INFO - 127.0.0.1 - - [14/Mar/2024 22:16:39] "GET /events HTTP/1.1" 200 -
+2024-03-14 22:16:40,540 - INFO - 127.0.0.1 - - [14/Mar/2024 22:16:40] "GET /tasks HTTP/1.1" 200 -
+2024-03-14 22:18:29,240 - INFO - 127.0.0.1 - - [14/Mar/2024 22:18:29] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 22:18:29,245 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-gjYYZGy9/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-14 22:18:29,253 - INFO - 127.0.0.1 - - [14/Mar/2024 22:18:29] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 22:18:29,355 - INFO - 127.0.0.1 - - [14/Mar/2024 22:18:29] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-14 22:18:44,272 - INFO - 127.0.0.1 - - [14/Mar/2024 22:18:44] "DELETE /login HTTP/1.1" 200 -
+2024-03-14 22:18:49,820 - INFO - 127.0.0.1 - - [14/Mar/2024 22:18:49] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 22:18:49,829 - INFO - 127.0.0.1 - - [14/Mar/2024 22:18:49] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 22:18:52,648 - INFO - 127.0.0.1 - - [14/Mar/2024 22:18:52] "POST /login HTTP/1.1" 200 -
+2024-03-14 22:19:06,413 - INFO - 127.0.0.1 - - [14/Mar/2024 22:19:06] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 22:19:06,486 - INFO - 127.0.0.1 - - [14/Mar/2024 22:19:06] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 22:19:06,488 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 22:19:06,519 - INFO - 127.0.0.1 - - [14/Mar/2024 22:19:06] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 22:19:07,269 - INFO - 127.0.0.1 - - [14/Mar/2024 22:19:07] "GET /events HTTP/1.1" 200 -
+2024-03-14 22:19:07,738 - INFO - 127.0.0.1 - - [14/Mar/2024 22:19:07] "GET /tasks HTTP/1.1" 200 -
+2024-03-14 22:22:25,716 - INFO - 127.0.0.1 - - [14/Mar/2024 22:22:25] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-14 22:22:25,724 - INFO - 127.0.0.1 - - [14/Mar/2024 22:22:25] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-14 22:22:25,732 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-14 22:22:25,768 - INFO - 127.0.0.1 - - [14/Mar/2024 22:22:25] "GET /users/1 HTTP/1.1" 200 -
+2024-03-14 22:22:26,236 - INFO - 127.0.0.1 - - [14/Mar/2024 22:22:26] "GET /events HTTP/1.1" 200 -
+2024-03-14 22:22:26,368 - INFO - 127.0.0.1 - - [14/Mar/2024 22:22:26] "GET /tasks HTTP/1.1" 200 -

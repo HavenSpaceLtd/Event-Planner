@@ -168,7 +168,7 @@ class UserById(Resource):
             user.phone = data['phone']
 
         db.session.commit()
-
+        
         updated_user_data = {
             "id": user.id,
             "first_name": user.first_name,
@@ -310,6 +310,7 @@ class AllEvents(Resource):
                 "progress": event.progress,
                 "description": event.description,
                 "owner": event.owner.first_name,
+                "tasks": event.get_tasks()
             }
             for event in events
         ]
@@ -395,17 +396,25 @@ class AllTasks(Resource):
         
     @jwt_required()
     def get(self):
+
         current_user = get_jwt_identity()
-        user_id = current_user.get('id')
-        tasks = Task.query.all()
+        user_id = current_user.get('user_id')
+        user = User.query.get(user_id)
+
+        if (user.title == "planner"):
+            tasks = Task.query.all()
+
+        if (user.title == "user"):
+            tasks = Task.query.filter_by(owner_id = user_id).all()
+
         tasks_list = [
             {
                 "id": task.id,
                 "title": task.title,
                 "start_date": task.start_date,
                 "end_date": task.end_date,
-                "start_time": task.start_time,
-                "end_time": task.end_time,
+                'start_time': task.start_time.strftime('%H:%M') if task.start_time else None,
+                'end_time': task.end_time.strftime('%H:%M') if task.end_time else None,
                 "location": task.location,
                 "amount": task.amount,
                 "progress": task.progress,
@@ -489,7 +498,6 @@ class Assignments(Resource):
         return make_response(jsonify({'message': 'Assignment updated'}), 201)
 
 class ManageCommunications(Resource):
-    @jwt_required()
     def post(self):
         data = request.json
         message = data.get('message')
@@ -511,7 +519,6 @@ class ManageCommunications(Resource):
 
         return make_response(jsonify({"Message": "Communication made successfully!"}), 201)
 
-    @jwt_required()
     def get(self):
         # Retrieve all communications
         communications = Communication.query.all()
@@ -528,7 +535,6 @@ class ManageCommunications(Resource):
 
 
 class BudgetResource(Resource):
-    @jwt_required()
     def get(self, budget_id=None):
         if budget_id:
             budget = Budget.query.get(budget_id)
@@ -552,7 +558,6 @@ class BudgetResource(Resource):
             ]
             return make_response(jsonify(budgets_list))
 
-    @jwt_required()
     def post(self):
         data = request.json
         event_id = data.get('event_id')
@@ -573,7 +578,6 @@ class BudgetResource(Resource):
 
         return make_response(jsonify({'message': 'Budget created successfully'}), 201)
 
-    @jwt_required()
     def put(self, budget_id):
         data = request.json
         budget = Budget.query.get(budget_id)
@@ -585,7 +589,6 @@ class BudgetResource(Resource):
         else:
             return make_response(jsonify({'message': 'Budget not found'}), 404)
 
-    @jwt_required()
     def delete(self, budget_id):
         budget = Budget.query.get(budget_id)
         if budget:
@@ -597,7 +600,6 @@ class BudgetResource(Resource):
 
 
 class ExpenseResource(Resource):
-    @jwt_required()
     def post(self):
         data = request.json
         amount = data.get('amount')
@@ -622,7 +624,6 @@ class ExpenseResource(Resource):
 
         return make_response(jsonify({"Message": "Expense added successfully!"}), 201)
 
-    @jwt_required()
     def get(self):
         expenses = Expense.query.all()
         expenses_list = [
@@ -637,39 +638,7 @@ class ExpenseResource(Resource):
         ]
         return make_response(jsonify(expenses_list))
 
-class BudgetReport(Resource):
-    @jwt_required()
-    def get(self, event_id):
-        # Get total expenses for the event
-        total_expenses = db.session.query(func.sum(Expense.amount)).filter_by(event_id=event_id).scalar()
-        if total_expenses is None:
-            total_expenses = 0
-
-        # Get budget for the event
-        budget = Budget.query.filter_by(event_id=event_id).first()
-        if not budget:
-            return make_response(jsonify({"error": "Budget not found for this event"}), 404)
-
-        remaining_budget = budget.amount - total_expenses
-        insights = ""
-        if remaining_budget < 0:
-            insights = "You have exceeded your budget!"
-        elif remaining_budget < budget.amount * 0.25:
-            insights = "You are running low on budget. Consider reducing expenses."
-        elif total_expenses == 0:
-            insights = "No expenses recorded yet."
-
-        budget_report = {
-            "event_id": event_id,
-            "budget_amount": budget.amount,
-            "total_expenses": total_expenses,
-            "remaining_budget": remaining_budget,
-            "insights": insights
-        }
-        return jsonify(budget_report)
-
 class Assets(Resource):
-    @jwt_required()
     def post(self):
         data = request.json
         name = data.get('name')
@@ -698,7 +667,6 @@ class Assets(Resource):
 
         return make_response(jsonify({"Message": "Resource added successfully!"}), 201)
 
-    @jwt_required()
     def get(self):
         assets = Asset.query.all()
         assets_dict = [
@@ -716,9 +684,7 @@ class Assets(Resource):
         return make_response(jsonify(assets_dict))
 
 class CollaborationResource(Resource):
-    @jwt_required()
     def post(self):
-        current_user_id = get_jwt_identity()
         data = request.json
         event_id = data.get('event_id')
         user_id = data.get('user_id')
@@ -735,9 +701,7 @@ class CollaborationResource(Resource):
 
         return make_response(jsonify({'message': 'Collaboration created successfully'}), 201)
 
-    @jwt_required()
     def get(self):
-        current_user_id = get_jwt_identity()
         collaborations = Collaboration.query.all()
         collaborations_list = [{
             'id': collab.id,
@@ -762,7 +726,6 @@ api.add_resource(BudgetResource, '/budgets', '/budgets/<int:budget_id>')
 api.add_resource(ExpenseResource, '/expenses')
 api.add_resource(Assets, '/assets')
 api.add_resource(CollaborationResource, '/collaborations')
-api.add_resource(BudgetReport, '/budget-report/<int:event_id>')
 
 if __name__ == '__main__':
     app.run(port=5555)
