@@ -8,10 +8,12 @@ const BudgetForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const activeToken = sessionStorage.getItem('accessToken'); // Get JWT token from sessionStorage
       const response = await fetch('/budgets', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${activeToken}` // Include JWT token in Authorization header
         },
         body: JSON.stringify({
           event_id: eventID,

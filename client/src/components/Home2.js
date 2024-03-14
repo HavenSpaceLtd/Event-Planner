@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Col, Container, Row, Form, Button, Navbar } from 'react-bootstrap';
+import { Card,Modal, Col, Container, Row, Form, Button, Navbar } from 'react-bootstrap';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { useAuth } from './AuthContext';
+import ResourceForm from './ResourceForm';
+
+import BudgetForm from './BudgetForm';
+import ExpenseForm from './ExpenseForm'
 
 function Home() {
 
@@ -234,6 +238,24 @@ console.log(userData);
     });
     setTasks(updatedTasks);
   };
+ const [showResourceForm, setShowResourceForm] = useState(false);
+  const [showExpenseForm, setShowExpenseForm] = useState(false);
+  const [showBudgetForm, setShowBudgetForm] = useState(false);
+
+  const handleAddResource = (taskId) => {
+    setShowResourceForm(true);
+  };
+
+  // Handler function for adding expenses
+  const handleAddExpense = (taskId) => {
+    setShowExpenseForm(true);
+  };
+
+  // Handler function for setting the budget
+  const handleSetBudget = (taskId) => {
+    setShowBudgetForm(true);
+  };
+
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
@@ -341,6 +363,38 @@ console.log(userData);
                                         <option value="Completed">Completed</option>
                                         <option value="Delayed">Delayed</option>
                                       </Form.Control>
+                                    <div>     <Button variant="link" onClick={handleAddResource} className="mr-3">Resources</Button>
+        {/* Replace your existing link for expenses with button and add onClick handler */}
+        <Button variant="link" onClick={handleAddExpense} className="mr-3">Expenses</Button>
+        {/* Replace your existing button for budget with button and add onClick handler */}
+        <Button variant="link" onClick={handleSetBudget} className="mr-3">Budget</Button>
+        {/* Modal for adding resources */}
+        <Modal show={showResourceForm} onHide={() => setShowResourceForm(false)}>
+          <Modal.Header closeButton>
+            <Modal.Title>Add Resource</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <ResourceForm onSubmit={() => setShowResourceForm(false)} />
+          </Modal.Body>
+        </Modal>
+        {/* Modal for adding expenses */}
+        <Modal show={showExpenseForm} onHide={() => setShowExpenseForm(false)}>
+          <Modal.Header closeButton>
+            <Modal.Title>Add Expense</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <ExpenseForm onSubmit={() => setShowExpenseForm(false)} />
+          </Modal.Body>
+        </Modal>
+        {/* Modal for setting the budget */}
+        <Modal show={showBudgetForm} onHide={() => setShowBudgetForm(false)}>
+          <Modal.Header closeButton>
+            <Modal.Title>Set Budget</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <BudgetForm onSubmit={() => setShowBudgetForm(false)} />
+          </Modal.Body>
+        </Modal> </div>
                                       <div className="d-flex justify-content-center align-items-center mt-2">
                                         <Button variant="primary" onClick={() => handleUpdate(task.id)}>Update</Button>
                                         {task.id !== 1 && (

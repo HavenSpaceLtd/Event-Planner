@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const ExpenseForm = () => {
   const [amount, setAmount] = useState('');
@@ -6,14 +6,24 @@ const ExpenseForm = () => {
   const [description, setDescription] = useState('');
   const [event_id, setEventId] = useState('');
 
+  // Retrieve event ID from session storage on component mount
+  useEffect(() => {
+    const storedEventId = sessionStorage.getItem('eventId');
+    if (storedEventId) {
+      setEventId(storedEventId);
+    }
+  }, []);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
+      const token = sessionStorage.getItem('accessToken'); // Get JWT token from session storage
       const response = await fetch('/expenses', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}` // Include JWT token in Authorization header
         },
         body: JSON.stringify({
           amount,
@@ -31,6 +41,8 @@ const ExpenseForm = () => {
         setCategory('');
         setDescription('');
         setEventId('');
+        // Remove event ID from session storage
+        sessionStorage.removeItem('eventId');
       } else {
         // Error occurred while adding expense
         const errorMessage = await response.json();

@@ -19,12 +19,16 @@ const ResourceForm = ({ onSubmit }) => {
   const handleSubmit = async e => {
     e.preventDefault();
     
-    // Submit reservation request to the backend
+    // Retrieve JWT token from session storage
+    const token = sessionStorage.getItem('accessToken');
+
+    // Submit reservation request to the backend with authorization header
     try {
-      const response = await fetch('/api/reservations', {
+      const response = await fetch('/assets', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}` // Include JWT token in Authorization header
         },
         body: JSON.stringify(formData)
       });
