@@ -1590,3 +1590,9 @@ ValueError: not enough values to unpack (expected 2, got 1)
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
+2024-03-15 09:20:39,954 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-15 09:20:39,954 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-15 09:21:20,472 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-15 09:21:20,472 - INFO - [33mPress CTRL+C to quit[0m
