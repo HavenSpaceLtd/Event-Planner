@@ -33,14 +33,16 @@ function App() {
           <Route path='/important' component={<ExpenseForm/>} />
           <Route path='/highpriority' component={<ExpenseTracking/>} />
           <Route path="/resources" element={<div>
-            <ResourceForm />
-            <BudgetForm />
-            <ExpenseForm />
+            <ExpenseTracking />
             < Charts />
-
              < BudgetPlanning />
-        <ExpenseTracking />
-        <ResourceManagement />
+       
+             <ResourceManagement />
+         <ResourceForm />
+           <ExpenseForm />
+         
+            <BudgetForm />
+           
             </div>} />
         </Routes>
         <Footer />
