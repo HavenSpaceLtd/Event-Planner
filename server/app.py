@@ -715,14 +715,26 @@ class BudgetReport(Resource):
 
 class Assets(Resource):
     @jwt_required()
+
+
+
     def post(self):
         data = request.json
         name = data.get('name')
         quantity = data.get('quantity')
-        start_date = data.get('start_date')
-        end_date = data.get('end_date')
+        # start_date = data.get('start_date')
+        # end_date = data.get('end_date')
         availability_status = data.get('availability_status')
         event_id = data.get('event_id')
+
+
+        # Convert start date string to Python date object
+        start_date_str = data.get('start_date')
+        start_date = datetime.strptime(start_date_str, '%m/%d/%Y').date()
+        
+        # Convert end date string to Python date object
+        end_date_str = data.get('end_date')
+        end_date = datetime.strptime(end_date_str, '%m/%d/%Y').date()
 
         # Check if event exists
         event = Event.query.get(event_id)

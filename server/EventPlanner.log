@@ -608,3 +608,168 @@ jwt.exceptions.ExpiredSignatureError: Signature has expired
 2024-03-15 16:51:02,544 - INFO - 127.0.0.1 - - [15/Mar/2024 16:51:02] "POST /login HTTP/1.1" 200 -
 2024-03-15 16:51:02,557 - INFO - User, johndoe@gmail.com, details accessed
 2024-03-15 16:51:02,563 - INFO - 127.0.0.1 - - [15/Mar/2024 16:51:02] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 17:07:14,024 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 17:07:14,025 - INFO - 127.0.0.1 - - [15/Mar/2024 17:07:14] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-15 17:07:40,872 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 17:07:40,873 - INFO - 127.0.0.1 - - [15/Mar/2024 17:07:40] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-15 17:14:20,104 - INFO - 127.0.0.1 - - [15/Mar/2024 17:14:20] "POST /login HTTP/1.1" 200 -
+2024-03-15 17:14:20,278 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 17:14:20,282 - INFO - 127.0.0.1 - - [15/Mar/2024 17:14:20] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 17:14:35,650 - INFO - 127.0.0.1 - - [15/Mar/2024 17:14:35] "POST /login HTTP/1.1" 200 -
+2024-03-15 17:14:35,683 - INFO - User, wazza10@manu.com, details accessed
+2024-03-15 17:14:35,691 - INFO - 127.0.0.1 - - [15/Mar/2024 17:14:35] "GET /users/3 HTTP/1.1" 200 -
+2024-03-15 17:14:50,685 - INFO - 127.0.0.1 - - [15/Mar/2024 17:14:50] "POST /login HTTP/1.1" 200 -
+2024-03-15 17:14:50,719 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 17:14:50,726 - INFO - 127.0.0.1 - - [15/Mar/2024 17:14:50] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 17:21:55,088 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 17:21:55,093 - INFO - 127.0.0.1 - - [15/Mar/2024 17:21:55] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 17:34:06,498 - INFO - 127.0.0.1 - - [15/Mar/2024 17:34:06] "POST /login HTTP/1.1" 200 -
+2024-03-15 17:36:16,240 - ERROR - Exception on /assets [POST]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1818, in _execute_context
+    context = constructor(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1457, in _init_compiled
+    l_param: List[Any] = [
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1459, in <listcomp>
+    flattened_processors[key](compiled_params[key])
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/dialects/sqlite/base.py", line 1068, in process
+    raise TypeError(
+TypeError: SQLite DateTime type only accepts Python datetime and date objects as input.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/home/harris/Development/code/phase5/DevProject/Event-Planner 6/Event-Planner/server/app.py", line 727, in post
+    # Check if event exists
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 597, in commit
+    return self._proxied.commit()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1972, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1257, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1232, in _prepare_impl
+    self.session.flush()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4296, in flush
+    self._flush(objects)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4431, in _flush
+    with util.safe_reraise():
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4392, in _flush
+    flush_context.execute()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1824, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2356, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1818, in _execute_context
+    context = constructor(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1457, in _init_compiled
+    l_param: List[Any] = [
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 1459, in <listcomp>
+    flattened_processors[key](compiled_params[key])
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/dialects/sqlite/base.py", line 1068, in process
+    raise TypeError(
+sqlalchemy.exc.StatementError: (builtins.TypeError) SQLite DateTime type only accepts Python datetime and date objects as input.
+[SQL: INSERT INTO assets (name, quantity, start_date, end_date, availability_status, event_id) VALUES (?, ?, ?, ?, ?, ?)]
+[parameters: [{'quantity': 100, 'name': 'AfriFite', 'event_id': '1', 'end_date': '03/16/2024', 'start_date': '03/09/2024', 'availability_status': 'Yes'}]]
+2024-03-15 17:36:16,489 - INFO - 127.0.0.1 - - [15/Mar/2024 17:36:16] "[35m[1mPOST /assets HTTP/1.1[0m" 500 -
+2024-03-15 17:42:10,198 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-15 17:42:10,198 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-15 17:42:14,999 - INFO - 127.0.0.1 - - [15/Mar/2024 17:42:14] "[35m[1mPOST /assets HTTP/1.1[0m" 201 -

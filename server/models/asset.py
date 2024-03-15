@@ -11,8 +11,8 @@ class Asset(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
     quantity = db.Column(db.Integer)
-    start_date = db.Column(db.DateTime, default=datetime.now)
-    end_date = db.Column(db.DateTime, default=datetime.now)
+    start_date = db.Column(db.Date)
+    end_date = db.Column(db.Date)
     availability_status = db.Column(db.String, default=True)
     event_id = db.Column(db.Integer, ForeignKey('events.id'))
 
@@ -26,8 +26,8 @@ class Asset(db.Model, SerializerMixin):
             'id': self.id,
             'name': self.name,
             'quantity': self.quantity,
-            'start_date': self.start_date.strftime('%Y-%m-%d %H:%M:%S'),
-            'end_date': self.end_date.strftime('%Y-%m-%d %H:%M:%S'),
+            'start_date': self.start_date,
+            'end_date': self.end_date,
             'availability_status': self.availability_status,
             'event_id': self.event_id
         }
