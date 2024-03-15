@@ -1,175 +1,153 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
-import googleIcon from '../assets/google.svg';
-import emailIcon from '../assets/gmail.svg';
-import * as Yup from 'yup';
-import { Formik } from 'formik';
 
-const googleIconStyle = {
-  width: '24px',
-  height: '24px',
-};
-
-const iconStyle = {
-  width: '24px',
-  height: '24px',
-};
 
 const NewEventForm = () => {
-  const initialValues = {
+  const [values, setValues] = useState({
     title: '',
-    phone: '',
-    email: '',
+    start_date: '',
+    end_date: '',
+    start_time: '',
+    end_time: '',
+    amount: '',
+    progress: '',
     location: '',
-    title: '',
-    password: '',
-    about: '',
-    image: '', // Assuming this will be handled separately, like file upload
-  };
-
-  const validationSchema = Yup.object().shape({
-    title: Yup.string().required('First Name is required'),
-    phone: Yup.string().required('Phone is required'),
-    email: Yup.string().email('Invalid email').required('Email is required'),
-    location: Yup.string().required('Location is required'),
-    title: Yup.string().required('Title is required'),
-    password: Yup.string()
-      .required('Password is required')
-      .min(5, 'Password must be at least 5 characters'),
-    about: Yup.string().required('About is required'),
+    description: '',
+    image: '',
+    owner_id: '',
   });
 
-  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    let formattedValue = value;
+  
+    // Check if the input is a date field and format it
+    if (name.includes('date')) {
+      const dateObj = new Date(value);
+      const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+      const day = String(dateObj.getDate()).padStart(2, '0');
+      const year = dateObj.getFullYear();
+      formattedValue = `${month}/${day}/${year}`;
+    }
+  
+    setValues((prevValues) => ({
+      ...prevValues,
+      [name]: formattedValue,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-     
-      const formDataToSend = new FormData();
-      for (let key in values) {
-        formDataToSend.append(key, values[key]);
+      console.log('Form data:', values);
+      const formData = new FormData();
+      for (const key in values) {
+        formData.append(key, values[key]);
       }
-      const response = await fetch('/users', {
+
+      // Get owner_id from session storage
+      const owner_id = sessionStorage.getItem('userId');
+      console.log('Owner ID:', owner_id);
+      if (!owner_id) {
+        throw new Error('Owner ID not found in session storage');
+      }
+
+      const token = sessionStorage.getItem('accessToken'); // Replace with your actual Bearer token
+      console.log('Bearer token:', token);
+      const response = await fetch('/events', {
         method: 'POST',
-        body: formDataToSend,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
       });
-  
+
       if (!response.ok) {
-        throw new Error('Failed to register user');
+        throw new Error('Failed to create event');
       }
-  
-      console.log('User registered successfully');
-  
-     
-      resetForm();
-  
-     
-      setSubmitting(false);
-  
-     
-      alert('User registered successfully!');
+
+      const data = await response.json();
+      console.log('Response:', data);
     } catch (error) {
       console.error('Error:', error.message);
-    
-     
-      setSubmitting(false);
+      // Handle error or display an error message
     }
   };
+
   return (
     <div className="full-page-container" style={{ background: 'linear-gradient(135deg, #ff8080, #b3ff66)', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)', marginTop: 0, paddingTop: '50px', paddingBottom: '50px' }}>
       <Container className="mt-5">
         <Row className="justify-content-center">
-          <Col md={6}>
+          <Col md={8}>
             <Card>
-              <Card.Body style={{ background: 'linear-gradient( rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%)', borderRadius: '20px' }}>
-                <h2 className="text-center text-dark mb-4" style={{ marginBottom: '20px', fontWeight: 'bold', textTransform: 'uppercase' }}>New Event</h2>
-                <Formik
-                  initialValues={initialValues}
-                  validationSchema={validationSchema}
-                  onSubmit={handleSubmit}
-                >
-                  {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting, setFieldValue }) => (
-                    <Form onSubmit={handleSubmit}>
-                      <Row className="mb-3">
-                        <Col sm={12}>
-                          <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>Title </Form.Label>
-                          <Form.Control type="text" placeholder="Enter first name" name="title" value={values.title} onChange={handleChange} onBlur={handleBlur} />
-                          {touched.title && errors.title && <div className="text-danger">{errors.title}</div>}
-                        </Col>
-                      </Row>
-                      
-                      <Row className="mb-3">
-                        <Col sm={12}>
-                          <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>Phone</Form.Label>
-                          <Form.Control type="text" placeholder="Enter phone" name="phone" value={values.phone} onChange={handleChange} onBlur={handleBlur} />
-                          {touched.phone && errors.phone && <div className="text-danger">{errors.phone}</div>}
-                        </Col>
-                      </Row>
-                      <Row className="mb-3">
-                        <Col sm={12}>
-                          <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>Email</Form.Label>
-                          <Form.Control type="email" placeholder="Enter email" name="email" value={values.email} onChange={handleChange} onBlur={handleBlur} />
-                          {touched.email && errors.email && <div className="text-danger">{errors.email}</div>}
-                        </Col>
-                      </Row>
-                      <Row className="mb-3">
-                        <Col sm={12}>
-                          <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>Location</Form.Label>
-                          <Form.Control type="text" placeholder="Enter location" name="location" value={values.location} onChange={handleChange} onBlur={handleBlur} />
-                          {touched.location && errors.location && <div className="text-danger">{errors.location}</div>}
-                        </Col>
-                      </Row>
-                      <Row className="mb-3">
-                        <Col sm={12}>
-                          <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>Title</Form.Label>
-                          <Form.Select name="title" value={values.title} onChange={handleChange} onBlur={handleBlur}>
-                            <option value="">Select title</option>
-                            <option value="user">User</option>
-                            <option value="planner">Planner</option>
-                          </Form.Select>
-                          {touched.title && errors.title && <div className="text-danger">{errors.title}</div>}
-                        </Col>
-                      </Row>
-                      <Row className="mb-3">
-                        <Col sm={12}>
-                          <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>Password</Form.Label>
-                          <Form.Control type="password" placeholder="Enter password" name="password" value={values.password} onChange={handleChange} onBlur={handleBlur} />
-                          {touched.password && errors.password && <div className="text-danger">{errors.password}</div>}
-                        </Col>
-                      </Row>
-                      <Row className="mb-3">
-                        <Col sm={12}>
-                          <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>About</Form.Label>
-                          <Form.Control as="textarea" rows={3} placeholder="Tell us about yourself" name="about" value={values.about} onChange={handleChange} onBlur={handleBlur} />
-                          {touched.about && errors.about && <div className="text-danger">{errors.about}</div>}
-                        </Col>
-                      </Row>
-                      <Row className="mb-3">
-                        <Col sm={12}>
-                          <Form.Label style={{ marginRight: '600px', fontWeight: 'bold' }}>Image</Form.Label>
-                          <Form.Control type="file" name="image" onChange={(e) => setFieldValue('image', e.target.files[0])} onBlur={handleBlur} />
-                        </Col>
-                      </Row>
-                      <Button variant="primary" type="submit" className="w-100 rounded-pill align-items-center" disabled={isSubmitting}>
-                        {isSubmitting ? 'Signing Up...' : 'Sign Up'}
-                      </Button>
-                    </Form>
-                  )}
-                </Formik>
-                <div className="text-center mb-4 position-relative" style={{ marginTop: '70px' }}>
-                  <hr className="w-100 my-0" style={{ borderColor: '#000' }} />
-                  <span className="position-absolute top-50 translate-middle px-3" style={{ backgroundColor: 'rgba(255, 255, 255, 1)', borderRadius: '4rem' }}>or</span>
-                  <hr className="w-100 my-0" style={{ borderColor: '#000' }} />
+              <Card.Body style={{ background: 'linear-gradient( rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%)', borderRadius: '20px', display: 'flex' }}>
+                <div style={{ flex: 1, paddingRight: '15px', borderRight: '1px solid #ccc' }}>
+                  <Form onSubmit={handleSubmit}>
+                    <Row className="mb-3">
+                      <Col sm={6}>
+                        <Form.Label>Title</Form.Label>
+                        <Form.Control type="text" placeholder="Enter title" name="title" value={values.title} onChange={handleChange} />
+                      </Col>
+                      <Col sm={6}>
+                        <Form.Label>Location</Form.Label>
+                        <Form.Control type="text" placeholder="Enter location" name="location" value={values.location} onChange={handleChange} />
+                      </Col>
+                    </Row>
+                    <Row className="mb-3">
+                      <Col sm={6}>
+                        <Form.Label>Start Date</Form.Label>
+                        <Form.Control type="date" name="start_date" value={values.start_date} onChange={handleChange} />
+                      </Col>
+                      <Col sm={6}>
+                        <Form.Label>End Date</Form.Label>
+                        <Form.Control type="date" name="end_date" value={values.end_date} onChange={handleChange} />
+                      </Col>
+                    </Row>
+                    <Row className="mb-3">
+                      <Col sm={6}>
+                        <Form.Label>Start Time</Form.Label>
+                        <Form.Control type="time" name="start_time" value={values.start_time} onChange={handleChange} />
+                      </Col>
+                      <Col sm={6}>
+                        <Form.Label>End Time</Form.Label>
+                        <Form.Control type="time" name="end_time" value={values.end_time} onChange={handleChange} />
+                      </Col>
+                    </Row>
+                  </Form>
                 </div>
-                <Button variant="light" className="w-100 rounded-pill d-flex align-items-center justify-content-center">
-                  <img src={googleIcon} alt="Google Icon" style={{ ...googleIconStyle, marginRight: '20px' }} />
-                  <span>Sign Up with Google</span>
-                </Button>
-                <hr className="my-4" />
-                <Button variant="light" className="w-100 rounded-pill d-flex align-items-center justify-content-center">
-                  <img src={emailIcon} alt="Email Icon" style={{ ...iconStyle, marginRight: '20px' }} />
-                  <span>Continue with Email</span>
-                </Button>
-                <div className="text-sm d-flex justify-content-between mt-3">
-                  <p>If you already have an account...</p>
-                  <Button variant="outline-primary">Log In</Button>
+                <div style={{ flex: 1, paddingLeft: '15px' }}>
+                  <Form onSubmit={handleSubmit}>
+                    <Row className="mb-3">
+                      <Col sm={12}>
+                        <Form.Label>Amount</Form.Label>
+                        <Form.Control type="number" placeholder="Enter amount" name="amount" value={values.amount} onChange={handleChange} />
+                      </Col>
+                    </Row>
+                    <Row className="mb-3">
+                      <Col sm={12}>
+                        <Form.Label>Progress</Form.Label>
+                        <Form.Control type="number" placeholder="Enter progress" name="progress" value={values.progress} onChange={handleChange} />
+                      </Col>
+                    </Row>
+                   
+                    <Row className="mb-3">
+                      <Col sm={12}>
+                        <Form.Label>Image</Form.Label>
+                        <Form.Control type="file" name="image" onChange={(e) => setValues({ ...values, image: e.target.files[0] })} />
+                      </Col>
+                    </Row>
+                    <Row className="mb-3">
+                      <Col sm={12}>
+                        <Form.Label>Description</Form.Label>
+                        <Form.Control as="textarea" rows={3} placeholder="Enter description" name="description" value={values.description} onChange={handleChange} />
+                      </Col>
+                    </Row>
+                    <Button variant="primary" type="submit" className="w-50 rounded-pill align-items-center">
+                      Create Event
+                    </Button>
+                  </Form>
+                  {/* Buttons for alternative sign-up methods */}
+                  {/* Add your buttons here */}
                 </div>
               </Card.Body>
             </Card>

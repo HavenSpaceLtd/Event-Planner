@@ -773,3 +773,291 @@ sqlalchemy.exc.StatementError: (builtins.TypeError) SQLite DateTime type only ac
  * Running on http://127.0.0.1:5555
 2024-03-15 17:42:10,198 - INFO - [33mPress CTRL+C to quit[0m
 2024-03-15 17:42:14,999 - INFO - 127.0.0.1 - - [15/Mar/2024 17:42:14] "[35m[1mPOST /assets HTTP/1.1[0m" 201 -
+2024-03-15 22:35:03,699 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-15 22:35:03,700 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-15 22:36:45,873 - INFO - 127.0.0.1 - - [15/Mar/2024 22:36:45] "POST /login HTTP/1.1" 200 -
+2024-03-15 22:36:46,119 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 22:36:46,158 - INFO - 127.0.0.1 - - [15/Mar/2024 22:36:46] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 22:37:25,892 - INFO - 127.0.0.1 - - [15/Mar/2024 22:37:25] "DELETE /login HTTP/1.1" 200 -
+2024-03-15 22:48:57,498 - INFO - 127.0.0.1 - - [15/Mar/2024 22:48:57] "POST /login HTTP/1.1" 200 -
+2024-03-15 22:48:57,612 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 22:48:57,655 - INFO - 127.0.0.1 - - [15/Mar/2024 22:48:57] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 23:57:49,190 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-15 23:57:49,191 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-15 23:58:54,051 - INFO - 127.0.0.1 - - [15/Mar/2024 23:58:54] "DELETE /login HTTP/1.1" 200 -
+2024-03-15 23:59:02,573 - INFO - 127.0.0.1 - - [15/Mar/2024 23:59:02] "POST /login HTTP/1.1" 200 -
+2024-03-15 23:59:02,718 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 23:59:02,757 - INFO - 127.0.0.1 - - [15/Mar/2024 23:59:02] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 00:04:00,512 - INFO - 127.0.0.1 - - [16/Mar/2024 00:04:00] "DELETE /login HTTP/1.1" 200 -
+2024-03-16 00:04:26,213 - INFO - 127.0.0.1 - - [16/Mar/2024 00:04:26] "POST /login HTTP/1.1" 200 -
+2024-03-16 00:04:26,355 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 00:04:26,398 - INFO - 127.0.0.1 - - [16/Mar/2024 00:04:26] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 00:04:36,376 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 00:04:36,417 - INFO - 127.0.0.1 - - [16/Mar/2024 00:04:36] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 00:06:10,817 - ERROR - Exception on /events [POST]
+Traceback (most recent call last):
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/home/qadhar/lastone/Event-Planner/server/app.py", line 272, in post
+    start_date = datetime.strptime(start_date_str, '%m/%d/%Y').date()
+  File "/usr/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/usr/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2024-03-17' does not match format '%m/%d/%Y'
+2024-03-16 00:06:10,837 - INFO - 127.0.0.1 - - [16/Mar/2024 00:06:10] "[35m[1mPOST /events HTTP/1.1[0m" 500 -
+2024-03-16 00:11:04,820 - ERROR - Exception on /events [POST]
+Traceback (most recent call last):
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/home/qadhar/lastone/Event-Planner/server/app.py", line 272, in post
+    start_date = datetime.strptime(start_date_str, '%m/%d/%Y').date()
+  File "/usr/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/usr/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2024-03-17' does not match format '%m/%d/%Y'
+2024-03-16 00:11:04,825 - INFO - 127.0.0.1 - - [16/Mar/2024 00:11:04] "[35m[1mPOST /events HTTP/1.1[0m" 500 -
+2024-03-16 00:11:19,648 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 00:11:19,697 - INFO - 127.0.0.1 - - [16/Mar/2024 00:11:19] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 00:20:40,761 - ERROR - Exception on /events [POST]
+Traceback (most recent call last):
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-16 00:20:40,775 - INFO - 127.0.0.1 - - [16/Mar/2024 00:20:40] "[35m[1mPOST /events HTTP/1.1[0m" 500 -
+2024-03-16 00:20:44,398 - ERROR - Exception on /events [POST]
+Traceback (most recent call last):
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-16 00:20:44,409 - INFO - 127.0.0.1 - - [16/Mar/2024 00:20:44] "[35m[1mPOST /events HTTP/1.1[0m" 500 -
+2024-03-16 00:22:02,865 - INFO - 127.0.0.1 - - [16/Mar/2024 00:22:02] "DELETE /login HTTP/1.1" 200 -
+2024-03-16 00:22:11,903 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
+    unverified_claims = jwt.decode(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2024-03-16 00:22:11,913 - INFO - 127.0.0.1 - - [16/Mar/2024 00:22:11] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-16 00:22:28,829 - INFO - 127.0.0.1 - - [16/Mar/2024 00:22:28] "POST /login HTTP/1.1" 200 -
+2024-03-16 00:22:28,995 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 00:22:29,036 - INFO - 127.0.0.1 - - [16/Mar/2024 00:22:29] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 00:23:37,919 - ERROR - Exception on /events [POST]
+Traceback (most recent call last):
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/home/qadhar/lastone/Event-Planner/server/app.py", line 272, in post
+    start_date_str = data.get('start_date')
+  File "/usr/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/usr/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2024-03-17' does not match format '%m/%d/%Y'
+2024-03-16 00:23:37,925 - INFO - 127.0.0.1 - - [16/Mar/2024 00:23:37] "[35m[1mPOST /events HTTP/1.1[0m" 500 -
+2024-03-16 00:23:40,231 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 00:23:40,272 - INFO - 127.0.0.1 - - [16/Mar/2024 00:23:40] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 00:25:03,598 - ERROR - Exception on /events [POST]
+Traceback (most recent call last):
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/home/qadhar/lastone/Event-Planner/server/app.py", line 272, in post
+    start_date_str = data.get('start_date')
+  File "/usr/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/usr/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2024-02-28' does not match format '%m/%d/%Y'
+2024-03-16 00:25:03,603 - INFO - 127.0.0.1 - - [16/Mar/2024 00:25:03] "[35m[1mPOST /events HTTP/1.1[0m" 500 -
+2024-03-16 00:25:06,646 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 00:25:06,692 - INFO - 127.0.0.1 - - [16/Mar/2024 00:25:06] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 00:30:56,315 - INFO - 127.0.0.1 - - [16/Mar/2024 00:30:56] "[35m[1mPOST /events HTTP/1.1[0m" 201 -
+2024-03-16 00:31:11,181 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 00:31:11,216 - INFO - 127.0.0.1 - - [16/Mar/2024 00:31:11] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 00:31:59,360 - INFO - 127.0.0.1 - - [16/Mar/2024 00:31:59] "DELETE /login HTTP/1.1" 200 -
+2024-03-16 00:32:06,487 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
+    unverified_claims = jwt.decode(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/qadhar/.local/share/virtualenvs/server-gZuDoXi0/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2024-03-16 00:32:06,489 - INFO - 127.0.0.1 - - [16/Mar/2024 00:32:06] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-16 00:32:16,995 - INFO - 127.0.0.1 - - [16/Mar/2024 00:32:16] "POST /login HTTP/1.1" 200 -
+2024-03-16 00:32:17,140 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 00:32:17,174 - INFO - 127.0.0.1 - - [16/Mar/2024 00:32:17] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 00:33:14,105 - INFO - 127.0.0.1 - - [16/Mar/2024 00:33:14] "[35m[1mPOST /events HTTP/1.1[0m" 201 -
+2024-03-16 00:33:16,509 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 00:33:16,559 - INFO - 127.0.0.1 - - [16/Mar/2024 00:33:16] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 00:35:11,414 - INFO - 127.0.0.1 - - [16/Mar/2024 00:35:11] "GET /users HTTP/1.1" 200 -
+2024-03-16 00:35:11,418 - INFO - 127.0.0.1 - - [16/Mar/2024 00:35:11] "GET /communications HTTP/1.1" 200 -
+2024-03-16 00:35:11,424 - INFO - 127.0.0.1 - - [16/Mar/2024 00:35:11] "GET /allevents HTTP/1.1" 200 -
+2024-03-16 00:35:11,446 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 00:35:11,483 - INFO - 127.0.0.1 - - [16/Mar/2024 00:35:11] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 00:35:47,093 - INFO - 127.0.0.1 - - [16/Mar/2024 00:35:47] "[35m[1mPOST /communications HTTP/1.1[0m" 201 -
+2024-03-16 00:35:54,336 - INFO - 127.0.0.1 - - [16/Mar/2024 00:35:54] "GET /users HTTP/1.1" 200 -
+2024-03-16 00:35:54,437 - INFO - 127.0.0.1 - - [16/Mar/2024 00:35:54] "GET /communications HTTP/1.1" 200 -
+2024-03-16 00:35:54,499 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 00:35:54,518 - INFO - 127.0.0.1 - - [16/Mar/2024 00:35:54] "GET /allevents HTTP/1.1" 200 -
+2024-03-16 00:35:54,558 - INFO - 127.0.0.1 - - [16/Mar/2024 00:35:54] "GET /users/1 HTTP/1.1" 200 -
