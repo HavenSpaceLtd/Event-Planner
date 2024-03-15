@@ -252,6 +252,7 @@ class AllEvents(Resource):
     @jwt_required()
     def post(self):
         data = request.form
+        print(data)
 
         # Handle image upload
         image_file = request.files['image']
@@ -293,6 +294,7 @@ class AllEvents(Resource):
             amount=data.get('amount'),
             description=data.get('description'),
             owner_id=data.get('owner_id'),
+            progress=data.get('progress'),
             image=image_path)  # Assigning the path of the uploaded image
         db.session.add(new_event)
         db.session.commit()
