@@ -26,3 +26,1532 @@
 2024-03-14 12:44:37,354 - INFO - [33mPress CTRL+C to quit[0m
 2024-03-14 12:44:51,341 - INFO - 127.0.0.1 - - [14/Mar/2024 12:44:51] "POST /login HTTP/1.1" 200 -
 2024-03-14 12:47:32,467 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2024-03-15 01:56:25,902 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-15 01:56:25,903 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-15 02:05:15,763 - INFO - 127.0.0.1 - - [15/Mar/2024 02:05:15] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:05:15,769 - INFO - 127.0.0.1 - - [15/Mar/2024 02:05:15] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:05:15,771 - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:05:15,835 - INFO - 127.0.0.1 - - [15/Mar/2024 02:05:15] "[35m[1mGET /users HTTP/1.1[0m" 500 -
+2024-03-15 02:06:02,576 - ERROR - Exception on /expenses [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:06:02,579 - ERROR - Exception on /budgets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:06:02,583 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:06:02,591 - INFO - 127.0.0.1 - - [15/Mar/2024 02:06:02] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:06:02,599 - INFO - 127.0.0.1 - - [15/Mar/2024 02:06:02] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:06:02,600 - INFO - 127.0.0.1 - - [15/Mar/2024 02:06:02] "[35m[1mGET /expenses HTTP/1.1[0m" 500 -
+2024-03-15 02:06:02,602 - INFO - 127.0.0.1 - - [15/Mar/2024 02:06:02] "[35m[1mGET /budgets HTTP/1.1[0m" 500 -
+2024-03-15 02:06:02,603 - INFO - 127.0.0.1 - - [15/Mar/2024 02:06:02] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-15 02:07:13,399 - ERROR - Exception on /budgets [POST]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:07:13,402 - INFO - 127.0.0.1 - - [15/Mar/2024 02:07:13] "[35m[1mPOST /budgets HTTP/1.1[0m" 500 -
+2024-03-15 02:08:23,593 - INFO - 127.0.0.1 - - [15/Mar/2024 02:08:23] "DELETE /login HTTP/1.1" 200 -
+2024-03-15 02:08:26,289 - INFO - 127.0.0.1 - - [15/Mar/2024 02:08:26] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:08:26,310 - INFO - 127.0.0.1 - - [15/Mar/2024 02:08:26] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:08:36,809 - INFO - 127.0.0.1 - - [15/Mar/2024 02:08:36] "POST /login HTTP/1.1" 200 -
+2024-03-15 02:08:46,611 - INFO - 127.0.0.1 - - [15/Mar/2024 02:08:46] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-03-15 02:08:53,948 - INFO - 127.0.0.1 - - [15/Mar/2024 02:08:53] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:08:53,955 - INFO - 127.0.0.1 - - [15/Mar/2024 02:08:53] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:08:53,990 - INFO - 127.0.0.1 - - [15/Mar/2024 02:08:53] "GET /users HTTP/1.1" 200 -
+2024-03-15 02:09:02,490 - INFO - 127.0.0.1 - - [15/Mar/2024 02:09:02] "GET /expenses HTTP/1.1" 200 -
+2024-03-15 02:09:02,504 - INFO - 127.0.0.1 - - [15/Mar/2024 02:09:02] "GET /budgets HTTP/1.1" 200 -
+2024-03-15 02:09:02,507 - INFO - 127.0.0.1 - - [15/Mar/2024 02:09:02] "GET /assets HTTP/1.1" 200 -
+2024-03-15 02:09:02,509 - INFO - 127.0.0.1 - - [15/Mar/2024 02:09:02] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:09:02,515 - INFO - 127.0.0.1 - - [15/Mar/2024 02:09:02] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:09:20,737 - INFO - 127.0.0.1 - - [15/Mar/2024 02:09:20] "[35m[1mPOST /budgets HTTP/1.1[0m" 201 -
+2024-03-15 02:32:42,694 - INFO - 127.0.0.1 - - [15/Mar/2024 02:32:42] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:32:42,700 - INFO - 127.0.0.1 - - [15/Mar/2024 02:32:42] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:33:09,523 - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:33:09,552 - ERROR - Exception on /communications [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:33:09,585 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:33:09,617 - INFO - 127.0.0.1 - - [15/Mar/2024 02:33:09] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:33:09,650 - INFO - 127.0.0.1 - - [15/Mar/2024 02:33:09] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:33:09,689 - INFO - 127.0.0.1 - - [15/Mar/2024 02:33:09] "[35m[1mGET /users HTTP/1.1[0m" 500 -
+2024-03-15 02:33:09,690 - INFO - 127.0.0.1 - - [15/Mar/2024 02:33:09] "[35m[1mGET /communications HTTP/1.1[0m" 500 -
+2024-03-15 02:33:09,691 - INFO - 127.0.0.1 - - [15/Mar/2024 02:33:09] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-15 02:33:09,700 - INFO - 127.0.0.1 - - [15/Mar/2024 02:33:09] "GET /allevents HTTP/1.1" 200 -
+2024-03-15 02:33:23,210 - INFO - 127.0.0.1 - - [15/Mar/2024 02:33:23] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:33:23,248 - INFO - 127.0.0.1 - - [15/Mar/2024 02:33:23] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:36:04,752 - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:36:04,756 - INFO - 127.0.0.1 - - [15/Mar/2024 02:36:04] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:36:04,760 - INFO - 127.0.0.1 - - [15/Mar/2024 02:36:04] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:36:04,762 - INFO - 127.0.0.1 - - [15/Mar/2024 02:36:04] "[35m[1mGET /users HTTP/1.1[0m" 500 -
+2024-03-15 02:36:11,312 - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:36:11,315 - INFO - 127.0.0.1 - - [15/Mar/2024 02:36:11] "[35m[1mGET /users HTTP/1.1[0m" 500 -
+2024-03-15 02:36:11,326 - ERROR - Exception on /communications [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:36:11,348 - INFO - 127.0.0.1 - - [15/Mar/2024 02:36:11] "[35m[1mGET /communications HTTP/1.1[0m" 500 -
+2024-03-15 02:36:11,355 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:36:11,359 - INFO - 127.0.0.1 - - [15/Mar/2024 02:36:11] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:36:11,362 - INFO - 127.0.0.1 - - [15/Mar/2024 02:36:11] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:36:11,363 - INFO - 127.0.0.1 - - [15/Mar/2024 02:36:11] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-15 02:36:11,364 - INFO - 127.0.0.1 - - [15/Mar/2024 02:36:11] "GET /allevents HTTP/1.1" 200 -
+2024-03-15 02:36:30,475 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:36:30,478 - ERROR - Exception on /budgets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:36:30,487 - ERROR - Exception on /expenses [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:36:30,499 - INFO - 127.0.0.1 - - [15/Mar/2024 02:36:30] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:36:30,500 - INFO - 127.0.0.1 - - [15/Mar/2024 02:36:30] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:36:30,502 - INFO - 127.0.0.1 - - [15/Mar/2024 02:36:30] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-15 02:36:30,503 - INFO - 127.0.0.1 - - [15/Mar/2024 02:36:30] "[35m[1mGET /budgets HTTP/1.1[0m" 500 -
+2024-03-15 02:36:30,505 - INFO - 127.0.0.1 - - [15/Mar/2024 02:36:30] "[35m[1mGET /expenses HTTP/1.1[0m" 500 -
+2024-03-15 02:38:19,271 - ERROR - Exception on /budgets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:38:19,277 - ERROR - Exception on /expenses [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:38:19,280 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:38:19,289 - INFO - 127.0.0.1 - - [15/Mar/2024 02:38:19] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:38:19,290 - INFO - 127.0.0.1 - - [15/Mar/2024 02:38:19] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:38:19,293 - INFO - 127.0.0.1 - - [15/Mar/2024 02:38:19] "[35m[1mGET /budgets HTTP/1.1[0m" 500 -
+2024-03-15 02:38:19,294 - INFO - 127.0.0.1 - - [15/Mar/2024 02:38:19] "[35m[1mGET /expenses HTTP/1.1[0m" 500 -
+2024-03-15 02:38:19,295 - INFO - 127.0.0.1 - - [15/Mar/2024 02:38:19] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-15 02:38:31,074 - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:38:31,079 - INFO - 127.0.0.1 - - [15/Mar/2024 02:38:31] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:38:31,080 - INFO - 127.0.0.1 - - [15/Mar/2024 02:38:31] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:38:31,081 - INFO - 127.0.0.1 - - [15/Mar/2024 02:38:31] "[35m[1mGET /users HTTP/1.1[0m" 500 -
+2024-03-15 02:38:36,404 - INFO - 127.0.0.1 - - [15/Mar/2024 02:38:36] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:38:36,425 - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:38:36,429 - INFO - 127.0.0.1 - - [15/Mar/2024 02:38:36] "[35m[1mGET /users HTTP/1.1[0m" 500 -
+2024-03-15 02:38:36,462 - INFO - 127.0.0.1 - - [15/Mar/2024 02:38:36] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:39:24,253 - INFO - 127.0.0.1 - - [15/Mar/2024 02:39:24] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:39:24,257 - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:39:24,313 - INFO - 127.0.0.1 - - [15/Mar/2024 02:39:24] "[35m[1mGET /users HTTP/1.1[0m" 500 -
+2024-03-15 02:39:24,288 - INFO - 127.0.0.1 - - [15/Mar/2024 02:39:24] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:39:37,385 - INFO - 127.0.0.1 - - [15/Mar/2024 02:39:37] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:39:37,389 - INFO - 127.0.0.1 - - [15/Mar/2024 02:39:37] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:41:33,268 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 02:41:33,271 - INFO - 127.0.0.1 - - [15/Mar/2024 02:41:33] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-15 02:41:43,780 - INFO - 127.0.0.1 - - [15/Mar/2024 02:41:43] "DELETE /login HTTP/1.1" 200 -
+2024-03-15 02:41:46,958 - INFO - 127.0.0.1 - - [15/Mar/2024 02:41:46] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:41:46,972 - INFO - 127.0.0.1 - - [15/Mar/2024 02:41:46] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:41:49,825 - INFO - 127.0.0.1 - - [15/Mar/2024 02:41:49] "POST /login HTTP/1.1" 200 -
+2024-03-15 02:41:55,360 - INFO - 127.0.0.1 - - [15/Mar/2024 02:41:55] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-03-15 02:42:08,247 - INFO - 127.0.0.1 - - [15/Mar/2024 02:42:08] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:42:08,268 - INFO - 127.0.0.1 - - [15/Mar/2024 02:42:08] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:42:08,480 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 02:42:08,512 - INFO - 127.0.0.1 - - [15/Mar/2024 02:42:08] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 02:42:08,564 - INFO - 127.0.0.1 - - [15/Mar/2024 02:42:08] "GET /events HTTP/1.1" 200 -
+2024-03-15 02:42:08,613 - INFO - 127.0.0.1 - - [15/Mar/2024 02:42:08] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 02:49:01,268 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 02:49:01,305 - INFO - 127.0.0.1 - - [15/Mar/2024 02:49:01] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 02:49:01,328 - INFO - 127.0.0.1 - - [15/Mar/2024 02:49:01] "GET /events HTTP/1.1" 200 -
+2024-03-15 02:49:01,350 - INFO - 127.0.0.1 - - [15/Mar/2024 02:49:01] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 02:52:29,900 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 02:52:29,945 - INFO - 127.0.0.1 - - [15/Mar/2024 02:52:29] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 02:52:29,969 - INFO - 127.0.0.1 - - [15/Mar/2024 02:52:29] "GET /events HTTP/1.1" 200 -
+2024-03-15 02:52:29,985 - INFO - 127.0.0.1 - - [15/Mar/2024 02:52:29] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 02:54:10,104 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 02:54:10,113 - INFO - 127.0.0.1 - - [15/Mar/2024 02:54:10] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:54:10,252 - INFO - 127.0.0.1 - - [15/Mar/2024 02:54:10] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:54:10,281 - INFO - 127.0.0.1 - - [15/Mar/2024 02:54:10] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 02:54:10,959 - INFO - 127.0.0.1 - - [15/Mar/2024 02:54:10] "GET /events HTTP/1.1" 200 -
+2024-03-15 02:54:11,160 - INFO - 127.0.0.1 - - [15/Mar/2024 02:54:11] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 02:54:55,235 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 02:54:55,239 - INFO - 127.0.0.1 - - [15/Mar/2024 02:54:55] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 02:54:55,242 - INFO - 127.0.0.1 - - [15/Mar/2024 02:54:55] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 02:54:55,264 - INFO - 127.0.0.1 - - [15/Mar/2024 02:54:55] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 02:54:55,475 - INFO - 127.0.0.1 - - [15/Mar/2024 02:54:55] "GET /events HTTP/1.1" 200 -
+2024-03-15 02:54:55,531 - INFO - 127.0.0.1 - - [15/Mar/2024 02:54:55] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 03:02:38,434 - INFO - 127.0.0.1 - - [15/Mar/2024 03:02:38] "POST /login HTTP/1.1" 200 -
+2024-03-15 03:02:48,949 - INFO - 127.0.0.1 - - [15/Mar/2024 03:02:48] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 03:02:48,949 - INFO - 127.0.0.1 - - [15/Mar/2024 03:02:48] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 03:02:48,964 - INFO - 127.0.0.1 - - [15/Mar/2024 03:02:48] "GET /users HTTP/1.1" 200 -
+2024-03-15 03:02:55,231 - INFO - 127.0.0.1 - - [15/Mar/2024 03:02:55] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 03:02:55,237 - INFO - 127.0.0.1 - - [15/Mar/2024 03:02:55] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 03:02:55,238 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 03:02:55,266 - INFO - 127.0.0.1 - - [15/Mar/2024 03:02:55] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 03:02:55,568 - INFO - 127.0.0.1 - - [15/Mar/2024 03:02:55] "GET /events HTTP/1.1" 200 -
+2024-03-15 03:02:55,597 - INFO - 127.0.0.1 - - [15/Mar/2024 03:02:55] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 03:10:23,798 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 03:10:23,876 - INFO - 127.0.0.1 - - [15/Mar/2024 03:10:23] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 03:10:23,908 - INFO - 127.0.0.1 - - [15/Mar/2024 03:10:23] "GET /events HTTP/1.1" 200 -
+2024-03-15 03:10:23,923 - INFO - 127.0.0.1 - - [15/Mar/2024 03:10:23] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 03:10:34,175 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 03:10:34,185 - INFO - 127.0.0.1 - - [15/Mar/2024 03:10:34] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 03:10:34,193 - INFO - 127.0.0.1 - - [15/Mar/2024 03:10:34] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 03:10:34,226 - INFO - 127.0.0.1 - - [15/Mar/2024 03:10:34] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 03:10:34,484 - INFO - 127.0.0.1 - - [15/Mar/2024 03:10:34] "GET /events HTTP/1.1" 200 -
+2024-03-15 03:10:34,533 - INFO - 127.0.0.1 - - [15/Mar/2024 03:10:34] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 03:12:30,816 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 03:12:30,850 - INFO - 127.0.0.1 - - [15/Mar/2024 03:12:30] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 03:12:30,899 - INFO - 127.0.0.1 - - [15/Mar/2024 03:12:30] "GET /events HTTP/1.1" 200 -
+2024-03-15 03:12:30,912 - INFO - 127.0.0.1 - - [15/Mar/2024 03:12:30] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 03:12:37,468 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 03:12:37,473 - INFO - 127.0.0.1 - - [15/Mar/2024 03:12:37] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 03:12:37,477 - INFO - 127.0.0.1 - - [15/Mar/2024 03:12:37] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 03:12:37,499 - INFO - 127.0.0.1 - - [15/Mar/2024 03:12:37] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 03:12:37,757 - INFO - 127.0.0.1 - - [15/Mar/2024 03:12:37] "GET /events HTTP/1.1" 200 -
+2024-03-15 03:12:37,796 - INFO - 127.0.0.1 - - [15/Mar/2024 03:12:37] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 03:13:07,784 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 03:13:07,804 - INFO - 127.0.0.1 - - [15/Mar/2024 03:13:07] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 03:13:07,841 - INFO - 127.0.0.1 - - [15/Mar/2024 03:13:07] "GET /events HTTP/1.1" 200 -
+2024-03-15 03:13:07,863 - INFO - 127.0.0.1 - - [15/Mar/2024 03:13:07] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 03:13:46,783 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 03:13:46,797 - INFO - 127.0.0.1 - - [15/Mar/2024 03:13:46] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 03:13:46,814 - INFO - 127.0.0.1 - - [15/Mar/2024 03:13:46] "GET /events HTTP/1.1" 200 -
+2024-03-15 03:13:46,827 - INFO - 127.0.0.1 - - [15/Mar/2024 03:13:46] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 03:17:08,065 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 03:17:08,131 - INFO - 127.0.0.1 - - [15/Mar/2024 03:17:08] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 03:17:08,150 - INFO - 127.0.0.1 - - [15/Mar/2024 03:17:08] "GET /events HTTP/1.1" 200 -
+2024-03-15 03:17:08,189 - INFO - 127.0.0.1 - - [15/Mar/2024 03:17:08] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 03:30:48,112 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 03:30:48,198 - INFO - 127.0.0.1 - - [15/Mar/2024 03:30:48] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-15 03:30:56,341 - INFO - 127.0.0.1 - - [15/Mar/2024 03:30:56] "DELETE /login HTTP/1.1" 200 -
+2024-03-15 03:31:00,515 - INFO - 127.0.0.1 - - [15/Mar/2024 03:31:00] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 03:31:00,520 - INFO - 127.0.0.1 - - [15/Mar/2024 03:31:00] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 03:31:05,895 - INFO - 127.0.0.1 - - [15/Mar/2024 03:31:05] "POST /login HTTP/1.1" 200 -
+2024-03-15 03:31:23,844 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 03:31:23,847 - INFO - 127.0.0.1 - - [15/Mar/2024 03:31:23] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 03:31:23,859 - INFO - 127.0.0.1 - - [15/Mar/2024 03:31:23] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 03:31:23,889 - INFO - 127.0.0.1 - - [15/Mar/2024 03:31:23] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 03:31:24,614 - INFO - 127.0.0.1 - - [15/Mar/2024 03:31:24] "GET /events HTTP/1.1" 200 -
+2024-03-15 03:31:24,670 - INFO - 127.0.0.1 - - [15/Mar/2024 03:31:24] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 03:32:01,836 - INFO - 127.0.0.1 - - [15/Mar/2024 03:32:01] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 03:32:01,850 - INFO - 127.0.0.1 - - [15/Mar/2024 03:32:01] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 03:32:01,857 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 03:32:01,892 - INFO - 127.0.0.1 - - [15/Mar/2024 03:32:01] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 03:32:02,116 - INFO - 127.0.0.1 - - [15/Mar/2024 03:32:02] "GET /events HTTP/1.1" 200 -
+2024-03-15 03:32:02,150 - INFO - 127.0.0.1 - - [15/Mar/2024 03:32:02] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 03:32:07,176 - INFO - 127.0.0.1 - - [15/Mar/2024 03:32:07] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 03:32:07,180 - INFO - 127.0.0.1 - - [15/Mar/2024 03:32:07] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 03:32:07,185 - INFO - 127.0.0.1 - - [15/Mar/2024 03:32:07] "GET /users HTTP/1.1" 200 -
+2024-03-15 03:32:09,824 - INFO - 127.0.0.1 - - [15/Mar/2024 03:32:09] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 03:32:09,828 - INFO - 127.0.0.1 - - [15/Mar/2024 03:32:09] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 03:32:09,828 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 03:32:09,842 - INFO - 127.0.0.1 - - [15/Mar/2024 03:32:09] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 03:32:10,138 - INFO - 127.0.0.1 - - [15/Mar/2024 03:32:10] "GET /events HTTP/1.1" 200 -
+2024-03-15 03:32:10,182 - INFO - 127.0.0.1 - - [15/Mar/2024 03:32:10] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 04:08:18,317 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 04:08:18,331 - INFO - 127.0.0.1 - - [15/Mar/2024 04:08:18] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 04:08:18,331 - INFO - 127.0.0.1 - - [15/Mar/2024 04:08:18] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 04:08:18,361 - INFO - 127.0.0.1 - - [15/Mar/2024 04:08:18] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-15 06:25:26,525 - INFO - 127.0.0.1 - - [15/Mar/2024 06:25:26] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:25:26,510 - INFO - 127.0.0.1 - - [15/Mar/2024 06:25:26] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:25:26,543 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 06:25:26,655 - INFO - 127.0.0.1 - - [15/Mar/2024 06:25:26] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-15 06:26:11,680 - INFO - 127.0.0.1 - - [15/Mar/2024 06:26:11] "DELETE /login HTTP/1.1" 200 -
+2024-03-15 06:26:15,073 - INFO - 127.0.0.1 - - [15/Mar/2024 06:26:15] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:26:15,085 - INFO - 127.0.0.1 - - [15/Mar/2024 06:26:15] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:26:18,797 - INFO - 127.0.0.1 - - [15/Mar/2024 06:26:18] "POST /login HTTP/1.1" 200 -
+2024-03-15 06:26:31,709 - INFO - 127.0.0.1 - - [15/Mar/2024 06:26:31] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:26:31,738 - INFO - 127.0.0.1 - - [15/Mar/2024 06:26:31] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:26:31,744 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 06:26:31,779 - INFO - 127.0.0.1 - - [15/Mar/2024 06:26:31] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 06:26:32,016 - INFO - 127.0.0.1 - - [15/Mar/2024 06:26:32] "GET /events HTTP/1.1" 200 -
+2024-03-15 06:26:32,048 - INFO - 127.0.0.1 - - [15/Mar/2024 06:26:32] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 06:26:49,836 - INFO - 127.0.0.1 - - [15/Mar/2024 06:26:49] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:26:49,840 - INFO - 127.0.0.1 - - [15/Mar/2024 06:26:49] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:26:49,846 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 06:26:49,872 - INFO - 127.0.0.1 - - [15/Mar/2024 06:26:49] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 06:26:50,037 - INFO - 127.0.0.1 - - [15/Mar/2024 06:26:50] "GET /events HTTP/1.1" 200 -
+2024-03-15 06:26:50,103 - INFO - 127.0.0.1 - - [15/Mar/2024 06:26:50] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 06:27:05,913 - INFO - 127.0.0.1 - - [15/Mar/2024 06:27:05] "GET /budgets HTTP/1.1" 200 -
+2024-03-15 06:27:05,915 - INFO - 127.0.0.1 - - [15/Mar/2024 06:27:05] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:27:05,960 - INFO - 127.0.0.1 - - [15/Mar/2024 06:27:05] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:27:05,962 - INFO - 127.0.0.1 - - [15/Mar/2024 06:27:05] "GET /expenses HTTP/1.1" 200 -
+2024-03-15 06:27:05,978 - INFO - 127.0.0.1 - - [15/Mar/2024 06:27:05] "GET /assets HTTP/1.1" 200 -
+2024-03-15 06:29:34,634 - INFO - 127.0.0.1 - - [15/Mar/2024 06:29:34] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:29:34,638 - INFO - 127.0.0.1 - - [15/Mar/2024 06:29:34] "GET /budgets HTTP/1.1" 200 -
+2024-03-15 06:29:34,641 - INFO - 127.0.0.1 - - [15/Mar/2024 06:29:34] "GET /assets HTTP/1.1" 200 -
+2024-03-15 06:29:34,644 - INFO - 127.0.0.1 - - [15/Mar/2024 06:29:34] "GET /expenses HTTP/1.1" 200 -
+2024-03-15 06:29:34,658 - INFO - 127.0.0.1 - - [15/Mar/2024 06:29:34] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:33:43,475 - INFO - 127.0.0.1 - - [15/Mar/2024 06:33:43] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:33:43,483 - INFO - 127.0.0.1 - - [15/Mar/2024 06:33:43] "GET /assets HTTP/1.1" 200 -
+2024-03-15 06:33:43,486 - INFO - 127.0.0.1 - - [15/Mar/2024 06:33:43] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:33:43,493 - INFO - 127.0.0.1 - - [15/Mar/2024 06:33:43] "GET /expenses HTTP/1.1" 200 -
+2024-03-15 06:33:43,497 - INFO - 127.0.0.1 - - [15/Mar/2024 06:33:43] "GET /budgets HTTP/1.1" 200 -
+2024-03-15 06:33:54,141 - INFO - 127.0.0.1 - - [15/Mar/2024 06:33:54] "GET /users HTTP/1.1" 200 -
+2024-03-15 06:33:54,144 - INFO - 127.0.0.1 - - [15/Mar/2024 06:33:54] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:33:54,148 - INFO - 127.0.0.1 - - [15/Mar/2024 06:33:54] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:35:05,793 - INFO - 127.0.0.1 - - [15/Mar/2024 06:35:05] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:35:05,800 - INFO - 127.0.0.1 - - [15/Mar/2024 06:35:05] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:35:05,806 - INFO - 127.0.0.1 - - [15/Mar/2024 06:35:05] "GET /users HTTP/1.1" 200 -
+2024-03-15 06:41:40,039 - INFO - 127.0.0.1 - - [15/Mar/2024 06:41:40] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:41:40,047 - INFO - 127.0.0.1 - - [15/Mar/2024 06:41:40] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:41:40,048 - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 06:41:40,062 - INFO - 127.0.0.1 - - [15/Mar/2024 06:41:40] "[35m[1mGET /users HTTP/1.1[0m" 500 -
+2024-03-15 06:46:14,148 - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 06:46:14,161 - INFO - 127.0.0.1 - - [15/Mar/2024 06:46:14] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:46:14,165 - INFO - 127.0.0.1 - - [15/Mar/2024 06:46:14] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:46:14,168 - INFO - 127.0.0.1 - - [15/Mar/2024 06:46:14] "[35m[1mGET /users HTTP/1.1[0m" 500 -
+2024-03-15 06:48:04,794 - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 06:48:04,811 - INFO - 127.0.0.1 - - [15/Mar/2024 06:48:04] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:48:04,812 - INFO - 127.0.0.1 - - [15/Mar/2024 06:48:04] "[35m[1mGET /users HTTP/1.1[0m" 500 -
+2024-03-15 06:48:04,813 - INFO - 127.0.0.1 - - [15/Mar/2024 06:48:04] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:50:08,712 - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 06:50:08,717 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:08] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:50:08,720 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:08] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:50:08,725 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:08] "[35m[1mGET /users HTTP/1.1[0m" 500 -
+2024-03-15 06:50:11,114 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:11] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:50:11,119 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:11] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:50:11,123 - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 06:50:11,219 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:11] "[35m[1mGET /users HTTP/1.1[0m" 500 -
+2024-03-15 06:50:11,181 - ERROR - Exception on /communications [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 06:50:11,231 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 06:50:11,233 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:11] "[35m[1mGET /communications HTTP/1.1[0m" 500 -
+2024-03-15 06:50:11,261 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:11] "GET /allevents HTTP/1.1" 200 -
+2024-03-15 06:50:11,263 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:11] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-15 06:50:15,029 - ERROR - Exception on /budgets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 06:50:15,036 - ERROR - Exception on /expenses [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 06:50:15,039 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 06:50:15,045 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:15] "[35m[1mGET /budgets HTTP/1.1[0m" 500 -
+2024-03-15 06:50:15,048 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:15] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:50:15,056 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:15] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:50:15,060 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:15] "[35m[1mGET /expenses HTTP/1.1[0m" 500 -
+2024-03-15 06:50:15,061 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:15] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-15 06:50:19,851 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 06:50:19,856 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:19] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 06:50:19,860 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:19] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 06:50:19,861 - INFO - 127.0.0.1 - - [15/Mar/2024 06:50:19] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-15 07:10:48,495 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-9MAoZuaD/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-15 07:10:48,553 - INFO - 127.0.0.1 - - [15/Mar/2024 07:10:48] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 07:10:48,554 - INFO - 127.0.0.1 - - [15/Mar/2024 07:10:48] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 07:10:48,562 - INFO - 127.0.0.1 - - [15/Mar/2024 07:10:48] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-15 07:11:13,355 - INFO - 127.0.0.1 - - [15/Mar/2024 07:11:13] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 07:11:13,368 - INFO - 127.0.0.1 - - [15/Mar/2024 07:11:13] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 07:11:30,034 - INFO - 127.0.0.1 - - [15/Mar/2024 07:11:30] "DELETE /login HTTP/1.1" 200 -
+2024-03-15 07:11:33,991 - INFO - 127.0.0.1 - - [15/Mar/2024 07:11:33] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 07:11:33,996 - INFO - 127.0.0.1 - - [15/Mar/2024 07:11:33] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 07:11:36,952 - INFO - 127.0.0.1 - - [15/Mar/2024 07:11:36] "POST /login HTTP/1.1" 200 -
+2024-03-15 07:11:46,126 - INFO - 127.0.0.1 - - [15/Mar/2024 07:11:46] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 07:11:46,127 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 07:11:46,129 - INFO - 127.0.0.1 - - [15/Mar/2024 07:11:46] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 07:11:46,162 - INFO - 127.0.0.1 - - [15/Mar/2024 07:11:46] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 07:11:46,419 - INFO - 127.0.0.1 - - [15/Mar/2024 07:11:46] "GET /events HTTP/1.1" 200 -
+2024-03-15 07:11:46,449 - INFO - 127.0.0.1 - - [15/Mar/2024 07:11:46] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 07:11:51,284 - INFO - 127.0.0.1 - - [15/Mar/2024 07:11:51] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 07:11:51,293 - INFO - 127.0.0.1 - - [15/Mar/2024 07:11:51] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 07:16:08,761 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:08] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 07:16:08,777 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:08] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 07:16:08,785 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 07:16:08,816 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:08] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 07:16:09,026 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:09] "GET /events HTTP/1.1" 200 -
+2024-03-15 07:16:09,078 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:09] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 07:16:18,750 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 07:16:18,757 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:18] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 07:16:18,758 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:18] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 07:16:18,857 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:18] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 07:16:19,084 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:19] "GET /events HTTP/1.1" 200 -
+2024-03-15 07:16:19,216 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:19] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 07:16:26,405 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:26] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 07:16:26,410 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:26] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 07:16:26,412 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 07:16:26,425 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:26] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 07:16:26,630 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:26] "GET /events HTTP/1.1" 200 -
+2024-03-15 07:16:26,658 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:26] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 07:16:37,058 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:37] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 07:16:37,059 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 07:16:37,062 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:37] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 07:16:37,086 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:37] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 07:16:37,281 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:37] "GET /events HTTP/1.1" 200 -
+2024-03-15 07:16:37,301 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:37] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 07:16:41,472 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:41] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 07:16:41,477 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:41] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 07:16:41,491 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 07:16:41,510 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:41] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 07:16:41,680 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:41] "GET /events HTTP/1.1" 200 -
+2024-03-15 07:16:41,719 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:41] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 07:16:48,222 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 07:16:48,281 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:48] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 07:16:48,331 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:48] "GET /events HTTP/1.1" 200 -
+2024-03-15 07:16:48,363 - INFO - 127.0.0.1 - - [15/Mar/2024 07:16:48] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 07:17:05,203 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 07:17:05,205 - INFO - 127.0.0.1 - - [15/Mar/2024 07:17:05] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 07:17:05,214 - INFO - 127.0.0.1 - - [15/Mar/2024 07:17:05] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 07:17:05,232 - INFO - 127.0.0.1 - - [15/Mar/2024 07:17:05] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 07:17:05,419 - INFO - 127.0.0.1 - - [15/Mar/2024 07:17:05] "GET /events HTTP/1.1" 200 -
+2024-03-15 07:17:05,467 - INFO - 127.0.0.1 - - [15/Mar/2024 07:17:05] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 07:17:46,922 - INFO - 127.0.0.1 - - [15/Mar/2024 07:17:46] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 07:17:46,925 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 07:17:46,928 - INFO - 127.0.0.1 - - [15/Mar/2024 07:17:46] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 07:17:46,944 - INFO - 127.0.0.1 - - [15/Mar/2024 07:17:46] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 07:17:47,117 - INFO - 127.0.0.1 - - [15/Mar/2024 07:17:47] "GET /events HTTP/1.1" 200 -
+2024-03-15 07:17:47,151 - INFO - 127.0.0.1 - - [15/Mar/2024 07:17:47] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 07:17:54,833 - INFO - 127.0.0.1 - - [15/Mar/2024 07:17:54] "[33mGET /allusers HTTP/1.1[0m" 404 -
+2024-03-15 07:17:54,838 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 07:17:54,849 - INFO - 127.0.0.1 - - [15/Mar/2024 07:17:54] "[33mGET /combined-data HTTP/1.1[0m" 404 -
+2024-03-15 07:17:54,871 - INFO - 127.0.0.1 - - [15/Mar/2024 07:17:54] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 07:17:55,010 - INFO - 127.0.0.1 - - [15/Mar/2024 07:17:55] "GET /events HTTP/1.1" 200 -
+2024-03-15 07:17:55,031 - INFO - 127.0.0.1 - - [15/Mar/2024 07:17:55] "GET /tasks HTTP/1.1" 200 -
+2024-03-15 07:18:26,076 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-15 07:18:26,108 - INFO - 127.0.0.1 - - [15/Mar/2024 07:18:26] "GET /users/1 HTTP/1.1" 200 -
+2024-03-15 07:18:26,131 - INFO - 127.0.0.1 - - [15/Mar/2024 07:18:26] "GET /events HTTP/1.1" 200 -
+2024-03-15 07:18:26,146 - INFO - 127.0.0.1 - - [15/Mar/2024 07:18:26] "GET /tasks HTTP/1.1" 200 -

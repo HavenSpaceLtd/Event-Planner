@@ -49,7 +49,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link href="#events" style={{ marginRight: '30px', color: 'black' }}>Events</Nav.Link>
+            <Nav.Link href="events" style={{ marginRight: '30px', color: 'black' }}>Events</Nav.Link>
             <Nav.Link href="tasks" style={{ marginRight: '30px', color: 'black' }}>Tasks</Nav.Link>
             <Nav.Link href="collaboration" style={{ marginRight: '30px', color: 'black' }}>Collaboration</Nav.Link>
             <Nav.Link href="resources" style={{ color: 'black' }}>Resources</Nav.Link>

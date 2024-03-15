@@ -1,0 +1,17 @@
+
+.ecard-container {
+    display: flex;
+    gap: 20px; /* Adjust the spacing between cards */
+    overflow-x: auto; /* Enable horizontal scrolling if necessary */
+}
+
+.ecard {
+    flex: 0 0 auto; /* Ensure the card does not grow or shrink */
+    width: 300px; /* Set the width of each card */
+    /* Add shadow without border line */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+.ecard-body {
+    padding: 20px;
+}
