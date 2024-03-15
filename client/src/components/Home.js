@@ -1,421 +1,258 @@
-import React, { useState, useEffect } from 'react';
-import { Card, Col, Container, Row, Form, Button, Navbar } from 'react-bootstrap';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import NewEventForm from "./NewEventForm"
 
 function Home() {
+    const [selectedItem, setSelectedItem] = useState('');
+    const [userData, setUserData] = useState({});
+    const [counter, setCounter] = useState(0);
 
-const[users, setUsers] = useState([])
- const userDataString = sessionStorage.getItem('UserData');
- const id = sessionStorage.getItem('userId')
-// Parse the stringified data back into an object
-const userData = JSON.parse(userDataString);
-const user = userData
 
-useEffect(() => {
-  const fetchUsers = async () => {
-    try {
-      const access_token = sessionStorage.getItem('accessToken'); // Assuming you have the access token
-      const response = await axios.get('/users', {
-        headers: {
-          Authorization: `Bearer ${access_token}`
+    const activeUser = sessionStorage.getItem('userId');
+    const activeToken = sessionStorage.getItem('accessToken');
+
+
+    useEffect(() => {
+        async function fetchUserData() {
+            try {
+                const response = await fetch(`/users/${activeUser}`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${activeToken}`
+                    }
+                });
+                if (!response.ok) {
+                    throw new Error("Failed to fetch user data");
+                }
+                const userData = await response.json();
+                setUserData(userData);
+            } catch (error) {
+                console.error("Error fetching user data:", error);
+            }
         }
-      });
-      setUsers(response.data); // Assuming response.data is an array of users
-    } catch (error) {
-      console.error('Error fetching users:', error);
-    }
-  };
+        fetchUserData();
+    }, []);
 
-  fetchUsers();
-
-  // Cleanup function if needed
-  // return () => { cleanup code here };
-}, []);
-console.log(users)
-// Now userData contains the user data retrieved from sessionStorage
-console.log(userData);
-  const [tasks, setTasks] = useState(() => {
-    // Initialize tasks from localStorage or use default if no tasks are saved
-    const savedTasks = localStorage.getItem('tasks');
-    return savedTasks ? JSON.parse(savedTasks) : [
-      {
-        id: 1,
-        title: 'Event Title',
-        end_date: '',
-        location: '',
-        amount: '',
-        status: 'Todo',
-      },
-    ];
-  });
-  
-  useEffect(() => {
-    // Save tasks to localStorage whenever tasks change
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);
-  
-
-  
- const handleDragEnd = async (result) => {
-  if (!result.destination) {
-    return;
-  }
-
-  const { destination, source } = result;
-
-  if (destination.droppableId === source.droppableId) {
-    return;
-  }
-
-  const updatedTasks = [...tasks];
-  const movedTask = updatedTasks.find(task => task.id.toString() === result.draggableId);
-
-  const prevStatus = movedTask.status;
-
-  movedTask.status = destination.droppableId;
-
-  if (destination.droppableId === 'todo') {
-    movedTask.status = 'Todo';
-  }
-
-  if (destination.droppableId === 'inprogress') {
-    movedTask.status = 'InProgress';
-  }
-
-  if (destination.droppableId === 'completed') {
-    movedTask.status = 'Completed';
-  }
-
-  if (destination.droppableId === 'delayed') {
-    movedTask.status = 'Delayed';
-  }
-
-  setTasks(updatedTasks);
-
-  if (prevStatus !== movedTask.status && movedTask.assignedTo.length > 0) {
-    let message = '';
-    switch (movedTask.status) {
-      case 'InProgress':
-        message = `${movedTask.assignedTo.join(', ')} have started working on ${movedTask.taskTitle}`;
-        break;
-      case 'Completed':
-        message = `${movedTask.assignedTo.join(', ')} have completed ${movedTask.taskTitle}`;
-        break;
-      case 'Delayed':
-        message = `${movedTask.taskTitle} assigned to ${movedTask.assignedTo.join(', ')} has been delayed`;
-        break;
-      default:
-        break;
-    }
-    if (message !== '') {
-      alert(message);
-    }
-  }
-
-  // Add PUT request to update the task status
-  try {
-    const response = await fetch(`/update_task_status/${movedTask.id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        newStatus: destination.droppableId // Assuming the droppableId represents the new status
-      })
-    });
-    if (!response.ok) {
-      throw new Error('Failed to update task status');
-    }
-  } catch (error) {
-    console.error('Error updating task status:', error);
-    // Handle error as needed
-  }
-};
-
-
-  const handleChange = (taskId, field, value) => {
-    const updatedTasks = tasks.map(task =>
-      task.id === taskId ? { ...task, [field]: value } : task
-    );
-    setTasks(updatedTasks);
-  };
-
-  const handleUpdate = async (taskId) => {
-    try {
-        const taskToCreate = tasks.find(task => task.id === taskId);
-        console.log(taskToCreate);
-        const startDate = new Date(taskToCreate.start_date);
-        const endDate = new Date(taskToCreate.end_date);
-      console.log(taskToCreate)
-        // For Start Date
-        const startMonth = String(startDate.getMonth() + 1).padStart(2, '0');
-        const startDay = String(startDate.getDate()).padStart(2, '0');
-        const startYear = startDate.getFullYear();
-        const formattedStartDate = `${startMonth}/${startDay}/${startYear}`;
-
-        // For End Date
-        const endMonth = String(endDate.getMonth() + 1).padStart(2, '0');
-        const endDay = String(endDate.getDate()).padStart(2, '0');
-        const endYear = endDate.getFullYear();
-        const formattedEndDate = `${endMonth}/${endDay}/${endYear}`;
-         
-
-        // Add own_id to taskToCreate object
-        taskToCreate.owner_id = user.id; 
-        taskToCreate.start_date = formattedStartDate; 
-        taskToCreate.end_date = formattedEndDate; 
-       
-        
-         
-
-        // Send data to /tasks endpoint
-        const tasksResponse = await fetch('/tasks', {
-            method: 'POST',
-            headers: {
-                "Authorization": `Bearer ${user.access_token}`,
-                'Content-Type': 'application/json', 
-            },
-            body: JSON.stringify(taskToCreate), // Send only the task to be created
-        });
-        if (!tasksResponse.ok) {
-            throw new Error('Failed to save to tasks');
+    const handleItemClick = (item) => {
+        setSelectedItem(item);
+        // console.log(selectedUser);
+        setCounter(prevCounter => prevCounter + 1);
+        console.log(userData);
+        if (item == "Logout") {
+            sessionStorage.removeItem('selectedUser');
         }
-        const tasksData = await tasksResponse.json();
-        console.log('Tasks Response:', tasksData);
-
-        alert('Task created Successfully');
-
-    } catch (error) {
-        console.error('Error:', error.message);
-    }
-    console.log(`Task with ID ${taskId} saved.`);
-};
-
-
-
-  const handleDelete = (taskId) => {
-    if (taskId === 1) {
-      console.log("Cannot delete the first card.");
-      return;
-    }
-    const updatedTasks = tasks.filter(task => task.id !== taskId);
-    setTasks(updatedTasks);
-    console.log(`Task with ID ${taskId} deleted.`);
-  };
-
-  const handleResetTask = (taskId) => {
-    const taskIndex = tasks.findIndex(task => task.id === taskId);
-    if (taskIndex !== -1) {
-      const originalTask = {
-        id: tasks[taskIndex].id,
-        title: 'New Event',
-        start_date: '',
-        location: '',
-        amount: '',
-        description: '',
-        status:'Todo'
-      };
-      const updatedTasks = [...tasks];
-      updatedTasks[taskIndex] = originalTask;
-      setTasks(updatedTasks);
-    }
-  };
-
-  const handleAddTask = () => {
-    const newTaskId = tasks.length + 1;
-    const newTask = {
-      id: newTaskId,
-      title: 'New Event',
-      start_date: '',
-      location: '',
-      amount: '',
-      description: '',
-      status:'Todo'
     };
-    const updatedTasks = [...tasks, newTask];
-    setTasks(updatedTasks);
-    console.log("New task added.");
-  };
 
-  const handleNumParticipantsChange = (taskId, value) => {
-    const updatedTasks = tasks.map(task =>
-      task.id === taskId ? { ...task, numParticipants: value } : task
-    );
-    setTasks(updatedTasks);
-  };
+    let trimmedPath = userData.image ? userData.image.replace("../client/public", "") : "";
+    let plain = "/images/default.jpg"
 
-  const handleUserSelect = (userId, taskId) => {
-    const updatedTasks = tasks.map(task => {
-      if (task.id === taskId && task.assignedTo.length < task.numParticipants) {
-        const newAssignedTo = [...task.assignedTo, userId];
-        return { ...task, assignedTo: newAssignedTo };
-      }
-      return task;
-    });
-    setTasks(updatedTasks);
-  };
-console.log(tasks)
-  return (
-    <DragDropContext onDragEnd={handleDragEnd}>
-      <Container fluid style={{ backgroundColor: 'bisque', padding: '20px' }}>
-        <Navbar bg="light" expand="lg" style={{ borderRadius: '20px' }}>
-          <Container>
-            <Button
-              variant="success"
-              onClick={handleAddTask}
-              className="mx-auto"
-              style={{ backgroundColor: '#3e2723' }}
-            >
-              Add Task
-            </Button>
-          </Container>
-        </Navbar>
-        <Row>
-          {['Todo', 'InProgress', 'Completed', 'Delayed'].map((status) => (
-            <Col key={status}>
-              
-              <h3>{status}</h3>
-              <hr style={{ borderColor: '#3e2723', backgroundColor: '#3e2723', height: '2px', margin: '5px 0' }} /> 
-              <Droppable droppableId={status.toLowerCase()} key={status}>
-                {(provided) => (
-                  <div ref={provided.innerRef} {...provided.droppableProps} style={{ minHeight: '100px' }}>
-                    {tasks.map((task, index) => {
-                      if (task.status.toLowerCase() === status.toLowerCase()) {
-                        return (
-                          <Draggable key={task.id} draggableId={task.id.toString()} index={index}>
-                            {(provided, snapshot) => (
-                              <div
-                                ref={provided.innerRef}
-                                {...provided.draggableProps}
-                                {...provided.dragHandleProps}
-                                className="customDraggable"
-                              >
-                       <Card style={{ marginBottom: '20px', opacity: snapshot.isDragging ? 0.8 : 1, border: 'none' }}>
-                                  <Card.Body>
-                                  
-                                    <Form.Group controlId={`task-${task.id}`}>
-                                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                                        <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-                                          <Form.Label>Task Title</Form.Label>
-                                        </div>
-                                        <div style={{ flex: 2 }}>
-                                          <Form.Control
-                                            type="text"
-                                            value={task.eventTitle}
-                                            onChange={(e) => handleChange(task.id, 'eventTitle', e.target.value)}
-                                          />
-                                        </div>
-                                      </div>                      
+    return (
+        <>
+            {userData.title == "planner" ? (
+                <div>
+                    <p>Name: {userData.first_name} {userData.last_name}</p>
+                    <p>Email: {userData.email}</p>
+                    {/* <p>Events: {userData.events}</p>
+                    <p>Tasks: {userData.tasks}</p> */}
+                    {/* Display other user data as needed */}
+                </div>
+            ) : (
+                <p>Loading user data...</p>
+            )}
+            {userData.title == "user" ? (
+                <div>
+                    <p>Name: {userData.first_name} {userData.last_name}</p>
+                    <p>Email: {userData.email}</p>
+                    {/* <p>Events: {userData.events}</p>
+                    <p>Tasks: {userData.tasks}</p> */}
+                    {/* Display other user data as needed */}
+                </div>
+            ) : (
+                <p>Loading user data...</p>
+            )}
 
-                                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-                                      <Form.Label>Start Date</Form.Label>
-                                      </div>
-                                      <div style={{ flex: 2 }}>
-                                      <Form.Control
-                                        type="date"
-                                        value={task.start_date}
-                                        onChange={(e) => handleChange(task.id, 'start_date', e.target.value)}
-                                      />
-                                      </div>
-                                      </div>
+            {userData ? (
+                <>
 
-                                      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-                                      <Form.Label>End Date</Form.Label>
-                                      </div>
-                                      <div style={{ flex: 2 }}>
-                                      <Form.Control
-                                        type="date"
-                                        value={task.end_date}
-                                        onChange={(e) => handleChange(task.id, 'end_date', e.target.value)}
-                                      />
-                                      </div>
-                                      </div>
+                    <div >
+                        <div className="row" >
+                            {/* left column */}
 
-                                                                       
-                                   
-                                      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-                                      <Form.Label htmlFor="time">Location</Form.Label>
-                                      </div>
-                                      <div style={{ flex: 2 }}>
-                                      <Form.Control
-                                           type="text"
-                                           value={task.location}
-                                           onChange={(e) => handleChange(task.id, 'location', e.target.value)}
-                                      />
-                                      </div>
-                                      </div>
+                            <div className="ms-5 mt-5 col-4" style={{ "width": "250px", "height": "700px" }}>
 
-                                      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-                                      <Form.Label htmlFor="time">Amount</Form.Label>
-                                      </div>
-                                      <div style={{ flex: 2 }}>
-                                      <Form.Control
-                                           type="text"
-                                           value={task.amount}
-                                           onChange={(e) => handleChange(task.id, 'amount', e.target.value)}
-                                      />
-                                      </div>
-                                      </div>
+                                <h4>{`${userData.first_name} ${userData.last_name}`}, {userData.title}</h4>
+                                <div className="mt-2 mb-2 ms-5" id={activeUser.id} ><img className="border border-secondary rounded" id={activeUser.id} src={trimmedPath ? trimmedPath : plain} style={{ height: "100px" }}></img></div>
+                                <div className="list-group" style={{ "width": "250px" }}>
+                                    <a
+                                        href="#"
+                                        className={`list-group-item list-group-item-action ${selectedItem === 'My Events' && 'active'}`}
+                                        onClick={() => handleItemClick('My Events')}
+                                    >
+                                        My Events
+                                    </a>
+                                    <a
+                                        href="#"
+                                        className={`list-group-item list-group-item-action ${selectedItem === 'My Tasks' && 'active'}`}
+                                        onClick={() => handleItemClick('My Tasks')}
+                                    >
+                                        My Tasks
+                                    </a>
+                                    <a
+                                        href="#"
+                                        className={`list-group-item list-group-item-action ${selectedItem === 'Create New Event' && 'active'}`}
+                                        onClick={() => handleItemClick('Create New Event')}
+                                    >
+                                        Create New Event
+                                    </a>
+                                    <a
+                                        href="#"
+                                        className={`list-group-item list-group-item-action ${selectedItem === 'High Priority Tasks' && 'active'}`}
+                                        onClick={() => handleItemClick('High Priority Tasks')}
+                                    >
+                                        High Priority Tasks
+                                    </a>
+                                    <a
+                                        href="#"
+                                        className={`list-group-item list-group-item-action ${selectedItem === 'Due Tasks' && 'active'}`}
+                                        onClick={() => handleItemClick('Due Tasks')}
+                                    >
+                                        Due Tasks
+                                    </a>
 
-                                      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-                                      <Form.Label htmlFor="time">Description</Form.Label>
-                                      </div>
-                                      <div style={{ flex: 2 }}>
-                                      <Form.Control
-                                           as="textarea"
-                                           value={task.description}
-                                           onChange={(e) => handleChange(task.id, 'description', e.target.value)}
-                                      />
-                                      </div>
-                                      </div>
-                                      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                                     <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-                                      <Form.Label htmlFor="time">Status</Form.Label>
-                                      </div>
-                                      <div style={{ flex: 2 }}>
-                                      <Form.Control
-                                           type="text"
-                                           value={task.status}
-                                           onChange={(e) => handleChange(task.id, 'description', e.target.value)}
-                                      />
-                                      </div>
-                                      </div>
-                                 
-                                     
-                                      <div className="d-flex justify-content-center align-items-center mt-2">
-                                        <Button variant="primary" onClick={() => handleUpdate(task.id)}>Update</Button>
-                                        {task.id !== 1 && (
-                                          <div className="mx-2">
-                                            <Button variant="danger" onClick={() => handleDelete(task.id)}>Delete</Button>
-                                          </div>
-                                        )}
-                                        <Button variant="secondary" style={{ backgroundColor: '#3e2723', marginLeft: '5px' }} onClick={() => handleResetTask(task.id)}>Reset Task</Button>
-                                      </div>
-                                    </Form.Group>
-                                  </Card.Body>
-                                </Card>
-                              </div>
+
+                                    {userData.title === 'planner' && (
+                                        <a
+                                            href="#"
+                                            className={`list-group-item list-group-item-action ${selectedItem === 'All Events' && 'active'}`}
+                                            onClick={() => handleItemClick('All Events')}
+                                        >
+                                            All Events
+                                        </a>
+                                    )}
+                                    {userData.title === 'planner' && (
+                                        <a
+                                            href="#"
+                                            className={`list-group-item list-group-item-action ${selectedItem === 'All Tasks' && 'active'}`}
+                                            onClick={() => handleItemClick('All Tasks')}
+                                        >
+                                            All Tasks
+                                        </a>
+                                    )}
+                                    <a
+                                        href="#"
+                                        className={`list-group-item list-group-item-action ${selectedItem === 'Your Profile' && 'active'}`}
+                                        onClick={() => handleItemClick('Your Profile')}
+                                    >
+                                        Your Profile
+                                    </a>
+                                    <a
+                                        href="/login"
+                                        className={`list-group-item list-group-item-action ${selectedItem === 'Logout' && 'active'}`}
+                                        onClick={() => handleItemClick('Logout')}
+                                    >
+                                        Logout
+                                    </a>
+
+                                </div>
+                            </div>
+                            {/* right column */}
+                            {selectedItem === 'My Events' && (
+                                <div className="ms-5 col-4 d-flex align-content-start flex-wrap" style={{ "width": "1000px" }}>
+                                    {/* {data.approved_jobs.map((item) => {
+                                        return <ApprovedJobCard
+                                            key={item.id}
+                                            id={item.id}
+                                            amount={item.amount}
+                                            hours={item.hours}
+                                            progress={item.progress}
+                                            title={item.title}
+                                            userId={activeUser.id}
+
+                                        />
+                                    })} */}
+                                </div>
                             )}
-                          </Draggable>
-                        );
-                      }
-                    })}
-                    {provided.placeholder}
-                  </div>
-                )}
-              </Droppable>
-            </Col>
-          ))}
-        </Row>
-      </Container>
-    </DragDropContext>
-  );
+                            {selectedItem === 'My Tasks' && (
+                                <div className="ms-5 col-4 d-flex align-content-start flex-wrap" style={{ "width": "1000px" }}>
+                                    {/* {data.new_jobs.map((item) => {
+                                        return <NewJobCard
+                                            key={item.id}
+                                            id={item.id}
+                                            amount={item.wage}
+                                            hours={item.hours}
+                                            title={item.title}
+                                            userId={activeUser.id}
+                                            update={setCounter}
+                                        />
+                                    })} */}
+                                </div>
+                            )}
+                            {selectedItem === 'Create New Event' && (
+                                <div className="ms-5 col-4 d-flex align-content-start flex-wrap" style={{ "width": "1000px" }}>
+                                    {<NewEventForm />}
+                                </div>
+                            )}
+                            {selectedItem === 'High Priority Tasks' && (
+                                <div className="ms-5 col-4 d-flex align-content-start flex-wrap" style={{ "width": "1000px" }}>
+                                    {/* {data.bids.map((item) => {
+                                        return <BidCard
+                                            key={item.id}
+                                            id={item.id}
+                                            offered_amount={item.offered_job_wage}
+                                            hours={item.offered_job_hours}
+                                            title={item.offered_job_title}
+                                            bid_amount={item.amount}
+                                        />
+                                    })} */}
+                                </div>
+                            )}
+                            {selectedItem === 'Due Tasks' && (
+                                <div className="ms-5 col-4 d-flex align-content-start flex-wrap" style={{ "width": "1000px" }}>
+                                    {/* {data.active_bids.map((item) => {
+                                        return <UnapprovedBidCard
+                                            key={item.id}
+                                            id={item.id}
+                                            offered_amount={item.offered_job_wage}
+                                            hours={item.offered_job_hours}
+                                            title={item.offered_job_title}
+                                            bid_amount={item.amount}
+                                            update={setCounter}
+                                        />
+                                    })} */}
+                                </div>
+                            )}
+
+                            {selectedItem === 'All Events' && (
+                                <div className="ms-5 col-4 d-flex align-content-end flex-wrap" style={{ "width": "1000px" }}>
+                                    {/* <Table bidData={bidData} update={setCounter} /> */}
+                                </div>
+                            )}
+
+                            {selectedItem === 'All Tasks' && (
+                                <div className="ms-5 col-4 d-flex align-content-start flex-wrap" style={{ "width": "1000px", padding: "50px" }}>
+                                    {/* <ConcludedTable concludedData={concludedData} update={setCounter} /> */}
+                                </div>
+                            )}
+
+                            {selectedItem === 'Your Profile' && (
+                                <div className="ms-5 col-4 d-flex align-content-end flex-wrap" style={{ "width": "1000px" }}>
+                                    {/* <ProfileCard userData={data} onUpdate={handleUpdateProfile} /> */}
+                                </div>
+                            )}
+
+                        </div>
+
+
+                    </div>
+                </>) : (
+                <p>Need to Login...</p>
+            )}
+
+
+
+
+        </>
+    );
 }
 
 export default Home;

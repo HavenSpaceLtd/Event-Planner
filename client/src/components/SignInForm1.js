@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import googleIcon from '../assets/google.svg';
 import emailIcon from '../assets/gmail.svg';
-import EventCard from './EventCard';
+import EventCard from './Home';
 import SignUpForm from './SignUpForm';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 
@@ -43,7 +43,7 @@ const SignInForm = () => {
       sessionStorage.setItem('userName', data.name);
 
       // Redirect to EventCard after successful login
-      navigate('/event');
+      navigate('/home');
 
     } catch (error) {
       console.error('Error:', error.message);
