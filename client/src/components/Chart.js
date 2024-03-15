@@ -35,60 +35,68 @@ const Charts = ({ expenseData }) => {
       title: 'Category',
       dataIndex: 'category',
       key: 'category',
+      width: '25%', // Adjust the width of the column
     },
     {
       title: 'Expense ($)',
       dataIndex: 'expense',
       key: 'expense',
+      width: '25%', // Adjust the width of the column
     },
     {
       title: 'Percentage',
       dataIndex: 'percentage',
       key: 'percentage',
+      width: '25%', // Adjust the width of the column
     },
     {
       title: 'Alternative',
       dataIndex: 'alternative',
       key: 'alternative',
+      width: '25%', // Adjust the width of the column
     },
   ];
 
   return (
     <div>
-      <h2>Event Expense Analysis</h2>
-      <ResponsiveContainer width="100%" height={400}>
-        <PieChart>
-          <Pie
-            dataKey="expenses"
-            data={mockExpenseData.labels.map((label, index) => ({
-              name: label,
-              expenses: mockExpenseData.expenses[index],
-            }))}
-            cx="50%"
-            cy="50%"
-            outerRadius={80}
-            fill="#8884d8"
-            label
-          >
-            {mockExpenseData.labels.map((_, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-            ))}
-          </Pie>
-          <Legend />
-        </PieChart>
-      </ResponsiveContainer>
-      <div style={{ marginTop: '20px' }}>
-        <h3>Expense Breakdown</h3>
-        <Table dataSource={expenseTableData} columns={columns.slice(0, 3)} pagination={false} />
+      <h2>Expense Analysis</h2>
+      <div style={{ display: 'flex' }}>
+        <div style={{ flex: '1', marginRight: '20px' }}>
+          <ResponsiveContainer width="100%" height={400}>
+            <PieChart>
+              <Pie
+                dataKey="expenses"
+                data={mockExpenseData.labels.map((label, index) => ({
+                  name: label,
+                  expenses: mockExpenseData.expenses[index],
+                }))}
+                cx="50%"
+                cy="50%"
+                outerRadius={80}
+                fill="#8884d8"
+                label
+              >
+                {mockExpenseData.labels.map((_, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+              <Legend />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
+        <div style={{ flex: '1' }}>
+          <h3>Expense Breakdown</h3>
+          <Table dataSource={expenseTableData} columns={columns} pagination={false} size="small" style={{ width: '100%' }} />
+        </div>
       </div>
       <div style={{ marginTop: '20px' }}>
         <h3>Summary</h3>
         <p>Total Expense: ${totalExpense}</p>
         {/* You can add more textual summaries here */}
       </div>
-      <div style={{ marginTop: '20px' }}>
+      <div style={{ marginTop: '20px', float:'right' }}>
         <h3>Cost-Saving Opportunities</h3>
-        <Table dataSource={costOpportunities} columns={columns} pagination={false} />
+        <Table dataSource={costOpportunities} columns={columns}  pagination={false} size="small" style={{ width: '50%' }} />
       </div>
     </div>
   );
