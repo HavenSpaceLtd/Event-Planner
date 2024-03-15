@@ -1555,250 +1555,38 @@ jwt.exceptions.ExpiredSignatureError: Signature has expired
 2024-03-15 07:18:26,108 - INFO - 127.0.0.1 - - [15/Mar/2024 07:18:26] "GET /users/1 HTTP/1.1" 200 -
 2024-03-15 07:18:26,131 - INFO - 127.0.0.1 - - [15/Mar/2024 07:18:26] "GET /events HTTP/1.1" 200 -
 2024-03-15 07:18:26,146 - INFO - 127.0.0.1 - - [15/Mar/2024 07:18:26] "GET /tasks HTTP/1.1" 200 -
-2024-03-15 08:40:29,099 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5555
-2024-03-15 08:40:29,100 - INFO - [33mPress CTRL+C to quit[0m
-2024-03-15 08:41:18,510 - ERROR - Exception on /budgets [GET]
-Traceback (most recent call last):
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
+
     signing_input, crypto_segment = jwt.rsplit(b".", 1)
 ValueError: not enough values to unpack (expected 2, got 1)
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/views.py", line 110, in view
-    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
-    verify_jwt_in_request(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
-    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
-    decoded_token = decode_token(encoded_token, csrf_token)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
-    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
-    unverified_claims = jwt.decode(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
-    decoded = self.decode_complete(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
-    decoded = api_jws.decode_complete(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
-    payload, signing_input, header, signature = self._load(jwt)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
-    raise DecodeError("Not enough segments") from err
-jwt.exceptions.DecodeError: Not enough segments
-2024-03-15 08:41:18,545 - INFO - 127.0.0.1 - - [15/Mar/2024 08:41:18] "[35m[1mGET /budgets HTTP/1.1[0m" 500 -
-2024-03-15 08:41:18,526 - ERROR - Exception on /assets [GET]
-Traceback (most recent call last):
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
+
     signing_input, crypto_segment = jwt.rsplit(b".", 1)
 ValueError: not enough values to unpack (expected 2, got 1)
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/views.py", line 110, in view
-    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
-    verify_jwt_in_request(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
-    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
-    decoded_token = decode_token(encoded_token, csrf_token)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
-    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
-    unverified_claims = jwt.decode(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
-    decoded = self.decode_complete(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
-    decoded = api_jws.decode_complete(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
-    payload, signing_input, header, signature = self._load(jwt)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
-    raise DecodeError("Not enough segments") from err
-jwt.exceptions.DecodeError: Not enough segments
-2024-03-15 08:41:18,548 - INFO - 127.0.0.1 - - [15/Mar/2024 08:41:18] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
-2024-03-15 08:41:18,536 - INFO - 127.0.0.1 - - [15/Mar/2024 08:41:18] "[33mGET /combined-data HTTP/1.1[0m" 404 -
-2024-03-15 08:41:18,538 - INFO - 127.0.0.1 - - [15/Mar/2024 08:41:18] "[33mGET /allusers HTTP/1.1[0m" 404 -
-2024-03-15 08:41:18,524 - ERROR - Exception on /expenses [GET]
-Traceback (most recent call last):
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
+
     signing_input, crypto_segment = jwt.rsplit(b".", 1)
 ValueError: not enough values to unpack (expected 2, got 1)
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/views.py", line 110, in view
-    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
-    verify_jwt_in_request(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
-    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
-    decoded_token = decode_token(encoded_token, csrf_token)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
-    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
-    unverified_claims = jwt.decode(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
-    decoded = self.decode_complete(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
-    decoded = api_jws.decode_complete(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
-    payload, signing_input, header, signature = self._load(jwt)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
-    raise DecodeError("Not enough segments") from err
-jwt.exceptions.DecodeError: Not enough segments
-2024-03-15 08:41:18,584 - INFO - 127.0.0.1 - - [15/Mar/2024 08:41:18] "[35m[1mGET /expenses HTTP/1.1[0m" 500 -
-2024-03-15 08:42:12,724 - ERROR - Exception on /expenses [GET]
-Traceback (most recent call last):
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
+
     signing_input, crypto_segment = jwt.rsplit(b".", 1)
 ValueError: not enough values to unpack (expected 2, got 1)
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/views.py", line 110, in view
-    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
-    verify_jwt_in_request(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
-    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
-    decoded_token = decode_token(encoded_token, csrf_token)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
-    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
-    unverified_claims = jwt.decode(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
-    decoded = self.decode_complete(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
-    decoded = api_jws.decode_complete(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
-    payload, signing_input, header, signature = self._load(jwt)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
-    raise DecodeError("Not enough segments") from err
-jwt.exceptions.DecodeError: Not enough segments
-2024-03-15 08:42:12,728 - INFO - 127.0.0.1 - - [15/Mar/2024 08:42:12] "[35m[1mGET /expenses HTTP/1.1[0m" 500 -
-2024-03-15 08:42:12,745 - ERROR - Exception on /budgets [GET]
-Traceback (most recent call last):
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
+
     signing_input, crypto_segment = jwt.rsplit(b".", 1)
 ValueError: not enough values to unpack (expected 2, got 1)
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/views.py", line 110, in view
-    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
-    verify_jwt_in_request(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
-    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
-    decoded_token = decode_token(encoded_token, csrf_token)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
-    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
-    unverified_claims = jwt.decode(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
-    decoded = self.decode_complete(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
-    decoded = api_jws.decode_complete(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
-    payload, signing_input, header, signature = self._load(jwt)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
-    raise DecodeError("Not enough segments") from err
-jwt.exceptions.DecodeError: Not enough segments
-2024-03-15 08:42:12,746 - ERROR - Exception on /assets [GET]
-Traceback (most recent call last):
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
-    signing_input, crypto_segment = jwt.rsplit(b".", 1)
-ValueError: not enough values to unpack (expected 2, got 1)
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask/views.py", line 110, in view
-    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
-    verify_jwt_in_request(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
-    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
-    decoded_token = decode_token(encoded_token, csrf_token)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
-    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
-    unverified_claims = jwt.decode(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
-    decoded = self.decode_complete(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
-    decoded = api_jws.decode_complete(
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
-    payload, signing_input, header, signature = self._load(jwt)
-  File "/home/natalie/.local/share/virtualenvs/server-4R8qblVK/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
-    raise DecodeError("Not enough segments") from err
-jwt.exceptions.DecodeError: Not enough segments
-2024-03-15 08:42:12,747 - INFO - 127.0.0.1 - - [15/Mar/2024 08:42:12] "[35m[1mGET /budgets HTTP/1.1[0m" 500 -
-2024-03-15 08:42:12,748 - INFO - 127.0.0.1 - - [15/Mar/2024 08:42:12] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
-2024-03-15 08:42:20,195 - INFO - 127.0.0.1 - - [15/Mar/2024 08:42:20] "[33mGET /combined-data HTTP/1.1[0m" 404 -
-2024-03-15 08:42:20,196 - INFO - 127.0.0.1 - - [15/Mar/2024 08:42:20] "[33mGET /allusers HTTP/1.1[0m" 404 -
-2024-03-15 08:42:34,111 - INFO - 127.0.0.1 - - [15/Mar/2024 08:42:34] "POST /login HTTP/1.1" 200 -
-2024-03-15 08:42:38,674 - INFO - 127.0.0.1 - - [15/Mar/2024 08:42:38] "GET /expenses HTTP/1.1" 200 -
-2024-03-15 08:42:38,698 - INFO - 127.0.0.1 - - [15/Mar/2024 08:42:38] "[33mGET /combined-data HTTP/1.1[0m" 404 -
-2024-03-15 08:42:38,701 - INFO - 127.0.0.1 - - [15/Mar/2024 08:42:38] "[33mGET /allusers HTTP/1.1[0m" 404 -
-2024-03-15 08:42:38,708 - INFO - 127.0.0.1 - - [15/Mar/2024 08:42:38] "GET /budgets HTTP/1.1" 200 -
-2024-03-15 08:42:38,710 - INFO - 127.0.0.1 - - [15/Mar/2024 08:42:38] "GET /assets HTTP/1.1" 200 -
