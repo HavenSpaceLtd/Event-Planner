@@ -424,7 +424,9 @@ class AllTasks(Resource):
             location=data.get('location'),
             amount=data.get('amount'),
             description=data.get('description'),
-            event_id=data.get('event_id'))
+            event_id=data.get('event_id'),
+            progress = 0)
+            
         db.session.add(new_task)
         db.session.commit()
 
@@ -477,16 +479,28 @@ class TaskById(Resource):
         if not task:
             return make_response(jsonify({'message': 'Task not found'}), 404)
 
+        # Update title, amount, progress, location, and status
         task.title = data.get('title', task.title)
-        task.start_date = datetime.strptime(data.get('start_date', task.start_date), '%m/%d/%Y').date()
-        task.end_date = datetime.strptime(data.get('end_date', task.end_date), '%m/%d/%Y').date()
-        task.start_time = datetime.strptime(data.get('start_time', task.start_time), '%H:%M').time()
-        task.end_time = datetime.strptime(data.get('end_time', task.end_time), '%H:%M').time()
         task.amount = data.get('amount', task.amount)
         task.progress = data.get('progress', task.progress)
         task.location = data.get('location', task.location)
         task.status = data.get('status', task.status)
-        task.description = data.get('description', task.description)
+
+        # Update start_date if provided
+        if 'start_date' in data:
+            task.start_date = datetime.strptime(str(data['start_date']), '%m/%d/%Y').date()
+
+        # Update end_date if provided
+        if 'end_date' in data:
+            task.end_date = datetime.strptime(str(data['end_date']), '%m/%d/%Y').date()
+
+        # Update start_time if provided
+        if 'start_time' in data:
+            task.start_time = datetime.strptime(data['start_time'], '%H:%M').time()
+
+        # Update end_time if provided
+        if 'end_time' in data:
+            task.end_time = datetime.strptime(data['end_time'], '%H:%M').time()
 
         db.session.commit()
         return make_response(jsonify({'message': 'Task updated successfully'}), 200)
@@ -816,7 +830,7 @@ api.add_resource(AllTasks, '/tasks')
 api.add_resource(Teams, '/teams')
 api.add_resource(Assignments, '/assignments')
 api.add_resource(EventById, '/events/<int:event_id>')
-api.add_resource(TaskById, '/events/<int:task_id>')
+api.add_resource(TaskById, '/tasks/<int:task_id>')
 api.add_resource(ManageCommunications, '/communications')
 api.add_resource(BudgetResource, '/budgets', '/budgets/<int:budget_id>')
 api.add_resource(ExpenseResource, '/expenses')

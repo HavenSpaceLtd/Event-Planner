@@ -1061,3 +1061,403 @@ jwt.exceptions.DecodeError: Not enough segments
 2024-03-16 00:35:54,499 - INFO - User, johndoe@gmail.com, details accessed
 2024-03-16 00:35:54,518 - INFO - 127.0.0.1 - - [16/Mar/2024 00:35:54] "GET /allevents HTTP/1.1" 200 -
 2024-03-16 00:35:54,558 - INFO - 127.0.0.1 - - [16/Mar/2024 00:35:54] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 09:06:42,322 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-16 09:06:42,344 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-16 09:09:09,942 - INFO - 127.0.0.1 - - [16/Mar/2024 09:09:09] "POST /login HTTP/1.1" 200 -
+2024-03-16 09:09:09,968 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 09:09:09,973 - INFO - 127.0.0.1 - - [16/Mar/2024 09:09:09] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 09:09:14,568 - INFO - 127.0.0.1 - - [16/Mar/2024 09:09:14] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 09:09:17,222 - INFO - 127.0.0.1 - - [16/Mar/2024 09:09:17] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 09:13:04,907 - INFO - 127.0.0.1 - - [16/Mar/2024 09:13:04] "[35m[1mPOST /events HTTP/1.1[0m" 201 -
+2024-03-16 09:20:31,395 - INFO - 127.0.0.1 - - [16/Mar/2024 09:20:31] "[35m[1mPOST /events HTTP/1.1[0m" 201 -
+2024-03-16 09:26:26,050 - ERROR - Exception on /events/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-16 09:26:26,226 - INFO - 127.0.0.1 - - [16/Mar/2024 09:26:26] "[35m[1mGET /events/1 HTTP/1.1[0m" 500 -
+2024-03-16 09:27:38,373 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-16 09:27:38,373 - INFO - 127.0.0.1 - - [16/Mar/2024 09:27:38] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-16 09:33:46,038 - INFO - 127.0.0.1 - - [16/Mar/2024 09:33:46] "POST /login HTTP/1.1" 200 -
+2024-03-16 09:33:46,054 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 09:33:46,063 - INFO - 127.0.0.1 - - [16/Mar/2024 09:33:46] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 09:33:50,590 - INFO - 127.0.0.1 - - [16/Mar/2024 09:33:50] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 09:33:50,636 - INFO - 127.0.0.1 - - [16/Mar/2024 09:33:50] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 09:36:44,414 - INFO - 127.0.0.1 - - [16/Mar/2024 09:36:44] "POST /login HTTP/1.1" 200 -
+2024-03-16 09:36:44,441 - INFO - User, janedee@gmail.com, details accessed
+2024-03-16 09:36:44,445 - INFO - 127.0.0.1 - - [16/Mar/2024 09:36:44] "GET /users/2 HTTP/1.1" 200 -
+2024-03-16 09:37:19,946 - INFO - 127.0.0.1 - - [16/Mar/2024 09:37:19] "GET /events/4 HTTP/1.1" 200 -
+2024-03-16 09:37:32,697 - INFO - 127.0.0.1 - - [16/Mar/2024 09:37:32] "POST /login HTTP/1.1" 200 -
+2024-03-16 09:37:32,712 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 09:37:32,720 - INFO - 127.0.0.1 - - [16/Mar/2024 09:37:32] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 09:37:36,621 - INFO - 127.0.0.1 - - [16/Mar/2024 09:37:36] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 09:37:36,625 - INFO - 127.0.0.1 - - [16/Mar/2024 09:37:36] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 09:37:50,238 - INFO - 127.0.0.1 - - [16/Mar/2024 09:37:50] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 09:37:50,241 - INFO - 127.0.0.1 - - [16/Mar/2024 09:37:50] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 09:42:51,112 - INFO - 127.0.0.1 - - [16/Mar/2024 09:42:51] "POST /login HTTP/1.1" 200 -
+2024-03-16 09:42:51,134 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 09:42:51,141 - INFO - 127.0.0.1 - - [16/Mar/2024 09:42:51] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 09:43:36,974 - INFO - 127.0.0.1 - - [16/Mar/2024 09:43:36] "POST /login HTTP/1.1" 200 -
+2024-03-16 09:43:36,987 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 09:43:36,995 - INFO - 127.0.0.1 - - [16/Mar/2024 09:43:36] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 09:43:41,782 - INFO - 127.0.0.1 - - [16/Mar/2024 09:43:41] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 09:43:41,786 - INFO - 127.0.0.1 - - [16/Mar/2024 09:43:41] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 09:43:48,858 - INFO - 127.0.0.1 - - [16/Mar/2024 09:43:48] "[35m[1mPOST /assignments HTTP/1.1[0m" 201 -
+2024-03-16 09:43:48,874 - INFO - 127.0.0.1 - - [16/Mar/2024 09:43:48] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 09:43:48,908 - INFO - 127.0.0.1 - - [16/Mar/2024 09:43:48] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 09:43:51,275 - INFO - 127.0.0.1 - - [16/Mar/2024 09:43:51] "[35m[1mPOST /assignments HTTP/1.1[0m" 201 -
+2024-03-16 09:43:51,284 - INFO - 127.0.0.1 - - [16/Mar/2024 09:43:51] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 09:43:51,313 - INFO - 127.0.0.1 - - [16/Mar/2024 09:43:51] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 09:44:02,128 - INFO - 127.0.0.1 - - [16/Mar/2024 09:44:02] "POST /login HTTP/1.1" 200 -
+2024-03-16 09:44:02,143 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 09:44:02,151 - INFO - 127.0.0.1 - - [16/Mar/2024 09:44:02] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 09:48:45,419 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 09:48:45,493 - INFO - 127.0.0.1 - - [16/Mar/2024 09:48:45] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 09:50:55,668 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 09:50:55,676 - INFO - 127.0.0.1 - - [16/Mar/2024 09:50:55] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 09:53:09,393 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 09:53:09,397 - INFO - 127.0.0.1 - - [16/Mar/2024 09:53:09] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 10:00:38,648 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-16 10:00:38,648 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-16 10:01:27,520 - ERROR - Exception on /tasks/2 [PATCH]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-16 10:01:27,601 - INFO - 127.0.0.1 - - [16/Mar/2024 10:01:27] "[35m[1mPATCH /tasks/2 HTTP/1.1[0m" 500 -
+2024-03-16 10:04:23,343 - ERROR - Exception on /tasks/2 [PATCH]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-16 10:04:23,344 - INFO - 127.0.0.1 - - [16/Mar/2024 10:04:23] "[35m[1mPATCH /tasks/2 HTTP/1.1[0m" 500 -
+2024-03-16 10:04:55,089 - INFO - 127.0.0.1 - - [16/Mar/2024 10:04:55] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:04:55,111 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 10:04:55,117 - INFO - 127.0.0.1 - - [16/Mar/2024 10:04:55] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 10:05:14,178 - ERROR - Exception on /tasks/2 [PATCH]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/home/harris/Development/code/phase5/DevProject/Event-Planner 6/Event-Planner/server/app.py", line 481, in patch
+    task.start_date = datetime.strptime(data.get('start_date', task.start_date), '%m/%d/%Y').date()
+TypeError: strptime() argument 1 must be str, not datetime.date
+2024-03-16 10:05:14,179 - INFO - 127.0.0.1 - - [16/Mar/2024 10:05:14] "[35m[1mPATCH /tasks/2 HTTP/1.1[0m" 500 -
+2024-03-16 10:10:51,314 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-16 10:10:51,314 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-16 10:11:07,428 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 10:11:07,444 - INFO - 127.0.0.1 - - [16/Mar/2024 10:11:07] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 10:11:16,676 - INFO - 127.0.0.1 - - [16/Mar/2024 10:11:16] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:11:16,690 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 10:11:16,698 - INFO - 127.0.0.1 - - [16/Mar/2024 10:11:16] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 10:11:22,342 - ERROR - Exception on /tasks/2 [PATCH]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/home/harris/Development/code/phase5/DevProject/Event-Planner 6/Event-Planner/server/app.py", line 481, in patch
+    task.start_date = datetime.strptime(str(data.get('start_date', task.start_date)), '%m/%d/%Y').date()
+  File "/usr/lib/python3.10/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/usr/lib/python3.10/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2023-03-05' does not match format '%m/%d/%Y'
+2024-03-16 10:11:22,354 - INFO - 127.0.0.1 - - [16/Mar/2024 10:11:22] "[35m[1mPATCH /tasks/2 HTTP/1.1[0m" 500 -
+2024-03-16 10:14:57,600 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-16 10:14:57,600 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-16 10:15:04,892 - INFO - 127.0.0.1 - - [16/Mar/2024 10:15:04] "PATCH /tasks/2 HTTP/1.1" 200 -
+2024-03-16 10:15:08,818 - INFO - 127.0.0.1 - - [16/Mar/2024 10:15:08] "PATCH /tasks/1 HTTP/1.1" 200 -
+2024-03-16 10:15:12,443 - INFO - 127.0.0.1 - - [16/Mar/2024 10:15:12] "PATCH /tasks/3 HTTP/1.1" 200 -
+2024-03-16 10:18:05,609 - INFO - 127.0.0.1 - - [16/Mar/2024 10:18:05] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:18:05,624 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 10:18:05,632 - INFO - 127.0.0.1 - - [16/Mar/2024 10:18:05] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 10:18:09,315 - INFO - 127.0.0.1 - - [16/Mar/2024 10:18:09] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:18:09,317 - INFO - 127.0.0.1 - - [16/Mar/2024 10:18:09] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:18:32,194 - INFO - 127.0.0.1 - - [16/Mar/2024 10:18:32] "[35m[1mPOST /tasks HTTP/1.1[0m" 201 -
+2024-03-16 10:18:32,211 - INFO - 127.0.0.1 - - [16/Mar/2024 10:18:32] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:19:09,414 - INFO - 127.0.0.1 - - [16/Mar/2024 10:19:09] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:19:09,417 - INFO - 127.0.0.1 - - [16/Mar/2024 10:19:09] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:19:58,725 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-16 10:19:58,725 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-16 10:20:02,781 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 10:20:02,798 - INFO - 127.0.0.1 - - [16/Mar/2024 10:20:02] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 10:20:05,951 - INFO - 127.0.0.1 - - [16/Mar/2024 10:20:05] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:20:05,952 - INFO - 127.0.0.1 - - [16/Mar/2024 10:20:05] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:20:35,872 - INFO - 127.0.0.1 - - [16/Mar/2024 10:20:35] "[35m[1mPOST /tasks HTTP/1.1[0m" 201 -
+2024-03-16 10:20:35,884 - INFO - 127.0.0.1 - - [16/Mar/2024 10:20:35] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:23:37,801 - INFO - 127.0.0.1 - - [16/Mar/2024 10:23:37] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:23:37,803 - INFO - 127.0.0.1 - - [16/Mar/2024 10:23:37] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:30:49,307 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-16 10:30:49,307 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-16 10:31:07,503 - INFO - 127.0.0.1 - - [16/Mar/2024 10:31:07] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-03-16 10:31:16,694 - INFO - 127.0.0.1 - - [16/Mar/2024 10:31:16] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:31:16,712 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 10:31:16,721 - INFO - 127.0.0.1 - - [16/Mar/2024 10:31:16] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 10:31:43,930 - INFO - 127.0.0.1 - - [16/Mar/2024 10:31:43] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:31:43,937 - INFO - 127.0.0.1 - - [16/Mar/2024 10:31:43] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:37:26,332 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-16 10:37:26,332 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-16 10:39:01,852 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 10:39:01,868 - INFO - 127.0.0.1 - - [16/Mar/2024 10:39:01] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 10:39:18,555 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 10:39:18,563 - INFO - 127.0.0.1 - - [16/Mar/2024 10:39:18] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 10:39:20,397 - INFO - 127.0.0.1 - - [16/Mar/2024 10:39:20] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:39:20,398 - INFO - 127.0.0.1 - - [16/Mar/2024 10:39:20] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:39:49,113 - INFO - 127.0.0.1 - - [16/Mar/2024 10:39:49] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:39:49,115 - INFO - 127.0.0.1 - - [16/Mar/2024 10:39:49] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:40:11,179 - INFO - 127.0.0.1 - - [16/Mar/2024 10:40:11] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:40:11,180 - INFO - 127.0.0.1 - - [16/Mar/2024 10:40:11] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:41:15,959 - INFO - 127.0.0.1 - - [16/Mar/2024 10:41:15] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:41:15,975 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 10:41:15,985 - INFO - 127.0.0.1 - - [16/Mar/2024 10:41:15] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 10:41:20,987 - INFO - 127.0.0.1 - - [16/Mar/2024 10:41:20] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:41:20,991 - INFO - 127.0.0.1 - - [16/Mar/2024 10:41:20] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:41:46,173 - INFO - 127.0.0.1 - - [16/Mar/2024 10:41:46] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:41:46,200 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 10:41:46,208 - INFO - 127.0.0.1 - - [16/Mar/2024 10:41:46] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 10:41:54,858 - INFO - 127.0.0.1 - - [16/Mar/2024 10:41:54] "PATCH /tasks/2 HTTP/1.1" 200 -
+2024-03-16 10:41:58,064 - INFO - 127.0.0.1 - - [16/Mar/2024 10:41:58] "PATCH /tasks/1 HTTP/1.1" 200 -
+2024-03-16 10:42:00,401 - INFO - 127.0.0.1 - - [16/Mar/2024 10:42:00] "PATCH /tasks/1 HTTP/1.1" 200 -
+2024-03-16 10:42:03,427 - INFO - 127.0.0.1 - - [16/Mar/2024 10:42:03] "PATCH /tasks/3 HTTP/1.1" 200 -
+2024-03-16 10:42:18,972 - INFO - 127.0.0.1 - - [16/Mar/2024 10:42:18] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:42:18,988 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 10:42:18,997 - INFO - 127.0.0.1 - - [16/Mar/2024 10:42:18] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 10:42:22,570 - INFO - 127.0.0.1 - - [16/Mar/2024 10:42:22] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:42:22,572 - INFO - 127.0.0.1 - - [16/Mar/2024 10:42:22] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:43:01,164 - INFO - 127.0.0.1 - - [16/Mar/2024 10:43:01] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:43:01,179 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 10:43:01,190 - INFO - 127.0.0.1 - - [16/Mar/2024 10:43:01] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 10:43:04,942 - INFO - 127.0.0.1 - - [16/Mar/2024 10:43:04] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:43:04,945 - INFO - 127.0.0.1 - - [16/Mar/2024 10:43:04] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:44:22,766 - INFO - 127.0.0.1 - - [16/Mar/2024 10:44:22] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:44:22,779 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 10:44:22,789 - INFO - 127.0.0.1 - - [16/Mar/2024 10:44:22] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 10:44:26,635 - INFO - 127.0.0.1 - - [16/Mar/2024 10:44:26] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:44:26,639 - INFO - 127.0.0.1 - - [16/Mar/2024 10:44:26] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:44:32,268 - INFO - 127.0.0.1 - - [16/Mar/2024 10:44:32] "[35m[1mPOST /assignments HTTP/1.1[0m" 201 -
+2024-03-16 10:44:32,287 - INFO - 127.0.0.1 - - [16/Mar/2024 10:44:32] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:44:32,305 - INFO - 127.0.0.1 - - [16/Mar/2024 10:44:32] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:45:01,767 - INFO - 127.0.0.1 - - [16/Mar/2024 10:45:01] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:45:01,784 - INFO - User, goat10@barca.com, details accessed
+2024-03-16 10:45:01,786 - INFO - 127.0.0.1 - - [16/Mar/2024 10:45:01] "GET /users/4 HTTP/1.1" 200 -
+2024-03-16 10:45:07,642 - INFO - 127.0.0.1 - - [16/Mar/2024 10:45:07] "PATCH /tasks/4 HTTP/1.1" 200 -
+2024-03-16 10:45:17,586 - INFO - 127.0.0.1 - - [16/Mar/2024 10:45:17] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:45:17,600 - INFO - User, goat10@barca.com, details accessed
+2024-03-16 10:45:17,602 - INFO - 127.0.0.1 - - [16/Mar/2024 10:45:17] "GET /users/4 HTTP/1.1" 200 -
+2024-03-16 10:45:49,675 - INFO - 127.0.0.1 - - [16/Mar/2024 10:45:49] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:45:49,688 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 10:45:49,698 - INFO - 127.0.0.1 - - [16/Mar/2024 10:45:49] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 10:45:53,207 - INFO - 127.0.0.1 - - [16/Mar/2024 10:45:53] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:45:53,208 - INFO - 127.0.0.1 - - [16/Mar/2024 10:45:53] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:48:50,356 - INFO - 127.0.0.1 - - [16/Mar/2024 10:48:50] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:48:50,371 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 10:48:50,381 - INFO - 127.0.0.1 - - [16/Mar/2024 10:48:50] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 10:49:02,123 - INFO - 127.0.0.1 - - [16/Mar/2024 10:49:02] "GET /events/3 HTTP/1.1" 200 -
+2024-03-16 10:49:02,125 - INFO - 127.0.0.1 - - [16/Mar/2024 10:49:02] "GET /events/2 HTTP/1.1" 200 -
+2024-03-16 10:50:35,782 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 10:50:35,792 - INFO - 127.0.0.1 - - [16/Mar/2024 10:50:35] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 10:50:42,989 - INFO - 127.0.0.1 - - [16/Mar/2024 10:50:42] "PATCH /tasks/2 HTTP/1.1" 200 -
+2024-03-16 10:53:11,119 - INFO - 127.0.0.1 - - [16/Mar/2024 10:53:11] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:53:11,136 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 10:53:11,145 - INFO - 127.0.0.1 - - [16/Mar/2024 10:53:11] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 10:53:37,759 - INFO - 127.0.0.1 - - [16/Mar/2024 10:53:37] "PATCH /tasks/2 HTTP/1.1" 200 -
+2024-03-16 10:54:09,167 - INFO - 127.0.0.1 - - [16/Mar/2024 10:54:09] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:54:09,183 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 10:54:09,194 - INFO - 127.0.0.1 - - [16/Mar/2024 10:54:09] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 10:57:54,627 - INFO - 127.0.0.1 - - [16/Mar/2024 10:57:54] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:57:54,642 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 10:57:54,653 - INFO - 127.0.0.1 - - [16/Mar/2024 10:57:54] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 10:57:57,315 - INFO - 127.0.0.1 - - [16/Mar/2024 10:57:57] "GET /events/3 HTTP/1.1" 200 -
+2024-03-16 10:57:57,316 - INFO - 127.0.0.1 - - [16/Mar/2024 10:57:57] "GET /events/2 HTTP/1.1" 200 -
+2024-03-16 10:58:03,743 - INFO - 127.0.0.1 - - [16/Mar/2024 10:58:03] "GET /events/2 HTTP/1.1" 200 -
+2024-03-16 10:58:03,743 - INFO - 127.0.0.1 - - [16/Mar/2024 10:58:03] "GET /events/3 HTTP/1.1" 200 -
+2024-03-16 10:58:18,342 - INFO - 127.0.0.1 - - [16/Mar/2024 10:58:18] "PATCH /tasks/2 HTTP/1.1" 200 -
+2024-03-16 10:58:24,253 - INFO - 127.0.0.1 - - [16/Mar/2024 10:58:24] "PATCH /tasks/2 HTTP/1.1" 200 -
+2024-03-16 10:58:40,382 - INFO - 127.0.0.1 - - [16/Mar/2024 10:58:40] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:58:40,395 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 10:58:40,406 - INFO - 127.0.0.1 - - [16/Mar/2024 10:58:40] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 10:58:43,968 - INFO - 127.0.0.1 - - [16/Mar/2024 10:58:43] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 10:58:43,970 - INFO - 127.0.0.1 - - [16/Mar/2024 10:58:43] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 10:59:03,862 - INFO - 127.0.0.1 - - [16/Mar/2024 10:59:03] "POST /login HTTP/1.1" 200 -
+2024-03-16 10:59:03,877 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 10:59:03,885 - INFO - 127.0.0.1 - - [16/Mar/2024 10:59:03] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 11:01:57,538 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 11:01:57,544 - INFO - 127.0.0.1 - - [16/Mar/2024 11:01:57] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 11:03:02,273 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 11:03:02,281 - INFO - 127.0.0.1 - - [16/Mar/2024 11:03:02] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 11:03:24,291 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 11:03:24,299 - INFO - 127.0.0.1 - - [16/Mar/2024 11:03:24] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 11:03:31,863 - INFO - 127.0.0.1 - - [16/Mar/2024 11:03:31] "POST /login HTTP/1.1" 200 -
+2024-03-16 11:03:31,885 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 11:03:31,894 - INFO - 127.0.0.1 - - [16/Mar/2024 11:03:31] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 11:07:10,503 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 11:07:10,511 - INFO - 127.0.0.1 - - [16/Mar/2024 11:07:10] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 11:07:26,219 - INFO - 127.0.0.1 - - [16/Mar/2024 11:07:26] "GET /events/3 HTTP/1.1" 200 -
+2024-03-16 11:07:26,222 - INFO - 127.0.0.1 - - [16/Mar/2024 11:07:26] "GET /events/2 HTTP/1.1" 200 -
+2024-03-16 11:08:31,669 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 11:08:31,678 - INFO - 127.0.0.1 - - [16/Mar/2024 11:08:31] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 11:27:14,899 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-16 11:27:14,929 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-16 11:27:25,576 - INFO - 127.0.0.1 - - [16/Mar/2024 11:27:25] "POST /login HTTP/1.1" 200 -
+2024-03-16 11:27:25,594 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 11:27:25,603 - INFO - 127.0.0.1 - - [16/Mar/2024 11:27:25] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 11:27:54,769 - INFO - 127.0.0.1 - - [16/Mar/2024 11:27:54] "PATCH /tasks/2 HTTP/1.1" 200 -
+2024-03-16 11:28:05,280 - INFO - 127.0.0.1 - - [16/Mar/2024 11:28:05] "POST /login HTTP/1.1" 200 -
+2024-03-16 11:28:05,295 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 11:28:05,306 - INFO - 127.0.0.1 - - [16/Mar/2024 11:28:05] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 11:32:30,835 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 11:32:30,844 - INFO - 127.0.0.1 - - [16/Mar/2024 11:32:30] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 11:33:07,216 - INFO - 127.0.0.1 - - [16/Mar/2024 11:33:07] "PATCH /tasks/1 HTTP/1.1" 200 -
+2024-03-16 11:33:10,311 - INFO - 127.0.0.1 - - [16/Mar/2024 11:33:10] "GET /events/2 HTTP/1.1" 200 -
+2024-03-16 11:33:10,312 - INFO - 127.0.0.1 - - [16/Mar/2024 11:33:10] "GET /events/3 HTTP/1.1" 200 -
+2024-03-16 11:33:24,284 - INFO - 127.0.0.1 - - [16/Mar/2024 11:33:24] "POST /login HTTP/1.1" 200 -
+2024-03-16 11:33:24,304 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 11:33:24,313 - INFO - 127.0.0.1 - - [16/Mar/2024 11:33:24] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 11:34:25,464 - INFO - 127.0.0.1 - - [16/Mar/2024 11:34:25] "POST /login HTTP/1.1" 200 -
+2024-03-16 11:34:25,483 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 11:34:25,491 - INFO - 127.0.0.1 - - [16/Mar/2024 11:34:25] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 11:34:25,636 - INFO - 127.0.0.1 - - [16/Mar/2024 11:34:25] "POST /login HTTP/1.1" 200 -
+2024-03-16 11:34:30,455 - INFO - 127.0.0.1 - - [16/Mar/2024 11:34:30] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 11:34:30,458 - INFO - 127.0.0.1 - - [16/Mar/2024 11:34:30] "GET /events/1 HTTP/1.1" 200 -

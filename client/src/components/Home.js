@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import NewEventForm from "./NewEventForm";
 import ProfileCard from "./ProfileCard";
 import EventCard1 from "./EventCard1";
+import MyTaskCard from "./MyTaskCard";
 
 function Home() {
     const [selectedItem, setSelectedItem] = useState('');
@@ -184,17 +185,16 @@ function Home() {
                             )}
                             {selectedItem === 'My Tasks' && (
                                 <div className="ms-5 col-4 d-flex align-content-start flex-wrap" style={{ "width": "1000px" }}>
-                                    {/* {data.new_jobs.map((item) => {
-                                        return <NewJobCard
+                                    {userData.tasks.map((item) => {
+                                        return <MyTaskCard
                                             key={item.id}
-                                            id={item.id}
-                                            amount={item.wage}
-                                            hours={item.hours}
+                                            id={item.id}                                         
                                             title={item.title}
-                                            userId={activeUser.id}
                                             update={setCounter}
+                                            activeToken={activeToken}
+                                            current_progress={item.progress}
                                         />
-                                    })} */}
+                                    })}
                                 </div>
                             )}
                             {selectedItem === 'Create New Event' && (
