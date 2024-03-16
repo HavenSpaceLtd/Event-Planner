@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
-
-// Get owner_id from session storage
-const owner_id = sessionStorage.getItem('userId');
-console.log('Owner ID:', owner_id);
-if (!owner_id) {
-  throw new Error('Owner ID not found in session storage');
-}
+import { useNavigate } from 'react-router-dom';
 
 const NewEventForm = () => {
+  const navigate = useNavigate(); // Initialize navigate hook
   const [values, setValues] = useState({
     title: '',
     start_date: '',
@@ -20,14 +15,13 @@ const NewEventForm = () => {
     location: '',
     description: '',
     image: '',
-    owner_id: owner_id,
+    owner_id: sessionStorage.getItem('userId') || '', // Retrieve owner_id
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     let formattedValue = value;
   
-    // Check if the input is a date field and format it
     if (name.includes('date')) {
       const dateObj = new Date(value);
       const month = String(dateObj.getMonth() + 1).padStart(2, '0');
@@ -45,16 +39,12 @@ const NewEventForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log('Form data:', values);
       const formData = new FormData();
       for (const key in values) {
         formData.append(key, values[key]);
       }
 
-      
-
-      const token = sessionStorage.getItem('accessToken'); // Replace with your actual Bearer token
-      console.log('Bearer token:', token);
+      const token = sessionStorage.getItem('accessToken');
       const response = await fetch('/events', {
         method: 'POST',
         headers: {
@@ -71,9 +61,14 @@ const NewEventForm = () => {
       console.log('Response:', data);
     } catch (error) {
       console.error('Error:', error.message);
-      // Handle error or display an error message
     }
   };
+
+  // Check if userId exists, if not, navigate to login
+  if (!sessionStorage.getItem('userId')) {
+    navigate('/login'); // Redirect to login page
+    return null; // Return null to prevent rendering
+  }
 
   return (
     <div className="full-page-container" style={{ background: 'linear-gradient(135deg, #ff8080, #b3ff66)', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)', marginTop: 0, paddingTop: '50px', paddingBottom: '50px' }}>
