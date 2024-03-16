@@ -2043,3 +2043,54 @@ jwt.exceptions.ExpiredSignatureError: Signature has expired
 2024-03-16 17:55:21,267 - INFO - 127.0.0.1 - - [16/Mar/2024 17:55:21] "GET /users/3 HTTP/1.1" 200 -
 2024-03-16 17:55:24,146 - INFO - 127.0.0.1 - - [16/Mar/2024 17:55:24] "GET /events/3 HTTP/1.1" 200 -
 2024-03-16 17:55:24,148 - INFO - 127.0.0.1 - - [16/Mar/2024 17:55:24] "GET /events/2 HTTP/1.1" 200 -
+2024-03-16 17:58:39,270 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 17:58:39,278 - INFO - 127.0.0.1 - - [16/Mar/2024 17:58:39] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 17:59:06,460 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 17:59:06,468 - INFO - 127.0.0.1 - - [16/Mar/2024 17:59:06] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 18:01:27,048 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 18:01:27,056 - INFO - 127.0.0.1 - - [16/Mar/2024 18:01:27] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 18:01:31,542 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 18:01:31,551 - INFO - 127.0.0.1 - - [16/Mar/2024 18:01:31] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 18:05:30,064 - INFO - 127.0.0.1 - - [16/Mar/2024 18:05:30] "GET /events/3 HTTP/1.1" 200 -
+2024-03-16 18:05:30,067 - INFO - 127.0.0.1 - - [16/Mar/2024 18:05:30] "GET /events/2 HTTP/1.1" 200 -
+2024-03-16 18:05:49,475 - INFO - 127.0.0.1 - - [16/Mar/2024 18:05:49] "POST /login HTTP/1.1" 200 -
+2024-03-16 18:05:49,490 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 18:05:49,500 - INFO - 127.0.0.1 - - [16/Mar/2024 18:05:49] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 18:05:54,135 - INFO - 127.0.0.1 - - [16/Mar/2024 18:05:54] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 18:05:54,137 - INFO - 127.0.0.1 - - [16/Mar/2024 18:05:54] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 18:07:26,742 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 18:07:26,753 - INFO - 127.0.0.1 - - [16/Mar/2024 18:07:26] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 18:07:55,669 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 18:07:55,677 - INFO - 127.0.0.1 - - [16/Mar/2024 18:07:55] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 18:08:02,374 - INFO - 127.0.0.1 - - [16/Mar/2024 18:08:02] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 18:08:02,378 - INFO - 127.0.0.1 - - [16/Mar/2024 18:08:02] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 18:09:55,142 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 18:09:55,153 - INFO - 127.0.0.1 - - [16/Mar/2024 18:09:55] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 18:10:03,218 - INFO - 127.0.0.1 - - [16/Mar/2024 18:10:03] "POST /login HTTP/1.1" 200 -
+2024-03-16 18:10:03,239 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 18:10:03,250 - INFO - 127.0.0.1 - - [16/Mar/2024 18:10:03] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 18:10:07,019 - INFO - 127.0.0.1 - - [16/Mar/2024 18:10:07] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 18:10:07,021 - INFO - 127.0.0.1 - - [16/Mar/2024 18:10:07] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 18:11:47,690 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 18:11:47,701 - INFO - 127.0.0.1 - - [16/Mar/2024 18:11:47] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 18:12:17,270 - INFO - 127.0.0.1 - - [16/Mar/2024 18:12:17] "POST /login HTTP/1.1" 200 -
+2024-03-16 18:12:17,285 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 18:12:17,296 - INFO - 127.0.0.1 - - [16/Mar/2024 18:12:17] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 18:12:32,593 - INFO - 127.0.0.1 - - [16/Mar/2024 18:12:32] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 18:12:32,596 - INFO - 127.0.0.1 - - [16/Mar/2024 18:12:32] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 18:12:36,326 - INFO - 127.0.0.1 - - [16/Mar/2024 18:12:36] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 18:12:36,330 - INFO - 127.0.0.1 - - [16/Mar/2024 18:12:36] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 18:17:41,695 - INFO - 127.0.0.1 - - [16/Mar/2024 18:17:41] "POST /login HTTP/1.1" 200 -
+2024-03-16 18:17:41,723 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 18:17:41,733 - INFO - 127.0.0.1 - - [16/Mar/2024 18:17:41] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 18:18:17,975 - INFO - 127.0.0.1 - - [16/Mar/2024 18:18:17] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 18:18:17,981 - INFO - 127.0.0.1 - - [16/Mar/2024 18:18:17] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 18:20:33,679 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 18:20:33,693 - INFO - 127.0.0.1 - - [16/Mar/2024 18:20:33] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 18:21:17,871 - INFO - 127.0.0.1 - - [16/Mar/2024 18:21:17] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 18:21:17,875 - INFO - 127.0.0.1 - - [16/Mar/2024 18:21:17] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 18:21:39,945 - INFO - 127.0.0.1 - - [16/Mar/2024 18:21:39] "POST /login HTTP/1.1" 200 -
+2024-03-16 18:21:39,960 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 18:21:39,970 - INFO - 127.0.0.1 - - [16/Mar/2024 18:21:39] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 18:21:53,167 - INFO - 127.0.0.1 - - [16/Mar/2024 18:21:53] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 18:21:53,170 - INFO - 127.0.0.1 - - [16/Mar/2024 18:21:53] "GET /events/1 HTTP/1.1" 200 -

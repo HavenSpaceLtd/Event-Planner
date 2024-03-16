@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function MyTaskCard({ id, progress, title, activeToken, current_progress }) {
+function MyTaskCard({ id, progress, title, activeToken, current_progress, startDate, endDate }) {
     const [newProgress, setNewProgress] = useState(current_progress);
     useEffect(() => {
         // Update newProgress with the progress prop when it changes
@@ -37,6 +37,8 @@ function MyTaskCard({ id, progress, title, activeToken, current_progress }) {
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text">ID: {id}</p>
+                    <p className="card-text">Start Date: {startDate}</p>
+                    <p className="card-text">End Date: {endDate}</p>
                     <div className="progress mt-2 mb-3">
                         <div className="progress-bar bg-success" role="progressbar" style={{ width: `${newProgress}%` }} aria-valuenow={newProgress} aria-valuemin="0" aria-valuemax="100">
                             Progress: {newProgress}%
