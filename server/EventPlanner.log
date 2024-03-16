@@ -1780,3 +1780,266 @@ ValueError: Invalid isoformat string: '2024-03-11 18:49:47.391325'
 2024-03-16 17:05:31,351 - INFO - 127.0.0.1 - - [16/Mar/2024 17:05:31] "POST /login HTTP/1.1" 200 -
 2024-03-16 17:05:31,417 - INFO - User, johndoe@gmail.com, details accessed
 2024-03-16 17:05:31,431 - INFO - 127.0.0.1 - - [16/Mar/2024 17:05:31] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 17:16:42,037 - INFO - 127.0.0.1 - - [16/Mar/2024 17:16:42] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 17:16:42,040 - INFO - 127.0.0.1 - - [16/Mar/2024 17:16:42] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 17:16:45,177 - INFO - 127.0.0.1 - - [16/Mar/2024 17:16:45] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 17:16:45,180 - INFO - 127.0.0.1 - - [16/Mar/2024 17:16:45] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 17:16:55,723 - INFO - 127.0.0.1 - - [16/Mar/2024 17:16:55] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 17:16:55,726 - INFO - 127.0.0.1 - - [16/Mar/2024 17:16:55] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 17:19:28,602 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 17:19:28,612 - INFO - 127.0.0.1 - - [16/Mar/2024 17:19:28] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 17:20:28,756 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 17:20:28,766 - INFO - 127.0.0.1 - - [16/Mar/2024 17:20:28] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 17:21:01,063 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-16 17:21:01,201 - INFO - 127.0.0.1 - - [16/Mar/2024 17:21:01] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-16 17:21:03,028 - ERROR - Exception on /events/5 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-16 17:21:03,029 - INFO - 127.0.0.1 - - [16/Mar/2024 17:21:03] "[35m[1mGET /events/5 HTTP/1.1[0m" 500 -
+2024-03-16 17:21:03,029 - ERROR - Exception on /events/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-16 17:21:03,030 - INFO - 127.0.0.1 - - [16/Mar/2024 17:21:03] "[35m[1mGET /events/1 HTTP/1.1[0m" 500 -
+2024-03-16 17:22:19,904 - INFO - 127.0.0.1 - - [16/Mar/2024 17:22:19] "[33mGET /users/null HTTP/1.1[0m" 404 -
+2024-03-16 17:22:28,810 - ERROR - Exception on /events/5 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-16 17:22:28,812 - ERROR - Exception on /events/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-16 17:22:28,812 - INFO - 127.0.0.1 - - [16/Mar/2024 17:22:28] "[35m[1mGET /events/5 HTTP/1.1[0m" 500 -
+2024-03-16 17:22:28,812 - INFO - 127.0.0.1 - - [16/Mar/2024 17:22:28] "[35m[1mGET /events/1 HTTP/1.1[0m" 500 -
+2024-03-16 17:41:02,660 - ERROR - Exception on /events/5 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-16 17:41:02,662 - ERROR - Exception on /events/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-16 17:41:02,663 - INFO - 127.0.0.1 - - [16/Mar/2024 17:41:02] "[35m[1mGET /events/5 HTTP/1.1[0m" 500 -
+2024-03-16 17:41:02,663 - INFO - 127.0.0.1 - - [16/Mar/2024 17:41:02] "[35m[1mGET /events/1 HTTP/1.1[0m" 500 -
+2024-03-16 17:41:10,173 - INFO - 127.0.0.1 - - [16/Mar/2024 17:41:10] "[33mGET /users/null HTTP/1.1[0m" 404 -
+2024-03-16 17:41:21,724 - INFO - 127.0.0.1 - - [16/Mar/2024 17:41:21] "POST /login HTTP/1.1" 200 -
+2024-03-16 17:41:21,735 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 17:41:21,744 - INFO - 127.0.0.1 - - [16/Mar/2024 17:41:21] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 17:41:26,744 - INFO - 127.0.0.1 - - [16/Mar/2024 17:41:26] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 17:41:26,748 - INFO - 127.0.0.1 - - [16/Mar/2024 17:41:26] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 17:43:03,135 - INFO - 127.0.0.1 - - [16/Mar/2024 17:43:03] "POST /login HTTP/1.1" 200 -
+2024-03-16 17:43:03,174 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 17:43:03,180 - INFO - 127.0.0.1 - - [16/Mar/2024 17:43:03] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 17:55:21,242 - INFO - 127.0.0.1 - - [16/Mar/2024 17:55:21] "POST /login HTTP/1.1" 200 -
+2024-03-16 17:55:21,258 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 17:55:21,267 - INFO - 127.0.0.1 - - [16/Mar/2024 17:55:21] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 17:55:24,146 - INFO - 127.0.0.1 - - [16/Mar/2024 17:55:24] "GET /events/3 HTTP/1.1" 200 -
+2024-03-16 17:55:24,148 - INFO - 127.0.0.1 - - [16/Mar/2024 17:55:24] "GET /events/2 HTTP/1.1" 200 -

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import NewEventForm from "./NewEventForm";
 import ProfileCard from "./ProfileCard";
 import EventCard1 from "./EventCard1";
@@ -8,7 +9,9 @@ function Home() {
     const [selectedItem, setSelectedItem] = useState('');
     const [userData, setUserData] = useState({});
     const [counter, setCounter] = useState(0);
+    const navigate = useNavigate(); // Initialize navigate hook
 
+    
 
     const activeUser = sessionStorage.getItem('userId');
     const activeToken = sessionStorage.getItem('accessToken');
@@ -77,9 +80,15 @@ function Home() {
     let trimmedPath = userData.image ? userData.image.replace("../client/public", "") : "";
     let plain = "/images/default.jpg"
 
+    // Check if userId exists, if not, navigate to login
+    if (!sessionStorage.getItem('userId')) {
+        navigate('/login'); // Redirect to login page
+        return null; // Return null to prevent rendering
+    }
+
     return (
         <>
-            
+
             {userData ? (
                 <>
 
@@ -188,7 +197,7 @@ function Home() {
                                     {userData.tasks.map((item) => {
                                         return <MyTaskCard
                                             key={item.id}
-                                            id={item.id}                                         
+                                            id={item.id}
                                             title={item.title}
                                             update={setCounter}
                                             activeToken={activeToken}
