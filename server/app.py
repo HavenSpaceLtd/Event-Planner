@@ -484,6 +484,7 @@ class TaskById(Resource):
         task.amount = data.get('amount', task.amount)
         task.progress = data.get('progress', task.progress)
         task.location = data.get('location', task.location)
+        task.priority = data.get('priority', task.priority)
         task.status = data.get('status', task.status)
 
         # Update start_date if provided

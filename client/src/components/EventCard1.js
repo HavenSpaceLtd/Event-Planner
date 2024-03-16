@@ -178,7 +178,7 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                             </ul>
                             <ul><h4>Team Members:</h4>
                                 {eventData.team_members.map((item) => {
-                                    return <li>{item.first_name}</li>
+                                    return <li key={item.task.id}>{item.first_name}</li>
                                 }
                                 )}
                             </ul>
