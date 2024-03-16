@@ -1697,3 +1697,80 @@ jwt.exceptions.ExpiredSignatureError: Signature has expired
 2024-03-16 16:09:42,657 - INFO - 127.0.0.1 - - [16/Mar/2024 16:09:42] "POST /login HTTP/1.1" 200 -
 2024-03-16 16:09:42,847 - INFO - User, johndoe@gmail.com, details accessed
 2024-03-16 16:09:42,863 - INFO - 127.0.0.1 - - [16/Mar/2024 16:09:42] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 16:21:17,637 - INFO - 127.0.0.1 - - [16/Mar/2024 16:21:17] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 16:21:17,638 - INFO - 127.0.0.1 - - [16/Mar/2024 16:21:17] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 16:21:38,518 - INFO - 127.0.0.1 - - [16/Mar/2024 16:21:38] "GET /events/5 HTTP/1.1" 200 -
+2024-03-16 16:21:38,521 - INFO - 127.0.0.1 - - [16/Mar/2024 16:21:38] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 16:22:26,928 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 16:22:26,930 - INFO - 127.0.0.1 - - [16/Mar/2024 16:22:26] "GET /communications HTTP/1.1" 200 -
+2024-03-16 16:22:26,931 - INFO - 127.0.0.1 - - [16/Mar/2024 16:22:26] "GET /allevents HTTP/1.1" 200 -
+2024-03-16 16:22:26,932 - INFO - 127.0.0.1 - - [16/Mar/2024 16:22:26] "GET /users HTTP/1.1" 200 -
+2024-03-16 16:22:26,938 - INFO - 127.0.0.1 - - [16/Mar/2024 16:22:26] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 16:22:35,107 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/home/harris/Development/code/phase5/DevProject/Event-Planner 6/Event-Planner/server/app.py", line 776, in get
+    assets = Asset.query.all()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/home/harris/.local/share/virtualenvs/server-EFXEsOrV/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+ValueError: Invalid isoformat string: '2024-03-11 18:49:47.391325'
+2024-03-16 16:22:35,108 - INFO - 127.0.0.1 - - [16/Mar/2024 16:22:35] "GET /budgets HTTP/1.1" 200 -
+2024-03-16 16:22:35,109 - INFO - 127.0.0.1 - - [16/Mar/2024 16:22:35] "GET /expenses HTTP/1.1" 200 -
+2024-03-16 16:22:36,493 - INFO - 127.0.0.1 - - [16/Mar/2024 16:22:36] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-16 16:22:57,821 - INFO - 127.0.0.1 - - [16/Mar/2024 16:22:57] "GET /communications HTTP/1.1" 200 -
+2024-03-16 16:22:57,821 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 16:22:57,822 - INFO - 127.0.0.1 - - [16/Mar/2024 16:22:57] "GET /allevents HTTP/1.1" 200 -
+2024-03-16 16:22:57,823 - INFO - 127.0.0.1 - - [16/Mar/2024 16:22:57] "GET /users HTTP/1.1" 200 -
+2024-03-16 16:22:57,832 - INFO - 127.0.0.1 - - [16/Mar/2024 16:22:57] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 16:23:22,196 - INFO - 127.0.0.1 - - [16/Mar/2024 16:23:22] "POST /login HTTP/1.1" 200 -
+2024-03-16 16:23:22,212 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 16:23:22,222 - INFO - 127.0.0.1 - - [16/Mar/2024 16:23:22] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 16:23:24,220 - INFO - 127.0.0.1 - - [16/Mar/2024 16:23:24] "GET /events/3 HTTP/1.1" 200 -
+2024-03-16 16:23:24,223 - INFO - 127.0.0.1 - - [16/Mar/2024 16:23:24] "GET /events/2 HTTP/1.1" 200 -
+2024-03-16 16:24:06,771 - INFO - 127.0.0.1 - - [16/Mar/2024 16:24:06] "GET /events/3 HTTP/1.1" 200 -
+2024-03-16 16:24:06,771 - INFO - 127.0.0.1 - - [16/Mar/2024 16:24:06] "GET /events/2 HTTP/1.1" 200 -
+2024-03-16 16:25:54,744 - INFO - 127.0.0.1 - - [16/Mar/2024 16:25:54] "GET /events/3 HTTP/1.1" 200 -
+2024-03-16 16:25:54,745 - INFO - 127.0.0.1 - - [16/Mar/2024 16:25:54] "GET /events/2 HTTP/1.1" 200 -
+2024-03-16 16:26:04,810 - INFO - 127.0.0.1 - - [16/Mar/2024 16:26:04] "POST /login HTTP/1.1" 200 -
+2024-03-16 16:26:04,823 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 16:26:04,834 - INFO - 127.0.0.1 - - [16/Mar/2024 16:26:04] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 16:26:23,826 - INFO - 127.0.0.1 - - [16/Mar/2024 16:26:23] "POST /login HTTP/1.1" 200 -
+2024-03-16 16:26:23,840 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 16:26:23,849 - INFO - 127.0.0.1 - - [16/Mar/2024 16:26:23] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 16:26:25,066 - INFO - 127.0.0.1 - - [16/Mar/2024 16:26:25] "GET /events/3 HTTP/1.1" 200 -
+2024-03-16 16:26:25,068 - INFO - 127.0.0.1 - - [16/Mar/2024 16:26:25] "GET /events/2 HTTP/1.1" 200 -
+2024-03-16 16:30:08,450 - INFO - User, wazza10@manu.com, details accessed
+2024-03-16 16:30:08,488 - INFO - 127.0.0.1 - - [16/Mar/2024 16:30:08] "GET /users/3 HTTP/1.1" 200 -
+2024-03-16 16:30:10,113 - INFO - 127.0.0.1 - - [16/Mar/2024 16:30:10] "GET /events/3 HTTP/1.1" 200 -
+2024-03-16 16:30:10,113 - INFO - 127.0.0.1 - - [16/Mar/2024 16:30:10] "GET /events/2 HTTP/1.1" 200 -
+2024-03-16 16:48:34,211 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-16 16:48:34,235 - INFO - [33mPress CTRL+C to quit[0m

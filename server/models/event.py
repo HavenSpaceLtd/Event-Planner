@@ -20,6 +20,7 @@ class Event(db.Model, SerializerMixin):
 
     amount = db.Column(db.Integer)
     progress = db.Column(db.Integer)
+    
 
     created_at = db.Column(DateTime, default=func.now())
     updated_at = db.Column(DateTime, default=func.now(), onupdate=func.now())
@@ -27,6 +28,8 @@ class Event(db.Model, SerializerMixin):
     location = db.Column(db.String)
     description = db.Column(db.String)
     image = db.Column(db.String)
+    priority = db.Column(db.String)
+
 
 
     # Foreign key to indicate the owner of the event
@@ -99,7 +102,7 @@ class Event(db.Model, SerializerMixin):
         return total_progress / num_tasks
 
     def __repr__(self) -> str:
-        return f'<Event {self.id}, {self.title}, {self.start_date}, {self.start_time}, {self.end_date}, {self.end_time}, {self.created_at}, {self.updated_at}, {self.image}, {self.description}, {self.location}, {self.amount}, {self.progress}>'
+        return f'<Event {self.id}, {self.title}, {self.start_date}, {self.start_time}, {self.end_date}, {self.end_time}, {self.created_at}, {self.updated_at}, {self.image}, {self.description}, {self.location}, {self.amount}, {self.progress}, {self.priority}>'
 
     def to_dict(self):
         return {
@@ -112,6 +115,7 @@ class Event(db.Model, SerializerMixin):
             'location': self.location,
             'amount': self.amount,
             'description': self.description,
+            'priority': self.priority,
             'image': self.image,
             'team_members': self.get_team_members(), 
             'tasks': self.get_tasks(),
