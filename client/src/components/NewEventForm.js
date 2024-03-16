@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 
+// Get owner_id from session storage
+const owner_id = sessionStorage.getItem('userId');
+console.log('Owner ID:', owner_id);
+if (!owner_id) {
+  throw new Error('Owner ID not found in session storage');
+}
 
 const NewEventForm = () => {
   const [values, setValues] = useState({
@@ -14,7 +20,7 @@ const NewEventForm = () => {
     location: '',
     description: '',
     image: '',
-    owner_id: '',
+    owner_id: owner_id,
   });
 
   const handleChange = (e) => {
@@ -45,12 +51,7 @@ const NewEventForm = () => {
         formData.append(key, values[key]);
       }
 
-      // Get owner_id from session storage
-      const owner_id = sessionStorage.getItem('userId');
-      console.log('Owner ID:', owner_id);
-      if (!owner_id) {
-        throw new Error('Owner ID not found in session storage');
-      }
+      
 
       const token = sessionStorage.getItem('accessToken'); // Replace with your actual Bearer token
       console.log('Bearer token:', token);

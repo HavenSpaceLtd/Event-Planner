@@ -1061,3 +1061,13 @@ jwt.exceptions.DecodeError: Not enough segments
 2024-03-16 00:35:54,499 - INFO - User, johndoe@gmail.com, details accessed
 2024-03-16 00:35:54,518 - INFO - 127.0.0.1 - - [16/Mar/2024 00:35:54] "GET /allevents HTTP/1.1" 200 -
 2024-03-16 00:35:54,558 - INFO - 127.0.0.1 - - [16/Mar/2024 00:35:54] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 09:06:42,322 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-16 09:06:42,344 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-16 09:09:09,942 - INFO - 127.0.0.1 - - [16/Mar/2024 09:09:09] "POST /login HTTP/1.1" 200 -
+2024-03-16 09:09:09,968 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 09:09:09,973 - INFO - 127.0.0.1 - - [16/Mar/2024 09:09:09] "GET /users/1 HTTP/1.1" 200 -
+2024-03-16 09:09:14,568 - INFO - 127.0.0.1 - - [16/Mar/2024 09:09:14] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 09:09:17,222 - INFO - 127.0.0.1 - - [16/Mar/2024 09:09:17] "GET /events/1 HTTP/1.1" 200 -
+2024-03-16 09:13:04,907 - INFO - 127.0.0.1 - - [16/Mar/2024 09:13:04] "[35m[1mPOST /events HTTP/1.1[0m" 201 -
+2024-03-16 09:20:31,395 - INFO - 127.0.0.1 - - [16/Mar/2024 09:20:31] "[35m[1mPOST /events HTTP/1.1[0m" 201 -
