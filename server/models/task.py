@@ -23,6 +23,8 @@ class Task(db.Model):
     location = db.Column(db.String)
     description = db.Column(db.String)
     image = db.Column(db.String)
+    priority = db.Column(db.String)
+    
 
     event_id = db.Column(db.Integer, db.ForeignKey('events.id'))
 
@@ -31,7 +33,7 @@ class Task(db.Model):
 
 
     def __repr__(self) -> str:
-        return f'<Event {self.id}, {self.title}, {self.start_date}, {self.start_time}, {self.end_date}, {self.end_time}, {self.created_at}, {self.updated_at}, {self.image} ,{self.description}, {self.location}, {self.status}, {self.amount}, {self.progress}>'
+        return f'<Event {self.id}, {self.title}, {self.start_date}, {self.start_time}, {self.end_date}, {self.end_time}, {self.created_at}, {self.updated_at}, {self.image} ,{self.description}, {self.location}, {self.status}, {self.amount}, {self.progress}, {self.priority}>'
     
     def to_dict(self):
         return {
@@ -43,6 +45,7 @@ class Task(db.Model):
             'end_time': self.end_time.strftime('%H:%M') if self.end_time else None,
             'location': self.location,
             'status': self.status,
+            'priority': self.priority,
             'amount': self.amount,
             'description': self.description,
             'image': self.image,
