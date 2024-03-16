@@ -1777,3 +1777,6 @@ ValueError: Invalid isoformat string: '2024-03-11 18:49:47.391325'
 2024-03-16 16:58:13,242 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5555
 2024-03-16 16:58:13,242 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-16 17:05:31,351 - INFO - 127.0.0.1 - - [16/Mar/2024 17:05:31] "POST /login HTTP/1.1" 200 -
+2024-03-16 17:05:31,417 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-16 17:05:31,431 - INFO - 127.0.0.1 - - [16/Mar/2024 17:05:31] "GET /users/1 HTTP/1.1" 200 -
