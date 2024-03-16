@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import NewEventForm from "./NewEventForm"
+import NewEventForm from "./NewEventForm";
+import ProfileCard from "./ProfileCard";
+import EventCard1 from "./EventCard1";
 
 function Home() {
     const [selectedItem, setSelectedItem] = useState('');
@@ -42,6 +44,34 @@ function Home() {
             sessionStorage.removeItem('selectedUser');
         }
     };
+
+    const handleUpdateProfile = (updatedData) => {
+
+        // Send updated profile data to the backend
+        fetch(`/users/${activeUser}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                "Authorization": `Bearer ${activeToken}`
+            },
+            body: JSON.stringify(updatedData),
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to update profile');
+                }
+
+                // If update successful, trigger a counter to refresh the data
+                console.log(updatedData);
+                setCounter(counter + 1);
+                alert('Updated successfull!');
+            })
+            .catch(error => {
+                console.error('Error updating profile:', error);
+
+            });
+    };
+
 
     let trimmedPath = userData.image ? userData.image.replace("../client/public", "") : "";
     let plain = "/images/default.jpg"
@@ -136,18 +166,20 @@ function Home() {
                             {/* right column */}
                             {selectedItem === 'My Events' && (
                                 <div className="ms-5 col-4 d-flex align-content-start flex-wrap" style={{ "width": "1000px" }}>
-                                    {/* {data.approved_jobs.map((item) => {
-                                        return <ApprovedJobCard
+                                    {userData.events.map((item) => {
+                                        return <EventCard1
                                             key={item.id}
                                             id={item.id}
-                                            amount={item.amount}
-                                            hours={item.hours}
-                                            progress={item.progress}
                                             title={item.title}
-                                            userId={activeUser.id}
+                                            location={item.location}
+                                            startDate={item.start_date}
+                                            endDate={item.end_date}
+                                            ownerId={item.owner_id}
+                                            userData={userData}
+                                            activeToken={activeToken}
 
                                         />
-                                    })} */}
+                                    })}
                                 </div>
                             )}
                             {selectedItem === 'My Tasks' && (
@@ -214,7 +246,7 @@ function Home() {
 
                             {selectedItem === 'Your Profile' && (
                                 <div className="ms-5 col-4 d-flex align-content-end flex-wrap" style={{ "width": "1000px" }}>
-                                    {/* <ProfileCard userData={data} onUpdate={handleUpdateProfile} /> */}
+                                    <ProfileCard userData={userData} onUpdate={handleUpdateProfile} />
                                 </div>
                             )}
 
