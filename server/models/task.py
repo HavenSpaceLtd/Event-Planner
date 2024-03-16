@@ -46,5 +46,6 @@ class Task(db.Model):
             'amount': self.amount,
             'description': self.description,
             'image': self.image,
+            'progress': self.progress,
             
         }

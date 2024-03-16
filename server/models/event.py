@@ -84,7 +84,19 @@ class Event(db.Model, SerializerMixin):
         
         return assigned_tasks_with_users
 
-        
+    def get_tasks_average_progress(self):
+        total_progress = db.session.query(func.sum(Task.progress)) \
+                                    .filter(Task.event_id == self.id) \
+                                    .scalar()
+
+        num_tasks = db.session.query(Task) \
+                             .filter(Task.event_id == self.id) \
+                             .count()
+
+        if num_tasks == 0:
+            return 0  # Return 0 if there are no tasks
+
+        return total_progress / num_tasks
 
     def __repr__(self) -> str:
         return f'<Event {self.id}, {self.title}, {self.start_date}, {self.start_time}, {self.end_date}, {self.end_time}, {self.created_at}, {self.updated_at}, {self.image}, {self.description}, {self.location}, {self.amount}, {self.progress}>'
@@ -105,4 +117,5 @@ class Event(db.Model, SerializerMixin):
             'tasks': self.get_tasks(),
             'unassigned_tasks': self.get_unassigned_tasks(),
             'assigned_tasks': self.get_assigned_tasks_with_users(),
+            'average_progress': self.get_tasks_average_progress(),
         }
