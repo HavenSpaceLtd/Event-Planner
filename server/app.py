@@ -145,6 +145,7 @@ class UserById(Resource):
             "events": user.get_owned_events(),
             "tasks": user.get_assigned_tasks(),
             "due_tasks": user.get_assigned_tasks_due_within_week(),
+            "high_priority_tasks": user.get_high_priority_tasks(),
         }
         return make_response(jsonify(user_data))
 
@@ -245,6 +246,7 @@ class LoginUser(Resource):
             "events": user.get_owned_events(),
             "tasks": user.get_assigned_tasks(),
             "due_tasks": user.get_assigned_tasks_due_within_week(),
+            "high_priority_tasks": user.get_high_priority_tasks(),
         }), 200)
 
     def delete(self):

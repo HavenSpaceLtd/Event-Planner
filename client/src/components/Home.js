@@ -226,16 +226,18 @@ function Home() {
                             )}
                             {selectedItem === 'High Priority Tasks' && (
                                 <div className="ms-5 col-4 d-flex align-content-start flex-wrap" style={{ "width": "1000px" }}>
-                                    {/* {data.bids.map((item) => {
-                                        return <BidCard
+                                    {userData.high_priority_tasks.map((item) => {
+                                        return <MyTaskCard
                                             key={item.id}
                                             id={item.id}
-                                            offered_amount={item.offered_job_wage}
-                                            hours={item.offered_job_hours}
-                                            title={item.offered_job_title}
-                                            bid_amount={item.amount}
+                                            title={item.title}
+                                            startDate={item.start_date}
+                                            endDate={item.end_date}
+                                            update={setCounter}
+                                            activeToken={activeToken}
+                                            current_progress={item.progress}
                                         />
-                                    })} */}
+                                    })}
                                 </div>
                             )}
                             {selectedItem === 'Due Tasks' && (

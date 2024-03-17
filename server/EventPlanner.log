@@ -4746,3 +4746,128 @@ jwt.exceptions.ExpiredSignatureError: Signature has expired
  * Running on http://127.0.0.1:5555
 2024-03-17 18:00:22,339 - INFO - [33mPress CTRL+C to quit[0m
 2024-03-17 18:00:25,623 - INFO - 127.0.0.1 - - [17/Mar/2024 18:00:25] "[35m[1mPOST /events HTTP/1.1[0m" 201 -
+2024-03-17 18:05:25,678 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 18:05:25,709 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:25] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 18:05:50,148 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:50] "POST /login HTTP/1.1" 200 -
+2024-03-17 18:05:50,162 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 18:05:50,179 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:50] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 18:05:54,159 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 18:05:54,166 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:54] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:05:54,167 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:54] "GET /events/6 HTTP/1.1" 200 -
+2024-03-17 18:05:54,173 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:54] "GET /events/7 HTTP/1.1" 200 -
+2024-03-17 18:05:54,176 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:54] "GET /events/1 HTTP/1.1" 200 -
+2024-03-17 18:05:54,178 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:54] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:05:54,179 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:54] "GET /events/5 HTTP/1.1" 200 -
+2024-03-17 18:05:54,185 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:54] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:05:54,192 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:54] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:05:54,197 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:54] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:05:54,198 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:54] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 18:05:54,202 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:54] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:05:54,207 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:54] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:05:54,211 - INFO - 127.0.0.1 - - [17/Mar/2024 18:05:54] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:06:34,373 - INFO - 127.0.0.1 - - [17/Mar/2024 18:06:34] "PATCH /tasks/3 HTTP/1.1" 200 -
+2024-03-17 18:09:30,729 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 18:09:30,741 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:30] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 18:09:31,781 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 18:09:31,784 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:31] "GET /events/7 HTTP/1.1" 200 -
+2024-03-17 18:09:31,787 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:31] "GET /events/6 HTTP/1.1" 200 -
+2024-03-17 18:09:31,790 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:31] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:09:31,793 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:31] "GET /events/5 HTTP/1.1" 200 -
+2024-03-17 18:09:31,798 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:31] "GET /events/1 HTTP/1.1" 200 -
+2024-03-17 18:09:31,806 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:31] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:09:31,812 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:31] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:09:31,813 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:31] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 18:09:31,818 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:31] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:09:31,822 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:31] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:09:31,826 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:31] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:09:31,831 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:31] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:09:31,835 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:31] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:09:32,909 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 18:09:32,923 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:32] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 18:09:49,198 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 18:09:49,199 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:49] "GET /events/6 HTTP/1.1" 200 -
+2024-03-17 18:09:49,199 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:49] "GET /events/7 HTTP/1.1" 200 -
+2024-03-17 18:09:49,204 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:49] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:09:49,211 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:49] "GET /events/5 HTTP/1.1" 200 -
+2024-03-17 18:09:49,214 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:49] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:09:49,216 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:49] "GET /events/1 HTTP/1.1" 200 -
+2024-03-17 18:09:49,222 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:49] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:09:49,230 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:49] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:09:49,232 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:49] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 18:09:49,235 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:49] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:09:49,239 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:49] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:09:49,243 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:49] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:09:49,247 - INFO - 127.0.0.1 - - [17/Mar/2024 18:09:49] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:17:17,949 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-17 18:17:17,950 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-17 18:17:23,549 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 18:17:23,578 - INFO - 127.0.0.1 - - [17/Mar/2024 18:17:23] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 18:17:30,404 - INFO - 127.0.0.1 - - [17/Mar/2024 18:17:30] "POST /login HTTP/1.1" 200 -
+2024-03-17 18:17:30,426 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 18:17:30,440 - INFO - 127.0.0.1 - - [17/Mar/2024 18:17:30] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 18:17:48,107 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 18:17:48,120 - INFO - 127.0.0.1 - - [17/Mar/2024 18:17:48] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 18:20:12,816 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-17 18:20:12,816 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-17 18:20:22,991 - INFO - 127.0.0.1 - - [17/Mar/2024 18:20:22] "POST /login HTTP/1.1" 200 -
+2024-03-17 18:20:23,008 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 18:20:23,027 - INFO - 127.0.0.1 - - [17/Mar/2024 18:20:23] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 18:21:12,567 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-17 18:21:12,567 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-17 18:21:15,332 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 18:21:15,366 - INFO - 127.0.0.1 - - [17/Mar/2024 18:21:15] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 18:21:20,561 - INFO - 127.0.0.1 - - [17/Mar/2024 18:21:20] "POST /login HTTP/1.1" 200 -
+2024-03-17 18:21:20,575 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 18:21:20,592 - INFO - 127.0.0.1 - - [17/Mar/2024 18:21:20] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 18:21:30,377 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 18:21:30,393 - INFO - 127.0.0.1 - - [17/Mar/2024 18:21:30] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 18:21:37,720 - INFO - 127.0.0.1 - - [17/Mar/2024 18:21:37] "POST /login HTTP/1.1" 200 -
+2024-03-17 18:21:37,733 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 18:21:37,744 - INFO - 127.0.0.1 - - [17/Mar/2024 18:21:37] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 18:21:44,629 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 18:21:44,636 - INFO - 127.0.0.1 - - [17/Mar/2024 18:21:44] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 18:22:25,296 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-17 18:22:25,296 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-17 18:22:36,395 - INFO - 127.0.0.1 - - [17/Mar/2024 18:22:36] "POST /login HTTP/1.1" 200 -
+2024-03-17 18:22:36,419 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 18:22:36,427 - INFO - 127.0.0.1 - - [17/Mar/2024 18:22:36] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 18:23:30,352 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 18:23:30,358 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:30] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 18:23:31,206 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 18:23:31,219 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:31] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 18:23:39,391 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 18:23:39,393 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:39] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:23:39,397 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:39] "GET /events/3 HTTP/1.1" 200 -
+2024-03-17 18:23:39,399 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:39] "GET /events/2 HTTP/1.1" 200 -
+2024-03-17 18:23:39,407 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:39] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 18:23:39,413 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:39] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:23:39,420 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:39] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:23:39,426 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:39] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:23:40,608 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 18:23:40,615 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:40] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 18:23:41,653 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 18:23:41,660 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:41] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 18:23:42,637 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 18:23:42,640 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:42] "GET /events/3 HTTP/1.1" 200 -
+2024-03-17 18:23:42,644 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:42] "GET /events/2 HTTP/1.1" 200 -
+2024-03-17 18:23:42,644 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:42] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:23:42,652 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:42] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 18:23:42,653 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:42] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:23:42,657 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:42] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:23:42,664 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:42] "GET /users HTTP/1.1" 200 -
+2024-03-17 18:23:43,943 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 18:23:43,950 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:43] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 18:23:44,792 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 18:23:44,802 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:44] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 18:23:45,778 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 18:23:45,785 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:45] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 18:23:46,617 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 18:23:46,624 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:46] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 18:23:47,888 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 18:23:47,895 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:47] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 18:23:51,141 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 18:23:51,155 - INFO - 127.0.0.1 - - [17/Mar/2024 18:23:51] "GET /users/3 HTTP/1.1" 200 -
