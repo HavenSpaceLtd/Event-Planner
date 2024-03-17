@@ -4327,3 +4327,17 @@ jwt.exceptions.ExpiredSignatureError: Signature has expired
 2024-03-17 13:16:58,114 - INFO - 127.0.0.1 - - [17/Mar/2024 13:16:58] "GET /users HTTP/1.1" 200 -
 2024-03-17 13:16:59,699 - INFO - User, wazza10@manu.com, details accessed
 2024-03-17 13:16:59,706 - INFO - 127.0.0.1 - - [17/Mar/2024 13:16:59] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 13:31:52,623 - INFO - 127.0.0.1 - - [17/Mar/2024 13:31:52] "POST /login HTTP/1.1" 200 -
+2024-03-17 13:31:52,696 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 13:31:52,707 - INFO - 127.0.0.1 - - [17/Mar/2024 13:31:52] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 13:31:56,436 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 13:31:56,440 - INFO - 127.0.0.1 - - [17/Mar/2024 13:31:56] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:31:56,440 - INFO - 127.0.0.1 - - [17/Mar/2024 13:31:56] "GET /events/1 HTTP/1.1" 200 -
+2024-03-17 13:31:56,448 - INFO - 127.0.0.1 - - [17/Mar/2024 13:31:56] "GET /events/5 HTTP/1.1" 200 -
+2024-03-17 13:31:56,451 - INFO - 127.0.0.1 - - [17/Mar/2024 13:31:56] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:31:56,458 - INFO - 127.0.0.1 - - [17/Mar/2024 13:31:56] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:31:56,463 - INFO - 127.0.0.1 - - [17/Mar/2024 13:31:56] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 13:31:56,466 - INFO - 127.0.0.1 - - [17/Mar/2024 13:31:56] "GET /users HTTP/1.1" 200 -
+2024-03-17 16:56:26,316 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-17 16:56:26,317 - INFO - [33mPress CTRL+C to quit[0m
