@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-function ProfileCard({ userData, onUpdate }) {
+function ProfileCard({ userData, onUpdate, activeToken }) {
     const [updatedData, setUpdatedData] = useState({});
     const [updatedImageData, setUpdatedImageData] = useState({});
-
+    const [counter, setCounter] = useState(0);
     
     let trimmedPath = userData.image ? userData.image.replace("../client/public", "") : "";
     let plain = "/images/default.jpg"
@@ -22,16 +22,21 @@ function ProfileCard({ userData, onUpdate }) {
     const handleImageChange = (e) => {
         e.preventDefault();
         const imageFile = e.target.files[0];
-
+    
         const formData = new FormData();
         formData.append('image', imageFile)
-        setUpdatedImageData((prevData) => formData)
+        setUpdatedImageData(formData);
+        setCounter(true); // Set counter to true when a new image is selected
+        console.log(counter); // This will output the previous state
     };
-
+    
     const postImage = (userData, formData) => {
         fetch(`http://127.0.0.1:5555/users/${userData.id}`, {
             method: 'POST',
             body: formData,
+            headers: {
+                'Authorization': `Bearer ${activeToken}`
+            }
         })
         .then(response => {
             if (!response.ok) {
@@ -39,7 +44,7 @@ function ProfileCard({ userData, onUpdate }) {
             }
             
             console.log(formData);
-            alert('Image Updated successfull!');
+            alert('Image Updated successfully!');
         })
         .catch(error => {
             console.error('Error updating profile:', error);
@@ -51,17 +56,23 @@ function ProfileCard({ userData, onUpdate }) {
     const handleUpdate = (e) => {
         e.preventDefault();
         const formData = new FormData();
-
+    
         for (let key in updatedData) {
             formData.append(key, updatedData[key]);
-
         }
-        
-        onUpdate(updatedData);
-        postImage(userData,updatedImageData);
+    
+        // Check if a new image has been selected
+        if (counter) {
+            postImage(userData, updatedImageData);
+            onUpdate(updatedData);
+        } else {
+            // If no new image selected, update other data only
+            onUpdate(updatedData);
+            
+        }
+    
         console.log(e.target);
     };
-
     return (
         <>
             <div className="row ms-5 mx-auto" id={userData.id}>

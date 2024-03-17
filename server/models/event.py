@@ -53,10 +53,10 @@ class Event(db.Model, SerializerMixin):
         return team_members
     
     def get_tasks(self):
-        
         event_tasks = Task.query.filter_by(event_id=self.id).all()
         serialized_tasks = [task.to_dict() for task in event_tasks]
-        return serialized_tasks
+        total_tasks_amount = sum(task.amount for task in event_tasks)
+        return serialized_tasks, total_tasks_amount
     
     def get_unassigned_tasks(self):
         unassigned_tasks = Task.query \
@@ -105,6 +105,7 @@ class Event(db.Model, SerializerMixin):
         return f'<Event {self.id}, {self.title}, {self.start_date}, {self.start_time}, {self.end_date}, {self.end_time}, {self.created_at}, {self.updated_at}, {self.image}, {self.description}, {self.location}, {self.amount}, {self.progress}, {self.priority}>'
 
     def to_dict(self):
+        tasks, total_tasks_amount = self.get_tasks()
         return {
             'id': self.id,
             'title': self.title,
@@ -118,8 +119,9 @@ class Event(db.Model, SerializerMixin):
             'priority': self.priority,
             'image': self.image,
             'team_members': self.get_team_members(), 
-            'tasks': self.get_tasks(),
+            'tasks': tasks,
             'unassigned_tasks': self.get_unassigned_tasks(),
             'assigned_tasks': self.get_assigned_tasks_with_users(),
             'average_progress': self.get_tasks_average_progress(),
+            'total_tasks_amount': total_tasks_amount
         }

@@ -37,7 +37,7 @@ function Home() {
             }
         }
         fetchUserData();
-    }, []);
+    }, [counter]);
 
     const handleItemClick = (item) => {
         setSelectedItem(item);
@@ -50,31 +50,34 @@ function Home() {
     };
 
     const handleUpdateProfile = (updatedData) => {
-
+        // // Convert updatedData to FormData
+        const formData = new FormData();
+        for (const key in updatedData) {
+            formData.append(key, updatedData[key]);
+        }
+    
         // Send updated profile data to the backend
         fetch(`/users/${activeUser}`, {
             method: 'PATCH',
             headers: {
-                'Content-Type': 'application/json',
                 "Authorization": `Bearer ${activeToken}`
             },
-            body: JSON.stringify(updatedData),
+            body: formData,
         })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to update profile');
-                }
-
-                // If update successful, trigger a counter to refresh the data
-                console.log(updatedData);
-                setCounter(counter + 1);
-                alert('Updated successfull!');
-            })
-            .catch(error => {
-                console.error('Error updating profile:', error);
-
-            });
-    };
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to update profile');
+            }
+    
+            // If update successful, trigger a counter to refresh the data
+            console.log(updatedData);
+            setCounter(counter + 1);
+            alert('Updated successfully!');
+        })
+        .catch(error => {
+            console.error('Error updating profile:', error);
+        });
+    }
 
 
     let trimmedPath = userData.image ? userData.image.replace("../client/public", "") : "";
@@ -184,6 +187,7 @@ function Home() {
                                             location={item.location}
                                             startDate={item.start_date}
                                             endDate={item.end_date}
+                                            amount={item.amount}
                                             ownerId={item.owner_id}
                                             userData={userData}
                                             activeToken={activeToken}
@@ -259,7 +263,7 @@ function Home() {
 
                             {selectedItem === 'Your Profile' && (
                                 <div className="ms-5 col-4 d-flex align-content-end flex-wrap" style={{ "width": "1000px" }}>
-                                    <ProfileCard userData={userData} onUpdate={handleUpdateProfile} />
+                                    <ProfileCard userData={userData} onUpdate={handleUpdateProfile} activeToken={activeToken} />
                                 </div>
                             )}
 
