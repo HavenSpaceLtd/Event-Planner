@@ -43,7 +43,7 @@ function Home() {
         setSelectedItem(item);
         // console.log(selectedUser);
         setCounter(prevCounter => prevCounter + 1);
-        console.log(userData);
+        // console.log(userData);
         if (item == "Logout") {
             sessionStorage.removeItem('selectedUser');
         }
@@ -78,7 +78,7 @@ function Home() {
 
 
     let trimmedPath = userData.image ? userData.image.replace("../client/public", "") : "";
-    let plain = "/images/default.jpg"
+    let plain = "/images/default.jpg";
 
     // Check if userId exists, if not, navigate to login
     if (!sessionStorage.getItem('userId')) {
@@ -187,6 +187,7 @@ function Home() {
                                             ownerId={item.owner_id}
                                             userData={userData}
                                             activeToken={activeToken}
+                                            currentTeamMembers={item.team_members}
 
                                         />
                                     })}

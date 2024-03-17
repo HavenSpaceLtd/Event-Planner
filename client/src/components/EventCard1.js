@@ -3,9 +3,9 @@ import { Modal, Button, Tooltip, OverlayTrigger, Dropdown } from "react-bootstra
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./EventCard1.css";
 
-function EventCard1({ id, title, location, startDate, endDate, ownerId, userData, activeToken }) {
+function EventCard1({ id, title, location, startDate, endDate, ownerId, userData, activeToken, currentTeamMembers }) {
     const [showModal, setShowModal] = useState(false);
-    const [showForm, setShowForm] = useState(false); 
+    const [showForm, setShowForm] = useState(false);
     const [eventData, setEventData] = useState({});
     const [teamMembers, setTeamMembers] = useState([]);
     const [newTaskData, setNewTaskData] = useState({
@@ -19,7 +19,7 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
         description: "",
         event_id: id
     });
-   
+
 
     const fetchEventData = async () => {
         try {
@@ -47,7 +47,7 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
 
     const handleCloseModal = () => {
         setShowModal(false);
-        setShowForm(false); 
+        setShowForm(false);
     };
 
     const handleShowModal = () => setShowModal(true);
@@ -55,24 +55,24 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
     const handleChange = (e) => {
         const { name, value } = e.target;
         let formattedValue = value;
-      
-        
+
+
         if (name.includes('date')) {
-          const dateObj = new Date(value);
-          const month = String(dateObj.getMonth() + 1).padStart(2, '0');
-          const day = String(dateObj.getDate()).padStart(2, '0');
-          const year = dateObj.getFullYear();
-          formattedValue = `${month}/${day}/${year}`;
+            const dateObj = new Date(value);
+            const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+            const day = String(dateObj.getDate()).padStart(2, '0');
+            const year = dateObj.getFullYear();
+            formattedValue = `${month}/${day}/${year}`;
         }
-      
+
         setNewTaskData((prevValues) => ({
-          ...prevValues,
-          [name]: formattedValue,
+            ...prevValues,
+            [name]: formattedValue,
         }));
-      };
-     
-    
-    
+    };
+
+
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -91,9 +91,9 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
             if (!response.ok) {
                 throw new Error("Failed to add new task");
             }
-            
+
             fetchEventData();
-            
+
             handleCloseModal();
         } catch (error) {
             console.error("Error adding new task:", error);
@@ -116,7 +116,7 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
             if (!response.ok) {
                 throw new Error("Failed to assign task to user");
             }
-            
+
             fetchEventData();
         } catch (error) {
             console.error("Error assigning task to user:", error);
@@ -130,7 +130,7 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        const fetchUsers = async () => {
+        const fetchAndFilterUsers = async () => {
             try {
                 const response = await fetch('/users', {
                     method: 'GET',
@@ -138,21 +138,27 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                         'Authorization': `Bearer ${activeToken}`
                     }
                 });
+
                 if (!response.ok) {
                     throw new Error('Failed to fetch users');
                 }
+
                 const data = await response.json();
-                const filteredUsers = data.filter(user => user.id !== parseInt(ownerId, 10));
+
+                const filteredUsers = data.filter(user => {
+                    return !teamMembers.some(member => member.email === user.email);
+                });
+
                 setUsers(filteredUsers);
             } catch (error) {
                 console.error('Error fetching users:', error);
             }
         };
 
-        fetchUsers();
-    }, [ownerId, activeToken]);
+        fetchAndFilterUsers();
+    }, [teamMembers, activeToken]);
 
-    const handleAssignTeamMember =  async(ownerId, id) => {
+    const handleAssignTeamMember = async (ownerId, id) => {
         try {
             const response = await fetch("/teams", {
                 method: "POST",
@@ -168,15 +174,15 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
             if (!response.ok) {
                 throw new Error("Failed to assign task to user");
             }
-            
-            fetchEventData(); 
+
+            fetchEventData();
         } catch (error) {
             console.error("Error assigning task to user:", error);
         }
     };
-    
 
-    
+
+
 
     return (
         <>
@@ -210,23 +216,25 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                         <Modal.Body>
                             <div className="team-members">
                                 <h4>Team Members:</h4>
-                                <ul className="list-group">
+                                <div className="d-flex align-content-end flex-wrap" >
                                     {teamMembers.map((member) => (
-                                        <li key={member.id} className="list-group-item">{member.first_name} {member.last_name}</li>
+                                        <div key={member.id} className="list-group-item px-2">{member.first_name} {member.last_name}
+                                            <div className="mt-2 mb-2 ms-5" id={member.id} ><img className="border border-secondary rounded" id={member.id} src={member.image ? member.image.replace("../client/public", "") : "/images/default.jpg"} style={{ height: "50px" }}></img></div>
+                                        </div>
                                     ))}
-                                </ul>
+                                </div>
                             </div>
 
                             <Dropdown style={{ marginBottom: '20px', marginLeft: '160px', marginTop: '20px' }}>
                                 <Dropdown.Toggle variant="success" id="dropdown-all-users">
-                                Add Team Member
+                                    Add Team Member
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu style={{ backgroundColor: '#fff' }}>
-                                {users.map(user => (
-                                    <Dropdown.Item key={user.id}  style={{ color: '#333' }} onClick={() => handleAssignTeamMember(user.id, id)}>
-                                    {`${user.first_name} ${user.last_name}`}
-                                    </Dropdown.Item>
-                                ))}
+                                    {users.map(user => (
+                                        <Dropdown.Item key={user.id} style={{ color: '#333' }} onClick={() => handleAssignTeamMember(user.id, id)}>
+                                            {`${user.first_name} ${user.last_name}`}
+                                        </Dropdown.Item>
+                                    ))}
                                 </Dropdown.Menu>
                             </Dropdown>
 
@@ -266,8 +274,8 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                                     placement="top"
                                     overlay={<Tooltip id="tooltip">Add New Task</Tooltip>}
                                 >
-                                    <Button variant="primary" style={{ marginTop: "40px", alighnItems: "center" }}onClick={() => setShowForm(!showForm)}>
-                                        {showForm ? "Hide Form" : "Show Form"}
+                                    <Button variant="primary" style={{ marginTop: "40px", alighnItems: "center" }} onClick={() => setShowForm(!showForm)}>
+                                        {showForm ? "Hide Form" : "New Task?"}
                                     </Button>
                                 </OverlayTrigger>
                                 {showForm && (
@@ -322,7 +330,7 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                                                 onChange={handleChange}
                                             />
                                         </div>
-                                        <div className="mb-3">
+                                        {/* <div className="mb-3">
                                             <label className="form-label">Location</label>
                                             <input
                                                 type="text"
@@ -331,7 +339,7 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                                                 value={newTaskData.location}
                                                 onChange={handleChange}
                                             />
-                                        </div>
+                                        </div> */}
                                         <div className="mb-3">
                                             <label className="form-label">Amount</label>
                                             <input
@@ -342,17 +350,8 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                                                 onChange={handleChange}
                                             />
                                         </div>
-                                        <div className="mb-3">
-                                            <label className="form-label"> Progress </label>
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                name="progress"
-                                                value={newTaskData.progress}
-                                                onChange={handleChange}
-                                            />
-                                        </div>
-                                        <div className="mb-3">
+
+                                        {/* <div className="mb-3">
                                             <label className="form-label">Description:</label>
                                             <textarea
                                                 className="form-control"
@@ -360,7 +359,7 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                                                 value={newTaskData.description}
                                                 onChange={handleChange}
                                             ></textarea>
-                                        </div>
+                                        </div> */}
                                         <Button variant="primary" type="submit" onSubmit={handleSubmit}>
                                             Add Task
                                         </Button>
