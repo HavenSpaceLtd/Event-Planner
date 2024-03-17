@@ -64,3 +64,12 @@ class User(db.Model, SerializerMixin):
             .all()
         
         return [task.to_dict() for task in assigned_tasks_due_within_week]
+    
+    def get_high_priority_tasks(self):
+        high_priority_tasks = db.session.query(Task) \
+            .join(Assignment, Task.id == Assignment.task_id) \
+            .filter(Assignment.user_id == self.id) \
+            .filter(Task.priority == 'High') \
+            .all()
+
+        return [task.to_dict() for task in high_priority_tasks]
