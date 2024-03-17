@@ -59,6 +59,21 @@ const NewEventForm = () => {
 
       const data = await response.json();
       console.log('Response:', data);
+      
+      setValues({
+        title: '',
+        start_date: '',
+        end_date: '',
+        start_time: '',
+        end_time: '',
+        amount: '',
+        progress: '',
+        location: '',
+        description: '',
+        image: '',
+        owner_id: sessionStorage.getItem('userId') || '',
+      });
+
     } catch (error) {
       console.error('Error:', error.message);
     }

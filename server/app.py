@@ -850,14 +850,25 @@ class CollaborationResource(Resource):
 
         return make_response(jsonify({'message': 'Collaboration created successfully'}), 201)
 
+   
     @jwt_required()
     def get(self):
-        collaborations_list = [{
-            'id': collab.id,
-            'event_id': collab.event_id,
-            'user_id': collab.user_id,
-            'datetime': collab.datetime.isoformat()
-        } for collab in collaborations]
+        current_user_id = get_jwt_identity().get('user_id')
+
+        # Query collaborations filtered by user_id
+        collaborations = Collaboration.query.filter_by(user_id=current_user_id).all()
+
+        # Prepare collaborations list for JSON response
+        collaborations_list = []
+        for collab in collaborations:
+            event = Event.query.filter_by(id=collab.event_id).first()
+            if event:
+                collaborations_list.append({
+                    'id': collab.id,
+                    'event_id': collab.event_id,
+                    'event_title': event.title,  # Assuming event has a 'name' attribute
+                    'user_id': collab.user_id,
+                })
 
         return make_response(jsonify(collaborations_list), 200)
 
