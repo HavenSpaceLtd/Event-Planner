@@ -28,6 +28,10 @@ function Home() {
                     }
                 });
                 if (!response.ok) {
+                    if (response.status === 401) {
+                        // Redirect to login page if access token has expired
+                        navigate('/login');
+                    }
                     throw new Error("Failed to fetch user data");
                 }
                 const userData = await response.json();
@@ -38,6 +42,7 @@ function Home() {
         }
         fetchUserData();
     }, [counter]);
+    
 
     const handleItemClick = (item) => {
         setSelectedItem(item);
@@ -188,6 +193,7 @@ function Home() {
                                             startDate={item.start_date}
                                             endDate={item.end_date}
                                             amount={item.amount}
+                                            expenditure={item.total_tasks_amount}
                                             ownerId={item.owner_id}
                                             userData={userData}
                                             activeToken={activeToken}
