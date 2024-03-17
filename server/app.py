@@ -18,10 +18,11 @@ from models.asset import Asset
 from models.collaboration import Collaboration
 from models.communication import Communication
 from datetime import datetime
+from flask_cors import CORS
 import logging
 
 app = Flask(__name__)
-
+CORS(app)
 UPLOAD_FOLDER = "../client/public/images/"
 app.json.compact = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///events.db'
@@ -150,15 +151,15 @@ class UserById(Resource):
     @jwt_required()
     def patch(self, id):
         current_user_id = get_jwt_identity()['user_id']
-        data = request.json
+        data = request.form
 
         user = User.query.get(id)
 
         if user is None:
-            return make_response(jsonify({"error": "User not found!"}), 404)
+            return make_response("User not found!", 404)
 
         if user.id != current_user_id:
-            return make_response(jsonify({"error": "Unauthorized!"}), 403)
+            return make_response("Unauthorized!", 403)
 
         if 'about' in data:
             user.about = data['about']
@@ -166,6 +167,12 @@ class UserById(Resource):
             user.location = data['location']
         if 'phone' in data:
             user.phone = data['phone']
+
+        if 'first_name' in data:
+            user.first_name = data['first_name']
+
+        if 'last_name' in data:
+            user.last_name = data['last_name']            
 
         db.session.commit()
         
@@ -176,7 +183,6 @@ class UserById(Resource):
             "email": user.email,
             "title": user.title,
             "phone": user.phone,
-            "image": user.image,
             "about": user.about,
             "location": user.location,
         }
@@ -185,22 +191,20 @@ class UserById(Resource):
     @jwt_required()
     def post(self, id):
         current_user_id = get_jwt_identity()['user_id']
-        data = request.json
+        data = request.form
 
         # Handle image upload
         user = User.query.get(id)
         image_file = request.files['image']
 
         if 'image' not in request.files:
-            flash('No file...')
-            return make_response(jsonify({"error": "Image not found"}), 404)
+            return make_response("Image not found", 404)
 
         if user.id != current_user_id:
-            return make_response(jsonify({"error": "Unauthorized!"}), 403)
+            return make_response("Unauthorized!", 403)
 
         if image_file.filename == '':
-            flash('No image selected')
-            return make_response(jsonify({"error": "No file selected"}), 404)
+            return make_response("No file selected", 404)
 
         if image_file and allowed_file(image_file.filename):
             filename = secure_filename(image_file.filename)

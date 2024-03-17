@@ -13,6 +13,7 @@ flask-bcrypt = "*"
 pyjwt = "*"
 flask-jwt-extended = "*"
 importlib-metadata = "*"
+flask-cors = "*"
 
 [dev-packages]
 

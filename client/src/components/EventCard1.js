@@ -3,7 +3,7 @@ import { Modal, Button, Tooltip, OverlayTrigger, Dropdown } from "react-bootstra
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./EventCard1.css";
 
-function EventCard1({ id, title, location, startDate, endDate, ownerId, userData, activeToken, currentTeamMembers }) {
+function EventCard1({ id, title, location, startDate, endDate, ownerId, userData, activeToken, currentTeamMembers, amount }) {
     const [showModal, setShowModal] = useState(false);
     const [showForm, setShowForm] = useState(false);
     const [eventData, setEventData] = useState({});
@@ -194,6 +194,8 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                             <p className="card-text">ID: {id}</p>
                             <p className="card-text">Location: {location}</p>
                             <p className="card-text">Start Date: {startDate}</p>
+                            <p className="card-text">End Date: {endDate}</p>
+                            <p className="card-text">Budget: KSH{amount.toLocaleString()}</p>
                             <div id={id} className="progress mt-2">
                                 <div
                                     id={id}
