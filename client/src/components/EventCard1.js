@@ -181,7 +181,32 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
         }
     };
 
+    const [priorities, setPriorities] = useState({});
 
+    const handlePriorityChange = async (taskId, newPriority) => {
+        try {
+            const response = await fetch(`/tasks/${taskId}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${activeToken}` // Assuming you have the activeToken available
+                },
+                body: JSON.stringify({
+                    priority: newPriority
+                })
+            });
+            if (!response.ok) {
+                throw new Error('Failed to update priority');
+            }
+            
+            setPriorities(prevPriorities => ({
+                ...prevPriorities,
+                [taskId]: newPriority
+            }));
+        } catch (error) {
+            console.error('Error updating priority:', error);
+        }
+    };
 
 
     return (
@@ -250,10 +275,24 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                                 <ul className="list-group">
                                     {eventData.assigned_tasks &&
                                         eventData.assigned_tasks.map((item) => (
-                                            <li key={item.task.id} className="list-group-item">{item.task.title}</li>
+                                            <li key={item.task.id} className="list-group-item">
+                                                {item.task.title}
+                                                <Dropdown>
+                                                    <Dropdown.Toggle variant="light" id={`dropdown-priority-${item.task.id}`} className="float-end">
+                                                        {priorities[item.task.id] || ''}
+                                                    </Dropdown.Toggle>
+                                                    <Dropdown.Menu>
+                                                        <Dropdown.Item onClick={() => handlePriorityChange(item.task.id, 'Low')}>Low</Dropdown.Item>
+                                                        <Dropdown.Item onClick={() => handlePriorityChange(item.task.id, 'Medium')}>Medium</Dropdown.Item>
+                                                        <Dropdown.Item onClick={() => handlePriorityChange(item.task.id, 'High')}>High</Dropdown.Item>
+                                                    </Dropdown.Menu>
+                                                </Dropdown>
+                                            </li>
                                         ))}
                                 </ul>
                             </div>
+
+                            
 
                             <div className="task-list">
                                 <h4>Unassigned Tasks:</h4>
