@@ -119,19 +119,19 @@ const NewEventForm = () => {
                         <Form.Control type="number" placeholder="Enter amount" name="amount" value={values.amount} onChange={handleChange} />
                       </Col>
                     </Row>
-                    <Row className="mb-3">
+                    {/* <Row className="mb-3">
                       <Col sm={12}>
                         <Form.Label>Progress</Form.Label>
                         <Form.Control type="number" placeholder="Enter progress" name="progress" value={values.progress} onChange={handleChange} />
                       </Col>
-                    </Row>
+                    </Row> */}
                    
-                    <Row className="mb-3">
+                    {/* <Row className="mb-3">
                       <Col sm={12}>
                         <Form.Label>Image</Form.Label>
                         <Form.Control type="file" name="image" onChange={(e) => setValues({ ...values, image: e.target.files[0] })} />
                       </Col>
-                    </Row>
+                    </Row> */}
                     <Row className="mb-3">
                       <Col sm={12}>
                         <Form.Label>Description</Form.Label>

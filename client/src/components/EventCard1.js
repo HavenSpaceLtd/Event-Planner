@@ -196,8 +196,8 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                             <p className="card-text">Start Date: {startDate}</p>
                             <p className="card-text">End Date: {endDate}</p>
                             <p className="card-text">Total Budget: KSH{amount.toLocaleString()}</p>
-                            <p className="card-text">Available Budget: KSH{(amount-expenditure).toLocaleString()}</p>
-                            <div id={id} className="progress mt-2">
+                            <p className="card-text">Available Budget: KSH{(amount - expenditure).toLocaleString()}</p>
+                            <div id={id} className="progress mt-2 mb-3">
                                 <div
                                     id={id}
                                     className="progress-bar"
@@ -210,6 +210,10 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                                     Progress: {eventData.average_progress}%
                                 </div>
                             </div>
+                            {(!eventData.tasks || eventData.tasks.length === 0) && (!eventData.team_members || eventData.team_members.length === 0) && (
+                                <button className="btn btn-danger">X</button>
+                            )}
+
                         </div>
                     </div>
                     <Modal show={showModal} onHide={handleCloseModal} centered>
