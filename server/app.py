@@ -259,18 +259,18 @@ class AllEvents(Resource):
         print(data)
 
         # Handle image upload
-        image_file = request.files['image']
+        # image_file = request.files['image']
 
-        if 'image' not in request.files:
-            return make_response(jsonify({"error": "Image not found"}), 404)
+        # if 'image' not in request.files:
+        #     return make_response(jsonify({"error": "Image not found"}), 404)
 
-        if image_file.filename == '':
-            return make_response(jsonify({"error": "No file selected"}), 404)
+        # if image_file.filename == '':
+        #     return make_response(jsonify({"error": "No file selected"}), 404)
 
-        if image_file and allowed_file(image_file.filename):
-            filename = secure_filename(image_file.filename)
-            image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            image_file.save(image_path)
+        # if image_file and allowed_file(image_file.filename):
+        #     filename = secure_filename(image_file.filename)
+        #     image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        #     image_file.save(image_path)
         
         # Convert start date string to Python date object
         start_date_str = data.get('start_date')
@@ -298,8 +298,8 @@ class AllEvents(Resource):
             amount=data.get('amount'),
             description=data.get('description'),
             owner_id=data.get('owner_id'),
-            progress=data.get('progress'),
-            image=image_path)  # Assigning the path of the uploaded image
+            # image=image_path  # Assigning the path of the uploaded image
+        )
         db.session.add(new_event)
         db.session.commit()
 
