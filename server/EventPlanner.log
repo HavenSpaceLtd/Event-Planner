@@ -3943,3 +3943,387 @@ jwt.exceptions.ExpiredSignatureError: Signature has expired
 2024-03-17 12:34:19,189 - INFO - 127.0.0.1 - - [17/Mar/2024 12:34:19] "GET /users/5 HTTP/1.1" 200 -
 2024-03-17 12:34:37,142 - INFO - User, labliss@vegas.com, details accessed
 2024-03-17 12:34:37,144 - INFO - 127.0.0.1 - - [17/Mar/2024 12:34:37] "GET /users/5 HTTP/1.1" 200 -
+2024-03-17 12:35:39,560 - INFO - User, labliss@vegas.com, details accessed
+2024-03-17 12:35:39,562 - INFO - 127.0.0.1 - - [17/Mar/2024 12:35:39] "GET /users/5 HTTP/1.1" 200 -
+2024-03-17 12:36:37,688 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:37] "POST /login HTTP/1.1" 200 -
+2024-03-17 12:36:37,708 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 12:36:37,718 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:37] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 12:36:41,331 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 12:36:41,336 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:41] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:36:41,343 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:41] "GET /events/1 HTTP/1.1" 200 -
+2024-03-17 12:36:41,352 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:41] "GET /events/5 HTTP/1.1" 200 -
+2024-03-17 12:36:41,358 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:41] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 12:36:41,470 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:41] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:36:41,478 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:41] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:36:41,484 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:41] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:36:49,368 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 12:36:49,377 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:49] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 12:36:56,271 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:56] "POST /login HTTP/1.1" 200 -
+2024-03-17 12:36:56,285 - INFO - User, janedee@gmail.com, details accessed
+2024-03-17 12:36:56,291 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:56] "GET /users/2 HTTP/1.1" 200 -
+2024-03-17 12:36:57,352 - INFO - User, janedee@gmail.com, details accessed
+2024-03-17 12:36:57,356 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:57] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:36:57,361 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:57] "GET /events/4 HTTP/1.1" 200 -
+2024-03-17 12:36:57,363 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:57] "GET /users/2 HTTP/1.1" 200 -
+2024-03-17 12:36:57,498 - INFO - 127.0.0.1 - - [17/Mar/2024 12:36:57] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:37:04,845 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:04] "[35m[1mPOST /teams HTTP/1.1[0m" 201 -
+2024-03-17 12:37:04,866 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:04] "GET /events/4 HTTP/1.1" 200 -
+2024-03-17 12:37:04,878 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:04] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:37:09,006 - INFO - User, janedee@gmail.com, details accessed
+2024-03-17 12:37:09,016 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:09] "GET /users/2 HTTP/1.1" 200 -
+2024-03-17 12:37:15,877 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:15] "POST /login HTTP/1.1" 200 -
+2024-03-17 12:37:15,890 - INFO - User, janedee@gmail.com, details accessed
+2024-03-17 12:37:15,897 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:15] "GET /users/2 HTTP/1.1" 200 -
+2024-03-17 12:37:17,093 - INFO - User, janedee@gmail.com, details accessed
+2024-03-17 12:37:17,095 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:17] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:37:17,101 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:17] "GET /events/4 HTTP/1.1" 200 -
+2024-03-17 12:37:17,104 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:17] "GET /users/2 HTTP/1.1" 200 -
+2024-03-17 12:37:17,113 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:17] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:37:32,163 - INFO - User, janedee@gmail.com, details accessed
+2024-03-17 12:37:32,170 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:32] "GET /users/2 HTTP/1.1" 200 -
+2024-03-17 12:37:38,793 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:38] "POST /login HTTP/1.1" 200 -
+2024-03-17 12:37:38,815 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 12:37:38,825 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:38] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 12:37:41,903 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 12:37:41,907 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:41] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:37:41,916 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:41] "GET /events/1 HTTP/1.1" 200 -
+2024-03-17 12:37:41,919 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:41] "GET /events/5 HTTP/1.1" 200 -
+2024-03-17 12:37:41,921 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:41] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:37:41,928 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:41] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 12:37:41,929 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:41] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:37:41,935 - INFO - 127.0.0.1 - - [17/Mar/2024 12:37:41] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:44:29,056 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 12:44:29,224 - INFO - 127.0.0.1 - - [17/Mar/2024 12:44:29] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 12:44:30,580 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 12:44:30,585 - INFO - 127.0.0.1 - - [17/Mar/2024 12:44:30] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:44:30,593 - INFO - 127.0.0.1 - - [17/Mar/2024 12:44:30] "GET /events/5 HTTP/1.1" 200 -
+2024-03-17 12:44:30,597 - INFO - 127.0.0.1 - - [17/Mar/2024 12:44:30] "GET /events/1 HTTP/1.1" 200 -
+2024-03-17 12:44:30,598 - INFO - 127.0.0.1 - - [17/Mar/2024 12:44:30] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:44:30,606 - INFO - 127.0.0.1 - - [17/Mar/2024 12:44:30] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:44:30,607 - INFO - 127.0.0.1 - - [17/Mar/2024 12:44:30] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 12:44:30,613 - INFO - 127.0.0.1 - - [17/Mar/2024 12:44:30] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:45:21,532 - INFO - 127.0.0.1 - - [17/Mar/2024 12:45:21] "GET /events/1 HTTP/1.1" 200 -
+2024-03-17 12:45:21,533 - INFO - 127.0.0.1 - - [17/Mar/2024 12:45:21] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:45:21,539 - INFO - 127.0.0.1 - - [17/Mar/2024 12:45:21] "GET /events/5 HTTP/1.1" 200 -
+2024-03-17 12:45:21,543 - INFO - 127.0.0.1 - - [17/Mar/2024 12:45:21] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:45:21,548 - INFO - 127.0.0.1 - - [17/Mar/2024 12:45:21] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:45:21,554 - INFO - 127.0.0.1 - - [17/Mar/2024 12:45:21] "GET /users HTTP/1.1" 200 -
+2024-03-17 12:47:05,601 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 12:47:05,611 - INFO - 127.0.0.1 - - [17/Mar/2024 12:47:05] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 13:01:36,134 - ERROR - Exception on /events/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-17 13:01:36,135 - ERROR - Exception on /events/5 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-17 13:01:36,136 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-17 13:01:36,137 - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-17 13:01:36,311 - INFO - 127.0.0.1 - - [17/Mar/2024 13:01:36] "[35m[1mGET /events/1 HTTP/1.1[0m" 500 -
+2024-03-17 13:01:36,312 - INFO - 127.0.0.1 - - [17/Mar/2024 13:01:36] "[35m[1mGET /events/5 HTTP/1.1[0m" 500 -
+2024-03-17 13:01:36,314 - INFO - 127.0.0.1 - - [17/Mar/2024 13:01:36] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-17 13:01:36,315 - INFO - 127.0.0.1 - - [17/Mar/2024 13:01:36] "[35m[1mGET /users HTTP/1.1[0m" 500 -
+2024-03-17 13:01:36,327 - ERROR - Exception on /users [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-17 13:01:36,328 - INFO - 127.0.0.1 - - [17/Mar/2024 13:01:36] "[35m[1mGET /users HTTP/1.1[0m" 500 -
+2024-03-17 13:05:15,855 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-17 13:05:15,856 - INFO - 127.0.0.1 - - [17/Mar/2024 13:05:15] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-17 13:05:26,478 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-17 13:05:26,479 - INFO - 127.0.0.1 - - [17/Mar/2024 13:05:26] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-17 13:05:30,639 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-17 13:05:30,640 - INFO - 127.0.0.1 - - [17/Mar/2024 13:05:30] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-17 13:05:36,121 - INFO - 127.0.0.1 - - [17/Mar/2024 13:05:36] "POST /login HTTP/1.1" 200 -
+2024-03-17 13:05:36,144 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 13:05:36,155 - INFO - 127.0.0.1 - - [17/Mar/2024 13:05:36] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 13:05:39,726 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 13:05:39,730 - INFO - 127.0.0.1 - - [17/Mar/2024 13:05:39] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:05:39,743 - INFO - 127.0.0.1 - - [17/Mar/2024 13:05:39] "GET /events/1 HTTP/1.1" 200 -
+2024-03-17 13:05:39,744 - INFO - 127.0.0.1 - - [17/Mar/2024 13:05:39] "GET /events/5 HTTP/1.1" 200 -
+2024-03-17 13:05:39,746 - INFO - 127.0.0.1 - - [17/Mar/2024 13:05:39] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:05:39,753 - INFO - 127.0.0.1 - - [17/Mar/2024 13:05:39] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 13:05:39,754 - INFO - 127.0.0.1 - - [17/Mar/2024 13:05:39] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:05:39,760 - INFO - 127.0.0.1 - - [17/Mar/2024 13:05:39] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:06:55,770 - INFO - 127.0.0.1 - - [17/Mar/2024 13:06:55] "[35m[1mPOST /tasks HTTP/1.1[0m" 201 -
+2024-03-17 13:06:55,790 - INFO - 127.0.0.1 - - [17/Mar/2024 13:06:55] "GET /events/5 HTTP/1.1" 200 -
+2024-03-17 13:06:55,803 - INFO - 127.0.0.1 - - [17/Mar/2024 13:06:55] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:07:03,888 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 13:07:03,899 - INFO - 127.0.0.1 - - [17/Mar/2024 13:07:03] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 13:07:04,854 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 13:07:04,856 - INFO - 127.0.0.1 - - [17/Mar/2024 13:07:04] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:07:04,866 - INFO - 127.0.0.1 - - [17/Mar/2024 13:07:04] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:07:04,868 - INFO - 127.0.0.1 - - [17/Mar/2024 13:07:04] "GET /events/5 HTTP/1.1" 200 -
+2024-03-17 13:07:04,871 - INFO - 127.0.0.1 - - [17/Mar/2024 13:07:04] "GET /events/1 HTTP/1.1" 200 -
+2024-03-17 13:07:04,878 - INFO - 127.0.0.1 - - [17/Mar/2024 13:07:04] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 13:07:04,878 - INFO - 127.0.0.1 - - [17/Mar/2024 13:07:04] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:07:04,884 - INFO - 127.0.0.1 - - [17/Mar/2024 13:07:04] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:12:27,702 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 13:12:27,705 - INFO - 127.0.0.1 - - [17/Mar/2024 13:12:27] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:12:27,716 - INFO - 127.0.0.1 - - [17/Mar/2024 13:12:27] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 13:12:27,726 - INFO - 127.0.0.1 - - [17/Mar/2024 13:12:27] "GET /communications HTTP/1.1" 200 -
+2024-03-17 13:12:27,766 - INFO - 127.0.0.1 - - [17/Mar/2024 13:12:27] "GET /allevents HTTP/1.1" 200 -
+2024-03-17 13:16:27,269 - INFO - 127.0.0.1 - - [17/Mar/2024 13:16:27] "DELETE /login HTTP/1.1" 200 -
+2024-03-17 13:16:46,881 - INFO - 127.0.0.1 - - [17/Mar/2024 13:16:46] "POST /login HTTP/1.1" 200 -
+2024-03-17 13:16:46,903 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 13:16:46,914 - INFO - 127.0.0.1 - - [17/Mar/2024 13:16:46] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 13:16:49,387 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 13:16:49,394 - INFO - 127.0.0.1 - - [17/Mar/2024 13:16:49] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 13:16:58,082 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 13:16:58,085 - INFO - 127.0.0.1 - - [17/Mar/2024 13:16:58] "GET /events/3 HTTP/1.1" 200 -
+2024-03-17 13:16:58,088 - INFO - 127.0.0.1 - - [17/Mar/2024 13:16:58] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:16:58,089 - INFO - 127.0.0.1 - - [17/Mar/2024 13:16:58] "GET /events/2 HTTP/1.1" 200 -
+2024-03-17 13:16:58,094 - INFO - 127.0.0.1 - - [17/Mar/2024 13:16:58] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 13:16:58,104 - INFO - 127.0.0.1 - - [17/Mar/2024 13:16:58] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:16:58,109 - INFO - 127.0.0.1 - - [17/Mar/2024 13:16:58] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:16:58,114 - INFO - 127.0.0.1 - - [17/Mar/2024 13:16:58] "GET /users HTTP/1.1" 200 -
+2024-03-17 13:16:59,699 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 13:16:59,706 - INFO - 127.0.0.1 - - [17/Mar/2024 13:16:59] "GET /users/3 HTTP/1.1" 200 -

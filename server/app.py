@@ -305,7 +305,7 @@ class AllEvents(Resource):
 
         return make_response(jsonify({'message': 'Event created successfully'}), 201)
 
-        
+
     @jwt_required()
     def get(self):
         current_user = get_jwt_identity()
@@ -314,6 +314,42 @@ class AllEvents(Resource):
 
         if (user.title == "planner"):
             events = Event.query.all()
+
+        if (user.title == "user"):
+            events = Event.query.filter_by(owner_id = user_id).all()
+        
+        events_list = []
+        for event in events:
+            event_data = {
+                "id": event.id,
+                "title": event.title,
+                "start_date": event.start_date,
+                "end_date": event.end_date,
+                "location": event.location,
+                "amount": event.amount,
+                "progress": event.progress,
+                "description": event.description,
+                "owner": event.owner.first_name,
+                "tasks": event.get_tasks()
+            }
+            if event.start_time:
+                event_data['start_time'] = event.start_time.strftime('%H:%M')
+            if event.end_time:
+                event_data['end_time'] = event.end_time.strftime('%H:%M')
+
+            events_list.append(event_data)
+
+        return make_response(jsonify(events_list), 200)
+
+class AllNonOwnedEvents(Resource):
+    @jwt_required()
+    def get(self):
+        current_user = get_jwt_identity()
+        user_id = current_user.get('user_id')
+        user = User.query.get(user_id)
+
+        if (user.title == "planner"):
+            events = Event.query.filter(Event.owner_id != user.id).all()
 
         if (user.title == "user"):
             events = Event.query.filter_by(owner_id = user_id).all()
@@ -830,6 +866,7 @@ api.add_resource(AllUsers, '/users')
 api.add_resource(LoginUser, '/login')
 api.add_resource(UserById, '/users/<int:id>')
 api.add_resource(AllEvents, '/events')
+api.add_resource(AllNonOwnedEvents, 'nonownedevents')
 api.add_resource(AllEventsList, '/allevents')
 api.add_resource(AllTasks, '/tasks')
 api.add_resource(Teams, '/teams')
