@@ -3,7 +3,7 @@ import { Modal, Button, Tooltip, OverlayTrigger, Dropdown } from "react-bootstra
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./EventCard1.css";
 
-function EventCard1({ id, title, location, startDate, endDate, ownerId, userData, expenditure, activeToken, currentTeamMembers, amount }) {
+function EventCard1({ id, title, location, startDate, endDate, ownerId, userData, expenditure, activeToken, currentTeamMembers, amount, update }) {
     const [showModal, setShowModal] = useState(false);
     const [showForm, setShowForm] = useState(false);
     const [eventData, setEventData] = useState({});
@@ -183,6 +183,27 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
 
     const [priorities, setPriorities] = useState({});
 
+    const handleDeleteEvent = async () => {
+        try {
+            const response = await fetch(`/events/${id}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${activeToken}`
+                }
+            });
+            if (!response.ok) {
+                throw new Error("Failed to delete event");
+            }
+            update();
+            alert('Event deleted successfully!');
+            
+
+        } catch (error) {
+            console.error("Error deleting event:", error);
+        }
+    };
+
     const handlePriorityChange = async (taskId, newPriority) => {
         try {
             const response = await fetch(`/tasks/${taskId}`, {
@@ -198,7 +219,7 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
             if (!response.ok) {
                 throw new Error('Failed to update priority');
             }
-            
+
             setPriorities(prevPriorities => ({
                 ...prevPriorities,
                 [taskId]: newPriority
@@ -235,12 +256,15 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                                     Progress: {eventData.average_progress}%
                                 </div>
                             </div>
-                            {(!eventData.tasks || eventData.tasks.length === 0) && (!eventData.team_members || eventData.team_members.length === 0) && (
-                                <button className="btn btn-danger">X</button>
-                            )}
-
+                            
                         </div>
+                        <div className="d-flex justify-content-center"> {/* Center the button */}
+                                {(!eventData.tasks || eventData.tasks.length === 0) && (!eventData.team_members || eventData.team_members.length === 0) && (
+                                    <button onClick={handleDeleteEvent} className="btn btn-danger mb-2" style={{ width: "50px" }}>X</button>
+                                )}
+                            </div>
                     </div>
+
                     <Modal show={showModal} onHide={handleCloseModal} centered>
                         <Modal.Header closeButton>
                             <Modal.Title>{title}</Modal.Title>
@@ -292,7 +316,7 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                                 </ul>
                             </div>
 
-                            
+
 
                             <div className="task-list">
                                 <h4>Unassigned Tasks:</h4>
