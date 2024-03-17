@@ -70,7 +70,40 @@ function Home() {
         fetchEventData();
     }, [counter]);
     
-
+    useEffect(() => {
+        async function fetchUserAlertData() {
+            try {
+                const response = await fetch(`/users/${activeUser}`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${activeToken}`
+                    }
+                });
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        // Redirect to login page if access token has expired
+                        navigate('/login');
+                    }
+                    throw new Error("Failed to fetch user data");
+                }
+                const userData = await response.json();
+                
+                // Check for due tasks and alert the user
+                const dueTasks = userData.due_tasks;
+                if (dueTasks && dueTasks.length > 0) {
+                    dueTasks.forEach(task => {
+                        const alertMessage = `Due Task: ${task.title} End Date: ${task.end_date}`;
+                        alert(alertMessage);
+                    });
+                }
+            } catch (error) {
+                console.error("Error fetching user data:", error);
+            }
+        }
+        fetchUserAlertData();
+    }, []);
+    
 
     const handleItemClick = (item) => {
         setSelectedItem(item);
@@ -273,6 +306,7 @@ function Home() {
                                             update={setCounter}
                                             activeToken={activeToken}
                                             current_progress={item.progress}
+                                            
                                         />
                                     })}
                                 </div>
