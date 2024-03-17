@@ -9,7 +9,8 @@ function Home() {
     const [selectedItem, setSelectedItem] = useState('');
     const [userData, setUserData] = useState({});
     const [counter, setCounter] = useState(0);
-    const navigate = useNavigate(); // Initialize navigate hook
+    const navigate = useNavigate();
+    const [eventData, setEventData] = useState({});
 
     
 
@@ -43,6 +44,33 @@ function Home() {
         fetchUserData();
     }, [counter]);
     
+    useEffect(() => {
+        async function fetchEventData() {
+            try {
+                const response = await fetch(`/events`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${activeToken}`
+                    }
+                });
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        // Redirect to login page if access token has expired
+                        navigate('/login');
+                    }
+                    throw new Error("Failed to fetch event data");
+                }
+                const eventData = await response.json();
+                setEventData(eventData);
+            } catch (error) {
+                console.error("Error fetching event data:", error);
+            }
+        }
+        fetchEventData();
+    }, [counter]);
+    
+
 
     const handleItemClick = (item) => {
         setSelectedItem(item);
@@ -155,15 +183,7 @@ function Home() {
                                             All Events
                                         </a>
                                     )}
-                                    {userData.title === 'planner' && (
-                                        <a
-                                            href="#"
-                                            className={`list-group-item list-group-item-action ${selectedItem === 'All Tasks' && 'active'}`}
-                                            onClick={() => handleItemClick('All Tasks')}
-                                        >
-                                            All Tasks
-                                        </a>
-                                    )}
+                                    
                                     <a
                                         href="#"
                                         className={`list-group-item list-group-item-action ${selectedItem === 'Your Profile' && 'active'}`}
@@ -198,6 +218,7 @@ function Home() {
                                             userData={userData}
                                             activeToken={activeToken}
                                             currentTeamMembers={item.team_members}
+                                            update={setCounter}
 
                                         />
                                     })}
@@ -259,13 +280,24 @@ function Home() {
 
                             {selectedItem === 'All Events' && (
                                 <div className="ms-5 col-4 d-flex align-content-end flex-wrap" style={{ "width": "1000px" }}>
-                                    {/* <Table bidData={bidData} update={setCounter} /> */}
-                                </div>
-                            )}
+                                    {eventData.map((item) => {
+                                        return <EventCard1
+                                            key={item.id}
+                                            id={item.id}
+                                            title={item.title}
+                                            location={item.location}
+                                            startDate={item.start_date}
+                                            endDate={item.end_date}
+                                            amount={item.amount}
+                                            expenditure={item.total_tasks_amount}
+                                            ownerId={item.owner_id}
+                                            userData={userData}
+                                            activeToken={activeToken}
+                                            currentTeamMembers={item.team_members}
+                                            update={setCounter}
 
-                            {selectedItem === 'All Tasks' && (
-                                <div className="ms-5 col-4 d-flex align-content-start flex-wrap" style={{ "width": "1000px", padding: "50px" }}>
-                                    {/* <ConcludedTable concludedData={concludedData} update={setCounter} /> */}
+                                        />
+                                    })}
                                 </div>
                             )}
 
