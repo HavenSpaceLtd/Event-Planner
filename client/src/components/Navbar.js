@@ -48,7 +48,7 @@ function NavBar() {
         <Navbar.Brand href="/" className="ml-lg-0" style={{ color: 'black',fontFamily: 'Aloja',fontSize: '40px' }} >Event Planner</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mx-auto">
+          <Nav className="mx-left">
             <Nav.Link href="/home" style={{ marginRight: '30px', color: 'black' }}>Home</Nav.Link>
             <Nav.Link href="collaboration" style={{ marginRight: '30px', color: 'black' }}>Collaboration</Nav.Link>
             <Nav.Link href="resources" style={{ color: 'black' }}>Resources</Nav.Link>
