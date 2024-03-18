@@ -4,6 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./EventCard1.css";
 import { FaExclamationTriangle } from 'react-icons/fa';
 
+import ResourceForm from './ResourceForm';
+import BudgetForm from './BudgetForm';
+import ExpenseForm from './ExpenseForm';
+
 function EventCard1({ id, title, location, startDate, endDate, ownerId, userData, expenditure, activeToken, currentTeamMembers, amount, update }) {
     const [showModal, setShowModal] = useState(false);
     const [showForm, setShowForm] = useState(false);
@@ -201,7 +205,7 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
             }
             update();
             alert('Event deleted successfully!');
-            
+
 
         } catch (error) {
             console.error("Error deleting event:", error);
@@ -235,6 +239,25 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
     };
 
 
+    const [showResourceForm, setShowResourceForm] = useState(false);
+    const [showExpenseForm, setShowExpenseForm] = useState(false);
+    const [showBudgetForm, setShowBudgetForm] = useState(false);
+
+    // Handler function for adding resource
+    const handleAddResource = () => {
+        setShowResourceForm(true);
+    };
+
+    // Handler function for adding expense
+    const handleAddExpense = () => {
+        setShowExpenseForm(true);
+    };
+
+    // Handler function for setting the budget
+    const handleSetBudget = () => {
+        setShowBudgetForm(true);
+    };
+
     return (
         <>
             {userData ? (
@@ -261,13 +284,13 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                                     Progress: {eventData.average_progress}%
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div className="d-flex justify-content-center"> {/* Center the button */}
-                                {(!eventData.tasks || eventData.tasks.length === 0) && (!eventData.team_members || eventData.team_members.length === 0) && (
-                                    <button onClick={handleDeleteEvent} className="btn btn-danger mb-2" style={{ width: "50px" }}>X</button>
-                                )}
-                            </div>
+                            {(!eventData.tasks || eventData.tasks.length === 0) && (!eventData.team_members || eventData.team_members.length === 0) && (
+                                <button onClick={handleDeleteEvent} className="btn btn-danger mb-2" style={{ width: "50px" }}>X</button>
+                            )}
+                        </div>
                     </div>
 
                     <Modal show={showModal} onHide={handleCloseModal} centered>
@@ -300,32 +323,32 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                             </Dropdown>
 
                             <div className="task-list">
-                            <h4>Assigned Tasks:</h4>
-                            <ul className="list-group">
-                                {eventData.assigned_tasks &&
-                                eventData.assigned_tasks.map((item) => (
-                                    <li key={item.task.id} className="list-group-item" style={{ padding: '5px 10px', marginBottom: '5px' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        {item.task.priority === 'High' && (
-                                        <FaExclamationTriangle style={{ color: 'red', marginRight: '5px' }} />
-                                        )}
-                                        <span>{item.task.title}</span>
-                                        <div style={{ marginLeft: 'auto' }}>
-                                        <Dropdown>
-                                            <Dropdown.Toggle variant="light" id={`dropdown-priority-${item.task.id}`}>
-                                            {"" || ''}
-                                            </Dropdown.Toggle>
-                                            <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => handlePriorityChange(item.task.id, 'Low')}>Low</Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handlePriorityChange(item.task.id, 'Medium')}>Medium</Dropdown.Item>
-                                            <Dropdown.Item onClick={() => handlePriorityChange(item.task.id, 'High')}>High</Dropdown.Item>
-                                            </Dropdown.Menu>
-                                        </Dropdown>
-                                        </div>
-                                    </div>
-                                    </li>
-                                ))}
-                            </ul>
+                                <h4>Assigned Tasks:</h4>
+                                <ul className="list-group">
+                                    {eventData.assigned_tasks &&
+                                        eventData.assigned_tasks.map((item) => (
+                                            <li key={item.task.id} className="list-group-item" style={{ padding: '5px 10px', marginBottom: '5px' }}>
+                                                <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                    {item.task.priority === 'High' && (
+                                                        <FaExclamationTriangle style={{ color: 'red', marginRight: '5px' }} />
+                                                    )}
+                                                    <span>{item.task.title}</span>
+                                                    <div style={{ marginLeft: 'auto' }}>
+                                                        <Dropdown>
+                                                            <Dropdown.Toggle variant="light" id={`dropdown-priority-${item.task.id}`}>
+                                                                {"" || ''}
+                                                            </Dropdown.Toggle>
+                                                            <Dropdown.Menu>
+                                                                <Dropdown.Item onClick={() => handlePriorityChange(item.task.id, 'Low')}>Low</Dropdown.Item>
+                                                                <Dropdown.Item onClick={() => handlePriorityChange(item.task.id, 'Medium')}>Medium</Dropdown.Item>
+                                                                <Dropdown.Item onClick={() => handlePriorityChange(item.task.id, 'High')}>High</Dropdown.Item>
+                                                            </Dropdown.Menu>
+                                                        </Dropdown>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        ))}
+                                </ul>
                             </div>
 
 
@@ -447,6 +470,42 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                                         </Button>
                                     </form>
                                 )}
+                                <div>
+            <div>
+                <div>
+                    <Button variant="link" onClick={handleAddResource} className="mr-3">Resources</Button>
+                    <Button variant="link" onClick={handleAddExpense} className="mr-3">Expenses</Button>
+                    <Button variant="link" onClick={handleSetBudget} className="mr-3">Budget</Button>
+                </div>
+            </div>
+
+            <Modal show={showResourceForm} onHide={() => setShowResourceForm(false)}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Add Resource</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <ResourceForm activeToken= {activeToken} onSubmit={() => setShowResourceForm(false)} />
+                </Modal.Body>
+            </Modal>
+
+            <Modal show={showExpenseForm} onHide={() => setShowExpenseForm(false)}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Add Expense</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <ExpenseForm onSubmit={() => setShowExpenseForm(false)} />
+                </Modal.Body>
+            </Modal>
+
+            <Modal show={showBudgetForm} onHide={() => setShowBudgetForm(false)}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Set Budget</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <BudgetForm onSubmit={() => setShowBudgetForm(false)} />
+                </Modal.Body>
+            </Modal>
+        </div>
                             </div>
                         </Modal.Body>
                     </Modal>
