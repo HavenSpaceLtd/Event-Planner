@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button, Tooltip, OverlayTrigger, Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./EventCard1.css";
+import { FaExclamationTriangle } from 'react-icons/fa';
 
 function EventCard1({ id, title, location, startDate, endDate, ownerId, userData, expenditure, activeToken, currentTeamMembers, amount, update }) {
     const [showModal, setShowModal] = useState(false);
@@ -295,25 +296,32 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                             </Dropdown>
 
                             <div className="task-list">
-                                <h4>Assigned Tasks:</h4>
-                                <ul className="list-group">
-                                    {eventData.assigned_tasks &&
-                                        eventData.assigned_tasks.map((item) => (
-                                            <li key={item.task.id} className="list-group-item">
-                                                {item.task.title}
-                                                <Dropdown>
-                                                    <Dropdown.Toggle variant="light" id={`dropdown-priority-${item.task.id}`} className="float-end">
-                                                        {priorities[item.task.id] || ''}
-                                                    </Dropdown.Toggle>
-                                                    <Dropdown.Menu>
-                                                        <Dropdown.Item onClick={() => handlePriorityChange(item.task.id, 'Low')}>Low</Dropdown.Item>
-                                                        <Dropdown.Item onClick={() => handlePriorityChange(item.task.id, 'Medium')}>Medium</Dropdown.Item>
-                                                        <Dropdown.Item onClick={() => handlePriorityChange(item.task.id, 'High')}>High</Dropdown.Item>
-                                                    </Dropdown.Menu>
-                                                </Dropdown>
-                                            </li>
-                                        ))}
-                                </ul>
+                            <h4>Assigned Tasks:</h4>
+                            <ul className="list-group">
+                                {eventData.assigned_tasks &&
+                                eventData.assigned_tasks.map((item) => (
+                                    <li key={item.task.id} className="list-group-item" style={{ padding: '5px 10px', marginBottom: '5px' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                                        {item.task.priority === 'High' && (
+                                        <FaExclamationTriangle style={{ color: 'red', marginRight: '5px' }} />
+                                        )}
+                                        <span>{item.task.title}</span>
+                                        <div style={{ marginLeft: 'auto' }}>
+                                        <Dropdown>
+                                            <Dropdown.Toggle variant="light" id={`dropdown-priority-${item.task.id}`}>
+                                            {"" || ''}
+                                            </Dropdown.Toggle>
+                                            <Dropdown.Menu>
+                                            <Dropdown.Item onClick={() => handlePriorityChange(item.task.id, 'Low')}>Low</Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handlePriorityChange(item.task.id, 'Medium')}>Medium</Dropdown.Item>
+                                            <Dropdown.Item onClick={() => handlePriorityChange(item.task.id, 'High')}>High</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown>
+                                        </div>
+                                    </div>
+                                    </li>
+                                ))}
+                            </ul>
                             </div>
 
 

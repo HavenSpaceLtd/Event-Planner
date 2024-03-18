@@ -241,8 +241,8 @@ const ChatBox = () => {
             {showEmojiPicker && (
               <Card style={{ 
                 position: 'absolute', 
-                bottom: showEmojiPicker ? '-200px' : '-340px', 
-                right: '80px', 
+                bottom: showEmojiPicker ? '-90px' : '-340px', 
+                right: '250px', 
                 width: '420px', 
                 borderRadius: '20px', 
                 transition: 'bottom 0.3s ease-in-out',
