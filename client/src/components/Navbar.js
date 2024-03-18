@@ -45,7 +45,7 @@ function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark" style={{ position: 'sticky', top: 0, zIndex: 1000, background: 'bisque', color: 'black' }}>
       <Container fluid>
-        <Navbar.Brand href="/" className="ml-lg-0" style={{ color: 'black' }}>Event Planner</Navbar.Brand>
+        <Navbar.Brand href="/" className="ml-lg-0" style={{ color: 'black',fontFamily: 'Aloja',fontSize: '40px' }} >Event Planner</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">

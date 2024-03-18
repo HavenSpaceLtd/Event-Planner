@@ -6847,3 +6847,495 @@ jwt.exceptions.ExpiredSignatureError: Signature has expired
 2024-03-17 21:08:53,904 - INFO - 127.0.0.1 - - [17/Mar/2024 21:08:53] "GET /users/3 HTTP/1.1" 200 -
 2024-03-17 21:08:53,910 - INFO - User, wazza10@manu.com, details accessed
 2024-03-17 21:08:53,916 - INFO - 127.0.0.1 - - [17/Mar/2024 21:08:53] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 21:19:02,056 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 21:19:02,061 - INFO - 127.0.0.1 - - [17/Mar/2024 21:19:02] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:19:02,071 - INFO - 127.0.0.1 - - [17/Mar/2024 21:19:02] "GET /events HTTP/1.1" 200 -
+2024-03-17 21:19:02,074 - INFO - 127.0.0.1 - - [17/Mar/2024 21:19:02] "GET /events/3 HTTP/1.1" 200 -
+2024-03-17 21:19:02,074 - INFO - 127.0.0.1 - - [17/Mar/2024 21:19:02] "GET /events/2 HTTP/1.1" 200 -
+2024-03-17 21:19:02,078 - INFO - 127.0.0.1 - - [17/Mar/2024 21:19:02] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:19:02,080 - INFO - 127.0.0.1 - - [17/Mar/2024 21:19:02] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 21:19:02,083 - INFO - 127.0.0.1 - - [17/Mar/2024 21:19:02] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:19:02,088 - INFO - 127.0.0.1 - - [17/Mar/2024 21:19:02] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:23:10,571 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 21:23:10,575 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:10] "GET /events HTTP/1.1" 200 -
+2024-03-17 21:23:10,584 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:10] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 21:23:20,336 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:20] "POST /login HTTP/1.1" 200 -
+2024-03-17 21:23:20,351 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 21:23:20,361 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:20] "GET /events HTTP/1.1" 200 -
+2024-03-17 21:23:20,372 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:20] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 21:23:20,376 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 21:23:20,387 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:20] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 21:23:22,355 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 21:23:22,358 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:22] "GET /events/7 HTTP/1.1" 200 -
+2024-03-17 21:23:22,365 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:22] "GET /events/6 HTTP/1.1" 200 -
+2024-03-17 21:23:22,368 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:22] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:23:22,371 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:22] "GET /events/1 HTTP/1.1" 200 -
+2024-03-17 21:23:22,376 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:22] "GET /events/5 HTTP/1.1" 200 -
+2024-03-17 21:23:22,378 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:22] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:23:22,383 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:22] "GET /events HTTP/1.1" 200 -
+2024-03-17 21:23:22,386 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:22] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:23:22,395 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:22] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 21:23:22,396 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:22] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:23:22,400 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:22] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:23:22,404 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:22] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:23:22,408 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:22] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:23:22,412 - INFO - 127.0.0.1 - - [17/Mar/2024 21:23:22] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:25:53,495 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 21:25:53,502 - INFO - 127.0.0.1 - - [17/Mar/2024 21:25:53] "GET /events HTTP/1.1" 200 -
+2024-03-17 21:25:53,512 - INFO - 127.0.0.1 - - [17/Mar/2024 21:25:53] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 21:25:55,797 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-17 21:25:55,808 - INFO - 127.0.0.1 - - [17/Mar/2024 21:25:55] "GET /events HTTP/1.1" 200 -
+2024-03-17 21:25:55,822 - INFO - 127.0.0.1 - - [17/Mar/2024 21:25:55] "GET /users/1 HTTP/1.1" 200 -
+2024-03-17 21:26:02,361 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:02] "POST /login HTTP/1.1" 200 -
+2024-03-17 21:26:02,398 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 21:26:02,403 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:02] "GET /events HTTP/1.1" 200 -
+2024-03-17 21:26:02,409 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:02] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 21:26:02,413 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 21:26:02,419 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:02] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 21:26:14,183 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 21:26:14,186 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:14] "GET /events HTTP/1.1" 200 -
+2024-03-17 21:26:14,194 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:14] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 21:26:17,115 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 21:26:17,118 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:17] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:26:17,122 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:17] "GET /events HTTP/1.1" 200 -
+2024-03-17 21:26:17,124 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:17] "GET /events/3 HTTP/1.1" 200 -
+2024-03-17 21:26:17,129 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:17] "GET /events/2 HTTP/1.1" 200 -
+2024-03-17 21:26:17,133 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:17] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:26:17,135 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:17] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 21:26:17,139 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:17] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:26:17,144 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:17] "GET /users HTTP/1.1" 200 -
+2024-03-17 21:26:18,740 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 21:26:18,745 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:18] "GET /events HTTP/1.1" 200 -
+2024-03-17 21:26:18,751 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:18] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 21:26:20,541 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 21:26:20,544 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:20] "GET /events HTTP/1.1" 200 -
+2024-03-17 21:26:20,550 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:20] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 21:26:24,179 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 21:26:24,183 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:24] "GET /events HTTP/1.1" 200 -
+2024-03-17 21:26:24,189 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:24] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 21:26:25,547 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 21:26:25,549 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:25] "GET /events HTTP/1.1" 200 -
+2024-03-17 21:26:25,555 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:25] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 21:26:27,073 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 21:26:27,077 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:27] "GET /events HTTP/1.1" 200 -
+2024-03-17 21:26:27,083 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:27] "GET /users/3 HTTP/1.1" 200 -
+2024-03-17 21:26:30,796 - INFO - User, wazza10@manu.com, details accessed
+2024-03-17 21:26:30,802 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:30] "GET /events HTTP/1.1" 200 -
+2024-03-17 21:26:30,809 - INFO - 127.0.0.1 - - [17/Mar/2024 21:26:30] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 08:11:16,409 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-18 08:11:16,441 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-18 08:13:16,688 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:16] "POST /login HTTP/1.1" 200 -
+2024-03-18 08:13:16,704 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:13:16,715 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:16] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:13:16,722 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:16] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:13:16,727 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:13:16,737 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:16] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:13:21,964 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:13:21,972 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:21] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 08:13:21,973 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:21] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 08:13:21,975 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:21] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:13:21,979 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:21] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 08:13:21,983 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:21] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 08:13:21,995 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:21] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:13:21,997 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:21] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:13:22,110 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:13:22,118 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:13:22,123 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:13:22,127 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:13:22,132 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:13:22,136 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:13:22,140 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:13:24,141 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:13:24,151 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:24] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:13:24,162 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:24] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:13:26,037 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:13:26,044 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:26] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 08:13:26,045 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:26] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 08:13:26,047 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:26] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:13:26,057 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:26] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 08:13:26,061 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:26] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:13:26,063 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:26] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 08:13:26,070 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:26] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:13:26,072 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:26] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:13:26,080 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:26] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:13:26,081 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:26] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:13:26,086 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:26] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:13:26,090 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:26] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:13:26,093 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:26] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:13:26,098 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:26] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:03,010 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:03] "PATCH /tasks/5 HTTP/1.1" 200 -
+2024-03-18 08:14:11,780 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:14:11,791 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:11] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:14:11,801 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:11] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:14:18,455 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:18] "POST /login HTTP/1.1" 200 -
+2024-03-18 08:14:18,488 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:14:18,498 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:18] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:14:18,508 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:18] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:14:18,513 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:14:18,526 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:18] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:14:22,672 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:22] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 08:14:22,674 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:22] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 08:14:22,675 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:14:22,681 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:22,686 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:22] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 08:14:22,692 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:22] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 08:14:22,697 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:22] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:14:22,697 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:22,704 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:22,711 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:22,712 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:22] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:14:22,716 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:22,720 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:22,725 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:22,729 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:47,262 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:14:47,269 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:47] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:14:47,277 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:47] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:14:48,971 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:14:48,984 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:48] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:14:48,989 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:48] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:14:52,220 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:14:52,226 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:52] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:14:52,235 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:52] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:14:54,399 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:14:54,412 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:54] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:14:54,424 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:54] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:14:56,193 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /events/3 HTTP/1.1" 200 -
+2024-03-18 08:14:56,195 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:56,201 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /events/2 HTTP/1.1" 200 -
+2024-03-18 08:14:56,202 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /events/4 HTTP/1.1" 200 -
+2024-03-18 08:14:56,206 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 08:14:56,208 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 08:14:56,222 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:14:56,227 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 08:14:56,228 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 08:14:56,229 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:56,238 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:14:56,238 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:56,246 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:56,251 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:14:56,252 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:56,256 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:56,261 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:56,268 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:56,273 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:56,277 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:56,281 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:56,285 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:56,289 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:14:56,293 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:56] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:15:01,469 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:15:01,476 - INFO - 127.0.0.1 - - [18/Mar/2024 08:15:01] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:15:01,486 - INFO - 127.0.0.1 - - [18/Mar/2024 08:15:01] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:15:09,795 - INFO - 127.0.0.1 - - [18/Mar/2024 08:15:09] "DELETE /login HTTP/1.1" 200 -
+2024-03-18 08:15:12,985 - ERROR - Exception on /events [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
+    unverified_claims = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2024-03-18 08:15:12,986 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
+    unverified_claims = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2024-03-18 08:15:13,415 - INFO - 127.0.0.1 - - [18/Mar/2024 08:15:13] "[35m[1mGET /events HTTP/1.1[0m" 500 -
+2024-03-18 08:15:13,416 - INFO - 127.0.0.1 - - [18/Mar/2024 08:15:13] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-18 08:15:52,537 - INFO - 127.0.0.1 - - [18/Mar/2024 08:15:52] "POST /login HTTP/1.1" 200 -
+2024-03-18 08:15:52,549 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:15:52,560 - INFO - 127.0.0.1 - - [18/Mar/2024 08:15:52] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:15:52,569 - INFO - 127.0.0.1 - - [18/Mar/2024 08:15:52] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:15:52,573 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:15:52,584 - INFO - 127.0.0.1 - - [18/Mar/2024 08:15:52] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:16:02,626 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:16:02,626 - INFO - 127.0.0.1 - - [18/Mar/2024 08:16:02] "GET /communications HTTP/1.1" 200 -
+2024-03-18 08:16:02,627 - INFO - 127.0.0.1 - - [18/Mar/2024 08:16:02] "GET /collaborations HTTP/1.1" 200 -
+2024-03-18 08:16:02,629 - INFO - 127.0.0.1 - - [18/Mar/2024 08:16:02] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:16:02,634 - INFO - 127.0.0.1 - - [18/Mar/2024 08:16:02] "GET /nonownedevents HTTP/1.1" 200 -
+2024-03-18 08:16:02,643 - INFO - 127.0.0.1 - - [18/Mar/2024 08:16:02] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:16:35,402 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:16:35,410 - INFO - 127.0.0.1 - - [18/Mar/2024 08:16:35] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:16:35,419 - INFO - 127.0.0.1 - - [18/Mar/2024 08:16:35] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:16:35,423 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:16:35,436 - INFO - 127.0.0.1 - - [18/Mar/2024 08:16:35] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:18:12,822 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:12] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 08:18:12,823 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:12] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:18:12,823 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:18:12,828 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:12] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 08:18:12,834 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:12] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 08:18:12,836 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:12] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 08:18:12,848 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:12] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:18:12,854 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:12] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:18:12,859 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:12] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:18:12,861 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:12] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:18:12,865 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:12] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:18:12,870 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:12] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:18:12,874 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:12] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:18:12,878 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:12] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:18:12,881 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:12] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:18:27,632 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:27] "[35m[1mPOST /teams HTTP/1.1[0m" 201 -
+2024-03-18 08:18:27,650 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:27] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 08:18:27,661 - INFO - 127.0.0.1 - - [18/Mar/2024 08:18:27] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:19:46,618 - INFO - 127.0.0.1 - - [18/Mar/2024 08:19:46] "[35m[1mPOST /tasks HTTP/1.1[0m" 201 -
+2024-03-18 08:19:46,713 - INFO - 127.0.0.1 - - [18/Mar/2024 08:19:46] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 08:19:46,730 - INFO - 127.0.0.1 - - [18/Mar/2024 08:19:46] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:03,611 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:20:03,620 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:03] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:20:03,627 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:03] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:20:10,741 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:10] "POST /login HTTP/1.1" 200 -
+2024-03-18 08:20:10,755 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:20:10,767 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:10] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:20:10,775 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:10] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:20:10,783 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:20:10,793 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:10] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:20:14,563 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:20:14,566 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:14] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 08:20:14,568 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:14] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:14,577 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:14] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 08:20:14,579 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:14] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 08:20:14,585 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:14] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:14,590 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:14] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 08:20:14,594 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:14] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:14,596 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:14] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:20:14,601 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:14] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:14,607 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:14] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:14,612 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:14] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:20:14,612 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:14] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:14,617 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:14] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:14,621 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:14] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:28,893 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:28] "[35m[1mPOST /assignments HTTP/1.1[0m" 201 -
+2024-03-18 08:20:28,908 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:28] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 08:20:28,937 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:28] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:37,101 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:37] "PATCH /tasks/11 HTTP/1.1" 200 -
+2024-03-18 08:20:37,121 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:20:37,137 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:37] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:20:37,148 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:37] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:20:49,478 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:20:49,490 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:49] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:20:49,502 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:49] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:20:55,519 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:55] "POST /login HTTP/1.1" 200 -
+2024-03-18 08:20:55,551 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:20:55,566 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:55] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:20:55,574 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:55] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:20:55,579 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:20:55,591 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:55] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:20:59,157 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:20:59,159 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:59] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 08:20:59,164 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:59] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 08:20:59,169 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:59] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:59,172 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:59] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 08:20:59,176 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:59] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 08:20:59,180 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:59] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:59,187 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:59] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:20:59,189 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:59] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:59,195 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:59] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:59,201 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:59] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:20:59,201 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:59] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:59,206 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:59] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:59,211 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:59] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:20:59,214 - INFO - 127.0.0.1 - - [18/Mar/2024 08:20:59] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:22:47,050 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:47] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 08:22:47,051 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:22:47,057 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:47] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:22:47,062 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:47] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 08:22:47,074 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:47] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:22:47,077 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:47] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 08:22:47,079 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:47] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:22:47,086 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:47] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 08:22:47,095 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:47] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:22:47,102 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:47] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:22:47,110 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:47] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:22:47,112 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:47] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:22:47,116 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:47] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:22:47,121 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:47] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:22:47,128 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:47] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:23:05,795 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:23:05,804 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:05] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:23:05,812 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:05] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:23:05,818 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:23:05,829 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:05] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:23:09,101 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:23:09,104 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 08:23:09,111 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 08:23:09,113 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:23:09,116 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 08:23:09,121 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 08:23:09,126 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:23:09,130 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:23:09,136 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:23:09,145 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:23:09,149 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:23:09,152 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:23:09,153 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:23:09,159 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:23:09,160 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:23:09,165 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:23:09,173 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:23:09,175 - INFO - 127.0.0.1 - - [18/Mar/2024 08:23:09] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:24:03,898 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:03] "[35m[1mPOST /tasks HTTP/1.1[0m" 201 -
+2024-03-18 08:24:03,908 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:03] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 08:24:03,916 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:03] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:24:17,108 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:17] "[35m[1mPOST /teams HTTP/1.1[0m" 201 -
+2024-03-18 08:24:17,127 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:17] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 08:24:17,141 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:17] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:24:33,635 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:33] "[35m[1mPOST /assignments HTTP/1.1[0m" 201 -
+2024-03-18 08:24:33,654 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:33] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 08:24:33,667 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:33] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:24:41,464 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:24:41,476 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:41] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:24:41,488 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:41] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:24:48,417 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:48] "POST /login HTTP/1.1" 200 -
+2024-03-18 08:24:48,430 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 08:24:48,434 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:48] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:24:48,442 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:48] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 08:24:48,447 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 08:24:48,453 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:48] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 08:24:56,311 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 08:24:56,313 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:56] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:24:56,321 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:56] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 08:24:58,088 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 08:24:58,101 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:58] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:24:58,105 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:58] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 08:24:59,246 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 08:24:59,249 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:59] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:24:59,256 - INFO - 127.0.0.1 - - [18/Mar/2024 08:24:59] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 08:25:00,259 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 08:25:00,263 - INFO - 127.0.0.1 - - [18/Mar/2024 08:25:00] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:25:00,269 - INFO - 127.0.0.1 - - [18/Mar/2024 08:25:00] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 08:25:01,399 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 08:25:01,404 - INFO - 127.0.0.1 - - [18/Mar/2024 08:25:01] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:25:01,405 - INFO - 127.0.0.1 - - [18/Mar/2024 08:25:01] "GET /events/3 HTTP/1.1" 200 -
+2024-03-18 08:25:01,408 - INFO - 127.0.0.1 - - [18/Mar/2024 08:25:01] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:25:01,409 - INFO - 127.0.0.1 - - [18/Mar/2024 08:25:01] "GET /events/2 HTTP/1.1" 200 -
+2024-03-18 08:25:01,413 - INFO - 127.0.0.1 - - [18/Mar/2024 08:25:01] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 08:25:01,571 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 08:25:01,573 - INFO - 127.0.0.1 - - [18/Mar/2024 08:25:01] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:25:01,577 - INFO - 127.0.0.1 - - [18/Mar/2024 08:25:01] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:25:01,583 - INFO - 127.0.0.1 - - [18/Mar/2024 08:25:01] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:25:01,587 - INFO - 127.0.0.1 - - [18/Mar/2024 08:25:01] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 08:25:01,589 - INFO - 127.0.0.1 - - [18/Mar/2024 08:25:01] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:26:39,610 - INFO - 127.0.0.1 - - [18/Mar/2024 08:26:39] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 08:26:39,647 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/home/harris/Development/code/phase5/DevProject/Event-Planner 7/Event-Planner/server/app.py", line 819, in get
+    assets = Asset.query.all()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 08:26:39,655 - INFO - 127.0.0.1 - - [18/Mar/2024 08:26:39] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 08:26:39,789 - INFO - 127.0.0.1 - - [18/Mar/2024 08:26:39] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 08:26:44,527 - INFO - 127.0.0.1 - - [18/Mar/2024 08:26:44] "GET /communications HTTP/1.1" 200 -
+2024-03-18 08:26:44,529 - INFO - 127.0.0.1 - - [18/Mar/2024 08:26:44] "GET /users HTTP/1.1" 200 -
+2024-03-18 08:26:44,534 - INFO - 127.0.0.1 - - [18/Mar/2024 08:26:44] "GET /collaborations HTTP/1.1" 200 -
+2024-03-18 08:26:44,534 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 08:26:44,536 - INFO - 127.0.0.1 - - [18/Mar/2024 08:26:44] "GET /nonownedevents HTTP/1.1" 200 -
+2024-03-18 08:26:44,542 - INFO - 127.0.0.1 - - [18/Mar/2024 08:26:44] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 08:31:30,307 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 08:31:30,310 - INFO - 127.0.0.1 - - [18/Mar/2024 08:31:30] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:31:30,316 - INFO - 127.0.0.1 - - [18/Mar/2024 08:31:30] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 08:31:30,410 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 08:31:30,423 - INFO - 127.0.0.1 - - [18/Mar/2024 08:31:30] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 08:35:03,862 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 08:35:03,866 - INFO - 127.0.0.1 - - [18/Mar/2024 08:35:03] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:35:03,875 - INFO - 127.0.0.1 - - [18/Mar/2024 08:35:03] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 08:35:34,387 - INFO - 127.0.0.1 - - [18/Mar/2024 08:35:34] "POST /login HTTP/1.1" 200 -
+2024-03-18 08:35:34,402 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:35:34,435 - INFO - 127.0.0.1 - - [18/Mar/2024 08:35:34] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:35:34,445 - INFO - 127.0.0.1 - - [18/Mar/2024 08:35:34] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:35:34,449 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:35:34,460 - INFO - 127.0.0.1 - - [18/Mar/2024 08:35:34] "GET /users/1 HTTP/1.1" 200 -
