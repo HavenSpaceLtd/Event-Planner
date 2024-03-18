@@ -13,6 +13,9 @@ import BudgetPlanning from './components/BudgetPlanning';
 import ExpenseTracking from './components/ExpenseTracker';
 import ResourceManagement from './components/ResourceManagement';
 import Collaboration from './components/Collaboration';
+import EventPlanningCard from './components/EventPlanningCard';
+import UpdateEventPlanning from './components/UpdateEventPlanning';
+import Reports from './components/Reports';
 
 
 
@@ -27,14 +30,9 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/collaboration"  element={<div> <Chatbox/>  < Collaboration /> </div>} />
           <Route path="/resources" element={<div>
-            <ResourceForm />
-            <BudgetForm />
-            <ExpenseForm />
-            < Charts />
-
-             < BudgetPlanning />
+            <EventPlanningCard/>
+            <UpdateEventPlanning/>
         <ExpenseTracking />
-        <ResourceManagement />
             </div>} />
         </Routes>
         <Footer />

@@ -741,6 +741,32 @@ class ExpenseResource(Resource):
         ]
         return make_response(jsonify(expenses_list))
 
+    @jwt_required()
+    def put(self, expense_id):
+        data = request.json
+        expense = Expense.query.get(expense_id)
+        if expense:
+            expense.event_id = data.get('event_id', expense.event_id)
+            expense.amount = data.get('amount', expense.amount)
+            expense.category = data.get('category', expense.category)
+            expense.description = data.get('description', expense.description)
+            db.session.commit()
+            return make_response(jsonify({'message': 'Expense updated successfully'}))
+        else:
+            return make_response(jsonify({'message': 'Expense not found'}), 404)
+
+    @jwt_required()
+    def delete(self, expense_id):
+        expense = Expense.query.get(expense_id)
+        if expense:
+            db.session.delete(expense)
+            db.session.commit()
+            return make_response(jsonify({'message': 'Expense deleted successfully'}))
+        else:
+            return make_response(jsonify({'message': 'Expense not found'}), 404)
+
+
+
 class BudgetReport(Resource):
     @jwt_required()
     def get(self, event_id):
@@ -877,7 +903,7 @@ api.add_resource(EventById, '/events/<int:event_id>')
 api.add_resource(TaskById, '/tasks/<int:task_id>')
 api.add_resource(ManageCommunications, '/communications')
 api.add_resource(BudgetResource, '/budgets', '/budgets/<int:budget_id>')
-api.add_resource(ExpenseResource, '/expenses')
+api.add_resource(ExpenseResource, '/expenses', '/expenses/<int:expense_id>' )
 api.add_resource(Assets, '/assets')
 api.add_resource(CollaborationResource, '/collaborations')
 api.add_resource(BudgetReport, '/budget-report/<int:event_id>')

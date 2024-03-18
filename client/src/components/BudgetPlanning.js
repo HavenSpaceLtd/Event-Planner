@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Button } from 'react-bootstrap';
 
 function BudgetPlanning() {
   const [budgets, setBudgets] = useState([]);
@@ -19,21 +20,21 @@ function BudgetPlanning() {
         Authorization: `Bearer ${activeToken}`,
       },
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Failed to fetch budgets');
-      }
-      return response.json();
-    })
-    .then(budgetsData => {
-      setBudgets(budgetsData);
-    })
-    .catch(error => {
-      setError(error.message);
-    })
-    .finally(() => {
-      setIsLoading(false);
-    });
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch budgets');
+        }
+        return response.json();
+      })
+      .then(budgetsData => {
+        setBudgets(budgetsData);
+      })
+      .catch(error => {
+        setError(error.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const handleUpdateBudget = (budgetId) => {
@@ -50,17 +51,17 @@ function BudgetPlanning() {
       },
       body: JSON.stringify({ amount: newAmount }),
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Failed to update budget');
-      }
-      setEditingBudgetId(null);
-      setNewAmount('');
-      fetchBudgets();
-    })
-    .catch(error => {
-      console.error('Error updating budget:', error);
-    });
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to update budget');
+        }
+        setEditingBudgetId(null);
+        setNewAmount('');
+        fetchBudgets();
+      })
+      .catch(error => {
+        console.error('Error updating budget:', error);
+      });
   };
 
   const handleCancelUpdate = () => {
@@ -76,15 +77,15 @@ function BudgetPlanning() {
           Authorization: `Bearer ${activeToken}`,
         },
       })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to delete budget');
-        }
-        fetchBudgets();
-      })
-      .catch(error => {
-        console.error('Error deleting budget:', error);
-      });
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to delete budget');
+          }
+          fetchBudgets();
+        })
+        .catch(error => {
+          console.error('Error deleting budget:', error);
+        });
     }
   };
 
@@ -97,34 +98,52 @@ function BudgetPlanning() {
   }
 
   return (
-    <div>
-      <h2>Budget Planning</h2>
-   <ul>
-  {budgets.length > 0 ? (
-    budgets.map((budget) => (
-      <li key={budget.id}>
-        Event ID: {budget.event_id} - Amount: {editingBudgetId === budget.id ? (
-          <form onSubmit={handleSubmitUpdate}>
-            <input
-              type="number"
-              value={newAmount}
-              onChange={(e) => setNewAmount(e.target.value)}
-              required
-            />
-            <button type="submit">Submit</button>
-            <button type="button" onClick={handleCancelUpdate}>Cancel</button>
-          </form>
-        ) : (
-          <span>{budget.amount}</span>
-        )}
-        <button onClick={() => handleUpdateBudget(budget.id)}>Update</button>
-        <button onClick={() => handleDeleteBudget(budget.id)}>Delete</button>
-      </li>
-    ))
-  ) : (
-    <li>No budgets available.</li>
-  )}
-</ul>
+    <div className="d-flex justify-content-center">
+      <div className="shadow p-3 mb-5 bg-white rounded">
+        <h2>Budget Planning</h2>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Event ID</th>
+              <th>Amount</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {budgets.length > 0 ? (
+              budgets.map((budget) => (
+                <tr key={budget.id}>
+                  <td>{budget.event_id}</td>
+                  <td>
+                    {editingBudgetId === budget.id ? (
+                      <form onSubmit={handleSubmitUpdate}>
+                        <input
+                          type="number"
+                          value={newAmount}
+                          onChange={(e) => setNewAmount(e.target.value)}
+                          required
+                        />
+                        <Button type="submit" variant="primary">Submit</Button>
+                        <Button type="button" onClick={handleCancelUpdate} variant="secondary">Cancel</Button>
+                      </form>
+                    ) : (
+                      <span>{budget.amount}</span>
+                    )}
+                  </td>
+                  <td>
+                    <Button onClick={() => handleUpdateBudget(budget.id)} variant="info">Update</Button>
+                    <Button onClick={() => handleDeleteBudget(budget.id)} variant="danger">Delete</Button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="3">No budgets available.</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

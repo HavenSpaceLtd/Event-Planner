@@ -6847,3 +6847,1765 @@ jwt.exceptions.ExpiredSignatureError: Signature has expired
 2024-03-17 21:08:53,904 - INFO - 127.0.0.1 - - [17/Mar/2024 21:08:53] "GET /users/3 HTTP/1.1" 200 -
 2024-03-17 21:08:53,910 - INFO - User, wazza10@manu.com, details accessed
 2024-03-17 21:08:53,916 - INFO - 127.0.0.1 - - [17/Mar/2024 21:08:53] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 06:44:11,178 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-18 06:44:11,178 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-18 06:47:04,251 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:04] "POST /login HTTP/1.1" 200 -
+2024-03-18 06:47:04,351 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:04] "POST /login HTTP/1.1" 200 -
+2024-03-18 06:47:04,443 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 06:47:04,556 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:04] "GET /events HTTP/1.1" 200 -
+2024-03-18 06:47:04,603 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:04] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 06:47:04,634 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 06:47:04,753 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:04] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 06:47:13,086 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 06:47:13,095 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:13] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:13,104 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:13] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 06:47:13,109 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:13] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 06:47:13,158 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:13] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 06:47:13,234 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:13] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 06:47:13,248 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:13] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:13,280 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:13] "GET /events HTTP/1.1" 200 -
+2024-03-18 06:47:13,291 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:13] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:13,300 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:13] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 06:47:13,355 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:13] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:13,372 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:13] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:13,395 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:13] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:13,412 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:13] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:13,436 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:13] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:16,299 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 06:47:16,330 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:16] "GET /events HTTP/1.1" 200 -
+2024-03-18 06:47:16,351 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:16] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 06:47:18,329 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 06:47:18,350 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:18] "GET /events HTTP/1.1" 200 -
+2024-03-18 06:47:18,376 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:18] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 06:47:19,926 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 06:47:19,952 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:19] "GET /events HTTP/1.1" 200 -
+2024-03-18 06:47:19,983 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:19] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 06:47:21,225 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 06:47:21,244 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:21] "GET /events HTTP/1.1" 200 -
+2024-03-18 06:47:21,270 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:21] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 06:47:22,437 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:22,458 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /events/3 HTTP/1.1" 200 -
+2024-03-18 06:47:22,476 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /events/2 HTTP/1.1" 200 -
+2024-03-18 06:47:22,504 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 06:47:22,508 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 06:47:22,542 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 06:47:22,550 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 06:47:22,571 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /events/4 HTTP/1.1" 200 -
+2024-03-18 06:47:22,591 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:22,602 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 06:47:22,619 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:22,633 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /events HTTP/1.1" 200 -
+2024-03-18 06:47:22,641 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:22,658 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:22,673 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:22,687 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:22,697 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:22,698 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 06:47:22,715 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:22,728 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:22,740 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:22,750 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:22,759 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:22,768 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:22] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:29,787 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 06:47:29,810 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:29] "GET /events HTTP/1.1" 200 -
+2024-03-18 06:47:29,842 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:29] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 06:47:35,996 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:35] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 06:47:36,009 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:36] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 06:47:36,024 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 819, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 06:47:36,295 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:36] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 06:47:43,287 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:43] "GET /communications HTTP/1.1" 200 -
+2024-03-18 06:47:43,288 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 06:47:43,295 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:43] "GET /allevents HTTP/1.1" 200 -
+2024-03-18 06:47:43,303 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:43] "GET /users HTTP/1.1" 200 -
+2024-03-18 06:47:43,399 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:43] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 06:47:53,606 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:53] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 06:47:53,608 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:53] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 06:47:53,629 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 819, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 06:47:53,642 - INFO - 127.0.0.1 - - [18/Mar/2024 06:47:53] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 06:50:58,668 - INFO - 127.0.0.1 - - [18/Mar/2024 06:50:58] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 06:51:02,238 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:02] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 06:51:02,250 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 819, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 06:51:02,254 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:02] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 06:51:02,316 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:02] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 06:51:16,068 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:16] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 06:51:16,095 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 819, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 06:51:16,105 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:16] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 06:51:16,120 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:16] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 06:51:29,943 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:29] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 06:51:29,945 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:29] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 06:51:29,954 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 819, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 06:51:29,971 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:29] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 06:51:33,147 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:33] "DELETE /login HTTP/1.1" 200 -
+2024-03-18 06:51:36,684 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:36] "POST /login HTTP/1.1" 200 -
+2024-03-18 06:51:36,802 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 06:51:36,891 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:36] "GET /events HTTP/1.1" 200 -
+2024-03-18 06:51:36,930 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:36] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 06:51:36,947 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 06:51:36,995 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:36] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 06:51:41,182 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:41] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 06:51:41,196 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:41] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 06:51:41,207 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 819, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 06:51:41,256 - INFO - 127.0.0.1 - - [18/Mar/2024 06:51:41] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 06:53:15,658 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 819, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 06:53:15,683 - INFO - 127.0.0.1 - - [18/Mar/2024 06:53:15] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 06:53:15,685 - INFO - 127.0.0.1 - - [18/Mar/2024 06:53:15] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 06:53:15,688 - INFO - 127.0.0.1 - - [18/Mar/2024 06:53:15] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 07:09:39,269 - ERROR - Exception on /expenses [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 07:09:39,352 - INFO - 127.0.0.1 - - [18/Mar/2024 07:09:39] "[35m[1mGET /expenses HTTP/1.1[0m" 500 -
+2024-03-18 07:09:54,437 - INFO - 127.0.0.1 - - [18/Mar/2024 07:09:54] "DELETE /login HTTP/1.1" 200 -
+2024-03-18 07:10:04,172 - INFO - 127.0.0.1 - - [18/Mar/2024 07:10:04] "POST /login HTTP/1.1" 200 -
+2024-03-18 07:10:04,242 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 07:10:04,379 - INFO - 127.0.0.1 - - [18/Mar/2024 07:10:04] "GET /events HTTP/1.1" 200 -
+2024-03-18 07:10:04,423 - INFO - 127.0.0.1 - - [18/Mar/2024 07:10:04] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 07:10:04,438 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 07:10:04,491 - INFO - 127.0.0.1 - - [18/Mar/2024 07:10:04] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 07:10:11,093 - INFO - 127.0.0.1 - - [18/Mar/2024 07:10:11] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 07:10:11,103 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 819, in get
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 07:10:11,105 - INFO - 127.0.0.1 - - [18/Mar/2024 07:10:11] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 07:10:11,123 - INFO - 127.0.0.1 - - [18/Mar/2024 07:10:11] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 07:12:23,617 - INFO - 127.0.0.1 - - [18/Mar/2024 07:12:23] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 07:12:23,619 - INFO - 127.0.0.1 - - [18/Mar/2024 07:12:23] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 07:12:23,626 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 819, in get
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 07:12:23,650 - INFO - 127.0.0.1 - - [18/Mar/2024 07:12:23] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 07:12:28,456 - INFO - 127.0.0.1 - - [18/Mar/2024 07:12:28] "[33mDELETE /expenses/1 HTTP/1.1[0m" 404 -
+2024-03-18 07:13:49,166 - INFO - 127.0.0.1 - - [18/Mar/2024 07:13:49] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 07:14:11,990 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:11] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 07:14:11,991 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 819, in get
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 07:14:11,992 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:11] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 07:14:12,015 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:12] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 07:14:16,483 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:16] "[33mDELETE /expenses/9 HTTP/1.1[0m" 404 -
+2024-03-18 07:14:18,593 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:18] "[33mDELETE /expenses/9 HTTP/1.1[0m" 404 -
+2024-03-18 07:14:19,911 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:19] "[33mDELETE /expenses/9 HTTP/1.1[0m" 404 -
+2024-03-18 07:14:20,877 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:20] "[33mDELETE /expenses/6 HTTP/1.1[0m" 404 -
+2024-03-18 07:14:25,902 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:25] "DELETE /login HTTP/1.1" 200 -
+2024-03-18 07:14:31,537 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:31] "POST /login HTTP/1.1" 200 -
+2024-03-18 07:14:31,704 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 07:14:31,728 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:31] "GET /events HTTP/1.1" 200 -
+2024-03-18 07:14:31,778 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:31] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 07:14:31,793 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 07:14:31,882 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:31] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 07:14:36,376 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:36] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 07:14:36,387 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:36] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 07:14:36,394 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 819, in get
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 07:14:36,408 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:36] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 07:14:41,318 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:41] "[33mDELETE /expenses/9 HTTP/1.1[0m" 404 -
+2024-03-18 07:14:43,659 - INFO - 127.0.0.1 - - [18/Mar/2024 07:14:43] "[33mDELETE /expenses/9 HTTP/1.1[0m" 404 -
+2024-03-18 07:15:49,167 - INFO - 127.0.0.1 - - [18/Mar/2024 07:15:49] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 07:15:57,695 - INFO - 127.0.0.1 - - [18/Mar/2024 07:15:57] "DELETE /budgets/6 HTTP/1.1" 200 -
+2024-03-18 07:15:57,732 - INFO - 127.0.0.1 - - [18/Mar/2024 07:15:57] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 07:19:42,308 - INFO - 127.0.0.1 - - [18/Mar/2024 07:19:42] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 07:23:33,543 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-18 07:23:33,547 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-18 07:24:09,727 - INFO - 127.0.0.1 - - [18/Mar/2024 07:24:09] "DELETE /login HTTP/1.1" 200 -
+2024-03-18 07:24:18,515 - INFO - 127.0.0.1 - - [18/Mar/2024 07:24:18] "POST /login HTTP/1.1" 200 -
+2024-03-18 07:24:18,654 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 07:24:18,691 - INFO - 127.0.0.1 - - [18/Mar/2024 07:24:18] "GET /events HTTP/1.1" 200 -
+2024-03-18 07:24:18,720 - INFO - 127.0.0.1 - - [18/Mar/2024 07:24:18] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 07:24:18,746 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 07:24:18,793 - INFO - 127.0.0.1 - - [18/Mar/2024 07:24:18] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 07:24:23,563 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 845, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 07:24:23,566 - INFO - 127.0.0.1 - - [18/Mar/2024 07:24:23] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 07:24:23,573 - INFO - 127.0.0.1 - - [18/Mar/2024 07:24:23] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 07:24:23,669 - INFO - 127.0.0.1 - - [18/Mar/2024 07:24:23] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 07:27:02,672 - INFO - 127.0.0.1 - - [18/Mar/2024 07:27:02] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 07:29:02,745 - INFO - 127.0.0.1 - - [18/Mar/2024 07:29:02] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 07:32:21,856 - INFO - 127.0.0.1 - - [18/Mar/2024 07:32:21] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 07:33:12,121 - INFO - 127.0.0.1 - - [18/Mar/2024 07:33:12] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 07:34:55,441 - INFO - 127.0.0.1 - - [18/Mar/2024 07:34:55] "DELETE /expenses/9 HTTP/1.1" 200 -
+2024-03-18 07:35:00,364 - INFO - 127.0.0.1 - - [18/Mar/2024 07:35:00] "DELETE /expenses/3 HTTP/1.1" 200 -
+2024-03-18 07:36:00,018 - INFO - 127.0.0.1 - - [18/Mar/2024 07:36:00] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 07:36:00,026 - INFO - 127.0.0.1 - - [18/Mar/2024 07:36:00] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 07:36:00,033 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 845, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 07:36:00,251 - INFO - 127.0.0.1 - - [18/Mar/2024 07:36:00] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 07:43:38,388 - ERROR - Exception on /budgets [POST]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 07:43:38,509 - INFO - 127.0.0.1 - - [18/Mar/2024 07:43:38] "[35m[1mPOST /budgets HTTP/1.1[0m" 500 -
+2024-03-18 07:43:44,529 - ERROR - Exception on /budgets [POST]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 07:43:44,531 - INFO - 127.0.0.1 - - [18/Mar/2024 07:43:44] "[35m[1mPOST /budgets HTTP/1.1[0m" 500 -
+2024-03-18 07:43:48,213 - ERROR - Exception on /budgets [POST]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 07:43:48,214 - INFO - 127.0.0.1 - - [18/Mar/2024 07:43:48] "[35m[1mPOST /budgets HTTP/1.1[0m" 500 -
+2024-03-18 07:43:53,418 - INFO - 127.0.0.1 - - [18/Mar/2024 07:43:53] "DELETE /login HTTP/1.1" 200 -
+2024-03-18 07:44:08,108 - INFO - 127.0.0.1 - - [18/Mar/2024 07:44:08] "POST /login HTTP/1.1" 200 -
+2024-03-18 07:44:08,286 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 07:44:08,310 - INFO - 127.0.0.1 - - [18/Mar/2024 07:44:08] "GET /events HTTP/1.1" 200 -
+2024-03-18 07:44:08,349 - INFO - 127.0.0.1 - - [18/Mar/2024 07:44:08] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 07:44:08,371 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 07:44:08,434 - INFO - 127.0.0.1 - - [18/Mar/2024 07:44:08] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 07:44:17,678 - INFO - 127.0.0.1 - - [18/Mar/2024 07:44:17] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 07:44:17,684 - INFO - 127.0.0.1 - - [18/Mar/2024 07:44:17] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 07:44:17,953 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 845, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 07:44:17,982 - INFO - 127.0.0.1 - - [18/Mar/2024 07:44:17] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 07:44:29,812 - INFO - 127.0.0.1 - - [18/Mar/2024 07:44:29] "[35m[1mPOST /budgets HTTP/1.1[0m" 201 -
+2024-03-18 07:44:38,944 - INFO - 127.0.0.1 - - [18/Mar/2024 07:44:38] "[35m[1mPOST /budgets HTTP/1.1[0m" 201 -
+2024-03-18 07:45:09,260 - INFO - 127.0.0.1 - - [18/Mar/2024 07:45:09] "DELETE /budgets/3 HTTP/1.1" 200 -
+2024-03-18 07:45:09,273 - INFO - 127.0.0.1 - - [18/Mar/2024 07:45:09] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 07:45:15,264 - INFO - 127.0.0.1 - - [18/Mar/2024 07:45:15] "DELETE /budgets/7 HTTP/1.1" 200 -
+2024-03-18 07:45:15,278 - INFO - 127.0.0.1 - - [18/Mar/2024 07:45:15] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 07:45:18,955 - INFO - 127.0.0.1 - - [18/Mar/2024 07:45:18] "DELETE /budgets/6 HTTP/1.1" 200 -
+2024-03-18 07:45:18,967 - INFO - 127.0.0.1 - - [18/Mar/2024 07:45:18] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 07:45:31,742 - INFO - 127.0.0.1 - - [18/Mar/2024 07:45:31] "[35m[1mPOST /budgets HTTP/1.1[0m" 201 -
+2024-03-18 07:45:41,872 - INFO - 127.0.0.1 - - [18/Mar/2024 07:45:41] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 07:45:41,881 - INFO - 127.0.0.1 - - [18/Mar/2024 07:45:41] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 07:45:41,887 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 845, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 07:45:41,902 - INFO - 127.0.0.1 - - [18/Mar/2024 07:45:41] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 08:13:08,921 - ERROR - Exception on /budgets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 08:13:08,923 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 08:13:08,923 - ERROR - Exception on /expenses [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 08:13:08,932 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:08] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 08:13:08,933 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:08] "[35m[1mGET /budgets HTTP/1.1[0m" 500 -
+2024-03-18 08:13:08,936 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:08] "[35m[1mGET /expenses HTTP/1.1[0m" 500 -
+2024-03-18 08:13:47,155 - ERROR - Exception on /expenses [POST]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 08:13:47,161 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:47] "[35m[1mPOST /expenses HTTP/1.1[0m" 500 -
+2024-03-18 08:13:57,167 - INFO - 127.0.0.1 - - [18/Mar/2024 08:13:57] "DELETE /login HTTP/1.1" 200 -
+2024-03-18 08:14:13,815 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:13] "POST /login HTTP/1.1" 200 -
+2024-03-18 08:14:15,166 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:14:15,196 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:15] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:14:15,223 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:15] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:14:15,235 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:14:15,318 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:15] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:14:18,034 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:18] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 08:14:18,039 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:18] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 08:14:18,043 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 845, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 08:14:18,069 - INFO - 127.0.0.1 - - [18/Mar/2024 08:14:18] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 08:15:08,782 - INFO - 127.0.0.1 - - [18/Mar/2024 08:15:08] "[35m[1mPOST /expenses HTTP/1.1[0m" 201 -
+2024-03-18 08:15:19,564 - INFO - 127.0.0.1 - - [18/Mar/2024 08:15:19] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 08:15:19,590 - INFO - 127.0.0.1 - - [18/Mar/2024 08:15:19] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 08:15:19,642 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 845, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 08:15:19,666 - INFO - 127.0.0.1 - - [18/Mar/2024 08:15:19] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 08:22:06,322 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:06] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 08:22:06,324 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 845, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 08:22:06,325 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:06] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 08:22:06,418 - INFO - 127.0.0.1 - - [18/Mar/2024 08:22:06] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 08:47:42,133 - ERROR - Exception on /budgets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 08:47:42,136 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 08:47:42,138 - ERROR - Exception on /expenses [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 08:47:42,155 - INFO - 127.0.0.1 - - [18/Mar/2024 08:47:42] "[35m[1mGET /budgets HTTP/1.1[0m" 500 -
+2024-03-18 08:47:42,156 - INFO - 127.0.0.1 - - [18/Mar/2024 08:47:42] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 08:47:42,159 - INFO - 127.0.0.1 - - [18/Mar/2024 08:47:42] "[35m[1mGET /expenses HTTP/1.1[0m" 500 -
+2024-03-18 08:47:59,647 - ERROR - Exception on /budgets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 08:47:59,648 - INFO - 127.0.0.1 - - [18/Mar/2024 08:47:59] "[35m[1mGET /budgets HTTP/1.1[0m" 500 -
+2024-03-18 08:48:04,307 - INFO - 127.0.0.1 - - [18/Mar/2024 08:48:04] "DELETE /login HTTP/1.1" 200 -
+2024-03-18 08:48:10,220 - INFO - 127.0.0.1 - - [18/Mar/2024 08:48:10] "POST /login HTTP/1.1" 200 -
+2024-03-18 08:48:10,441 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:48:10,473 - INFO - 127.0.0.1 - - [18/Mar/2024 08:48:10] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:48:10,503 - INFO - 127.0.0.1 - - [18/Mar/2024 08:48:10] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:48:10,519 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:48:10,567 - INFO - 127.0.0.1 - - [18/Mar/2024 08:48:10] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:48:20,632 - INFO - 127.0.0.1 - - [18/Mar/2024 08:48:20] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 08:48:20,645 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 845, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 08:48:20,698 - INFO - 127.0.0.1 - - [18/Mar/2024 08:48:20] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 08:48:20,722 - INFO - 127.0.0.1 - - [18/Mar/2024 08:48:20] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 08:48:27,745 - INFO - 127.0.0.1 - - [18/Mar/2024 08:48:27] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 08:48:32,711 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 845, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 08:48:32,723 - INFO - 127.0.0.1 - - [18/Mar/2024 08:48:32] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 08:48:37,401 - INFO - 127.0.0.1 - - [18/Mar/2024 08:48:37] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 08:48:58,076 - INFO - 127.0.0.1 - - [18/Mar/2024 08:48:58] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 08:52:51,849 - INFO - 127.0.0.1 - - [18/Mar/2024 08:52:51] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 08:52:51,851 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 845, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 08:52:51,852 - INFO - 127.0.0.1 - - [18/Mar/2024 08:52:51] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 08:52:51,882 - INFO - 127.0.0.1 - - [18/Mar/2024 08:52:51] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 08:52:58,689 - INFO - 127.0.0.1 - - [18/Mar/2024 08:52:58] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 08:52:58,690 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 845, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 08:52:58,692 - INFO - 127.0.0.1 - - [18/Mar/2024 08:52:58] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 08:52:58,703 - INFO - 127.0.0.1 - - [18/Mar/2024 08:52:58] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 08:53:10,558 - INFO - 127.0.0.1 - - [18/Mar/2024 08:53:10] "DELETE /login HTTP/1.1" 200 -
+2024-03-18 08:53:17,957 - INFO - 127.0.0.1 - - [18/Mar/2024 08:53:17] "POST /login HTTP/1.1" 200 -
+2024-03-18 08:53:18,074 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:53:18,092 - INFO - 127.0.0.1 - - [18/Mar/2024 08:53:18] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:53:18,136 - INFO - 127.0.0.1 - - [18/Mar/2024 08:53:18] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:53:18,151 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:53:18,208 - INFO - 127.0.0.1 - - [18/Mar/2024 08:53:18] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:53:24,496 - INFO - 127.0.0.1 - - [18/Mar/2024 08:53:24] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 08:53:24,517 - INFO - 127.0.0.1 - - [18/Mar/2024 08:53:24] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 08:53:24,519 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 845, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 08:53:24,654 - INFO - 127.0.0.1 - - [18/Mar/2024 08:53:24] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 08:54:57,567 - INFO - 127.0.0.1 - - [18/Mar/2024 08:54:57] "DELETE /login HTTP/1.1" 200 -
+2024-03-18 08:55:03,908 - INFO - 127.0.0.1 - - [18/Mar/2024 08:55:03] "POST /login HTTP/1.1" 200 -
+2024-03-18 08:55:04,017 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:55:04,059 - INFO - 127.0.0.1 - - [18/Mar/2024 08:55:04] "GET /events HTTP/1.1" 200 -
+2024-03-18 08:55:04,082 - INFO - 127.0.0.1 - - [18/Mar/2024 08:55:04] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:55:04,099 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 08:55:04,171 - INFO - 127.0.0.1 - - [18/Mar/2024 08:55:04] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 08:55:14,208 - INFO - 127.0.0.1 - - [18/Mar/2024 08:55:14] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 08:55:14,218 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/Users/ericmusembi/Desktop/projects/Event-FullStack-Project/Event-Planner-Final/Event-Planner/server/app.py", line 845, in get
+    assets = Asset.query.all()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 08:55:14,220 - INFO - 127.0.0.1 - - [18/Mar/2024 08:55:14] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 08:55:14,231 - INFO - 127.0.0.1 - - [18/Mar/2024 08:55:14] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 08:57:13,964 - INFO - 127.0.0.1 - - [18/Mar/2024 08:57:13] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 09:09:33,930 - INFO - 127.0.0.1 - - [18/Mar/2024 09:09:33] "[35m[1mPOST /expenses HTTP/1.1[0m" 201 -
+2024-03-18 09:09:44,103 - INFO - 127.0.0.1 - - [18/Mar/2024 09:09:44] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 09:10:48,663 - ERROR - Exception on /expenses [POST]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 09:10:48,668 - INFO - 127.0.0.1 - - [18/Mar/2024 09:10:48] "[35m[1mPOST /expenses HTTP/1.1[0m" 500 -
+2024-03-18 09:14:46,954 - ERROR - Exception on /expenses [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 09:14:46,960 - INFO - 127.0.0.1 - - [18/Mar/2024 09:14:46] "[35m[1mGET /expenses HTTP/1.1[0m" 500 -
+2024-03-18 09:16:34,366 - ERROR - Exception on /expenses [GET]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 09:16:34,374 - INFO - 127.0.0.1 - - [18/Mar/2024 09:16:34] "[35m[1mGET /expenses HTTP/1.1[0m" 500 -
+2024-03-18 09:19:05,817 - ERROR - Exception on /expenses/1 [PUT]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 09:19:05,829 - INFO - 127.0.0.1 - - [18/Mar/2024 09:19:05] "[35m[1mPUT /expenses/1 HTTP/1.1[0m" 500 -
+2024-03-18 09:19:08,303 - ERROR - Exception on /expenses/1 [PUT]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 09:19:08,304 - INFO - 127.0.0.1 - - [18/Mar/2024 09:19:08] "[35m[1mPUT /expenses/1 HTTP/1.1[0m" 500 -
+2024-03-18 09:19:14,514 - ERROR - Exception on /expenses/1 [DELETE]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 09:19:14,515 - INFO - 127.0.0.1 - - [18/Mar/2024 09:19:14] "[35m[1mDELETE /expenses/1 HTTP/1.1[0m" 500 -
+2024-03-18 09:19:17,421 - ERROR - Exception on /expenses/1 [DELETE]
+Traceback (most recent call last):
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/flask_jwt_extended/tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 162, in decode_complete
+    self._validate_claims(
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 248, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+  File "/Users/ericmusembi/.local/share/virtualenvs/server-IIq3OCtN/lib/python3.9/site-packages/jwt/api_jwt.py", line 306, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+2024-03-18 09:19:17,430 - INFO - 127.0.0.1 - - [18/Mar/2024 09:19:17] "[35m[1mDELETE /expenses/1 HTTP/1.1[0m" 500 -
+2024-03-18 09:19:23,103 - INFO - 127.0.0.1 - - [18/Mar/2024 09:19:23] "DELETE /login HTTP/1.1" 200 -
+2024-03-18 09:19:30,713 - INFO - 127.0.0.1 - - [18/Mar/2024 09:19:30] "POST /login HTTP/1.1" 200 -
+2024-03-18 09:19:30,889 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:19:30,918 - INFO - 127.0.0.1 - - [18/Mar/2024 09:19:30] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:19:30,956 - INFO - 127.0.0.1 - - [18/Mar/2024 09:19:30] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:19:30,971 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:19:31,021 - INFO - 127.0.0.1 - - [18/Mar/2024 09:19:31] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:19:38,315 - INFO - 127.0.0.1 - - [18/Mar/2024 09:19:38] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 09:19:47,222 - INFO - 127.0.0.1 - - [18/Mar/2024 09:19:47] "PUT /expenses/1 HTTP/1.1" 200 -
+2024-03-18 09:19:47,272 - INFO - 127.0.0.1 - - [18/Mar/2024 09:19:47] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 09:20:22,768 - INFO - 127.0.0.1 - - [18/Mar/2024 09:20:22] "PUT /expenses/1 HTTP/1.1" 200 -
+2024-03-18 09:20:22,780 - INFO - 127.0.0.1 - - [18/Mar/2024 09:20:22] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 09:20:38,142 - INFO - 127.0.0.1 - - [18/Mar/2024 09:20:38] "DELETE /expenses/2 HTTP/1.1" 200 -
+2024-03-18 09:20:54,036 - INFO - 127.0.0.1 - - [18/Mar/2024 09:20:54] "PUT /expenses/8 HTTP/1.1" 200 -
+2024-03-18 09:20:54,081 - INFO - 127.0.0.1 - - [18/Mar/2024 09:20:54] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 09:20:55,087 - INFO - 127.0.0.1 - - [18/Mar/2024 09:20:55] "DELETE /expenses/8 HTTP/1.1" 200 -
