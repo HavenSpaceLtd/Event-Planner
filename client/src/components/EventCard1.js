@@ -151,12 +151,14 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                 });
 
                 setUsers(filteredUsers);
+                update();
             } catch (error) {
                 console.error('Error fetching users:', error);
             }
         };
 
         fetchAndFilterUsers();
+        update();
     }, [teamMembers, activeToken]);
 
     const handleAssignTeamMember = async (ownerId, id) => {
@@ -177,6 +179,7 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
             }
 
             fetchEventData();
+            update();
         } catch (error) {
             console.error("Error assigning task to user:", error);
         }
@@ -225,6 +228,7 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                 ...prevPriorities,
                 [taskId]: newPriority
             }));
+            update();
         } catch (error) {
             console.error('Error updating priority:', error);
         }
