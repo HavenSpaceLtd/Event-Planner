@@ -12,7 +12,7 @@ function Home() {
     const navigate = useNavigate();
     const [eventData, setEventData] = useState({});
 
-    
+
 
     const activeUser = sessionStorage.getItem('userId');
     const activeToken = sessionStorage.getItem('accessToken');
@@ -43,7 +43,7 @@ function Home() {
         }
         fetchUserData();
     }, [counter]);
-    
+
     useEffect(() => {
         async function fetchEventData() {
             try {
@@ -69,7 +69,7 @@ function Home() {
         }
         fetchEventData();
     }, [counter]);
-    
+
     useEffect(() => {
         async function fetchUserAlertData() {
             try {
@@ -88,7 +88,7 @@ function Home() {
                     throw new Error("Failed to fetch user data");
                 }
                 const userData = await response.json();
-                
+
                 // Check for due tasks and alert the user
                 const dueTasks = userData.due_tasks;
                 if (dueTasks && dueTasks.length > 0) {
@@ -103,7 +103,7 @@ function Home() {
         }
         fetchUserAlertData();
     }, []);
-    
+
 
     const handleItemClick = (item) => {
         setSelectedItem(item);
@@ -121,7 +121,7 @@ function Home() {
         for (const key in updatedData) {
             formData.append(key, updatedData[key]);
         }
-    
+
         // Send updated profile data to the backend
         fetch(`/users/${activeUser}`, {
             method: 'PATCH',
@@ -130,21 +130,25 @@ function Home() {
             },
             body: formData,
         })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to update profile');
-            }
-    
-            // If update successful, trigger a counter to refresh the data
-            console.log(updatedData);
-            setCounter(counter + 1);
-            alert('Updated successfully!');
-        })
-        .catch(error => {
-            console.error('Error updating profile:', error);
-        });
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to update profile');
+                }
+
+                // If update successful, trigger a counter to refresh the data
+                console.log(updatedData);
+                setCounter(counter + 1);
+                alert('Updated successfully!');
+            })
+            .catch(error => {
+                console.error('Error updating profile:', error);
+            });
     }
 
+    const handleLogout = () => {
+        handleItemClick('Logout'); // Update the selected item
+        sessionStorage.removeItem('accessToken'); 
+    };
 
     let trimmedPath = userData.image ? userData.image.replace("../client/public", "") : "";
     let plain = "/images/default.jpg";
@@ -216,7 +220,7 @@ function Home() {
                                             All Events
                                         </a>
                                     )}
-                                    
+
                                     <a
                                         href="#"
                                         className={`list-group-item list-group-item-action ${selectedItem === 'Your Profile' && 'active'}`}
@@ -227,7 +231,7 @@ function Home() {
                                     <a
                                         href="/login"
                                         className={`list-group-item list-group-item-action ${selectedItem === 'Logout' && 'active'}`}
-                                        onClick={() => handleItemClick('Logout')}
+                                        onClick={handleLogout}
                                     >
                                         Logout
                                     </a>
@@ -306,7 +310,7 @@ function Home() {
                                             update={setCounter}
                                             activeToken={activeToken}
                                             current_progress={item.progress}
-                                            
+
                                         />
                                     })}
                                 </div>
