@@ -8147,3 +8147,424 @@ jwt.exceptions.DecodeError: Not enough segments
 2024-03-18 09:26:16,855 - INFO - 127.0.0.1 - - [18/Mar/2024 09:26:16] "GET /users/3 HTTP/1.1" 200 -
 2024-03-18 09:26:16,860 - INFO - User, wazza10@manu.com, details accessed
 2024-03-18 09:26:16,866 - INFO - 127.0.0.1 - - [18/Mar/2024 09:26:16] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:29:31,309 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:29:31,317 - INFO - 127.0.0.1 - - [18/Mar/2024 09:29:31] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:29:31,318 - INFO - 127.0.0.1 - - [18/Mar/2024 09:29:31] "GET /events/3 HTTP/1.1" 200 -
+2024-03-18 09:29:31,325 - INFO - 127.0.0.1 - - [18/Mar/2024 09:29:31] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:29:31,326 - INFO - 127.0.0.1 - - [18/Mar/2024 09:29:31] "GET /events/2 HTTP/1.1" 200 -
+2024-03-18 09:29:31,332 - INFO - 127.0.0.1 - - [18/Mar/2024 09:29:31] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:29:31,334 - INFO - 127.0.0.1 - - [18/Mar/2024 09:29:31] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:29:31,336 - INFO - 127.0.0.1 - - [18/Mar/2024 09:29:31] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:29:31,340 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:29:31,341 - INFO - 127.0.0.1 - - [18/Mar/2024 09:29:31] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:29:31,347 - INFO - 127.0.0.1 - - [18/Mar/2024 09:29:31] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:29:31,350 - INFO - 127.0.0.1 - - [18/Mar/2024 09:29:31] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:33:22,553 - ERROR - Exception on /users/3 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
+    unverified_claims = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2024-03-18 09:33:22,554 - ERROR - Exception on /events [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
+    unverified_claims = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2024-03-18 09:33:22,555 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:22] "[35m[1mGET /users/3 HTTP/1.1[0m" 500 -
+2024-03-18 09:33:22,555 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:22] "[35m[1mGET /events HTTP/1.1[0m" 500 -
+2024-03-18 09:33:30,336 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:30] "POST /login HTTP/1.1" 200 -
+2024-03-18 09:33:30,349 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:33:30,366 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:30] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:33:30,377 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:30] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:33:30,430 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:33:30,447 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:30] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:33:34,550 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:33:34,558 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 09:33:34,561 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:33:34,563 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 09:33:34,567 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 09:33:34,568 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 09:33:34,574 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:33:34,582 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:33:34,584 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:33:34,594 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:33:34,597 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:33:34,606 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:33:34,608 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:33:34,609 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:33:34,613 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:33:34,620 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:33:34,625 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:33:34,630 - INFO - 127.0.0.1 - - [18/Mar/2024 09:33:34] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:34:29,326 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
+    unverified_claims = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2024-03-18 09:34:29,327 - ERROR - Exception on /events [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
+    unverified_claims = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2024-03-18 09:34:29,328 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:29] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-18 09:34:29,330 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:29] "[35m[1mGET /events HTTP/1.1[0m" 500 -
+2024-03-18 09:34:35,607 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:35] "POST /login HTTP/1.1" 200 -
+2024-03-18 09:34:35,643 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:34:35,646 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:35] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:34:35,654 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:35] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:34:35,659 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:34:35,666 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:35] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:34:40,426 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:34:40,430 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:40] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:34:40,438 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:40] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:34:44,650 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:34:44,653 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:44] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:34:44,659 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:44] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:34:47,694 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:34:47,697 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:47] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:34:47,703 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:47] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:34:49,157 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:34:49,161 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:49] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:34:49,168 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:49] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:34:51,106 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:34:51,109 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:51] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:34:51,116 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:51] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:34:54,223 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:34:54,229 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:54] "GET /events/2 HTTP/1.1" 200 -
+2024-03-18 09:34:54,231 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:54] "GET /events/3 HTTP/1.1" 200 -
+2024-03-18 09:34:54,234 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:54] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:34:54,236 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:54] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:34:54,242 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:54] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:34:54,246 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:54] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:34:54,247 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:54] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:34:54,249 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:34:54,257 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:54] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:34:54,260 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:54] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:34:54,263 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:54] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:34:57,478 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:57] "GET /collaborations HTTP/1.1" 200 -
+2024-03-18 09:34:57,480 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:57] "GET /communications HTTP/1.1" 200 -
+2024-03-18 09:34:57,482 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:34:57,486 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:57] "GET /nonownedevents HTTP/1.1" 200 -
+2024-03-18 09:34:57,487 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:57] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:34:57,494 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:57] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:34:59,208 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:59] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 09:34:59,209 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/home/harris/Development/code/phase5/DevProject/Event-Planner 7/Event-Planner/server/app.py", line 819, in get
+    assets = Asset.query.all()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 09:34:59,209 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:59] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 09:34:59,210 - INFO - 127.0.0.1 - - [18/Mar/2024 09:34:59] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 09:44:57,213 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:44:57,215 - INFO - 127.0.0.1 - - [18/Mar/2024 09:44:57] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:44:57,222 - INFO - 127.0.0.1 - - [18/Mar/2024 09:44:57] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:44:57,226 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:44:57,233 - INFO - 127.0.0.1 - - [18/Mar/2024 09:44:57] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:45:05,390 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:45:05,392 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:05] "GET /events/3 HTTP/1.1" 200 -
+2024-03-18 09:45:05,394 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:05] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:45:05,396 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:05] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:45:05,398 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:05] "GET /events/2 HTTP/1.1" 200 -
+2024-03-18 09:45:05,409 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:05] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:45:05,411 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:05] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:45:05,413 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:05] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:45:05,420 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:05] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:45:05,422 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:45:05,433 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:05] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:45:05,436 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:05] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:45:06,553 - INFO - User, wazza10@manu.com, details accessed
+2024-03-18 09:45:06,561 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:06] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:45:06,565 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:06] "GET /users/3 HTTP/1.1" 200 -
+2024-03-18 09:45:14,460 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:14] "POST /login HTTP/1.1" 200 -
+2024-03-18 09:45:14,475 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:45:14,488 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:14] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:45:14,497 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:14] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:45:14,502 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:45:14,514 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:14] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:45:18,996 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:18] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 09:45:18,996 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:45:19,001 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:19] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 09:45:19,004 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:19] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:45:19,006 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:19] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 09:45:19,013 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:19] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 09:45:19,016 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:19] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:45:19,026 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:19] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:45:19,028 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:19] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:45:19,042 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:19] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:45:19,051 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:19] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:45:19,052 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:19] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:45:19,053 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:19] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:45:19,060 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:45:19,062 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:19] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:45:19,070 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:19] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:45:19,077 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:19] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:45:19,079 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:19] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:45:47,510 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:47] "GET /expenses HTTP/1.1" 200 -
+2024-03-18 09:45:47,511 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:47] "GET /budgets HTTP/1.1" 200 -
+2024-03-18 09:45:47,511 - ERROR - Exception on /assets [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "/home/harris/Development/code/phase5/DevProject/Event-Planner 7/Event-Planner/server/app.py", line 819, in get
+    assets = Asset.query.all()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 1769, in all
+    return self._allrows()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 1676, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 2270, in _fetchall_impl
+    return list(self.iterator)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/orm/loading.py", line 219, in chunks
+    fetch = cursor._raw_all_rows()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/sqlalchemy/engine/result.py", line 541, in <listcomp>
+    return [make_row(row) for row in rows]
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "lib/sqlalchemy/cyextension/processors.pyx", line 51, in sqlalchemy.cyextension.processors.str_to_date
+TypeError: fromisoformat: argument must be str
+2024-03-18 09:45:47,511 - INFO - 127.0.0.1 - - [18/Mar/2024 09:45:47] "[35m[1mGET /assets HTTP/1.1[0m" 500 -
+2024-03-18 09:46:31,940 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:46:31,951 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:31] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:46:31,959 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:31] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:46:31,965 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:46:31,979 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:31] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:46:33,705 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 09:46:33,718 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:46:33,722 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 09:46:33,724 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:46:33,735 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 09:46:33,738 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 09:46:33,743 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:46:33,748 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:46:33,752 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:46:33,762 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:46:33,765 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:46:33,770 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:46:33,771 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:46:33,774 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:46:33,780 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:46:33,788 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:46:33,795 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:46:33,796 - INFO - 127.0.0.1 - - [18/Mar/2024 09:46:33] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:53:10,772 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:53:10,781 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:10] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:53:10,789 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:10] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:53:15,717 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /events/3 HTTP/1.1" 200 -
+2024-03-18 09:53:15,718 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /events/4 HTTP/1.1" 200 -
+2024-03-18 09:53:15,724 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /events/2 HTTP/1.1" 200 -
+2024-03-18 09:53:15,726 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:53:15,731 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:53:15,735 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 09:53:15,745 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 09:53:15,745 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 09:53:15,750 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 09:53:15,752 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:53:15,756 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:53:15,760 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:53:15,767 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:53:15,771 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:53:15,772 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:53:15,777 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:53:15,782 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:53:15,785 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:53:15,789 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:53:15,793 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:53:15,797 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:53:15,801 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:53:15,806 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:53:15,809 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:15] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:53:17,149 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:53:17,157 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:17] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:53:17,167 - INFO - 127.0.0.1 - - [18/Mar/2024 09:53:17] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:58:12,991 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-18 09:58:12,995 - INFO - 127.0.0.1 - - [18/Mar/2024 09:58:12] "GET /events/6 HTTP/1.1" 200 -
+2024-03-18 09:58:13,000 - INFO - 127.0.0.1 - - [18/Mar/2024 09:58:13] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:58:13,004 - INFO - 127.0.0.1 - - [18/Mar/2024 09:58:13] "GET /events/7 HTTP/1.1" 200 -
+2024-03-18 09:58:13,010 - INFO - 127.0.0.1 - - [18/Mar/2024 09:58:13] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:58:13,012 - INFO - 127.0.0.1 - - [18/Mar/2024 09:58:13] "GET /events/5 HTTP/1.1" 200 -
+2024-03-18 09:58:13,015 - INFO - 127.0.0.1 - - [18/Mar/2024 09:58:13] "GET /events/1 HTTP/1.1" 200 -
+2024-03-18 09:58:13,022 - INFO - 127.0.0.1 - - [18/Mar/2024 09:58:13] "GET /events HTTP/1.1" 200 -
+2024-03-18 09:58:13,023 - INFO - 127.0.0.1 - - [18/Mar/2024 09:58:13] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:58:13,031 - INFO - 127.0.0.1 - - [18/Mar/2024 09:58:13] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:58:13,037 - INFO - 127.0.0.1 - - [18/Mar/2024 09:58:13] "GET /users/1 HTTP/1.1" 200 -
+2024-03-18 09:58:13,038 - INFO - 127.0.0.1 - - [18/Mar/2024 09:58:13] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:58:13,044 - INFO - 127.0.0.1 - - [18/Mar/2024 09:58:13] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:58:13,047 - INFO - 127.0.0.1 - - [18/Mar/2024 09:58:13] "GET /users HTTP/1.1" 200 -
+2024-03-18 09:58:13,052 - INFO - 127.0.0.1 - - [18/Mar/2024 09:58:13] "GET /users HTTP/1.1" 200 -
