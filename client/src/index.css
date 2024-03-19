@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@font-face {
+  font-family: 'Aloja';
+  src: url('./Aloja-Light.woff') format('woff2'),
+       url('./Aloja-Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

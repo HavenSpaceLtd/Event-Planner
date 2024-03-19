@@ -1,0 +1,10 @@
+.scroll-container {
+    overflow-x: auto;
+    display: flex;
+    white-space: nowrap;
+  }
+  
+  .card {
+    flex: 0 0 auto;
+  }
+  

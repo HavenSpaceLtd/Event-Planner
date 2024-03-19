@@ -1,24 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import NavBar from './components/Navbar';
+import Footer from './components/Footer';
+import SignInForm1 from './components/SignInForm1';
+import ResourceForm from './components/ResourceForm';
+import BudgetForm from './components/BudgetForm';
+import ExpenseForm from './components/ExpenseForm';
+import Home from './components/Home';
+import Charts from './components/Chart';
+import Chatbox from './components/Chatbox';
+import BudgetPlanning from './components/BudgetPlanning';
+import ExpenseTracking from './components/ExpenseTracker';
+import ResourceManagement from './components/ResourceManagement';
+import Collaboration from './components/Collaboration';
+import EventPlanningCard from './components/EventPlanningCard';
+import UpdateEventPlanning from './components/UpdateEventPlanning';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<SignInForm1 />} />
+          <Route path="/login" element={<SignInForm1 />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/collaboration"  element={<div> <Chatbox/>  < Collaboration /> </div>} />
+          <Route path="/resources" element={<div>
+            <EventPlanningCard/>
+            <UpdateEventPlanning/>
+            <ExpenseTracking />
+            </div>} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
