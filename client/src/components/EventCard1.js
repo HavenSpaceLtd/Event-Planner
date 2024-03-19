@@ -471,7 +471,7 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                                     </form>
                                 )}
                                 <div>
-            <div>
+            {/* <div>
                 <div>
                     <Button variant="link" onClick={handleAddResource} className="mr-3">Resources</Button>
                     <Button variant="link" onClick={handleAddExpense} className="mr-3">Expenses</Button>
@@ -504,7 +504,7 @@ function EventCard1({ id, title, location, startDate, endDate, ownerId, userData
                 <Modal.Body>
                     <BudgetForm onSubmit={() => setShowBudgetForm(false)} />
                 </Modal.Body>
-            </Modal>
+            </Modal> */}
         </div>
                             </div>
                         </Modal.Body>

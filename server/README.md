@@ -10,6 +10,7 @@ wazza10@manu.com ~ user
 
 EventPlanner allows users to create events and assign team members to the events.
 Users can also create the tasks requred for an event and assign the team members to undertake specific tasks.
+The tasks have budgets that contribute to the event total budget.
 The team members can log in to view the tasks assigned to them, high priority tasks and due tasks.
 They can also update the progress and the average progress gets reflected in the events page.
 The team can also chat by sending messages in the collaboration page.

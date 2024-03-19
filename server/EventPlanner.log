@@ -10960,3 +10960,127 @@ Traceback (most recent call last):
 jwt.exceptions.DecodeError: Not enough segments
 2024-03-18 14:39:32,326 - INFO - 127.0.0.1 - - [18/Mar/2024 14:39:32] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
 2024-03-18 14:39:32,327 - INFO - 127.0.0.1 - - [18/Mar/2024 14:39:32] "[35m[1mGET /events HTTP/1.1[0m" 500 -
+2024-03-19 08:47:39,477 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5555
+2024-03-19 08:47:39,504 - INFO - [33mPress CTRL+C to quit[0m
+2024-03-19 08:49:45,025 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:45] "POST /login HTTP/1.1" 200 -
+2024-03-19 08:49:45,043 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-19 08:49:45,054 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:45] "GET /events HTTP/1.1" 200 -
+2024-03-19 08:49:45,062 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:45] "GET /users/1 HTTP/1.1" 200 -
+2024-03-19 08:49:45,067 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-19 08:49:45,078 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:45] "GET /users/1 HTTP/1.1" 200 -
+2024-03-19 08:49:49,248 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-19 08:49:49,255 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /events/6 HTTP/1.1" 200 -
+2024-03-19 08:49:49,257 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:49:49,263 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /events/1 HTTP/1.1" 200 -
+2024-03-19 08:49:49,267 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /events/7 HTTP/1.1" 200 -
+2024-03-19 08:49:49,267 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /events/5 HTTP/1.1" 200 -
+2024-03-19 08:49:49,276 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /users/1 HTTP/1.1" 200 -
+2024-03-19 08:49:49,290 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-19 08:49:49,292 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:49:49,300 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /events HTTP/1.1" 200 -
+2024-03-19 08:49:49,301 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:49:49,309 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:49:49,316 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:49:49,319 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /users/1 HTTP/1.1" 200 -
+2024-03-19 08:49:49,320 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /events HTTP/1.1" 200 -
+2024-03-19 08:49:49,323 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:49:49,328 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:49:49,333 - INFO - 127.0.0.1 - - [19/Mar/2024 08:49:49] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:50:53,004 - INFO - 127.0.0.1 - - [19/Mar/2024 08:50:53] "GET /events/6 HTTP/1.1" 200 -
+2024-03-19 08:50:53,009 - INFO - 127.0.0.1 - - [19/Mar/2024 08:50:53] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:50:53,016 - INFO - 127.0.0.1 - - [19/Mar/2024 08:50:53] "GET /events/5 HTTP/1.1" 200 -
+2024-03-19 08:50:53,018 - INFO - 127.0.0.1 - - [19/Mar/2024 08:50:53] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:50:53,020 - INFO - 127.0.0.1 - - [19/Mar/2024 08:50:53] "GET /events/1 HTTP/1.1" 200 -
+2024-03-19 08:50:53,021 - INFO - 127.0.0.1 - - [19/Mar/2024 08:50:53] "GET /events/7 HTTP/1.1" 200 -
+2024-03-19 08:50:53,025 - INFO - 127.0.0.1 - - [19/Mar/2024 08:50:53] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:50:53,030 - INFO - 127.0.0.1 - - [19/Mar/2024 08:50:53] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:50:53,036 - INFO - 127.0.0.1 - - [19/Mar/2024 08:50:53] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:50:53,043 - INFO - 127.0.0.1 - - [19/Mar/2024 08:50:53] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:50:53,049 - INFO - 127.0.0.1 - - [19/Mar/2024 08:50:53] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:50:53,055 - INFO - 127.0.0.1 - - [19/Mar/2024 08:50:53] "GET /users HTTP/1.1" 200 -
+2024-03-19 08:52:26,862 - ERROR - Exception on /users/1 [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
+    unverified_claims = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2024-03-19 08:52:26,863 - ERROR - Exception on /events [GET]
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/flask_jwt_extended/jwt_manager.py", line 535, in _decode_jwt_from_config
+    unverified_claims = jwt.decode(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/harris/.local/share/virtualenvs/server-DnJZ69jO/lib/python3.10/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2024-03-19 08:52:27,576 - INFO - 127.0.0.1 - - [19/Mar/2024 08:52:27] "[35m[1mGET /users/1 HTTP/1.1[0m" 500 -
+2024-03-19 08:52:27,576 - INFO - 127.0.0.1 - - [19/Mar/2024 08:52:27] "[35m[1mGET /events HTTP/1.1[0m" 500 -
+2024-03-19 08:52:34,346 - INFO - 127.0.0.1 - - [19/Mar/2024 08:52:34] "POST /login HTTP/1.1" 200 -
+2024-03-19 08:52:34,359 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-19 08:52:34,370 - INFO - 127.0.0.1 - - [19/Mar/2024 08:52:34] "GET /events HTTP/1.1" 200 -
+2024-03-19 08:52:34,379 - INFO - 127.0.0.1 - - [19/Mar/2024 08:52:34] "GET /users/1 HTTP/1.1" 200 -
+2024-03-19 08:52:34,383 - INFO - User, johndoe@gmail.com, details accessed
+2024-03-19 08:52:34,394 - INFO - 127.0.0.1 - - [19/Mar/2024 08:52:34] "GET /users/1 HTTP/1.1" 200 -
+2024-03-19 08:52:38,150 - INFO - 127.0.0.1 - - [19/Mar/2024 08:52:38] "GET /expenses HTTP/1.1" 200 -
